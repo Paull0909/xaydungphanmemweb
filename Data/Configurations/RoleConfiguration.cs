@@ -1,8 +1,6 @@
-﻿using Data.Entities;
-using Microsoft.AspNetCore.Identity;
+﻿using Application.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System.Data;
 
 namespace Data.Configurations
 {

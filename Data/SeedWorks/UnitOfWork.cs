@@ -1,6 +1,8 @@
-﻿using Application.SeedWorks;
+﻿using Application.Repositories;
+using Application.SeedWorks;
 using AutoMapper;
 using Data.EF;
+using Data.Repositories;
 
 namespace Data.SeedWorks
 {
@@ -11,8 +13,11 @@ namespace Data.SeedWorks
         public UnitOfWork(WebDbContext context, IMapper mapper)
         {
             _context = context;
-
+            Categories = new CategoryRepository(context, mapper);
         }
+
+        public ICategoryRepository Categories { get; private set; }
+
         public async Task<int> CompleteAsync()
         {
             return await _context.SaveChangesAsync();
