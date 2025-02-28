@@ -23,3 +23,5 @@ D:\xaydungphanmemweb\Application\obj\Debug\net8.0\Application.dll
 D:\xaydungphanmemweb\Application\obj\Debug\net8.0\refint\Application.dll
 D:\xaydungphanmemweb\Application\obj\Debug\net8.0\Application.pdb
 D:\xaydungphanmemweb\Application\obj\Debug\net8.0\ref\Application.dll
+D:\xaydungphanmemweb\Application\bin\Debug\net8.0\Application.runtimeconfig.json
+D:\xaydungphanmemweb\Application\obj\Debug\net8.0\Application.genruntimeconfig.cache

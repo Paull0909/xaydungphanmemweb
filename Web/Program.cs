@@ -1,8 +1,11 @@
 using Application.Email.Service;
 using Data.EF;
-using Data.Entities;
+using Application.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Application.SeedWorks;
+using Data.SeedWorks;
+using Application.DTO.Categorys;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,9 +14,14 @@ builder.Services.AddControllersWithViews();
 // Configure Entity Framework Core
 var connectionString = builder.Configuration.GetConnectionString("SQLServerIdentityConnection") ?? throw new InvalidOperationException("Connection string 'SQLServerIdentityConnection' not found.");
 builder.Services.AddDbContext<WebDbContext>(options =>
-    options.UseSqlServer(connectionString, b => b.MigrationsAssembly("Data"))); 
+    options.UseSqlServer(connectionString, b => b.MigrationsAssembly("Data")));
 
-       
+//Register Repositories 
+builder.Services.AddScoped(typeof(IRepository<,>), typeof(RepositoryBase<,>));
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+//Register Mapper ModelDTO
+builder.Services.AddAutoMapper(typeof(CreateUpdateCateoryRequest));
+
 //Configuration Identity Services
 builder.Services.AddIdentity<User,Role>(
     options =>
@@ -33,6 +41,7 @@ builder.Services.Configure<IdentityOptions>(options =>
 {
     options.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@.";
 });
+
 // Configure token lifespan
 builder.Services.Configure<DataProtectionTokenProviderOptions>(options =>
 {
