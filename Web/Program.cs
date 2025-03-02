@@ -7,6 +7,15 @@ using Application.SeedWorks;
 using Data.SeedWorks;
 using Application.DTO.Categorys;
 using Application.DTO.Products;
+using Application.DTO.Adventisements;
+using Application.DTO.Orders;
+using Application.DTO.OrderDetails;
+using Application.DTO.ProductImages;
+using Application.DTO.SizeProducts;
+using Application.DTO.TotalRevenues;
+using Application.DTO.Transactions;
+using Application.DTO.VariantsProducts;
+using Application.DTO.Carts;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,8 +30,17 @@ builder.Services.AddDbContext<WebDbContext>(options =>
 builder.Services.AddScoped(typeof(IRepository<,>), typeof(RepositoryBase<,>));
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 //Register Mapper ModelDTO
+builder.Services.AddAutoMapper(typeof(CreateUpdateCartRequest));
 builder.Services.AddAutoMapper(typeof(CreateUpdateCateoryRequest));
 builder.Services.AddAutoMapper(typeof(CreateUpdateProductRequest));
+builder.Services.AddAutoMapper(typeof(CreateUpdateAdvertisementRequest));
+builder.Services.AddAutoMapper(typeof(CreateUpdateOrderRequest));
+builder.Services.AddAutoMapper(typeof(CreateUpdateOrderDetailRequest));
+builder.Services.AddAutoMapper(typeof(CreateUpdateProductImageRequest));
+builder.Services.AddAutoMapper(typeof(CreateUpdateSizeProductRequest));
+builder.Services.AddAutoMapper(typeof(CreateUpdateTotalRevenueRequest));
+builder.Services.AddAutoMapper(typeof(CreateUpdateTransactionRequest));
+builder.Services.AddAutoMapper(typeof(CreateUpdateVariantsProductRequest));
 //Configuration Identity Services
 builder.Services.AddIdentity<User,Role>(
     options =>
