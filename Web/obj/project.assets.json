@@ -4230,11 +4230,12 @@
       "Data >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.Google >= 8.0.0",
       "Microsoft.AspNetCore.Identity >= 2.3.0",
+      "Microsoft.EntityFrameworkCore >= 9.0.2",
       "Microsoft.EntityFrameworkCore.SqlServer >= 9.0.2"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\DUY\\.nuget\\packages\\": {},
+    "C:\\Users\\ad\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
@@ -4243,14 +4244,14 @@
       "projectUniqueName": "D:\\xaydungphanmemweb\\Web\\Web.csproj",
       "projectName": "Web",
       "projectPath": "D:\\xaydungphanmemweb\\Web\\Web.csproj",
-      "packagesPath": "C:\\Users\\DUY\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\ad\\.nuget\\packages\\",
       "outputPath": "D:\\xaydungphanmemweb\\Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\DUY\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ad\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4284,7 +4285,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0": {
@@ -4297,6 +4299,10 @@
           "Microsoft.AspNetCore.Identity": {
             "target": "Package",
             "version": "[2.3.0, )"
+          },
+          "Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[9.0.2, )"
           },
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
@@ -4322,7 +4328,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

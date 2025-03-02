@@ -409,12 +409,8 @@ public async Task<IActionResult> Login(LoginViewModel model)
             var user = await userManager.FindByEmailAsync(Email);
             if (user == null || await userManager.IsEmailConfirmedAsync(user))
             {
-                // Handle the situation when the user does not exist or Email already confirmed.
-                // For security, don't reveal that the user does not exist or Email is already confirmed
                 return View("ConfirmationEmailSent");
             }
-
-            //Then send the Confirmation Email to the User
             await SendConfirmationEmail(Email, user);
 
             return View("ConfirmationEmailSent");

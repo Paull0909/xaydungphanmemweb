@@ -1,29 +1,21 @@
-using Microsoft.AspNetCore.Authorization;
+using Data.EF;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
-using Web.Models;
-
-namespace Web.Controllers
+using Microsoft.EntityFrameworkCore;
+public class HomeController : Controller
 {
-    public class HomeController : Controller
+    private readonly WebDbContext _context;
+
+    public HomeController(WebDbContext context)
     {
-        private readonly ILogger<HomeController> _logger;
+        _context = context;
+    }
 
-        [AllowAnonymous]
-        public IActionResult Index()
-        {
-            return View();
-        }
-        [Authorize]
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+    public IActionResult Index()
+    {
+        var categories = _context.Categories
+                                 .Include(c => c.Products)
+                                 .ThenInclude(p => p.ProductImages) 
+                                 .ToList();
+        return View(categories);  
     }
 }

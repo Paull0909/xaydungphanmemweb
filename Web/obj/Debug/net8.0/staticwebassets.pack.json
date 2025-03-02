@@ -2,23 +2,59 @@
   "Files": [
     {
       "Id": "D:\\xaydungphanmemweb\\Web\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Web.bundle.scp.css",
-      "PackagePath": "staticwebassets\\Web.bundle.scp.css"
+      "PackagePath": "staticwebassets\\Web.zmm9ivslsu.bundle.scp.css"
     },
     {
-      "Id": "D:\\xaydungphanmemweb\\Web\\wwwroot\\Images\\AccessDenied.png",
-      "PackagePath": "staticwebassets\\Images\\AccessDenied.png"
+      "Id": "D:\\xaydungphanmemweb\\Web\\wwwroot\\Images\\0e2b848f5e10e04eb901.jpg",
+      "PackagePath": "staticwebassets\\Images\\0e2b848f5e10e04eb901.jpg"
     },
     {
-      "Id": "D:\\xaydungphanmemweb\\Web\\wwwroot\\css\\site.css",
-      "PackagePath": "staticwebassets\\css\\site.css"
+      "Id": "D:\\xaydungphanmemweb\\Web\\wwwroot\\Images\\DSC05365.webp",
+      "PackagePath": "staticwebassets\\Images\\DSC05365.webp"
+    },
+    {
+      "Id": "D:\\xaydungphanmemweb\\Web\\wwwroot\\Images\\DSC05369.webp",
+      "PackagePath": "staticwebassets\\Images\\DSC05369.webp"
+    },
+    {
+      "Id": "D:\\xaydungphanmemweb\\Web\\wwwroot\\Images\\MENDOZATOP_MENDOZASKIRT03.webp",
+      "PackagePath": "staticwebassets\\Images\\MENDOZATOP_MENDOZASKIRT03.webp"
+    },
+    {
+      "Id": "D:\\xaydungphanmemweb\\Web\\wwwroot\\Images\\MENDOZATOP_MENDOZASKIRT04.webp",
+      "PackagePath": "staticwebassets\\Images\\MENDOZATOP_MENDOZASKIRT04.webp"
+    },
+    {
+      "Id": "D:\\xaydungphanmemweb\\Web\\wwwroot\\Images\\banner_1.jpg",
+      "PackagePath": "staticwebassets\\Images\\banner_1.jpg"
+    },
+    {
+      "Id": "D:\\xaydungphanmemweb\\Web\\wwwroot\\Images\\banner_2.jpg",
+      "PackagePath": "staticwebassets\\Images\\banner_2.jpg"
+    },
+    {
+      "Id": "D:\\xaydungphanmemweb\\Web\\wwwroot\\Images\\banner_3.jpg",
+      "PackagePath": "staticwebassets\\Images\\banner_3.jpg"
+    },
+    {
+      "Id": "D:\\xaydungphanmemweb\\Web\\wwwroot\\Images\\banner_4.jpg",
+      "PackagePath": "staticwebassets\\Images\\banner_4.jpg"
+    },
+    {
+      "Id": "D:\\xaydungphanmemweb\\Web\\wwwroot\\Images\\logo.jpg",
+      "PackagePath": "staticwebassets\\Images\\logo.jpg"
+    },
+    {
+      "Id": "D:\\xaydungphanmemweb\\Web\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
     },
     {
       "Id": "D:\\xaydungphanmemweb\\Web\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "D:\\xaydungphanmemweb\\Web\\wwwroot\\js\\site.js",
-      "PackagePath": "staticwebassets\\js\\site.js"
+      "Id": "D:\\xaydungphanmemweb\\Web\\wwwroot\\js\\javascript.js",
+      "PackagePath": "staticwebassets\\js\\javascript.js"
     },
     {
       "Id": "D:\\xaydungphanmemweb\\Web\\wwwroot\\lib\\bootstrap\\LICENSE",
@@ -247,6 +283,10 @@
     {
       "Id": "D:\\xaydungphanmemweb\\Web\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Web.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Web.Microsoft.AspNetCore.StaticWebAssets.props",
