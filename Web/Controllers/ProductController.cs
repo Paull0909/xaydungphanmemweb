@@ -16,22 +16,60 @@ namespace Web.Controllers
             _mapper = mapper;
         }
 
+        public async Task<IActionResult> GetAllProduct()
+        {
+            var product = await _unitOfWork.Products.GetAllAsync();
+            if (product != null)
+            {
+                return View(product);
+            }
+            else
+            {
+                ViewBag.Product = "Khong co du lieu nao";
+                return View();
+            }
+
+        }
+
         [HttpGet]
         public async Task<IActionResult> Create()
         {
-            return View();
+            var catagory = await _unitOfWork.Categories.GetAllAsync();
+            return View(catagory);
         }
         [HttpPost]
-        //[Authorize]
         public async Task<IActionResult> Create(CreateUpdateProductRequest request)
         {
             var product = _mapper.Map<CreateUpdateProductRequest, Product>(request);
             _unitOfWork.Products.Add(product);
-
+            if (request.img != null)
+            {
+                foreach (var item in request.img)
+                {
+                    item.product_id = product.product_id;
+                    _unitOfWork.ProductImageRepository.Add(item);
+                }
+            }
+            if(request.variants != null)
+            {
+                foreach (var item in request.variants)
+                {
+                    item.product_id = product.product_id;
+                    _unitOfWork.VariantsProductRepository.Add(item);
+                    if(item.Size != null)
+                    {
+                        foreach (var s in item.Size)
+                        {
+                            s.variants_product_id = item.Id;
+                            _unitOfWork.SizeProductsRepository.Add(s);
+                        }
+                    }
+                }
+            }
             var result = await _unitOfWork.CompleteAsync();
             if (result > 0)
             {
-                return RedirectToAction(nameof(HomeController.Index), "Home");
+                return RedirectToAction("GetAllProduct");
             }
             else
             {
@@ -39,25 +77,39 @@ namespace Web.Controllers
                 return RedirectToAction("Create");
             }
         }
-        [HttpGet]
-        public async Task<IActionResult> EditProduct()
-        {
-            return View();
-        }
-        [HttpGet]
-        //[Authorize]
-        public async Task<IActionResult> EditProduct(int id, CreateUpdateProductRequest request)
+
+        public async Task<IActionResult> EditProduct(int id)
         {
             var product = await _unitOfWork.Products.GetByIdAsync(id);
+            ViewBag.Category = await _unitOfWork.Categories.GetAllAsync();
+            product.ProductImages = await _unitOfWork.ProductImageRepository.GetListImgByIdProAsync(id);
+            return View(product);
+        }
+        [HttpGet]
+        public async Task<IActionResult> EditProduct(CreateUpdateProductRequest request)
+        {
+            var product = await _unitOfWork.Products.GetByIdAsync(request.product_id);
             if (product == null)
             {
-                return NotFound();
+                ViewBag.Product = "Khong tim thay san pham";
+                return View("EditProduct");
             }
             _mapper.Map(request, product);
+            if(product.ProductImages != null)
+            {
+                foreach (var image in product.ProductImages)
+                {
+                    var imgs = _unitOfWork.ProductImageRepository.GetByIdAsync(image.Id);
+                    if(imgs != null)
+                    {
+                        _mapper.Map(image, imgs);
+                    }         
+                }
+            }
             var result = await _unitOfWork.CompleteAsync();
             if (result > 0)
             {
-                return RedirectToAction(nameof(HomeController.Index), "Home");
+                return RedirectToAction("EditProduct");
             }
             else
             {
@@ -67,56 +119,27 @@ namespace Web.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> DeleteProduct()
-        {
-            return View();
-        }
-        [HttpGet]
         //[Authorize]
-        public async Task<IActionResult> DeleteProduct(int[] ids)
+        public async Task<IActionResult> DeleteProduct(int id)
         {
-            foreach (var id in ids)
+            var product = await _unitOfWork.Products.GetByIdAsync(id);
+            if (product == null)
             {
-                var product = await _unitOfWork.Products.GetByIdAsync(id);
-                if (product == null)
-                {
-                    return NotFound();
-                }
-                _unitOfWork.Products.Remove(product);
+                ViewBag.Product = "Loi vui long nhap lai";
+                return NotFound();
             }
+            _unitOfWork.Products.Remove(product);
             var result = await _unitOfWork.CompleteAsync();
             if (result > 0)
             {
-                return RedirectToAction(nameof(HomeController.Index), "Home");
+                ViewBag.Product = "Xoa san pham thanh cong";
+                return RedirectToAction("GetAllProduct");
             }
             else
             {
-                ViewBag.Product = "Loi vui long nhap lai";
-                return RedirectToAction("DeleteProduct");
+                ViewBag.Product = "Xoa san pham khong thanh cong";
+                return RedirectToAction("GetAllProduct");
             }
-        }
-
-        [HttpGet]
-        public async Task<IActionResult> GetProducts()
-        {
-            return View();
-        }
-        [HttpGet]
-        //[Authorize]
-        public async Task<IActionResult> GetAllProduct()
-        {
-            var product = await _unitOfWork.Products.GetAllAsync();
-            if (product != null)
-            {
-                return RedirectToAction(nameof(HomeController.Index), "Home");
-            }
-            // return Ok(category);
-            else
-            {
-                ViewBag.Product = "Loi vui long nhap lai";
-                return RedirectToAction("GetProducts");
-            }
-
         }
     }
 }

@@ -1,0 +1,428 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Monweb\\xaydungphanmemweb\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|d:\\monweb\\xaydungphanmemweb\\web\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|solutionrelative:web\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|d:\\monweb\\xaydungphanmemweb\\web\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|solutionrelative:web\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8372E2D-A980-40E4-8AA9-264E303295B7}|Application\\Application.csproj|d:\\monweb\\xaydungphanmemweb\\application\\dto\\carts\\createupdatecartrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8372E2D-A980-40E4-8AA9-264E303295B7}|Application\\Application.csproj|solutionrelative:application\\dto\\carts\\createupdatecartrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87D4349B-17E4-49B3-8D39-08BD8C182656}|Data\\Data.csproj|d:\\monweb\\xaydungphanmemweb\\data\\seedworks\\repositorybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87D4349B-17E4-49B3-8D39-08BD8C182656}|Data\\Data.csproj|solutionrelative:data\\seedworks\\repositorybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87D4349B-17E4-49B3-8D39-08BD8C182656}|Data\\Data.csproj|d:\\monweb\\xaydungphanmemweb\\data\\repositories\\cartrepostory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87D4349B-17E4-49B3-8D39-08BD8C182656}|Data\\Data.csproj|solutionrelative:data\\repositories\\cartrepostory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8372E2D-A980-40E4-8AA9-264E303295B7}|Application\\Application.csproj|d:\\monweb\\xaydungphanmemweb\\application\\repositories\\icartrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8372E2D-A980-40E4-8AA9-264E303295B7}|Application\\Application.csproj|solutionrelative:application\\repositories\\icartrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|d:\\monweb\\xaydungphanmemweb\\web\\controllers\\administrationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|solutionrelative:web\\controllers\\administrationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8372E2D-A980-40E4-8AA9-264E303295B7}|Application\\Application.csproj|d:\\monweb\\xaydungphanmemweb\\application\\repositories\\iproductimagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8372E2D-A980-40E4-8AA9-264E303295B7}|Application\\Application.csproj|solutionrelative:application\\repositories\\iproductimagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87D4349B-17E4-49B3-8D39-08BD8C182656}|Data\\Data.csproj|d:\\monweb\\xaydungphanmemweb\\data\\repositories\\productimagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87D4349B-17E4-49B3-8D39-08BD8C182656}|Data\\Data.csproj|solutionrelative:data\\repositories\\productimagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87D4349B-17E4-49B3-8D39-08BD8C182656}|Data\\Data.csproj|d:\\monweb\\xaydungphanmemweb\\data\\repositories\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87D4349B-17E4-49B3-8D39-08BD8C182656}|Data\\Data.csproj|solutionrelative:data\\repositories\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8372E2D-A980-40E4-8AA9-264E303295B7}|Application\\Application.csproj|d:\\monweb\\xaydungphanmemweb\\application\\repositories\\icategoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8372E2D-A980-40E4-8AA9-264E303295B7}|Application\\Application.csproj|solutionrelative:application\\repositories\\icategoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8372E2D-A980-40E4-8AA9-264E303295B7}|Application\\Application.csproj|d:\\monweb\\xaydungphanmemweb\\application\\repositories\\iorderdetailrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8372E2D-A980-40E4-8AA9-264E303295B7}|Application\\Application.csproj|solutionrelative:application\\repositories\\iorderdetailrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8372E2D-A980-40E4-8AA9-264E303295B7}|Application\\Application.csproj|d:\\monweb\\xaydungphanmemweb\\application\\seedworks\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8372E2D-A980-40E4-8AA9-264E303295B7}|Application\\Application.csproj|solutionrelative:application\\seedworks\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|d:\\monweb\\xaydungphanmemweb\\web\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|solutionrelative:web\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8372E2D-A980-40E4-8AA9-264E303295B7}|Application\\Application.csproj|d:\\monweb\\xaydungphanmemweb\\application\\dto\\products\\productdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8372E2D-A980-40E4-8AA9-264E303295B7}|Application\\Application.csproj|solutionrelative:application\\dto\\products\\productdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8372E2D-A980-40E4-8AA9-264E303295B7}|Application\\Application.csproj|d:\\monweb\\xaydungphanmemweb\\application\\dto\\products\\createupdateproductrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8372E2D-A980-40E4-8AA9-264E303295B7}|Application\\Application.csproj|solutionrelative:application\\dto\\products\\createupdateproductrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8372E2D-A980-40E4-8AA9-264E303295B7}|Application\\Application.csproj|d:\\monweb\\xaydungphanmemweb\\application\\seedworks\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8372E2D-A980-40E4-8AA9-264E303295B7}|Application\\Application.csproj|solutionrelative:application\\seedworks\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8372E2D-A980-40E4-8AA9-264E303295B7}|Application\\Application.csproj|d:\\monweb\\xaydungphanmemweb\\application\\repositories\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8372E2D-A980-40E4-8AA9-264E303295B7}|Application\\Application.csproj|solutionrelative:application\\repositories\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87D4349B-17E4-49B3-8D39-08BD8C182656}|Data\\Data.csproj|d:\\monweb\\xaydungphanmemweb\\data\\repositories\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87D4349B-17E4-49B3-8D39-08BD8C182656}|Data\\Data.csproj|solutionrelative:data\\repositories\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8372E2D-A980-40E4-8AA9-264E303295B7}|Application\\Application.csproj|d:\\monweb\\xaydungphanmemweb\\application\\dto\\orders\\createupdateorderrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8372E2D-A980-40E4-8AA9-264E303295B7}|Application\\Application.csproj|solutionrelative:application\\dto\\orders\\createupdateorderrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8372E2D-A980-40E4-8AA9-264E303295B7}|Application\\Application.csproj|d:\\monweb\\xaydungphanmemweb\\application\\dto\\variantsproducts\\variantsproductdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8372E2D-A980-40E4-8AA9-264E303295B7}|Application\\Application.csproj|solutionrelative:application\\dto\\variantsproducts\\variantsproductdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8372E2D-A980-40E4-8AA9-264E303295B7}|Application\\Application.csproj|d:\\monweb\\xaydungphanmemweb\\application\\dto\\variantsproducts\\createupdatevariantsproductrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8372E2D-A980-40E4-8AA9-264E303295B7}|Application\\Application.csproj|solutionrelative:application\\dto\\variantsproducts\\createupdatevariantsproductrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8372E2D-A980-40E4-8AA9-264E303295B7}|Application\\Application.csproj|d:\\monweb\\xaydungphanmemweb\\application\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8372E2D-A980-40E4-8AA9-264E303295B7}|Application\\Application.csproj|solutionrelative:application\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8372E2D-A980-40E4-8AA9-264E303295B7}|Application\\Application.csproj|d:\\monweb\\xaydungphanmemweb\\application\\dto\\orders\\orderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8372E2D-A980-40E4-8AA9-264E303295B7}|Application\\Application.csproj|solutionrelative:application\\dto\\orders\\orderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CreateUpdateCartRequest.cs",
+              "DocumentMoniker": "D:\\Monweb\\xaydungphanmemweb\\Application\\DTO\\Carts\\CreateUpdateCartRequest.cs",
+              "RelativeDocumentMoniker": "Application\\DTO\\Carts\\CreateUpdateCartRequest.cs",
+              "ToolTip": "D:\\Monweb\\xaydungphanmemweb\\Application\\DTO\\Carts\\CreateUpdateCartRequest.cs",
+              "RelativeToolTip": "Application\\DTO\\Carts\\CreateUpdateCartRequest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-02T17:16:48.639Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CartRepostory.cs",
+              "DocumentMoniker": "D:\\Monweb\\xaydungphanmemweb\\Data\\Repositories\\CartRepostory.cs",
+              "RelativeDocumentMoniker": "Data\\Repositories\\CartRepostory.cs",
+              "ToolTip": "D:\\Monweb\\xaydungphanmemweb\\Data\\Repositories\\CartRepostory.cs",
+              "RelativeToolTip": "Data\\Repositories\\CartRepostory.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-02T17:04:04.777Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CartController.cs",
+              "DocumentMoniker": "D:\\Monweb\\xaydungphanmemweb\\Web\\Controllers\\CartController.cs",
+              "RelativeDocumentMoniker": "Web\\Controllers\\CartController.cs",
+              "ToolTip": "D:\\Monweb\\xaydungphanmemweb\\Web\\Controllers\\CartController.cs",
+              "RelativeToolTip": "Web\\Controllers\\CartController.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAgwDIAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-02T17:01:25.558Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AdministrationController.cs",
+              "DocumentMoniker": "D:\\Monweb\\xaydungphanmemweb\\Web\\Controllers\\AdministrationController.cs",
+              "RelativeDocumentMoniker": "Web\\Controllers\\AdministrationController.cs",
+              "ToolTip": "D:\\Monweb\\xaydungphanmemweb\\Web\\Controllers\\AdministrationController.cs",
+              "RelativeToolTip": "Web\\Controllers\\AdministrationController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-02T17:08:41.497Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ICartRepository.cs",
+              "DocumentMoniker": "D:\\Monweb\\xaydungphanmemweb\\Application\\Repositories\\ICartRepository.cs",
+              "RelativeDocumentMoniker": "Application\\Repositories\\ICartRepository.cs",
+              "ToolTip": "D:\\Monweb\\xaydungphanmemweb\\Application\\Repositories\\ICartRepository.cs",
+              "RelativeToolTip": "Application\\Repositories\\ICartRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-02T17:02:53.437Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IProductImageRepository.cs",
+              "DocumentMoniker": "D:\\Monweb\\xaydungphanmemweb\\Application\\Repositories\\IProductImageRepository.cs",
+              "RelativeDocumentMoniker": "Application\\Repositories\\IProductImageRepository.cs",
+              "ToolTip": "D:\\Monweb\\xaydungphanmemweb\\Application\\Repositories\\IProductImageRepository.cs",
+              "RelativeToolTip": "Application\\Repositories\\IProductImageRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-02T17:06:29.495Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RepositoryBase.cs",
+              "DocumentMoniker": "D:\\Monweb\\xaydungphanmemweb\\Data\\SeedWorks\\RepositoryBase.cs",
+              "RelativeDocumentMoniker": "Data\\SeedWorks\\RepositoryBase.cs",
+              "ToolTip": "D:\\Monweb\\xaydungphanmemweb\\Data\\SeedWorks\\RepositoryBase.cs",
+              "RelativeToolTip": "Data\\SeedWorks\\RepositoryBase.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAwCUAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-02T12:47:01.145Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CategoryRepository.cs",
+              "DocumentMoniker": "D:\\Monweb\\xaydungphanmemweb\\Data\\Repositories\\CategoryRepository.cs",
+              "RelativeDocumentMoniker": "Data\\Repositories\\CategoryRepository.cs",
+              "ToolTip": "D:\\Monweb\\xaydungphanmemweb\\Data\\Repositories\\CategoryRepository.cs",
+              "RelativeToolTip": "Data\\Repositories\\CategoryRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-02T17:05:26.161Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ICategoryRepository.cs",
+              "DocumentMoniker": "D:\\Monweb\\xaydungphanmemweb\\Application\\Repositories\\ICategoryRepository.cs",
+              "RelativeDocumentMoniker": "Application\\Repositories\\ICategoryRepository.cs",
+              "ToolTip": "D:\\Monweb\\xaydungphanmemweb\\Application\\Repositories\\ICategoryRepository.cs",
+              "RelativeToolTip": "Application\\Repositories\\ICategoryRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-02T17:03:02.584Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IOrderDetailRepository.cs",
+              "DocumentMoniker": "D:\\Monweb\\xaydungphanmemweb\\Application\\Repositories\\IOrderDetailRepository.cs",
+              "RelativeDocumentMoniker": "Application\\Repositories\\IOrderDetailRepository.cs",
+              "ToolTip": "D:\\Monweb\\xaydungphanmemweb\\Application\\Repositories\\IOrderDetailRepository.cs",
+              "RelativeToolTip": "Application\\Repositories\\IOrderDetailRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-02T17:03:05.464Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ProductImageRepository.cs",
+              "DocumentMoniker": "D:\\Monweb\\xaydungphanmemweb\\Data\\Repositories\\ProductImageRepository.cs",
+              "RelativeDocumentMoniker": "Data\\Repositories\\ProductImageRepository.cs",
+              "ToolTip": "D:\\Monweb\\xaydungphanmemweb\\Data\\Repositories\\ProductImageRepository.cs",
+              "RelativeToolTip": "Data\\Repositories\\ProductImageRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-02T12:47:06.199Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "IRepository.cs",
+              "DocumentMoniker": "D:\\Monweb\\xaydungphanmemweb\\Application\\SeedWorks\\IRepository.cs",
+              "RelativeDocumentMoniker": "Application\\SeedWorks\\IRepository.cs",
+              "ToolTip": "D:\\Monweb\\xaydungphanmemweb\\Application\\SeedWorks\\IRepository.cs",
+              "RelativeToolTip": "Application\\SeedWorks\\IRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-02T16:21:06.689Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "D:\\Monweb\\xaydungphanmemweb\\Web\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "Web\\Controllers\\ProductController.cs",
+              "ToolTip": "D:\\Monweb\\xaydungphanmemweb\\Web\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "Web\\Controllers\\ProductController.cs",
+              "ViewState": "AQIAAFQAAAAAAAAAAAAowGsAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-02T12:04:07.911Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "CreateUpdateProductRequest.cs",
+              "DocumentMoniker": "D:\\Monweb\\xaydungphanmemweb\\Application\\DTO\\Products\\CreateUpdateProductRequest.cs",
+              "RelativeDocumentMoniker": "Application\\DTO\\Products\\CreateUpdateProductRequest.cs",
+              "ToolTip": "D:\\Monweb\\xaydungphanmemweb\\Application\\DTO\\Products\\CreateUpdateProductRequest.cs",
+              "RelativeToolTip": "Application\\DTO\\Products\\CreateUpdateProductRequest.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAwBcAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-02T12:17:15.067Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "IUnitOfWork.cs",
+              "DocumentMoniker": "D:\\Monweb\\xaydungphanmemweb\\Application\\SeedWorks\\IUnitOfWork.cs",
+              "RelativeDocumentMoniker": "Application\\SeedWorks\\IUnitOfWork.cs",
+              "ToolTip": "D:\\Monweb\\xaydungphanmemweb\\Application\\SeedWorks\\IUnitOfWork.cs",
+              "RelativeToolTip": "Application\\SeedWorks\\IUnitOfWork.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-02T12:43:19.487Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "IProductRepository.cs",
+              "DocumentMoniker": "D:\\Monweb\\xaydungphanmemweb\\Application\\Repositories\\IProductRepository.cs",
+              "RelativeDocumentMoniker": "Application\\Repositories\\IProductRepository.cs",
+              "ToolTip": "D:\\Monweb\\xaydungphanmemweb\\Application\\Repositories\\IProductRepository.cs",
+              "RelativeToolTip": "Application\\Repositories\\IProductRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-02T16:21:01.856Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ProductDTO.cs",
+              "DocumentMoniker": "D:\\Monweb\\xaydungphanmemweb\\Application\\DTO\\Products\\ProductDTO.cs",
+              "RelativeDocumentMoniker": "Application\\DTO\\Products\\ProductDTO.cs",
+              "ToolTip": "D:\\Monweb\\xaydungphanmemweb\\Application\\DTO\\Products\\ProductDTO.cs",
+              "RelativeToolTip": "Application\\DTO\\Products\\ProductDTO.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABgAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-02T12:17:14.421Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "OrderRepository.cs",
+              "DocumentMoniker": "D:\\Monweb\\xaydungphanmemweb\\Data\\Repositories\\OrderRepository.cs",
+              "RelativeDocumentMoniker": "Data\\Repositories\\OrderRepository.cs",
+              "ToolTip": "D:\\Monweb\\xaydungphanmemweb\\Data\\Repositories\\OrderRepository.cs",
+              "RelativeToolTip": "Data\\Repositories\\OrderRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-02T12:47:44.479Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "CreateUpdateOrderRequest.cs",
+              "DocumentMoniker": "D:\\Monweb\\xaydungphanmemweb\\Application\\DTO\\Orders\\CreateUpdateOrderRequest.cs",
+              "RelativeDocumentMoniker": "Application\\DTO\\Orders\\CreateUpdateOrderRequest.cs",
+              "ToolTip": "D:\\Monweb\\xaydungphanmemweb\\Application\\DTO\\Orders\\CreateUpdateOrderRequest.cs",
+              "RelativeToolTip": "Application\\DTO\\Orders\\CreateUpdateOrderRequest.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-02T12:12:41.238Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "VariantsProductDTO.cs",
+              "DocumentMoniker": "D:\\Monweb\\xaydungphanmemweb\\Application\\DTO\\VariantsProducts\\VariantsProductDTO.cs",
+              "RelativeDocumentMoniker": "Application\\DTO\\VariantsProducts\\VariantsProductDTO.cs",
+              "ToolTip": "D:\\Monweb\\xaydungphanmemweb\\Application\\DTO\\VariantsProducts\\VariantsProductDTO.cs",
+              "RelativeToolTip": "Application\\DTO\\VariantsProducts\\VariantsProductDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-02T12:28:33.161Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "CreateUpdateVariantsProductRequest.cs",
+              "DocumentMoniker": "D:\\Monweb\\xaydungphanmemweb\\Application\\DTO\\VariantsProducts\\CreateUpdateVariantsProductRequest.cs",
+              "RelativeDocumentMoniker": "Application\\DTO\\VariantsProducts\\CreateUpdateVariantsProductRequest.cs",
+              "ToolTip": "D:\\Monweb\\xaydungphanmemweb\\Application\\DTO\\VariantsProducts\\CreateUpdateVariantsProductRequest.cs",
+              "RelativeToolTip": "Application\\DTO\\VariantsProducts\\CreateUpdateVariantsProductRequest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-02T12:28:34.474Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "OrderDTO.cs",
+              "DocumentMoniker": "D:\\Monweb\\xaydungphanmemweb\\Application\\DTO\\Orders\\OrderDTO.cs",
+              "RelativeDocumentMoniker": "Application\\DTO\\Orders\\OrderDTO.cs",
+              "ToolTip": "D:\\Monweb\\xaydungphanmemweb\\Application\\DTO\\Orders\\OrderDTO.cs",
+              "RelativeToolTip": "Application\\DTO\\Orders\\OrderDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-02T12:17:02.115Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Product.cs",
+              "DocumentMoniker": "D:\\Monweb\\xaydungphanmemweb\\Application\\Entities\\Product.cs",
+              "RelativeDocumentMoniker": "Application\\Entities\\Product.cs",
+              "ToolTip": "D:\\Monweb\\xaydungphanmemweb\\Application\\Entities\\Product.cs",
+              "RelativeToolTip": "Application\\Entities\\Product.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAQwBQAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-02T12:16:53.081Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CategoryController.cs",
+              "DocumentMoniker": "D:\\Monweb\\xaydungphanmemweb\\Web\\Controllers\\CategoryController.cs",
+              "RelativeDocumentMoniker": "Web\\Controllers\\CategoryController.cs",
+              "ToolTip": "D:\\Monweb\\xaydungphanmemweb\\Web\\Controllers\\CategoryController.cs",
+              "RelativeToolTip": "Web\\Controllers\\CategoryController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-02T16:49:56.198Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -15,5 +15,10 @@ namespace Data.Repositories
             _mapper = mapper;
         }
 
+        public async Task<List<Cart>> GetAllByUser(Guid id)
+        {
+            var cart = _context.Carts.Where(c=>c.UserId == id).ToList();
+            return cart;
+        }
     }
 }

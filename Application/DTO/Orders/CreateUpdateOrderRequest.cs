@@ -1,4 +1,5 @@
 ﻿using Application.Enum;
+using Application.Entities;
 using AutoMapper;
 
 namespace Application.DTO.Orders
@@ -17,6 +18,7 @@ namespace Application.DTO.Orders
         public Status Status { set; get; }
         public TransactionStatus transactionStatus { set; get; }
         public Guid UserId { set; get; }
+
         public class AutoMapperProfiles : Profile
         {
             public AutoMapperProfiles()

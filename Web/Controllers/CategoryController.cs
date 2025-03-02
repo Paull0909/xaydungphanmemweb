@@ -16,23 +16,27 @@ namespace Web.Controllers
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
-        
+        public async Task<IActionResult> GetAllCategory()
+        {
+            var catagory = _unitOfWork.Categories.GetAllAsync();
+            return View(catagory);
+        }
+
         [HttpGet]
         public async Task<IActionResult> CreateCategory()
         {
             return View();
         }
         [HttpPost]
-        //[Authorize]
         public async Task<IActionResult> CreateCategory(CreateUpdateCateoryRequest request)
         {
             var category = _mapper.Map<CreateUpdateCateoryRequest, Category>(request);
             _unitOfWork.Categories.Add(category);
-            
             var result = await _unitOfWork.CompleteAsync();
             if (result > 0)
             {
-                return RedirectToAction(nameof(HomeController.Index), "Home");
+                ViewBag.Category = "Them thanh cong";
+                return RedirectToAction("GetAllCategory");
             }
             else 
             {
@@ -46,78 +50,39 @@ namespace Web.Controllers
             return View();
         }
         [HttpGet]
-        //[Authorize]
-        public async Task<IActionResult> EditCategory(int id,CreateUpdateCateoryRequest request)
+        public async Task<IActionResult> EditCategory(CreateUpdateCateoryRequest request)
         {
-            var category = await _unitOfWork.Categories.GetByIdAsync(id);
+            var category = await _unitOfWork.Categories.GetByIdAsync(request.type_id);
             if (category == null)
             {
-                return NotFound();
+                ViewBag.Category = "Khong thay phan loai san pham vua chon";
+                return RedirectToAction("GetAllCategory");
             }
             _mapper.Map(request, category);
             var result = await _unitOfWork.CompleteAsync();
-            if (result > 0)
-            {
-                return RedirectToAction(nameof(HomeController.Index), "Home");
-            }
-            else
-            {
-                ViewBag.Category = "Loi vui long nhap lai";
-                return RedirectToAction("EditCategory");
-            }
+            return RedirectToAction("EditCategory");
         }
 
         [HttpGet]
-        public async Task<IActionResult> DeleteCategory()
+        public async Task<IActionResult> DeleteCategory(int id)
         {
-            return View();
-        }
-        [HttpGet]
-        //[Authorize]
-        public async Task<IActionResult> DeleteCategory(int[] ids)
-        {
-            foreach (var id in ids)
-            {
-                var category = await _unitOfWork.Categories.GetByIdAsync(id);
-                if (category == null)
-                {
-                    return NotFound();
-                }
-                _unitOfWork.Categories.Remove(category);
-            }
+             var category = await _unitOfWork.Categories.GetByIdAsync(id);
+             if (category == null)
+             {
+                return NotFound();
+             }
+            _unitOfWork.Categories.Remove(category);
             var result = await _unitOfWork.CompleteAsync();
             if (result > 0)
             {
-                return RedirectToAction(nameof(HomeController.Index), "Home");
+                ViewBag.Category = "Xoa thang cong";
+                return RedirectToAction("GetAllCategory");
             }
             else
             {
-                ViewBag.Category = "Loi vui long nhap lai";
+                ViewBag.Category = "Xoa khong thang cong";
                 return RedirectToAction("DeleteCategory");
             }
-        }
-
-        [HttpGet]
-        public async Task<IActionResult> GetCategories()
-        {
-            return View();
-        }
-        [HttpGet]
-        //[Authorize]
-        public async Task<IActionResult> GetAllCategory()
-        {
-            var category = await _unitOfWork.Categories.GetAllAsync();
-            if (category != null)
-            {
-                return RedirectToAction(nameof(HomeController.Index), "Home");
-            }
-            // return Ok(category);
-            else
-            {
-                ViewBag.Category = "Loi vui long nhap lai";
-                return RedirectToAction("GetCategories");
-            }
-            
         }
     }
 }

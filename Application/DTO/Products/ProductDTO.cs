@@ -1,4 +1,6 @@
 ﻿using Application.DTO.Categorys;
+using Application.DTO.VariantsProducts;
+using Application.Entities;
 using Application.Enum;
 using AutoMapper;
 using System;

@@ -1,4 +1,5 @@
-﻿using Application.Enum;
+﻿using Application.Entities;
+using Application.Enum;
 using AutoMapper;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,8 @@ namespace Application.DTO.Products
         public int type_id { get; set; }
         public string Desdescription { get; set; }
         public int advertisement_id { get; set; }
+        public List<ProductImage> img { set; get; }
+        public List<Variants_product> variants { get; set; }
         public class AutoMapperProfiles : Profile
         {
             public AutoMapperProfiles()
