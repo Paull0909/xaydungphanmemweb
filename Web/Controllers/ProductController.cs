@@ -6,24 +6,24 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Web.Controllers
 {
-    public class ProductController1 : Controller
+    public class ProductController : Controller
     {
         private readonly IMapper _mapper;
         private readonly IUnitOfWork _unitOfWork;
-        public ProductController1(IUnitOfWork unitOfWork, IMapper mapper)
+        public ProductController(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
 
         [HttpGet]
-        public async Task<IActionResult> CreateProduct()
+        public async Task<IActionResult> Create()
         {
             return View();
         }
         [HttpPost]
         //[Authorize]
-        public async Task<IActionResult> CreateProduct(CreateUpdateProductRequest request)
+        public async Task<IActionResult> Create(CreateUpdateProductRequest request)
         {
             var product = _mapper.Map<CreateUpdateProductRequest, Product>(request);
             _unitOfWork.Products.Add(product);
@@ -36,7 +36,7 @@ namespace Web.Controllers
             else
             {
                 ViewBag.Product = "Loi vui long nhap lai";
-                return RedirectToAction("CreateProduct");
+                return RedirectToAction("Create");
             }
         }
         [HttpGet]
