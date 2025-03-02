@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Application.SeedWorks;
 using Data.SeedWorks;
 using Application.DTO.Categorys;
+using Application.DTO.Products;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,7 +22,7 @@ builder.Services.AddScoped(typeof(IRepository<,>), typeof(RepositoryBase<,>));
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 //Register Mapper ModelDTO
 builder.Services.AddAutoMapper(typeof(CreateUpdateCateoryRequest));
-
+builder.Services.AddAutoMapper(typeof(CreateUpdateProductRequest));
 //Configuration Identity Services
 builder.Services.AddIdentity<User,Role>(
     options =>

@@ -1,60 +1,59 @@
-﻿using Application.DTO.Categorys;
+﻿using Application.DTO.Products;
 using Application.Entities;
 using Application.SeedWorks;
 using AutoMapper;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Web.Controllers
 {
-    public class CategoryController : Controller
+    public class ProductController1 : Controller
     {
         private readonly IMapper _mapper;
         private readonly IUnitOfWork _unitOfWork;
-        public CategoryController(IUnitOfWork unitOfWork, IMapper mapper)
+        public ProductController1(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
-        
+
         [HttpGet]
-        public async Task<IActionResult> CreateCategory()
+        public async Task<IActionResult> CreateProduct()
         {
             return View();
         }
         [HttpPost]
         //[Authorize]
-        public async Task<IActionResult> CreateCategory(CreateUpdateCateoryRequest request)
+        public async Task<IActionResult> CreateProduct(CreateUpdateProductRequest request)
         {
-            var category = _mapper.Map<CreateUpdateCateoryRequest, Category>(request);
-            _unitOfWork.Categories.Add(category);
-            
+            var product = _mapper.Map<CreateUpdateProductRequest, Product>(request);
+            _unitOfWork.Products.Add(product);
+
             var result = await _unitOfWork.CompleteAsync();
             if (result > 0)
             {
                 return RedirectToAction(nameof(HomeController.Index), "Home");
             }
-            else 
+            else
             {
-                ViewBag.Category = "Loi vui long nhap lai";
-                return RedirectToAction("CreateCategory");
-            } 
+                ViewBag.Product = "Loi vui long nhap lai";
+                return RedirectToAction("CreateProduct");
+            }
         }
         [HttpGet]
-        public async Task<IActionResult> EditCategory()
+        public async Task<IActionResult> EditProduct()
         {
             return View();
         }
         [HttpGet]
         //[Authorize]
-        public async Task<IActionResult> EditCategory(int id,CreateUpdateCateoryRequest request)
+        public async Task<IActionResult> EditProduct(int id, CreateUpdateProductRequest request)
         {
-            var category = await _unitOfWork.Categories.GetByIdAsync(id);
-            if (category == null)
+            var product = await _unitOfWork.Products.GetByIdAsync(id);
+            if (product == null)
             {
                 return NotFound();
             }
-            _mapper.Map(request, category);
+            _mapper.Map(request, product);
             var result = await _unitOfWork.CompleteAsync();
             if (result > 0)
             {
@@ -62,28 +61,28 @@ namespace Web.Controllers
             }
             else
             {
-                ViewBag.Category = "Loi vui long nhap lai";
-                return RedirectToAction("EditCategory");
+                ViewBag.Product = "Loi vui long nhap lai";
+                return RedirectToAction("EditProduct");
             }
         }
 
         [HttpGet]
-        public async Task<IActionResult> DeleteCategory()
+        public async Task<IActionResult> DeleteProduct()
         {
             return View();
         }
         [HttpGet]
         //[Authorize]
-        public async Task<IActionResult> DeleteCategory(int[] ids)
+        public async Task<IActionResult> DeleteProduct(int[] ids)
         {
             foreach (var id in ids)
             {
-                var category = await _unitOfWork.Categories.GetByIdAsync(id);
-                if (category == null)
+                var product = await _unitOfWork.Products.GetByIdAsync(id);
+                if (product == null)
                 {
                     return NotFound();
                 }
-                _unitOfWork.Categories.Remove(category);
+                _unitOfWork.Products.Remove(product);
             }
             var result = await _unitOfWork.CompleteAsync();
             if (result > 0)
@@ -92,32 +91,32 @@ namespace Web.Controllers
             }
             else
             {
-                ViewBag.Category = "Loi vui long nhap lai";
-                return RedirectToAction("DeleteCategory");
+                ViewBag.Product = "Loi vui long nhap lai";
+                return RedirectToAction("DeleteProduct");
             }
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetCategories()
+        public async Task<IActionResult> GetProducts()
         {
             return View();
         }
         [HttpGet]
         //[Authorize]
-        public async Task<IActionResult> GetAllCategory()
+        public async Task<IActionResult> GetAllProduct()
         {
-            var category = await _unitOfWork.Categories.GetAllAsync();
-            if (category != null)
+            var product = await _unitOfWork.Products.GetAllAsync();
+            if (product != null)
             {
                 return RedirectToAction(nameof(HomeController.Index), "Home");
             }
             // return Ok(category);
             else
             {
-                ViewBag.Category = "Loi vui long nhap lai";
-                return RedirectToAction("GetCategories");
+                ViewBag.Product = "Loi vui long nhap lai";
+                return RedirectToAction("GetProducts");
             }
-            
+
         }
     }
 }

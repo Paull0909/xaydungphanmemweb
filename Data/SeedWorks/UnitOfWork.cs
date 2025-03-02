@@ -14,9 +14,12 @@ namespace Data.SeedWorks
         {
             _context = context;
             Categories = new CategoryRepository(context, mapper);
+            Products= new ProductRepository(context, mapper);
         }
 
         public ICategoryRepository Categories { get; private set; }
+
+        public IProductRepository Products { get; private set; }
 
         public async Task<int> CompleteAsync()
         {
