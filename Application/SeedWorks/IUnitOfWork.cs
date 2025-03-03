@@ -15,6 +15,7 @@ namespace Application.SeedWorks
         ITotalRevenueRepository TotalRevenueRepository { get; }
         ITransactionRepository TransactionRepository { get; }
         IVariants_productRepository VariantsProductRepository { get; }
+        IUserRepository UserRepository { get; }
         Task<int> CompleteAsync();
     }
 }
