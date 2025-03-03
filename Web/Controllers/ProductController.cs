@@ -141,5 +141,17 @@ namespace Web.Controllers
                 return RedirectToAction("GetAllProduct");
             }
         }
+
+        [HttpGet]
+        public async Task<IActionResult> ProductInfo(int id)
+        {
+            var product = await _unitOfWork.Products.GetByIdAsync(id);
+            product.variants = await _unitOfWork.VariantsProductRepository.GetByProduct(product.product_id);
+            foreach(var item in product.variants)
+            {
+                item.Size = await _unitOfWork.SizeProductsRepository.GetByProduct(item.Id);
+            }
+            return View(product);
+        }
     }
 }

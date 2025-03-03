@@ -15,5 +15,10 @@ namespace Data.Repositories
             _mapper = mapper;
         }
 
+        public async Task<TotalRevenue> GetByDate(DateTime date)
+        {
+           var total = _context.TotalRevenue.Where(x=>x.date.Year == date.Year & x.date.Month == date.Month).FirstOrDefault();
+            return total;
+        }
     }
 }

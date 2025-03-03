@@ -15,5 +15,10 @@ namespace Data.Repositories
             _mapper = mapper;
         }
 
+        public async Task<List<Order>> GetAllByUser(Guid id)
+        {
+            var or = _context.Orders.Where(x => x.UserId == id).ToList();
+            return or;
+        }
     }
 }
