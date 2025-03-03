@@ -901,10 +901,7 @@
           "Microsoft.Extensions.Configuration.Abstractions": "9.0.2"
         },
         "runtime": {
-          "Application.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "Application.dll": {}
         }
       },
       "Data/1.0.0": {
@@ -918,10 +915,7 @@
           "Microsoft.Extensions.Configuration.Json": "8.0.0"
         },
         "runtime": {
-          "Data.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "Data.dll": {}
         }
       }
     }

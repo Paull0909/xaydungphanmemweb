@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Application.Entities
+﻿namespace Application.Entities
 {
     public class OrderDetail
     {
@@ -15,7 +9,6 @@ namespace Application.Entities
         public decimal Price { set; get; }
         public string Cata_product { set; get; }
         public string Size {  set; get; }
-
         public Order Order { get; set; }
         public Product Product { get; set; }
     }
