@@ -45,7 +45,7 @@ namespace Web.Controllers
                 var result = await _unitOfWork.CompleteAsync();
                 if (result > 0)
                 {
-                    ViewBag.Category = "Them thanh cong";
+                    ViewBag.Category = "Da them vao gio hang";
                     return RedirectToAction("GetAllCategory");
                 }
                 else

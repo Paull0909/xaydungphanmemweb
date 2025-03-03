@@ -18,6 +18,7 @@ namespace Application.DTO.Orders
         public Status Status { set; get; }
         public TransactionStatus transactionStatus { set; get; }
         public Guid UserId { set; get; }
+        public List<Product> Products { set; get; }
 
         public class AutoMapperProfiles : Profile
         {

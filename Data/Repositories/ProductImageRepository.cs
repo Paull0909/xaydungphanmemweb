@@ -16,6 +16,12 @@ namespace Data.Repositories
             _mapper = mapper;
         }
 
+        public async Task<ProductImage> GetImgByIdProductAsync(int id)
+        {
+            var img = _context.ProductImages.Find(id);
+            return img;
+        }
+
         public async Task<List<ProductImage>> GetListImgByIdProAsync(int id)
         {
             var img = _context.ProductImages.Where(t=>t.product_id == id).ToList();

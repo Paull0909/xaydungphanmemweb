@@ -6,5 +6,6 @@ namespace Application.Repositories
     public interface IProductImageRepository : IRepository<ProductImage, int>
     {
         Task<List<ProductImage>> GetListImgByIdProAsync(int id);
+        Task<ProductImage> GetImgByIdProductAsync(int id);
     }
 }
