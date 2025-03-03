@@ -35,7 +35,7 @@
                     <label asp-for="RememberMe" class="text-sm text-gray-600">Remember me</label>
                 </div>
                 <!-- Forgot password link -->
-                <a href="@Url.Action("ForgotPassword", "Account")" class="text-sm text-blue-600">Forgot password?</a>
+                <a asp-controller="Account" asp-action="ForgotPassword" class="text-sm text-blue-600">Forgot password?</a>
             </div>
 
             <button type="submit" class="w-full bg-blue-600 text-white p-2 rounded-md hover:bg-blue-700">

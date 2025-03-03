@@ -21,8 +21,11 @@
                         <p class="text-lg">
                             You can now
                             <strong>
-                                <a href="@Url.Action("Login", "Account")" class="text-blue-600 font-semibold">Login</a>
+                                <a asp-controller="Account" asp-action="Login" class="text-blue-600 font-semibold">
+                                    Login
+                                </a>
                             </strong>
+
                             and start using all the features of <strong>Dot Net Tutorials</strong>.
                             We’re excited to have you onboard!
                         </p>
@@ -35,7 +38,7 @@
                         </div>
                         <p class="text-lg">
                             If the link has expired or you never received one, you can
-                            <a href="@Url.Action("ResendConfirmationEmail", "Account")" class="text-blue-600 font-semibold">
+                            <a asp-controller="Account" asp-action="ResendConfirmationEmail" class="text-blue-600 font-semibold">
                                 request a new confirmation email
                             </a>
                             at any time.
