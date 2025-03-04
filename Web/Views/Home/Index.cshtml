@@ -1,5 +1,4 @@
 ﻿@model List<Application.Entities.Category>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,52 +8,35 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
 </head>
 <body>
-    <section class="relative w-full h-screen">
-        <div class="swiper mySwiper w-full h-full">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img alt="Banner 1"
-                         class="w-full h-full object-cover"
-                         src="https://storage.googleapis.com/a1aa/image/Ic_JBSG_eqjh6rAXVL3Z4Ka4N5K5PY8PfGcTcBYdcq4.jpg" />
-                </div>
-                <div class="swiper-slide">
-                    <img alt="Banner 2"
-                         class="w-full h-full object-cover"
-                         src="https://storage.googleapis.com/a1aa/image/72RlWbVcEf5jqFsDJnwcylC7RFVlXKkNa5HrB7fV7Ws.jpg" />
-                </div>
-                <div class="swiper-slide">
-                    <img alt="Banner 3"
-                         class="w-full h-full object-cover"
-                         src="https://storage.googleapis.com/a1aa/image/psCiLZTG5GFgGh8dcfSIB4b16tu1vfyJdyxUjG0SNlU.jpg" />
-                </div>
-                <div class="swiper-slide">
-                    <img alt="Banner 4"
-                         class="w-full h-full object-cover"
-                         src="https://storage.googleapis.com/a1aa/image/9GoBEdM3lhB-3F6nmGB6ngAKXatrHOkejOogO_yH0ls.jpg" />
-                </div>
-            </div>
-            <div class="swiper-pagination"></div>
-        </div>
-    </section>
-    <section class="px-6 py-12 bg-gray-50">
-        <div class="max-w-6xl mx-auto mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-center">
-            @foreach (var category in Model)
-            {
-                <div class="bg-white rounded-lg shadow-lg p-4 hover:shadow-xl transition transform hover:scale-105">
-                    <h3 class="font-semibold">@category.type_name</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-                        @foreach (var product in category.Products)
-                        {
-                            <div>
-                                <img src="@product.ProductImages.FirstOrDefault()?.ImagePath" alt="Product image" />
-                                <h3>@product.product_name</h3>
-                                <p>@product.price</p>
-                            </div>
-                        }
+    @if (!User.IsInRole("Admin"))
+    {
+        <section class="relative w-full h-screen">
+            <div class="swiper mySwiper w-full h-full">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img alt="Banner 1"
+                             class="w-full h-full object-cover object-center"
+                             src="https://www.themavensaigon.com/cdn/shop/files/COVER_ce1b467f-6927-4cc4-a139-e7572d66e372.jpg?v=1740205039&width=2100" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img alt="Banner 2"
+                             class="w-full h-full object-cover object-center"
+                             src="https://theme.hstatic.net/200000740713/1001130726/14/slideshow_2.jpg?v=85" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img alt="Banner 3"
+                             class="w-full h-full object-cover"
+                             src="https://storage.googleapis.com/a1aa/image/psCiLZTG5GFgGh8dcfSIB4b16tu1vfyJdyxUjG0SNlU.jpg" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img alt="Banner 4"
+                             class="w-full h-full object-cover"
+                             src="https://storage.googleapis.com/a1aa/image/9GoBEdM3lhB-3F6nmGB6ngAKXatrHOkejOogO_yH0ls.jpg" />
                     </div>
                 </div>
-            }
-        </div>
-    </section>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+    }
 </body>
 </html>

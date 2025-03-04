@@ -13,16 +13,6 @@
         <form class="space-y-6" asp-action="Register" asp-controller="Account" method="post">
             <!-- Validation Summary -->
             <div asp-validation-summary="All" class="text-danger mb-3"></div>
-
-            <!-- Username Field -->
-            <div class="mb-4">
-                <label for="UserName" class="block text-sm font-medium text-gray-900">Username</label>
-                <input asp-for="UserName"
-                       class="w-full p-2 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                       placeholder="Enter your username" />
-                <span asp-validation-for="UserName" class="text-danger"></span>
-            </div>
-
             <!-- Email Field -->
             <div class="mb-4">
                 <label for="Email" class="block text-sm font-medium text-gray-900">Email</label>
