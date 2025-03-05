@@ -15,5 +15,10 @@ namespace Data.Repositories
             _mapper = mapper;
         }
 
+        public async Task<List<Size_Product>> GetByProduct(int id)
+        {
+            var size = _context.Size_Product.Where(x => x.variants_product_id==id).ToList();
+            return size;
+        }
     }
 }

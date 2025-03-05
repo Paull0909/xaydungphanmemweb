@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using Application.Entities;
+using AutoMapper;
 
 namespace Application.DTO.OrderDetails
 {
@@ -11,6 +12,8 @@ namespace Application.DTO.OrderDetails
         public decimal Price { set; get; }
         public string Cata_product { set; get; }
         public string Size { set; get; }
+        public List<ProductImage> Images { set; get; }
+        public string name_product { get; set; }
         public class AutoMapperProfiles : Profile
         {
             public AutoMapperProfiles()
