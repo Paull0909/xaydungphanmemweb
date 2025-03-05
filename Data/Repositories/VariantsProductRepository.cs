@@ -18,6 +18,12 @@ namespace Data.Repositories
             _mapper = mapper;
         }
 
+        public async Task<List<Variants_product>> GetByProduct(int id)
+        {
+            var variant = _context.Variants_product.Where(x => x.product_id == id).ToList();
+            return variant;
+        }
+
         public async Task<PagedResult<VariantsProductDTO>> GetVariantsProductPagingAsync(PagedRequest request)
         {
             var query = _context.Variants_product.AsQueryable();

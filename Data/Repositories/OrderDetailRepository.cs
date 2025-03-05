@@ -15,5 +15,10 @@ namespace Data.Repositories
             _mapper = mapper;
         }
 
+        public async Task<List<OrderDetail>> GetAllByBill(int id)
+        {
+            var ord = _context.OrderDetails.Where(x => x.bill_id == id).ToList();
+            return ord;
+        }
     }
 }
