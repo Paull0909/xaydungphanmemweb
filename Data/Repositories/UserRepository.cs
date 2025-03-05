@@ -1,4 +1,5 @@
 ﻿using Application.DTO;
+using Application.DTO.Users;
 using Application.DTO.VariantsProducts;
 using Application.Entities;
 using Application.Repositories;
@@ -9,21 +10,23 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Data.Repositories
 {
-    public class VariantsProductRepository : RepositoryBase<Variants_product, int>, IVariants_productRepository
+    public class UserRepository : RepositoryBase<User, Guid>, IUserRepository
     {
         private readonly IMapper _mapper;
 
-        public VariantsProductRepository(WebDbContext context, IMapper mapper) : base(context)
+        public UserRepository(WebDbContext context, IMapper mapper) : base(context)
         {
             _mapper = mapper;
         }
 
-        public async Task<PagedResult<VariantsProductDTO>> GetVariantsProductPagingAsync(PagedRequest request)
+        public async Task<PagedResult<UserDTO>> GetUserPagingAsync(PagedRequest request)
         {
-            var query = _context.Variants_product.AsQueryable();
+            var query = _context.Users.AsQueryable();
             if (!string.IsNullOrEmpty(request.search))
             {
-                query = query.Where(x => x.Name.Contains(request.search));
+                query = query.Where(x => x.Email.Contains(request.search)
+                                        || x.UserName.Contains(request.search)
+                                        || x.PhoneNumber.Contains(request.search));
             }
             //Query page
             query = query
@@ -32,20 +35,21 @@ namespace Data.Repositories
                 .Take(request.size);
             var list = query.ToListAsync();
             var rowCount = list.Result.Count();
-            List<VariantsProductDTO> variantsProductDtos = new List<VariantsProductDTO>();
+            List<UserDTO>  userDtos = new List<UserDTO>();
             list.Result.ForEach((x) =>
             {
-                variantsProductDtos.Add(new VariantsProductDTO
+                userDtos.Add(new UserDTO
                 {
                     Id = x.Id,
-                    Name = x.Name,
-                    product_id=x.product_id
+                    Dob = x.Dob,
+                    UserName=x.UserName,
+                    Email = x.Email 
                 });
             });
 
-            var pagedResponse = new PagedResult<VariantsProductDTO>
+            var pagedResponse = new PagedResult<UserDTO>
             {
-                Data = variantsProductDtos,
+                Data = userDtos,
                 CurrentPage = request.page,
                 RowCount = rowCount,
                 PageSize = request.size,

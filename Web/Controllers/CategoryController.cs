@@ -1,6 +1,8 @@
-﻿using Application.DTO.Categorys;
+﻿using Application.DTO;
+using Application.DTO.Categorys;
 using Application.Entities;
 using Application.SeedWorks;
+using Application.Services;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -82,6 +84,25 @@ namespace Web.Controllers
             {
                 ViewBag.Category = "Xoa khong thang cong";
                 return RedirectToAction("DeleteCategory");
+            }
+        }
+        [HttpGet]
+        public async Task<ActionResult<PagedResult<CategoryDTO>>> GetCategoryPaging( PagedRequest request)
+        {
+            try
+            {
+                if (request == null)
+                {
+                    return BadRequest();
+                }
+
+                var result = await _unitOfWork.Categories.GetCategoryPagingAsync(request);
+
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest();
             }
         }
     }

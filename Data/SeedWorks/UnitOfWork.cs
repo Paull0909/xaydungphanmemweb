@@ -24,6 +24,7 @@ namespace Data.SeedWorks
             TotalRevenueRepository = new TotalRevenueRepository(context, mapper);
             TransactionRepository = new TransactionRepository(context, mapper);
             VariantsProductRepository = new VariantsProductRepository(context, mapper);
+            UserRepository = new UserRepository(context, mapper);
         }
         public ICategoryRepository Categories { get; private set; }
         public IProductRepository Products { get; private set; }
@@ -36,6 +37,8 @@ namespace Data.SeedWorks
         public ITotalRevenueRepository TotalRevenueRepository { get; private set; }
         public ITransactionRepository TransactionRepository { get; private set; }
         public IVariants_productRepository VariantsProductRepository { get; private set; }
+
+        public IUserRepository UserRepository { get; private set; }
 
         public async Task<int> CompleteAsync()
         {
