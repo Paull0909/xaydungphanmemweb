@@ -10,9 +10,18 @@
         </h3>
 
         <!-- Form Đăng Ký -->
-        <form class="space-y-6" asp-action="Register" asp-controller="Account" method="post">
+        <form class="space-y-6" asp-controller="Account" asp-action="Register" method="post">
             <!-- Validation Summary -->
             <div asp-validation-summary="All" class="text-danger mb-3"></div>
+            <!-- Username Field -->
+            <div class="mb-4">
+                <label for="Username" class="block text-sm font-medium text-gray-900">Username</label>
+                <input asp-for="UserName"
+                       class="w-full p-2 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                       placeholder="Enter your username" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+
             <!-- Email Field -->
             <div class="mb-4">
                 <label for="Email" class="block text-sm font-medium text-gray-900">Email</label>
@@ -58,7 +67,7 @@
 
         <!-- Already have an account -->
         <p class="text-gray-500 text-sm mb-6 text-center">
-            Already have an account? <a href="/Account/Login" class="text-blue-600 font-medium">Sign in.</a>
+            Already have an account? <a asp-controller="Account" asp-action="Login" class="text-blue-600 font-medium">Sign in.</a>
         </p>
 
         <div class="flex items-center my-4">
@@ -69,7 +78,7 @@
 
         <!-- External Login Button -->
         <button class="w-full flex items-center justify-center bg-white border p-2 rounded-md shadow-sm mb-2 hover:bg-gray-100 external-login-btn"
-                asp-action="ExternalLogin" asp-route-provider="Google" data-provider="Google" data-url="@Url.Action("ExternalLogin", "Account", new { provider = "Google" })">
+               asp-controller="Account" asp-action="ExternalLogin" asp-route-provider="Google" data-provider="Google" data-url="@Url.Action("ExternalLogin", "Account", new { provider = "Google" })">
             <img src="https://www.svgrepo.com/show/355037/google.svg" class="w-5 h-5 mr-2" alt="Google" />
             Sign up with Google
         </button>

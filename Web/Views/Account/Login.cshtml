@@ -4,7 +4,7 @@
     <div class="w-full max-w-md bg-white p-8 rounded-lg shadow-md">
         <h3 class="mt-10 text-center text-2xl font-bold tracking-tight text-gray-900">Sign In</h3>
 
-        <form method="post" asp-action="Login" asp-controller="Account" class="space-y-6" novalidate>
+        <form asp-controller="Account" asp-action="Login" method="post" class="space-y-6" novalidate>
             <!-- Email Field -->
             <div class="mb-4">
                 <label asp-for="Email" class="block text-sm font-medium text-gray-900">Email</label>
@@ -45,7 +45,7 @@
 
         <!-- Register & Forgot Password Options -->
         <p class="text-gray-500 text-sm mb-6 text-center">
-            Don’t have an account? <a href="/Account/Register" class="text-blue-600 font-medium">Sign up.</a>
+            Don’t have an account? <a asp-controller="Account" asp-action="Register" class="text-blue-600 font-medium">Sign up.</a>
         </p>
 
         <div class="flex items-center my-4">
@@ -61,7 +61,6 @@
             <img src="https://www.svgrepo.com/show/355037/google.svg" class="w-5 h-5 mr-2" alt="Google" />
             Sign in with Google
         </button>
-
         <!-- Resend Confirmation Email Link -->
         <div class="text-center mt-3">
             <a class="text-sm text-blue-600"
