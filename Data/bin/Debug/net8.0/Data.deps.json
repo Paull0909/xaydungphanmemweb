@@ -1472,7 +1472,10 @@
           "Microsoft.Extensions.Configuration.Abstractions": "9.0.2"
         },
         "runtime": {
-          "Application.dll": {}
+          "Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
