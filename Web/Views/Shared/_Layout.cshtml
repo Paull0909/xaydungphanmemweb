@@ -1,4 +1,4 @@
-﻿@using Application.Entities
+﻿﻿@using Application.Entities
 @using Microsoft.AspNetCore.Identity
 @inject SignInManager<User> SignInManager
 
@@ -9,98 +9,210 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - ASPNETCoreIdentityDemo</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+          rel="stylesheet" />
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="~/js/javascript.js"></script>
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+<body class="flex flex-col min-w-screen">
+    <header class="bg-gray-200 shadow-md w-full">
+        <nav class="flex items-center justify-between py-6 w-full px-6" aria-label="Global">
 
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="SecureMethod">Secure</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="NonSecureMethod">Non Secure</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="CreateCategory">Add Cate</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Create">Add Product</a>
-                        </li>
-                        @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
-                        {
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                                   data-bs-toggle="dropdown" aria-expanded="false">
-                                    Manage
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" asp-controller="Administration"
-                                       asp-action="ListUsers">Users</a>
-                                    <a class="dropdown-item" asp-controller="Administration"
-                                       asp-action="ListRoles">Roles</a>
-                                </ul>
-                            </li>
-                        }
-                        
-                    </ul>
-                    <ul class="navbar-nav ml-auto">
-                        @*If the user is signed-in display Logout link*@
-                        @if (SignInManager.IsSignedIn(User))
-                        {
-                            <li class="nav-item">
-                                <form method="post" asp-controller="account" asp-action="logout">
-                                    <button type="submit" style="width:auto"
-                                            class="nav-link btn btn-link py-0">
-                                        Logout @User?.Identity?.Name
-                                    </button>
+            <a href="/Home/Index" class="-m-1.5 p-1.5 ">
+                <img class="h-12 w-auto rounded-full" src="~/Im" alt="" />
+            </a>
+            <div class="flex lg:hidden justify-end items-center gap-x-4">
+                <div class="flex lg:justify-end items-center gap-x-4 ml-auto">
+                    <!-- Search -->
+                    <div class="relative">
+                        <input type="text" placeholder="Search" class="px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-600 w-60 p-lg-4 text-left">
+                        <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500">
+                            <i class="fas fa-search"></i>
+                        </span>
+                    </div>
+
+                    <!-- Icon Shopping -->
+                    <a href="#" class="text-gray-500 hover:text-gray-900">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                </div>
+                <button id="menu-toggle" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+                    <span class="sr-only">Open main menu</span>
+                    <i class="fas fa-bars text-2xl size-6"></i>
+                </button>
+            </div>
+            <div class="hidden lg:flex lg:gap-x-12 justify-center w-55/100 mx-auto">
+                <ul class="flex space-x-10 text-gray-700">
+                    <li><a href="#" class="hover:text-gray-900 text-xl font-medium">Women</a></li>
+                    <li><a href="#" class="hover:text-gray-900 text-xl font-medium">Men</a></li>
+                    <li><a href="#" class="hover:text-gray-900 text-xl font-medium">Company</a></li>
+                    <li><a href="#" class="hover:text-gray-900 text-xl font-medium">Stores</a></li>
+                </ul>
+            </div>
+            <div class="hidden lg:flex lg:justify-between items-center lg:gap-x-4 pl-0 w-3/10">
+                <div class="flex items-center gap-x-4 w-full">
+                    <!-- Search -->
+                    <div class="relative w-40 ml-0 flex-grow">
+                        <input type="text" placeholder="Search" class="px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-600 w-full text-left pl-0">
+                        <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500">
+                            <i class="fas fa-search"></i>
+                        </span>
+                    </div>
+
+                    <!-- Icon Shopping-->
+                    <div class="flex justify-center items-center w-10">
+                        <a href="#" class="text-gray-500 hover:text-gray-900">
+                            <i class="fas fa-shopping-cart"></i>
+                        </a>
+                    </div>
+                </div>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <!-- Logout button -->
+                    <form action="/Account/Logout" method="post">
+                        @Html.AntiForgeryToken() <!-- CSRF Token -->
+                        <button type="submit" class="text-gray-500 hover:text-gray-900 font-medium w-32">Log Out</button>
+                    </form>
+                }
+                else
+                {
+                    <a href="/Account/Login" class="text-gray-500 hover:text-gray-900 font-medium w-32">Sign In</a>
+                    <div class="h-6 w-px bg-gray-300"></div>
+                    <a href="/Account/Register" class="text-gray-500 hover:text-gray-900 font-medium w-32">Sign Up</a>
+                }
+            </div>
+
+
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden" role="dialog" aria-modal="true">
+            <div class="fixed inset-0 z-10 bg-black/30"></div>
+            <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                <div class="flex items-center justify-between">
+                    <a href="#" class="-m-1.5 p-1.5">
+                        <img class="h-12 w-auto rounded-full" src="~/Images/logo.jpg" alt="" />
+                    </a>
+                    <button type="button" id="close-menu" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+                        <span class="sr-only">Close menu</span>
+                        <i class="fas fa-times text-2xl size-6"></i>
+                    </button>
+                </div>
+                <div class="mt-6 flow-root">
+                    <div class="-my-6 divide-y divide-gray-500/10">
+                        <div class="space-y-2 py-6">
+                            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Women</a>
+                            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Men</a>
+                            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Company</a>
+                            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Stores</a>
+                        </div>
+                        <div class="py-6">
+                            <!-- Sign In link -->
+                            @if (!User.Identity.IsAuthenticated)
+                            {
+                                <a href="/Account/Login" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Sign In</a>
+                            }
+                            <!-- Sign Up link -->
+                            @if (!User.Identity.IsAuthenticated)
+                            {
+                                <a href="/Account/Register" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Sign Up</a>
+                            }
+
+                            <!-- Show LogOut if User is authenticated -->
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <form action="/Account/Logout" method="post">
+                                    @Html.AntiForgeryToken() <!-- CSRF Token -->
+                                    <button type="submit" class="text-gray-500 hover:text-gray-900 font-medium">Log Out</button>
                                 </form>
-                            </li>
-                        }
-                        else
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link" asp-controller="account" asp-action="register">
-                                    Register
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" asp-controller="account" asp-action="login">
-                                    Login
-                                </a>
-                            </li>
-                        }
-                    </ul>
+                            }
+                        </div>
+                    </div>
                 </div>
             </div>
-        </nav>
+        </div>
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - ASPNETCoreIdentityDemo - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <footer class="px-6 py-12">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div>
+                <h3 class="font-bold text-gray-700 hover:text-black">Shop</h3>
+                <ul>
+                    <li>
+                        <a href="#" class="text-gray-500 hover:text-black">Women</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-gray-500 hover:text-black">Men</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-gray-500 hover:text-black">Company</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-gray-500 hover:text-black">Stores</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-bold text-gray-700 hover:text-black">Legal</h3>
+                <ul>
+                    <li>
+                        <a href="#" class="text-gray-500 hover:text-black">Privacy</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-gray-500 hover:text-black">Terms</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-gray-500 hover:text-black">Shipping</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-gray-500 hover:text-black">Returns</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-bold text-gray-700 hover:text-black">Connect</h3>
+                <ul>
+                    <li>
+                        <a href="#" class="text-gray-500 hover:text-black">Contact Us</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-gray-500 hover:text-black">Twitter</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-gray-500 hover:text-black">Instagram</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-gray-500 hover:text-black">Facebook</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-black font-medium">Sign up for the newsletter</h3>
+                <form class="mt-4">
+                    <input type="email"
+                           class="w-full px-4 py-2 border border-gray-300 rounded-md"
+                           placeholder="Email" />
+                    <button class="w-full py-2 mt-2 bg-gray-700 text-white rounded-md"
+                            type="submit">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 
     <!-- jQuery -->
