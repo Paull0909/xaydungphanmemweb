@@ -1,36 +1,137 @@
 ﻿@model RegisterViewModel
 
+
 @{
     ViewBag.Title = "User Registration";
 }
+<div class="flex items-center justify-center min-h-full bg-gray-100">
+    <div class="w-full max-w-md bg-white p-8 rounded-lg shadow-md">
+        <h3 class="mt-10 text-center text-2xl font-bold tracking-tight text-gray-900">
+            Sign Up
+        </h3>
 
-<h1>User Registration</h1>
-
-<div class="row">
-    <div class="col-md-12">
-        <form method="post">
-            <div asp-validation-summary="All" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="UserName"></label>
-                <input asp-for="UserName" class="form-control" />
+        <!-- Form Đăng Ký -->
+        <form class="space-y-6" asp-controller="Account" asp-action="Register" method="post">
+            <!-- Validation Summary -->
+            <div asp-validation-summary="All" class="text-danger mb-3"></div>
+            <!-- Username Field -->
+            <div class="mb-4">
+                <label for="Username" class="block text-sm font-medium text-gray-900">Username</label>
+                <input asp-for="UserName"
+                       class="w-full p-2 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                       placeholder="Enter your username" />
                 <span asp-validation-for="UserName" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Email"></label>
-                <input asp-for="Email" class="form-control" />
+
+            <!-- Email Field -->
+            <div class="mb-4">
+                <label for="Email" class="block text-sm font-medium text-gray-900">Email</label>
+                <input asp-for="Email"
+                       class="w-full p-2 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                       placeholder="name@gmail.com" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Password"></label>
-                <input asp-for="Password" class="form-control" />
+
+            <!-- Password Field -->
+            <div class="mb-4">
+                <label for="Password" class="block text-sm font-medium text-gray-900">Password</label>
+                <div class="flex items-center">
+                    <input asp-for="Password"
+                           class="w-full p-2 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                           placeholder="••••••••" />
+                    <button type="button" id="togglePassword" class="focus:outline-none -ml-8">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                </div>
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="ConfirmPassword"></label>
-                <input asp-for="ConfirmPassword" class="form-control" />
+
+            <!-- Confirm Password Field -->
+            <div class="mb-4">
+                <label for="ConfirmPassword" class="block text-sm font-medium text-gray-900">Confirm Password</label>
+                <div class="flex items-center">
+                    <input asp-for="ConfirmPassword"
+                           class="w-full p-2 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                           placeholder="••••••••" />
+                    <button type="button" id="toggleConfirmPassword" class="focus:outline-none -ml-8">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                </div>
                 <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
             </div>
-            <button type="submit" class="btn btn-primary">Register</button>
+
+            <!-- Submit Button -->
+            <button type="submit" class="w-full bg-blue-600 text-white p-2 rounded-md hover:bg-blue-700">
+                Sign up
+            </button>
         </form>
+
+        <!-- Already have an account -->
+        <p class="text-gray-500 text-sm mb-6 text-center">
+            Already have an account? <a asp-controller="Account" asp-action="Login" class="text-blue-600 font-medium">Sign in.</a>
+        </p>
+
+        <div class="flex items-center my-4">
+            <hr class="flex-grow border-gray-300" />
+            <span class="px-2 text-gray-500">or</span>
+            <hr class="flex-grow border-gray-300" />
+        </div>
+
+        <!-- External Login Button -->
+        <button class="w-full flex items-center justify-center bg-white border p-2 rounded-md shadow-sm mb-2 hover:bg-gray-100 external-login-btn"
+                asp-controller="Account" asp-action="ExternalLogin" asp-route-provider="Google" data-provider="Google" data-url="@Url.Action("ExternalLogin", "Account", new { provider = "Google" })">
+            <img src="https://www.svgrepo.com/show/355037/google.svg" class="w-5 h-5 mr-2" alt="Google" />
+            Sign up with Google
+        </button>
+
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            function togglePasswordVisibility(inputId, buttonId) {
+                const input = document.getElementById(inputId);
+                const button = document.getElementById(buttonId);
+                const icon = button.querySelector("i");
+
+                button.addEventListener("click", function () {
+                    if (input.type === "password") {
+                        input.type = "text";
+                        icon.classList.remove("fa-eye");
+                        icon.classList.add("fa-eye-slash");
+                    } else {
+                        input.type = "password";
+                        icon.classList.remove("fa-eye-slash");
+                        icon.classList.add("fa-eye");
+                    }
+                });
+            }
+            togglePasswordVisibility("Password", "togglePassword");
+            togglePasswordVisibility("ConfirmPassword", "toggleConfirmPassword");
+        });
+
+         document.querySelectorAll('.external-login-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                var provider = this.getAttribute('data-provider');
+                var url = this.getAttribute('data-url');
+
+                // Define popup window size
+                var width = 500;
+                var height = 600;
+                var left = (window.innerWidth / 2) - (width / 2);
+                var top = (window.innerHeight / 2) - (height / 2);
+
+                // Open the popup window
+                var popup = window.open(url, provider, `width=${width},height=${height},top=${top},left=${left},resizable=yes`);
+
+                // Monitor the popup to check if it closes
+                var checkPopup = setInterval(function () {
+                    if (popup.closed) {
+                        clearInterval(checkPopup);
+                        // Optionally, reload or fetch updated user state
+                        location.reload(); // Refresh the parent window to reflect login state
+                    }
+                }, 500); // Check every 500ms if the popup is closed
+            });
+        });
+    </script>
 </div>

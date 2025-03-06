@@ -3,6 +3,90 @@
   "WorkspaceRootPath": "D:\\xaydungphanmemweb\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|d:\\xaydungphanmemweb\\web\\views\\account\\resetpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|solutionrelative:web\\views\\account\\resetpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|d:\\xaydungphanmemweb\\web\\views\\account\\resetpasswordconfirmation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|solutionrelative:web\\views\\account\\resetpasswordconfirmation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|d:\\xaydungphanmemweb\\web\\views\\account\\resendconfirmationemail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|solutionrelative:web\\views\\account\\resendconfirmationemail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|d:\\xaydungphanmemweb\\web\\views\\account\\forgotpasswordconfirmation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|solutionrelative:web\\views\\account\\forgotpasswordconfirmation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|d:\\xaydungphanmemweb\\web\\views\\account\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|solutionrelative:web\\views\\account\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|d:\\xaydungphanmemweb\\web\\views\\account\\confirmemail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|solutionrelative:web\\views\\account\\confirmemail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|d:\\xaydungphanmemweb\\web\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|solutionrelative:web\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|d:\\xaydungphanmemweb\\web\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|solutionrelative:web\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|d:\\xaydungphanmemweb\\web\\views\\administration\\manageuserroles.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|solutionrelative:web\\views\\administration\\manageuserroles.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|d:\\xaydungphanmemweb\\web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|solutionrelative:web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|d:\\xaydungphanmemweb\\web\\views\\administration\\listusers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|solutionrelative:web\\views\\administration\\listusers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|d:\\xaydungphanmemweb\\web\\views\\administration\\listroles.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|solutionrelative:web\\views\\administration\\listroles.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|d:\\xaydungphanmemweb\\web\\views\\administration\\editusersinrole.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|solutionrelative:web\\views\\administration\\editusersinrole.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|d:\\xaydungphanmemweb\\web\\views\\administration\\edituser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|solutionrelative:web\\views\\administration\\edituser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|d:\\xaydungphanmemweb\\web\\views\\administration\\editrole.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|solutionrelative:web\\views\\administration\\editrole.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|d:\\xaydungphanmemweb\\web\\views\\administration\\createrole.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|solutionrelative:web\\views\\administration\\createrole.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|d:\\xaydungphanmemweb\\web\\views\\administration\\accessdenied.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|solutionrelative:web\\views\\administration\\accessdenied.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|d:\\xaydungphanmemweb\\web\\views\\category\\createcategory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|solutionrelative:web\\views\\category\\createcategory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|d:\\xaydungphanmemweb\\web\\views\\product\\createproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|solutionrelative:web\\views\\product\\createproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|d:\\xaydungphanmemweb\\web\\views\\product\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|solutionrelative:web\\views\\product\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|d:\\xaydungphanmemweb\\web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|solutionrelative:web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|d:\\xaydungphanmemweb\\web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|solutionrelative:web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
@@ -115,6 +199,279 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "ResetPasswordConfirmation.cshtml",
+              "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Views\\Account\\ResetPasswordConfirmation.cshtml",
+              "RelativeDocumentMoniker": "Web\\Views\\Account\\ResetPasswordConfirmation.cshtml",
+              "ToolTip": "D:\\xaydungphanmemweb\\Web\\Views\\Account\\ResetPasswordConfirmation.cshtml",
+              "RelativeToolTip": "Web\\Views\\Account\\ResetPasswordConfirmation.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACAAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-06T14:43:56.865Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ResetPassword.cshtml",
+              "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Views\\Account\\ResetPassword.cshtml",
+              "RelativeDocumentMoniker": "Web\\Views\\Account\\ResetPassword.cshtml",
+              "ToolTip": "D:\\xaydungphanmemweb\\Web\\Views\\Account\\ResetPassword.cshtml",
+              "RelativeToolTip": "Web\\Views\\Account\\ResetPassword.cshtml",
+              "ViewState": "AgIAACYAAAAAAAAAAAAiwDoAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-06T14:43:50.791Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ResendConfirmationEmail.cshtml",
+              "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Views\\Account\\ResendConfirmationEmail.cshtml",
+              "RelativeDocumentMoniker": "Web\\Views\\Account\\ResendConfirmationEmail.cshtml",
+              "ToolTip": "D:\\xaydungphanmemweb\\Web\\Views\\Account\\ResendConfirmationEmail.cshtml",
+              "RelativeToolTip": "Web\\Views\\Account\\ResendConfirmationEmail.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAiwCYAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-06T14:43:41.883Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ForgotPasswordConfirmation.cshtml",
+              "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Views\\Account\\ForgotPasswordConfirmation.cshtml",
+              "RelativeDocumentMoniker": "Web\\Views\\Account\\ForgotPasswordConfirmation.cshtml",
+              "ToolTip": "D:\\xaydungphanmemweb\\Web\\Views\\Account\\ForgotPasswordConfirmation.cshtml",
+              "RelativeToolTip": "Web\\Views\\Account\\ForgotPasswordConfirmation.cshtml",
+              "ViewState": "AgIAABkAAAAAAAAAAAAiwC0AAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-06T14:43:36.02Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ForgotPassword.cshtml",
+              "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Views\\Account\\ForgotPassword.cshtml",
+              "RelativeDocumentMoniker": "Web\\Views\\Account\\ForgotPassword.cshtml",
+              "ToolTip": "D:\\xaydungphanmemweb\\Web\\Views\\Account\\ForgotPassword.cshtml",
+              "RelativeToolTip": "Web\\Views\\Account\\ForgotPassword.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-06T14:43:27.689Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ConfirmEmail.cshtml",
+              "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Views\\Account\\ConfirmEmail.cshtml",
+              "RelativeDocumentMoniker": "Web\\Views\\Account\\ConfirmEmail.cshtml",
+              "ToolTip": "D:\\xaydungphanmemweb\\Web\\Views\\Account\\ConfirmEmail.cshtml",
+              "RelativeToolTip": "Web\\Views\\Account\\ConfirmEmail.cshtml",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAiwDMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-06T14:43:20.504Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Views\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "Web\\Views\\Account\\Register.cshtml",
+              "ToolTip": "D:\\xaydungphanmemweb\\Web\\Views\\Account\\Register.cshtml",
+              "RelativeToolTip": "Web\\Views\\Account\\Register.cshtml",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAiwIgAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-06T14:43:03.828Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "Web\\Views\\Account\\Login.cshtml",
+              "ToolTip": "D:\\xaydungphanmemweb\\Web\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "Web\\Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-06T14:42:37.314Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ManageUserRoles.cshtml",
+              "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Views\\Administration\\ManageUserRoles.cshtml",
+              "RelativeDocumentMoniker": "Web\\Views\\Administration\\ManageUserRoles.cshtml",
+              "ToolTip": "D:\\xaydungphanmemweb\\Web\\Views\\Administration\\ManageUserRoles.cshtml",
+              "RelativeToolTip": "Web\\Views\\Administration\\ManageUserRoles.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-06T14:42:12.98Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ListUsers.cshtml",
+              "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Views\\Administration\\ListUsers.cshtml",
+              "RelativeDocumentMoniker": "Web\\Views\\Administration\\ListUsers.cshtml",
+              "ToolTip": "D:\\xaydungphanmemweb\\Web\\Views\\Administration\\ListUsers.cshtml",
+              "RelativeToolTip": "Web\\Views\\Administration\\ListUsers.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-06T14:40:50.05Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ListRoles.cshtml",
+              "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Views\\Administration\\ListRoles.cshtml",
+              "RelativeDocumentMoniker": "Web\\Views\\Administration\\ListRoles.cshtml",
+              "ToolTip": "D:\\xaydungphanmemweb\\Web\\Views\\Administration\\ListRoles.cshtml",
+              "RelativeToolTip": "Web\\Views\\Administration\\ListRoles.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-06T14:40:32.621Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "EditUsersInRole.cshtml",
+              "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Views\\Administration\\EditUsersInRole.cshtml",
+              "RelativeDocumentMoniker": "Web\\Views\\Administration\\EditUsersInRole.cshtml",
+              "ToolTip": "D:\\xaydungphanmemweb\\Web\\Views\\Administration\\EditUsersInRole.cshtml",
+              "RelativeToolTip": "Web\\Views\\Administration\\EditUsersInRole.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-06T14:40:22.97Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "EditUser.cshtml",
+              "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Views\\Administration\\EditUser.cshtml",
+              "RelativeDocumentMoniker": "Web\\Views\\Administration\\EditUser.cshtml",
+              "ToolTip": "D:\\xaydungphanmemweb\\Web\\Views\\Administration\\EditUser.cshtml",
+              "RelativeToolTip": "Web\\Views\\Administration\\EditUser.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-06T14:40:03.224Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "CreateRole.cshtml",
+              "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Views\\Administration\\CreateRole.cshtml",
+              "RelativeDocumentMoniker": "Web\\Views\\Administration\\CreateRole.cshtml",
+              "ToolTip": "D:\\xaydungphanmemweb\\Web\\Views\\Administration\\CreateRole.cshtml",
+              "RelativeToolTip": "Web\\Views\\Administration\\CreateRole.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-06T14:39:45.609Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "EditRole.cshtml",
+              "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Views\\Administration\\EditRole.cshtml",
+              "RelativeDocumentMoniker": "Web\\Views\\Administration\\EditRole.cshtml",
+              "ToolTip": "D:\\xaydungphanmemweb\\Web\\Views\\Administration\\EditRole.cshtml",
+              "RelativeToolTip": "Web\\Views\\Administration\\EditRole.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-06T14:39:44.528Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Web\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\xaydungphanmemweb\\Web\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Web\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-06T14:37:40.202Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AccessDenied.cshtml",
+              "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Views\\Administration\\AccessDenied.cshtml",
+              "RelativeDocumentMoniker": "Web\\Views\\Administration\\AccessDenied.cshtml",
+              "ToolTip": "D:\\xaydungphanmemweb\\Web\\Views\\Administration\\AccessDenied.cshtml",
+              "RelativeToolTip": "Web\\Views\\Administration\\AccessDenied.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-06T14:39:34.59Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "CreateCategory.cshtml",
+              "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Views\\Category\\CreateCategory.cshtml",
+              "RelativeDocumentMoniker": "Web\\Views\\Category\\CreateCategory.cshtml",
+              "ToolTip": "D:\\xaydungphanmemweb\\Web\\Views\\Category\\CreateCategory.cshtml",
+              "RelativeToolTip": "Web\\Views\\Category\\CreateCategory.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-06T14:39:07.205Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "CreateProduct.cshtml",
+              "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Views\\Product\\CreateProduct.cshtml",
+              "RelativeDocumentMoniker": "Web\\Views\\Product\\CreateProduct.cshtml",
+              "ToolTip": "D:\\xaydungphanmemweb\\Web\\Views\\Product\\CreateProduct.cshtml",
+              "RelativeToolTip": "Web\\Views\\Product\\CreateProduct.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-06T14:38:55.752Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Views\\Product\\Create.cshtml",
+              "RelativeDocumentMoniker": "Web\\Views\\Product\\Create.cshtml",
+              "ToolTip": "D:\\xaydungphanmemweb\\Web\\Views\\Product\\Create.cshtml",
+              "RelativeToolTip": "Web\\Views\\Product\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-06T14:38:39.488Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Web\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\xaydungphanmemweb\\Web\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Web\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAEEBAAAAAAAAAAAiwFUBAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-06T14:37:21.982Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
               "Title": "AccountController.cs",
               "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "Web\\Controllers\\AccountController.cs",
@@ -126,12 +483,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 21,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\appsettings.json",
               "RelativeDocumentMoniker": "Web\\appsettings.json",
-              "ToolTip": "D:\\xaydungphanmemweb\\Web\\appsettings.json*",
-              "RelativeToolTip": "Web\\appsettings.json*",
+              "ToolTip": "D:\\xaydungphanmemweb\\Web\\appsettings.json",
+              "RelativeToolTip": "Web\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-03-05T03:41:47.765Z",
@@ -139,7 +496,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 27,
               "Title": "VariantsProductRepository.cs",
               "DocumentMoniker": "D:\\xaydungphanmemweb\\Data\\Repositories\\VariantsProductRepository.cs",
               "RelativeDocumentMoniker": "Data\\Repositories\\VariantsProductRepository.cs",
@@ -151,7 +508,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 28,
               "Title": "IVariants_productRepository.cs",
               "DocumentMoniker": "D:\\xaydungphanmemweb\\Application\\Repositories\\IVariants_productRepository.cs",
               "RelativeDocumentMoniker": "Application\\Repositories\\IVariants_productRepository.cs",
@@ -163,7 +520,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 23,
               "Title": "TotalRevenueController.cs",
               "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Controllers\\TotalRevenueController.cs",
               "RelativeDocumentMoniker": "Web\\Controllers\\TotalRevenueController.cs",
@@ -175,7 +532,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 25,
               "Title": "TotalRevenueRepository.cs",
               "DocumentMoniker": "D:\\xaydungphanmemweb\\Data\\Repositories\\TotalRevenueRepository.cs",
               "RelativeDocumentMoniker": "Data\\Repositories\\TotalRevenueRepository.cs",
@@ -187,7 +544,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 26,
               "Title": "ITotalRevenueRepository.cs",
               "DocumentMoniker": "D:\\xaydungphanmemweb\\Application\\Repositories\\ITotalRevenueRepository.cs",
               "RelativeDocumentMoniker": "Application\\Repositories\\ITotalRevenueRepository.cs",
@@ -199,7 +556,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 24,
               "Title": "ProductController.cs",
               "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Controllers\\ProductController.cs",
               "RelativeDocumentMoniker": "Web\\Controllers\\ProductController.cs",
@@ -211,7 +568,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 29,
               "Title": "OrdersController.cs",
               "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Controllers\\OrdersController.cs",
               "RelativeDocumentMoniker": "Web\\Controllers\\OrdersController.cs",
@@ -223,7 +580,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 30,
               "Title": "OrderDetailRepository.cs",
               "DocumentMoniker": "D:\\xaydungphanmemweb\\Data\\Repositories\\OrderDetailRepository.cs",
               "RelativeDocumentMoniker": "Data\\Repositories\\OrderDetailRepository.cs",
@@ -235,7 +592,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 31,
               "Title": "IOrderDetailRepository.cs",
               "DocumentMoniker": "D:\\xaydungphanmemweb\\Application\\Repositories\\IOrderDetailRepository.cs",
               "RelativeDocumentMoniker": "Application\\Repositories\\IOrderDetailRepository.cs",
@@ -247,7 +604,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 32,
               "Title": "OrderRepository.cs",
               "DocumentMoniker": "D:\\xaydungphanmemweb\\Data\\Repositories\\OrderRepository.cs",
               "RelativeDocumentMoniker": "Data\\Repositories\\OrderRepository.cs",
@@ -259,7 +616,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 33,
               "Title": "IOrderRepository.cs",
               "DocumentMoniker": "D:\\xaydungphanmemweb\\Application\\Repositories\\IOrderRepository.cs",
               "RelativeDocumentMoniker": "Application\\Repositories\\IOrderRepository.cs",
@@ -271,7 +628,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 34,
               "Title": "CreateUpdateOrderDetailRequest.cs",
               "DocumentMoniker": "D:\\xaydungphanmemweb\\Application\\DTO\\OrderDetails\\CreateUpdateOrderDetailRequest.cs",
               "RelativeDocumentMoniker": "Application\\DTO\\OrderDetails\\CreateUpdateOrderDetailRequest.cs",
@@ -283,7 +640,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 35,
               "Title": "SizeProductRepository.cs",
               "DocumentMoniker": "D:\\xaydungphanmemweb\\Data\\Repositories\\SizeProductRepository.cs",
               "RelativeDocumentMoniker": "Data\\Repositories\\SizeProductRepository.cs",
@@ -295,7 +652,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 36,
               "Title": "ISizeProductRepository.cs",
               "DocumentMoniker": "D:\\xaydungphanmemweb\\Application\\Repositories\\ISizeProductRepository.cs",
               "RelativeDocumentMoniker": "Application\\Repositories\\ISizeProductRepository.cs",
@@ -307,7 +664,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 37,
               "Title": "CartController.cs",
               "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Controllers\\CartController.cs",
               "RelativeDocumentMoniker": "Web\\Controllers\\CartController.cs",
@@ -319,7 +676,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 38,
               "Title": "CategoryController.cs",
               "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Controllers\\CategoryController.cs",
               "RelativeDocumentMoniker": "Web\\Controllers\\CategoryController.cs",
