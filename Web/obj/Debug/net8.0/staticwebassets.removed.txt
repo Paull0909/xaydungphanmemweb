@@ -1,0 +1,3 @@
+D:\xaydungphanmemweb\Web\wwwroot\css\site.css
+D:\xaydungphanmemweb\Web\wwwroot\Images\AccessDenied.png
+D:\xaydungphanmemweb\Web\wwwroot\js\site.js
