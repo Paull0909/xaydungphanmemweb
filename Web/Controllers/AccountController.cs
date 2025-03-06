@@ -42,7 +42,7 @@ namespace Web.Controllers
                 // Copy data from RegisterViewModel to IdentityUser
                 var user = new User
                 {
-                    UserName = model.Email,
+                    UserName = model.UserName,
                     Email = model.Email
                 };
 
