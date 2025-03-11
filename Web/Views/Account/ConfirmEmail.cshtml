@@ -1,28 +1,31 @@
-﻿@{
+﻿﻿@{
     ViewData["Title"] = "Email Confirmation";
     var error = ViewBag.ErrorMessage as string;
     var success = ViewBag.Message as string;
 }
 
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-md-8 offset-md-2">
-            <div class="card shadow">
-                <div class="card-header">
-                    <h3 class="card-title mb-0">Email Confirmation</h3>
+<div class="container mx-auto mt-16 px-4">
+    <div class="flex justify-center">
+        <div class="w-full max-w-lg">
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                <div class="bg-blue-600 text-white p-4">
+                    <h3 class="text-2xl font-semibold">Email Confirmation</h3>
                 </div>
-                <div class="card-body">
+                <div class="p-6">
                     @* If there is a success message, display a success alert *@
                     @if (!string.IsNullOrEmpty(success))
                     {
-                        <div class="alert alert-success" role="alert">
+                        <div class="bg-green-100 text-green-800 p-4 rounded-lg mb-4">
                             <strong>Success!</strong> @success
                         </div>
-                        <p>
+                        <p class="text-lg">
                             You can now
                             <strong>
-                                <a href="@Url.Action("Login", "Account")" class="font-weight-bold">Login</a>
+                                <a asp-controller="Account" asp-action="Login" class="text-blue-600 font-semibold">
+                                    Login
+                                </a>
                             </strong>
+
                             and start using all the features of <strong>Dot Net Tutorials</strong>.
                             We’re excited to have you onboard!
                         </p>
@@ -30,12 +33,12 @@
                     @* Otherwise, if there’s an error message, display an error alert *@
                     else if (!string.IsNullOrEmpty(error))
                     {
-                        <div class="alert alert-danger" role="alert">
+                        <div class="bg-red-100 text-red-800 p-4 rounded-lg mb-4">
                             <strong>Oops!</strong> @error
                         </div>
-                        <p>
+                        <p class="text-lg">
                             If the link has expired or you never received one, you can
-                            <a href="@Url.Action("ResendConfirmationEmail", "Account")" class="font-weight-bold">
+                            <a asp-controller="Account" asp-action="ResendConfirmationEmail" class="text-blue-600 font-semibold">
                                 request a new confirmation email
                             </a>
                             at any time.

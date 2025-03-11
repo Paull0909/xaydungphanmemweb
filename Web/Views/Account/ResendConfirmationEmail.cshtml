@@ -1,34 +1,36 @@
-﻿@{
+﻿﻿﻿@{
     ViewData["Title"] = ViewBag.Message ?? "Resend Confirmation Email";
 }
 
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-md-6 offset-md-3">
-            <!-- Display the Page Message -->
-            <h2 class="text-center mb-4">@ViewBag.Message</h2>
+<div class="container mx-auto my-16 px-4">
+    <div class="flex justify-center">
+        <div class="w-full max-w-md">
+            <!-- Hiển thị thông báo cho người dùng -->
+            <h2 class="text-2xl font-semibold text-center text-gray-700 mb-6">@ViewBag.Message</h2>
 
-            <!-- Card for the Resend Confirmation Form -->
-            <div class="card shadow">
-                <div class="card-body">
-                    <p class="lead">
+            <!-- Card để nhập lại email -->
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                <div class="p-6">
+                    <p class="text-lg text-gray-600 mb-6">
                         If you haven't received your confirmation email, please enter
                         your email address below. We'll send you another link to verify
                         your account.
                     </p>
 
-                    <form asp-action="ResendConfirmationEmail" asp-controller="Account" method="post">
-                        <div class="form-group mb-3">
-                            <label for="emailInput" class="form-label">Email Address</label>
+                    <form asp-controller="Account" asp-action="ResendConfirmationEmail" method="post">
+                        <div class="mb-4">
+                            <label for="emailInput" class="block text-sm font-semibold text-gray-700">Email Address</label>
                             <input type="email"
                                    id="emailInput"
-                                   name="email"
-                                   class="form-control"
+                                   name="Email"
+                                   class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                                    placeholder="yourname@example.com"
                                    required />
                         </div>
 
-                        <button class="btn btn-primary" type="submit">@ViewBag.Message</button>
+                        <button class="w-full py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500" type="submit">
+                            @ViewBag.Message
+                        </button>
                     </form>
                 </div>
             </div>

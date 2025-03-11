@@ -1,102 +1,90 @@
 ﻿@model LoginViewModel
 
-<div class="container my-5">
-    <div class="row">
-        <!-- Local Account Login -->
-        <div class="col-md-6">
-            <div class="card shadow-sm">
-                <div class="card-header bg-primary text-white">
-                    <h4 class="mb-0">Local Account Login</h4>
-                </div>
-                <div class="card-body">
-                    <form method="post" asp-action="Login" asp-controller="Account" novalidate>
-                        <input type="hidden" name="ReturnUrl" value="@Model.ReturnUrl" />
+<div class="flex items-center justify-center min-h-full bg-gray-100">
+    <div class="w-full max-w-md bg-white p-8 rounded-lg shadow-md">
+        <h3 class="mt-10 text-center text-2xl font-bold tracking-tight text-gray-900">Sign In</h3>
 
-                        <!-- Validation Summary -->
-                        <div asp-validation-summary="All" class="text-danger mb-3"></div>
-
-                        <!-- Email Field -->
-                        <div class="mb-3">
-                            <label asp-for="Email" class="form-label"></label>
-                            <input asp-for="Email" class="form-control" placeholder="Enter your email" />
-                            <span asp-validation-for="Email" class="text-danger"></span>
-                        </div>
-
-                        <!-- Password Field -->
-                        <div class="mb-3">
-                            <label asp-for="Password" class="form-label"></label>
-                            <input asp-for="Password" class="form-control" placeholder="Enter your password" />
-                            <span asp-validation-for="Password" class="text-danger"></span>
-                        </div>
-
-                        <!-- Remember Me -->
-                        <div class="form-check mb-3">
-                            <input asp-for="RememberMe" class="form-check-input" />
-                            <label asp-for="RememberMe" class="form-check-label">
-                                @Html.DisplayNameFor(m => m.RememberMe)
-                            </label>
-                        </div>
-
-                        <!-- Login Button & Confirm Email Button -->
-                        <div class="d-flex justify-content-between align-items-center">
-                            <button type="submit" class="btn btn-success">Log In</button>
-                            <a class="btn btn-warning"
-                               asp-controller="Account"
-                               asp-action="ResendConfirmationEmail"
-                               asp-route-IsResend="false">Confirm Email</a>
-                        </div>
-                    </form>
-
-                    <!-- Register & Forgot Password Options -->
-                    <div class="mt-3 d-flex justify-content-end">
-                        <a asp-controller="Account" asp-action="Register" class="btn btn-link">
-                            Register
-                        </a>
-                        <a asp-controller="Account" asp-action="ForgotPassword" class="btn btn-link">
-                            Forgot Password?
-                        </a>
-                    </div>
-                </div>
+        <form asp-controller="Account" asp-action="Login" method="post" class="space-y-6" novalidate>
+            <!-- Email Field -->
+            <div class="mb-4">
+                <label asp-for="Email" class="block text-sm font-medium text-gray-900">Email</label>
+                <input asp-for="Email"
+                       class="w-full p-2 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                       placeholder="name@gmail.com" />
+                <span asp-validation-for="Email" class="text-danger"></span>
             </div>
+
+            <!-- Password Field -->
+            <div class="mb-4">
+                <label asp-for="Password" class="block text-sm font-medium text-gray-900">Password</label>
+                <div class="flex items-center">
+                    <input asp-for="Password"
+                           class="w-full p-2 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                           placeholder="••••••••" />
+                    <button type="button" id="togglePassword" class="focus:outline-none -ml-8">
+                        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240227164304/visible.png"
+                             alt="toggle password visibility" class="w-4" />
+                    </button>
+                </div>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <div class="flex justify-between items-center mb-4">
+                <div>
+                    <input asp-for="RememberMe" type="checkbox" class="mr-2" />
+                    <label asp-for="RememberMe" class="text-sm text-gray-600">Remember me</label>
+                </div>
+                <!-- Forgot password link -->
+                <a asp-controller="Account" asp-action="ForgotPassword" class="text-sm text-blue-600">Forgot password?</a>
+            </div>
+
+            <button type="submit" class="w-full bg-blue-600 text-white p-2 rounded-md hover:bg-blue-700">
+                Sign in to your account
+            </button>
+        </form>
+
+        <!-- Register & Forgot Password Options -->
+        <p class="text-gray-500 text-sm mb-6 text-center">
+            Don’t have an account? <a asp-controller="Account" asp-action="Register" class="text-blue-600 font-medium">Sign up.</a>
+        </p>
+
+        <div class="flex items-center my-4">
+            <hr class="flex-grow border-gray-300" />
+            <span class="px-2 text-gray-500">or</span>
+            <hr class="flex-grow border-gray-300" />
         </div>
 
         <!-- External Login -->
-        <div class="col-md-6 mt-4 mt-md-0">
-            <div class="card shadow-sm">
-                <div class="card-header bg-primary text-white">
-                    <h4 class="mb-0">External Login</h4>
-                </div>
-                <div class="card-body">
-                    @if (Model.ExternalLogins == null || Model.ExternalLogins.Count == 0)
-                    {
-                        <div class="alert alert-info mb-0">
-                            No external logins configured
-                        </div>
-                    }
-                    else
-                    {
-                        <p class="mb-3">You can log in using one of the following providers:</p>
-                        <div class="d-grid gap-2">
-                            @foreach (var provider in Model.ExternalLogins)
-                            {
-                                <button type="button"
-                                        class="btn btn-outline-primary external-login-btn"
-                                        data-provider="@provider.Name"
-                                        data-url="@Url.Action("ExternalLogin", "Account", new { provider = provider.Name, returnUrl = Model.ReturnUrl })"
-                                        title="Log in using your @provider.DisplayName account">
-                                    @provider.DisplayName
-                                </button>
-                            }
-                        </div>
-                    }
-                </div>
-            </div>
+        <button class="w-full flex items-center justify-center bg-white border p-2 rounded-md shadow-sm mb-2 hover:bg-gray-100 external-login-btn"
+                data-provider="Google"
+                data-url="@Url.Action("ExternalLogin", "Account", new { provider = "Google", returnUrl = Model.ReturnUrl })">
+            <img src="https://www.svgrepo.com/show/355037/google.svg" class="w-5 h-5 mr-2" alt="Google" />
+            Sign in with Google
+        </button>
+        <!-- Resend Confirmation Email Link -->
+        <div class="text-center mt-3">
+            <a class="text-sm text-blue-600"
+               asp-controller="Account"
+               asp-action="ResendConfirmationEmail"
+               asp-route-Email="@Model.Email">
+                Resend Confirmation Email
+            </a>
         </div>
     </div>
 </div>
 
-@section Scripts {
-    <script type="text/javascript">
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const passIn = document.getElementById("Password");
+        const btn = document.getElementById("togglePassword");
+
+        if (passIn && btn) {
+            btn.addEventListener("click", function () {
+                const type = passIn.getAttribute("type") === "password" ? "text" : "password";
+                passIn.setAttribute("type", type);
+            });
+        }
+
         document.querySelectorAll('.external-login-btn').forEach(button => {
             button.addEventListener('click', function () {
                 var provider = this.getAttribute('data-provider');
@@ -121,5 +109,5 @@
                 }, 500); // Check every 500ms if the popup is closed
             });
         });
-    </script>
-}
+    });
+</script>

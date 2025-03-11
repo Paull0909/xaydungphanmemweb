@@ -300,3 +300,7 @@ D:\Monweb\xaydungphanmemweb\Web\obj\Debug\net8.0\refint\Web.dll
 D:\Monweb\xaydungphanmemweb\Web\obj\Debug\net8.0\Web.pdb
 D:\Monweb\xaydungphanmemweb\Web\obj\Debug\net8.0\Web.genruntimeconfig.cache
 D:\Monweb\xaydungphanmemweb\Web\obj\Debug\net8.0\ref\Web.dll
+D:\xaydungphanmemweb\Web\bin\Debug\net8.0\Web.staticwebassets.endpoints.json
+D:\xaydungphanmemweb\Web\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\xaydungphanmemweb\Web\obj\Debug\net8.0\staticwebassets\msbuild.Web.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+D:\xaydungphanmemweb\Web\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
