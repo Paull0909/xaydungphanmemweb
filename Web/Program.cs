@@ -72,6 +72,7 @@ builder.Services.ConfigureApplicationCookie(options =>
 {
     // If the LoginPath isn't set, ASP.NET Core defaults the path to /Account/Login.
     options.LoginPath = "/Account/Login"; // Set your login path here
+    options.LogoutPath = "/Account/Logout";
     // If the AccessDenied isn't set, ASP.NET Core defaults the path to /Account/AccessDenied
     options.AccessDeniedPath = "/Account/AccessDenied"; // Set your access denied path here
 });

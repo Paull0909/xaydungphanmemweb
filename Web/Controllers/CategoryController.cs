@@ -21,7 +21,7 @@ namespace Web.Controllers
         public async Task<IActionResult> GetAllCategory()
         {
             var catagory = _unitOfWork.Categories.GetAllAsync();
-            return View(catagory);
+            return View("CategoryListView",catagory);
         }
 
         [HttpGet]

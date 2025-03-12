@@ -1,16 +1,16 @@
 ﻿<Project>
   <ItemGroup>
-    <StaticWebAssetEndpoint Include="_content/Web/css/site.c2tiyv64ts.css">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
+    <StaticWebAssetEndpoint Include="_content/Web/css/style.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\style.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"c2tiyv64ts"},{"Name":"integrity","Value":"sha256-pAGv4ietcJNk/EwsQZ5BN9\u002BK4MuNYS2a9wl4Jw\u002Bq9D0="},{"Name":"label","Value":"_content/Web/css/site.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"362"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022pAGv4ietcJNk/EwsQZ5BN9\u002BK4MuNYS2a9wl4Jw\u002Bq9D0=\u0022"},{"Name":"Last-Modified","Value":"Mon, 10 Mar 2025 16:50:28 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-fBIKQsAUiFDIWB5PY0x7Kzbu5VC2q\u002BV8vNma7FosLMQ="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"498"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022fBIKQsAUiFDIWB5PY0x7Kzbu5VC2q\u002BV8vNma7FosLMQ=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 19:05:53 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/Web/css/site.css">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
+    <StaticWebAssetEndpoint Include="_content/Web/css/style.s2mvsofetn.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\style.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-pAGv4ietcJNk/EwsQZ5BN9\u002BK4MuNYS2a9wl4Jw\u002Bq9D0="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"362"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022pAGv4ietcJNk/EwsQZ5BN9\u002BK4MuNYS2a9wl4Jw\u002Bq9D0=\u0022"},{"Name":"Last-Modified","Value":"Mon, 10 Mar 2025 16:50:28 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"s2mvsofetn"},{"Name":"integrity","Value":"sha256-fBIKQsAUiFDIWB5PY0x7Kzbu5VC2q\u002BV8vNma7FosLMQ="},{"Name":"label","Value":"_content/Web/css/style.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"498"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022fBIKQsAUiFDIWB5PY0x7Kzbu5VC2q\u002BV8vNma7FosLMQ=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 19:05:53 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Web/favicon.61n19gt1b8.ico">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\favicon.ico'))</AssetFile>
@@ -35,6 +35,906 @@
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"v6ml1wjm0s"},{"Name":"integrity","Value":"sha256-lzSlh129m3h428KS8pOjrcoTSQU57/FimpGtoaaMEyQ="},{"Name":"label","Value":"_content/Web/Images/AccessDenied.png"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"5472"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022lzSlh129m3h428KS8pOjrcoTSQU57/FimpGtoaaMEyQ=\u0022"},{"Name":"Last-Modified","Value":"Mon, 10 Mar 2025 16:50:28 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/banner_1.7rd514q77y.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\banner_1.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"7rd514q77y"},{"Name":"integrity","Value":"sha256-HZpdW6BW\u002BRnfqCiut1ohCkUZh5Tm5ULEPbg/4kuXr\u002B4="},{"Name":"label","Value":"_content/Web/Images/banner_1.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"158154"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022HZpdW6BW\u002BRnfqCiut1ohCkUZh5Tm5ULEPbg/4kuXr\u002B4=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/banner_1.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\banner_1.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-HZpdW6BW\u002BRnfqCiut1ohCkUZh5Tm5ULEPbg/4kuXr\u002B4="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"158154"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022HZpdW6BW\u002BRnfqCiut1ohCkUZh5Tm5ULEPbg/4kuXr\u002B4=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/banner_2.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\banner_2.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-cIGiROigO266ttR5iqlwNL\u002B9erXY11dTSt4TnO\u002Bfb7E="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"144415"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022cIGiROigO266ttR5iqlwNL\u002B9erXY11dTSt4TnO\u002Bfb7E=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/banner_2.s50r9nq9vq.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\banner_2.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"s50r9nq9vq"},{"Name":"integrity","Value":"sha256-cIGiROigO266ttR5iqlwNL\u002B9erXY11dTSt4TnO\u002Bfb7E="},{"Name":"label","Value":"_content/Web/Images/banner_2.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"144415"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022cIGiROigO266ttR5iqlwNL\u002B9erXY11dTSt4TnO\u002Bfb7E=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/banner_3.a4ron7428p.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\banner_3.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"a4ron7428p"},{"Name":"integrity","Value":"sha256-tq0BCyZkhQWqliwXQbG72U6/v8dg5XqlUqaV5S7PDss="},{"Name":"label","Value":"_content/Web/Images/banner_3.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"38635"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022tq0BCyZkhQWqliwXQbG72U6/v8dg5XqlUqaV5S7PDss=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/banner_3.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\banner_3.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-tq0BCyZkhQWqliwXQbG72U6/v8dg5XqlUqaV5S7PDss="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"38635"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022tq0BCyZkhQWqliwXQbG72U6/v8dg5XqlUqaV5S7PDss=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/banner_4.2jd6w7zizh.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\banner_4.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"2jd6w7zizh"},{"Name":"integrity","Value":"sha256-Aiq2jUKgZpu1yFLA8wrOTemSK5dWFI05sKZ6RuFlhwU="},{"Name":"label","Value":"_content/Web/Images/banner_4.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"52733"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022Aiq2jUKgZpu1yFLA8wrOTemSK5dWFI05sKZ6RuFlhwU=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/banner_4.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\banner_4.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-Aiq2jUKgZpu1yFLA8wrOTemSK5dWFI05sKZ6RuFlhwU="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"52733"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022Aiq2jUKgZpu1yFLA8wrOTemSK5dWFI05sKZ6RuFlhwU=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/DSC03822.aqybk4euci.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\DSC03822.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"aqybk4euci"},{"Name":"integrity","Value":"sha256-kgi2QPic\u002B7x74dogt64xigfq00En2Vekqy7C1r7QwFo="},{"Name":"label","Value":"_content/Web/Images/DSC03822.webp"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"84926"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022kgi2QPic\u002B7x74dogt64xigfq00En2Vekqy7C1r7QwFo=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/DSC03822.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\DSC03822.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-kgi2QPic\u002B7x74dogt64xigfq00En2Vekqy7C1r7QwFo="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"84926"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022kgi2QPic\u002B7x74dogt64xigfq00En2Vekqy7C1r7QwFo=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/DSC03873.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\DSC03873.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-FlrHcxmiaoKWYOJ3VPIh3XMTAkiZoYzEpfEJYZm8Wr0="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"283516"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022FlrHcxmiaoKWYOJ3VPIh3XMTAkiZoYzEpfEJYZm8Wr0=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/DSC03873.yy8y4w8rgz.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\DSC03873.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"yy8y4w8rgz"},{"Name":"integrity","Value":"sha256-FlrHcxmiaoKWYOJ3VPIh3XMTAkiZoYzEpfEJYZm8Wr0="},{"Name":"label","Value":"_content/Web/Images/DSC03873.webp"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"283516"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022FlrHcxmiaoKWYOJ3VPIh3XMTAkiZoYzEpfEJYZm8Wr0=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/DSC05365.t3o8oeb8hi.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\DSC05365.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"t3o8oeb8hi"},{"Name":"integrity","Value":"sha256-CezCtggLf849gIbLfAYG52Kdrg4xOpt\u002Bm7oCIgXeYno="},{"Name":"label","Value":"_content/Web/Images/DSC05365.webp"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"74832"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022CezCtggLf849gIbLfAYG52Kdrg4xOpt\u002Bm7oCIgXeYno=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/DSC05365.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\DSC05365.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-CezCtggLf849gIbLfAYG52Kdrg4xOpt\u002Bm7oCIgXeYno="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"74832"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022CezCtggLf849gIbLfAYG52Kdrg4xOpt\u002Bm7oCIgXeYno=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/DSC05369.ek44sbmiuf.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\DSC05369.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"ek44sbmiuf"},{"Name":"integrity","Value":"sha256-4oe0U\u002BGALKDwsCLBbdZJY4sRoc7fp7PRJQLoxueiUtU="},{"Name":"label","Value":"_content/Web/Images/DSC05369.webp"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"83844"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u00224oe0U\u002BGALKDwsCLBbdZJY4sRoc7fp7PRJQLoxueiUtU=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/DSC05369.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\DSC05369.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-4oe0U\u002BGALKDwsCLBbdZJY4sRoc7fp7PRJQLoxueiUtU="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"83844"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u00224oe0U\u002BGALKDwsCLBbdZJY4sRoc7fp7PRJQLoxueiUtU=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/logo.5kg3o17qq9.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\logo.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"5kg3o17qq9"},{"Name":"integrity","Value":"sha256-lSJuEebLIxRT4CxOnOhtZ\u002BPJenqjFZClAznEcmAlE88="},{"Name":"label","Value":"_content/Web/Images/logo.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"94890"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022lSJuEebLIxRT4CxOnOhtZ\u002BPJenqjFZClAznEcmAlE88=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/logo.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\logo.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-lSJuEebLIxRT4CxOnOhtZ\u002BPJenqjFZClAznEcmAlE88="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"94890"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022lSJuEebLIxRT4CxOnOhtZ\u002BPJenqjFZClAznEcmAlE88=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/MENDOZATOP_MENDOZASKIRT03.geu6f3gpq8.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\MENDOZATOP_MENDOZASKIRT03.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"geu6f3gpq8"},{"Name":"integrity","Value":"sha256-aHrU9CKHrEc1XpkOpZ2X8c9eFaQe1m6tAVSUeXn0iE8="},{"Name":"label","Value":"_content/Web/Images/MENDOZATOP_MENDOZASKIRT03.webp"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"213390"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022aHrU9CKHrEc1XpkOpZ2X8c9eFaQe1m6tAVSUeXn0iE8=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/MENDOZATOP_MENDOZASKIRT03.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\MENDOZATOP_MENDOZASKIRT03.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-aHrU9CKHrEc1XpkOpZ2X8c9eFaQe1m6tAVSUeXn0iE8="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"213390"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022aHrU9CKHrEc1XpkOpZ2X8c9eFaQe1m6tAVSUeXn0iE8=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/MENDOZATOP_MENDOZASKIRT04.nb0ly6gawy.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\MENDOZATOP_MENDOZASKIRT04.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"nb0ly6gawy"},{"Name":"integrity","Value":"sha256-HVFiSq7/HDP6Z8Epyk3JCe3QG5MdLOg5LFjIPCR/Q6U="},{"Name":"label","Value":"_content/Web/Images/MENDOZATOP_MENDOZASKIRT04.webp"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"198086"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022HVFiSq7/HDP6Z8Epyk3JCe3QG5MdLOg5LFjIPCR/Q6U=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/MENDOZATOP_MENDOZASKIRT04.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\MENDOZATOP_MENDOZASKIRT04.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-HVFiSq7/HDP6Z8Epyk3JCe3QG5MdLOg5LFjIPCR/Q6U="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"198086"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022HVFiSq7/HDP6Z8Epyk3JCe3QG5MdLOg5LFjIPCR/Q6U=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/MENDOZATOP_MENDOZASKIRT06.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\MENDOZATOP_MENDOZASKIRT06.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-DP4PW0Oa2L/TTjXhZ5pP7l05AyqKX\u002B5N9fiRR9SG2H8="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"200964"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022DP4PW0Oa2L/TTjXhZ5pP7l05AyqKX\u002B5N9fiRR9SG2H8=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/MENDOZATOP_MENDOZASKIRT06.wluw76ueyi.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\MENDOZATOP_MENDOZASKIRT06.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"wluw76ueyi"},{"Name":"integrity","Value":"sha256-DP4PW0Oa2L/TTjXhZ5pP7l05AyqKX\u002B5N9fiRR9SG2H8="},{"Name":"label","Value":"_content/Web/Images/MENDOZATOP_MENDOZASKIRT06.webp"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"200964"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022DP4PW0Oa2L/TTjXhZ5pP7l05AyqKX\u002B5N9fiRR9SG2H8=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Noel22Maven1231copy_800x_0d6acd49-ee62-48ff-a9b0-4dfe0e9cac8d.bel62vprf8.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Noel22Maven1231copy_800x_0d6acd49-ee62-48ff-a9b0-4dfe0e9cac8d.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"bel62vprf8"},{"Name":"integrity","Value":"sha256-0x\u002BatlvlC6kWn1zSsDgpz4H7qBr14xT7zr8dJnVdL\u002Bg="},{"Name":"label","Value":"_content/Web/Images/Noel22Maven1231copy_800x_0d6acd49-ee62-48ff-a9b0-4dfe0e9cac8d.webp"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"63014"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u00220x\u002BatlvlC6kWn1zSsDgpz4H7qBr14xT7zr8dJnVdL\u002Bg=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Noel22Maven1231copy_800x_0d6acd49-ee62-48ff-a9b0-4dfe0e9cac8d.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Noel22Maven1231copy_800x_0d6acd49-ee62-48ff-a9b0-4dfe0e9cac8d.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-0x\u002BatlvlC6kWn1zSsDgpz4H7qBr14xT7zr8dJnVdL\u002Bg="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"63014"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u00220x\u002BatlvlC6kWn1zSsDgpz4H7qBr14xT7zr8dJnVdL\u002Bg=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam.a38j0jp5ve.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"a38j0jp5ve"},{"Name":"integrity","Value":"sha256-tqt\u002B7vXAMGNWjWqrErcRYmwnp9aIq16uVY9zdM8TdSE="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam.html"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"391654"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022tqt\u002B7vXAMGNWjWqrErcRYmwnp9aIq16uVY9zdM8TdSE=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-tqt\u002B7vXAMGNWjWqrErcRYmwnp9aIq16uVY9zdM8TdSE="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"391654"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022tqt\u002B7vXAMGNWjWqrErcRYmwnp9aIq16uVY9zdM8TdSE=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/1511872758986871">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\1511872758986871'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-/oAo5QUBgSionblK2KQ27oSpsD6FBA5x7VyPHU\u002B9Frc="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"73470"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022/oAo5QUBgSionblK2KQ27oSpsD6FBA5x7VyPHU\u002B9Frc=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/1511872758986871.6bnw145vn0">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\1511872758986871'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"6bnw145vn0"},{"Name":"integrity","Value":"sha256-/oAo5QUBgSionblK2KQ27oSpsD6FBA5x7VyPHU\u002B9Frc="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/1511872758986871"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"73470"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022/oAo5QUBgSionblK2KQ27oSpsD6FBA5x7VyPHU\u002B9Frc=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/animate.min.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\animate.min.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-TAVebQ2borjxvkcZEQ6SwblJntB1nw0cSPzNFqezHc8="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"58139"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022TAVebQ2borjxvkcZEQ6SwblJntB1nw0cSPzNFqezHc8=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/animate.min.o726qkk1by.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\animate.min.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"o726qkk1by"},{"Name":"integrity","Value":"sha256-TAVebQ2borjxvkcZEQ6SwblJntB1nw0cSPzNFqezHc8="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/animate.min.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"58139"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022TAVebQ2borjxvkcZEQ6SwblJntB1nw0cSPzNFqezHc8=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/bfd4c30bewb0c33e81p949af984m6c3bb5d2m.js.4s2puklds2.tải xuống">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\bfd4c30bewb0c33e81p949af984m6c3bb5d2m.js.tải xuống'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"4s2puklds2"},{"Name":"integrity","Value":"sha256-rOfusGWtOAvwQWfhPGSbPAGfDo2Fo2JC9gcKBpNgShQ="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/bfd4c30bewb0c33e81p949af984m6c3bb5d2m.js.t\u1EA3i xu\u1ED1ng"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"133938"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022rOfusGWtOAvwQWfhPGSbPAGfDo2Fo2JC9gcKBpNgShQ=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/bfd4c30bewb0c33e81p949af984m6c3bb5d2m.js.tải xuống">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\bfd4c30bewb0c33e81p949af984m6c3bb5d2m.js.tải xuống'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-rOfusGWtOAvwQWfhPGSbPAGfDo2Fo2JC9gcKBpNgShQ="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"133938"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022rOfusGWtOAvwQWfhPGSbPAGfDo2Fo2JC9gcKBpNgShQ=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/carousel.cr5rf39lqn.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\carousel.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"cr5rf39lqn"},{"Name":"integrity","Value":"sha256-6IDcnsspFRdUMkBPmoQwziTvWfg40UR5oSf33lwZBM4="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/carousel.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"7771"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00226IDcnsspFRdUMkBPmoQwziTvWfg40UR5oSf33lwZBM4=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/carousel.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\carousel.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-6IDcnsspFRdUMkBPmoQwziTvWfg40UR5oSf33lwZBM4="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"7771"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00226IDcnsspFRdUMkBPmoQwziTvWfg40UR5oSf33lwZBM4=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/complementary-products.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\complementary-products.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-4dQhaSHjFRD0IH5DlCUJDHJCzOYXPmAgmuphXUjWp2U="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"302"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00224dQhaSHjFRD0IH5DlCUJDHJCzOYXPmAgmuphXUjWp2U=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/complementary-products.jrse6v00kn.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\complementary-products.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"jrse6v00kn"},{"Name":"integrity","Value":"sha256-4dQhaSHjFRD0IH5DlCUJDHJCzOYXPmAgmuphXUjWp2U="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/complementary-products.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"302"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00224dQhaSHjFRD0IH5DlCUJDHJCzOYXPmAgmuphXUjWp2U=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-FWiI7eDlnTwYy8A\u002BD4sS7SA3LBbN\u002BLQLv0jCofoTigs="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1871"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022FWiI7eDlnTwYy8A\u002BD4sS7SA3LBbN\u002BLQLv0jCofoTigs=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/css.1hzmz2s0s0">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"1hzmz2s0s0"},{"Name":"integrity","Value":"sha256-FWiI7eDlnTwYy8A\u002BD4sS7SA3LBbN\u002BLQLv0jCofoTigs="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1871"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022FWiI7eDlnTwYy8A\u002BD4sS7SA3LBbN\u002BLQLv0jCofoTigs=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/DSC01937.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\DSC01937.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-7k\u002B\u002Boc4KK/Q4dDn3f2HNm4MLBDZYloeld83HtKha2eU="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"95970"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00227k\u002B\u002Boc4KK/Q4dDn3f2HNm4MLBDZYloeld83HtKha2eU=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/DSC01937.uk4zm6urt0.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\DSC01937.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"uk4zm6urt0"},{"Name":"integrity","Value":"sha256-7k\u002B\u002Boc4KK/Q4dDn3f2HNm4MLBDZYloeld83HtKha2eU="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/DSC01937.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"95970"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00227k\u002B\u002Boc4KK/Q4dDn3f2HNm4MLBDZYloeld83HtKha2eU=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/DSC04087.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\DSC04087.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-/szT8/f4JOecYkAIzURFOC9hElOpUR1aLyntZqJiJXo="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"512832"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022/szT8/f4JOecYkAIzURFOC9hElOpUR1aLyntZqJiJXo=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/DSC04087.mn3ygzn42g.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\DSC04087.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"mn3ygzn42g"},{"Name":"integrity","Value":"sha256-/szT8/f4JOecYkAIzURFOC9hElOpUR1aLyntZqJiJXo="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/DSC04087.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"512832"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022/szT8/f4JOecYkAIzURFOC9hElOpUR1aLyntZqJiJXo=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/DSC04094.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\DSC04094.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-xu6/mEIKFrRFxog0YNMWo5zYQYwUB2o\u002BLEhk\u002Bp6q/Eg="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"92015"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022xu6/mEIKFrRFxog0YNMWo5zYQYwUB2o\u002BLEhk\u002Bp6q/Eg=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/DSC04094.m8lhpc4fh4.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\DSC04094.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"m8lhpc4fh4"},{"Name":"integrity","Value":"sha256-xu6/mEIKFrRFxog0YNMWo5zYQYwUB2o\u002BLEhk\u002Bp6q/Eg="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/DSC04094.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"92015"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022xu6/mEIKFrRFxog0YNMWo5zYQYwUB2o\u002BLEhk\u002Bp6q/Eg=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/DSC04097.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\DSC04097.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-iTjz/Ms/bpltVJuzOnfVzar5K41VHlZHLErqBEziosw="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"378440"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022iTjz/Ms/bpltVJuzOnfVzar5K41VHlZHLErqBEziosw=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/DSC04097.lpjrwv6xdd.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\DSC04097.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"lpjrwv6xdd"},{"Name":"integrity","Value":"sha256-iTjz/Ms/bpltVJuzOnfVzar5K41VHlZHLErqBEziosw="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/DSC04097.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"378440"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022iTjz/Ms/bpltVJuzOnfVzar5K41VHlZHLErqBEziosw=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/DSC05795.7u0smls14c.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\DSC05795.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"7u0smls14c"},{"Name":"integrity","Value":"sha256-Pz0fiZL43KYwBdyzIeN2Eife7DiIuz7Hj9c2qSI4YI0="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/DSC05795.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"156522"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022Pz0fiZL43KYwBdyzIeN2Eife7DiIuz7Hj9c2qSI4YI0=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/DSC05795.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\DSC05795.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-Pz0fiZL43KYwBdyzIeN2Eife7DiIuz7Hj9c2qSI4YI0="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"156522"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022Pz0fiZL43KYwBdyzIeN2Eife7DiIuz7Hj9c2qSI4YI0=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/fbevents.js.5rsrivruug.tải xuống">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\fbevents.js.tải xuống'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"5rsrivruug"},{"Name":"integrity","Value":"sha256-r9ckf1BdZIXJsOgfoLww\u002BkcMz2SD13QkioYEMVcI7AI="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/fbevents.js.t\u1EA3i xu\u1ED1ng"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"246406"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022r9ckf1BdZIXJsOgfoLww\u002BkcMz2SD13QkioYEMVcI7AI=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/fbevents.js.tải xuống">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\fbevents.js.tải xuống'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-r9ckf1BdZIXJsOgfoLww\u002BkcMz2SD13QkioYEMVcI7AI="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"246406"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022r9ckf1BdZIXJsOgfoLww\u002BkcMz2SD13QkioYEMVcI7AI=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/GRAYSONWHITETOP_GRAYSONSKIRT02_67958c8e-2d84-48a9-b33e-c828a8c085f2.ja4qvg7abo.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\GRAYSONWHITETOP_GRAYSONSKIRT02_67958c8e-2d84-48a9-b33e-c828a8c085f2.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"ja4qvg7abo"},{"Name":"integrity","Value":"sha256-xbj1851FCf3LHFgCB\u002BuiZGjLbNkTqf851v8AbJSnczc="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/GRAYSONWHITETOP_GRAYSONSKIRT02_67958c8e-2d84-48a9-b33e-c828a8c085f2.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"228138"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022xbj1851FCf3LHFgCB\u002BuiZGjLbNkTqf851v8AbJSnczc=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/GRAYSONWHITETOP_GRAYSONSKIRT02_67958c8e-2d84-48a9-b33e-c828a8c085f2.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\GRAYSONWHITETOP_GRAYSONSKIRT02_67958c8e-2d84-48a9-b33e-c828a8c085f2.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-xbj1851FCf3LHFgCB\u002BuiZGjLbNkTqf851v8AbJSnczc="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"228138"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022xbj1851FCf3LHFgCB\u002BuiZGjLbNkTqf851v8AbJSnczc=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/Gwenshort_800x_403405fb-9d32-4e15-b891-82b8e3280a15.v36imgl00g.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\Gwenshort_800x_403405fb-9d32-4e15-b891-82b8e3280a15.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"v36imgl00g"},{"Name":"integrity","Value":"sha256-lar42g\u002BxHE3HZmvZ3gTe9dL1H9CRMVIfkYsQouPrjFs="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/Gwenshort_800x_403405fb-9d32-4e15-b891-82b8e3280a15.webp"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"21045"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022lar42g\u002BxHE3HZmvZ3gTe9dL1H9CRMVIfkYsQouPrjFs=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/Gwenshort_800x_403405fb-9d32-4e15-b891-82b8e3280a15.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\Gwenshort_800x_403405fb-9d32-4e15-b891-82b8e3280a15.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-lar42g\u002BxHE3HZmvZ3gTe9dL1H9CRMVIfkYsQouPrjFs="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"21045"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022lar42g\u002BxHE3HZmvZ3gTe9dL1H9CRMVIfkYsQouPrjFs=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/HaileyDress_Details_590x_2936bad4-c8ee-481b-a552-ca7df3633a2c.g1yabbr3yp.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\HaileyDress_Details_590x_2936bad4-c8ee-481b-a552-ca7df3633a2c.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"g1yabbr3yp"},{"Name":"integrity","Value":"sha256-LM4h6dXinNrMYFRXhD5iRds79PPEfnklOKR3xpI7\u002B3A="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/HaileyDress_Details_590x_2936bad4-c8ee-481b-a552-ca7df3633a2c.webp"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"64978"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022LM4h6dXinNrMYFRXhD5iRds79PPEfnklOKR3xpI7\u002B3A=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/HaileyDress_Details_590x_2936bad4-c8ee-481b-a552-ca7df3633a2c.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\HaileyDress_Details_590x_2936bad4-c8ee-481b-a552-ca7df3633a2c.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-LM4h6dXinNrMYFRXhD5iRds79PPEfnklOKR3xpI7\u002B3A="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"64978"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022LM4h6dXinNrMYFRXhD5iRds79PPEfnklOKR3xpI7\u002B3A=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/HaileyDress_Front.jpgvv_590x_936fc773-943d-44d9-b7cc-00a21971b821.7ybid4y9xf.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\HaileyDress_Front.jpgvv_590x_936fc773-943d-44d9-b7cc-00a21971b821.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"7ybid4y9xf"},{"Name":"integrity","Value":"sha256-AdZNsygRV2OoCGW4eId0/y1ZFLqEGTvOThRLsUgsIqc="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/HaileyDress_Front.jpgvv_590x_936fc773-943d-44d9-b7cc-00a21971b821.webp"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"35067"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022AdZNsygRV2OoCGW4eId0/y1ZFLqEGTvOThRLsUgsIqc=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/HaileyDress_Front.jpgvv_590x_936fc773-943d-44d9-b7cc-00a21971b821.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\HaileyDress_Front.jpgvv_590x_936fc773-943d-44d9-b7cc-00a21971b821.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-AdZNsygRV2OoCGW4eId0/y1ZFLqEGTvOThRLsUgsIqc="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"35067"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022AdZNsygRV2OoCGW4eId0/y1ZFLqEGTvOThRLsUgsIqc=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/HannahTop_Front.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\HannahTop_Front.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-fYlF6uYWd3YDlIAQ7HZsE5OHGRJ3gXLmUVv7/Mcmzjo="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"95729"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022fYlF6uYWd3YDlIAQ7HZsE5OHGRJ3gXLmUVv7/Mcmzjo=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/HannahTop_Front.pt9vuyiu2y.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\HannahTop_Front.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"pt9vuyiu2y"},{"Name":"integrity","Value":"sha256-fYlF6uYWd3YDlIAQ7HZsE5OHGRJ3gXLmUVv7/Mcmzjo="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/HannahTop_Front.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"95729"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022fYlF6uYWd3YDlIAQ7HZsE5OHGRJ3gXLmUVv7/Mcmzjo=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/installed.js.tải xuống">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\installed.js.tải xuống'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-nd4pBRjKiO2OC6IzUFYM759Age14/HGBJcSjLc2Swic="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"40"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022nd4pBRjKiO2OC6IzUFYM759Age14/HGBJcSjLc2Swic=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/installed.js.zctjm07nry.tải xuống">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\installed.js.tải xuống'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"zctjm07nry"},{"Name":"integrity","Value":"sha256-nd4pBRjKiO2OC6IzUFYM759Age14/HGBJcSjLc2Swic="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/installed.js.t\u1EA3i xu\u1ED1ng"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"40"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022nd4pBRjKiO2OC6IzUFYM759Age14/HGBJcSjLc2Swic=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/IsabelBlueSkirt_Front_800x_e3dfa520-b702-4fd2-90fa-41c8c435fc42.gd6e7wfoaw.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\IsabelBlueSkirt_Front_800x_e3dfa520-b702-4fd2-90fa-41c8c435fc42.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"gd6e7wfoaw"},{"Name":"integrity","Value":"sha256-PBH8Tq1xwaagOngY09awDx\u002BP8\u002B3jyPhp49Um3DIsZHc="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/IsabelBlueSkirt_Front_800x_e3dfa520-b702-4fd2-90fa-41c8c435fc42.webp"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"26601"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022PBH8Tq1xwaagOngY09awDx\u002BP8\u002B3jyPhp49Um3DIsZHc=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/IsabelBlueSkirt_Front_800x_e3dfa520-b702-4fd2-90fa-41c8c435fc42.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\IsabelBlueSkirt_Front_800x_e3dfa520-b702-4fd2-90fa-41c8c435fc42.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-PBH8Tq1xwaagOngY09awDx\u002BP8\u002B3jyPhp49Um3DIsZHc="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"26601"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022PBH8Tq1xwaagOngY09awDx\u002BP8\u002B3jyPhp49Um3DIsZHc=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/IsabelWhiteSkirt_Front.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\IsabelWhiteSkirt_Front.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-ZCbxWN9tItZyiIHkmA559eCbX2sNvfzaQGQ8oHQ0sW4="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"99628"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022ZCbxWN9tItZyiIHkmA559eCbX2sNvfzaQGQ8oHQ0sW4=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/IsabelWhiteSkirt_Front.ozu2139kdp.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\IsabelWhiteSkirt_Front.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"ozu2139kdp"},{"Name":"integrity","Value":"sha256-ZCbxWN9tItZyiIHkmA559eCbX2sNvfzaQGQ8oHQ0sW4="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/IsabelWhiteSkirt_Front.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"99628"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022ZCbxWN9tItZyiIHkmA559eCbX2sNvfzaQGQ8oHQ0sW4=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-ywldkNU2cNq3J5UzXqeJHonKdEcMLaDzL6VYAYFqo/Q="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"282039"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022ywldkNU2cNq3J5UzXqeJHonKdEcMLaDzL6VYAYFqo/Q=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/js.hlre7b8ucc">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"hlre7b8ucc"},{"Name":"integrity","Value":"sha256-ywldkNU2cNq3J5UzXqeJHonKdEcMLaDzL6VYAYFqo/Q="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/js"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"282039"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022ywldkNU2cNq3J5UzXqeJHonKdEcMLaDzL6VYAYFqo/Q=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/load_feature-1060834584ef204397b1179782a1b090047ee4397cb627244ab89e03f65c4307.js.g885j1duow.tải xuống">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\load_feature-1060834584ef204397b1179782a1b090047ee4397cb627244ab89e03f65c4307.js.tải xuống'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"g885j1duow"},{"Name":"integrity","Value":"sha256-EGCDRYTvIEOXsReXgqGwkAR\u002B5Dl8tickSrieA/ZcQwc="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/load_feature-1060834584ef204397b1179782a1b090047ee4397cb627244ab89e03f65c4307.js.t\u1EA3i xu\u1ED1ng"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"12948"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022EGCDRYTvIEOXsReXgqGwkAR\u002B5Dl8tickSrieA/ZcQwc=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/load_feature-1060834584ef204397b1179782a1b090047ee4397cb627244ab89e03f65c4307.js.tải xuống">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\load_feature-1060834584ef204397b1179782a1b090047ee4397cb627244ab89e03f65c4307.js.tải xuống'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-EGCDRYTvIEOXsReXgqGwkAR\u002B5Dl8tickSrieA/ZcQwc="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"12948"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022EGCDRYTvIEOXsReXgqGwkAR\u002B5Dl8tickSrieA/ZcQwc=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/Logo_black_Logotype.0ld9k5sgmv.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\Logo_black_Logotype.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"0ld9k5sgmv"},{"Name":"integrity","Value":"sha256-/MpH2dLgVRy/RC\u002BFG7LXk3BDei0IpDs5MseX2iEf90w="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/Logo_black_Logotype.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"3113"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022/MpH2dLgVRy/RC\u002BFG7LXk3BDei0IpDs5MseX2iEf90w=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/Logo_black_Logotype.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\Logo_black_Logotype.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-/MpH2dLgVRy/RC\u002BFG7LXk3BDei0IpDs5MseX2iEf90w="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"3113"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022/MpH2dLgVRy/RC\u002BFG7LXk3BDei0IpDs5MseX2iEf90w=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/LucyBlueTop_Front.3csjodqpm3.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\LucyBlueTop_Front.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"3csjodqpm3"},{"Name":"integrity","Value":"sha256-zZ2yyYg\u002BKs7RfVli1mMkWvNQMVRTtL8OB/46Y8nYLy4="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/LucyBlueTop_Front.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"303775"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022zZ2yyYg\u002BKs7RfVli1mMkWvNQMVRTtL8OB/46Y8nYLy4=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/LucyBlueTop_Front.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\LucyBlueTop_Front.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-zZ2yyYg\u002BKs7RfVli1mMkWvNQMVRTtL8OB/46Y8nYLy4="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"303775"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022zZ2yyYg\u002BKs7RfVli1mMkWvNQMVRTtL8OB/46Y8nYLy4=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/LucyPinkTop_Front.4z16n16u21.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\LucyPinkTop_Front.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"4z16n16u21"},{"Name":"integrity","Value":"sha256-gLV3bASll2bXRfWBmTXpUojAloIRLflJ9qCfAu1On18="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/LucyPinkTop_Front.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"209250"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022gLV3bASll2bXRfWBmTXpUojAloIRLflJ9qCfAu1On18=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/LucyPinkTop_Front.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\LucyPinkTop_Front.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-gLV3bASll2bXRfWBmTXpUojAloIRLflJ9qCfAu1On18="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"209250"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022gLV3bASll2bXRfWBmTXpUojAloIRLflJ9qCfAu1On18=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/M0335_06d11d4a-fe99-4096-864d-e18f4f58fbfd.3nxg4y09k3.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\M0335_06d11d4a-fe99-4096-864d-e18f4f58fbfd.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"3nxg4y09k3"},{"Name":"integrity","Value":"sha256-sWXDoG8L2XOoFuvcjxu2WmQk8MkBWAJgINjq5hyFW4s="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/M0335_06d11d4a-fe99-4096-864d-e18f4f58fbfd.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"427575"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022sWXDoG8L2XOoFuvcjxu2WmQk8MkBWAJgINjq5hyFW4s=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/M0335_06d11d4a-fe99-4096-864d-e18f4f58fbfd.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\M0335_06d11d4a-fe99-4096-864d-e18f4f58fbfd.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-sWXDoG8L2XOoFuvcjxu2WmQk8MkBWAJgINjq5hyFW4s="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"427575"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022sWXDoG8L2XOoFuvcjxu2WmQk8MkBWAJgINjq5hyFW4s=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/M1283.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\M1283.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-LUFhVnVg/a/pINgxdIE9YlHOnqq06VWPAER0gtRZ76c="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"262127"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022LUFhVnVg/a/pINgxdIE9YlHOnqq06VWPAER0gtRZ76c=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/M1283.vxd9o667jg.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\M1283.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"vxd9o667jg"},{"Name":"integrity","Value":"sha256-LUFhVnVg/a/pINgxdIE9YlHOnqq06VWPAER0gtRZ76c="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/M1283.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"262127"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022LUFhVnVg/a/pINgxdIE9YlHOnqq06VWPAER0gtRZ76c=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/M1284.8473ejp2jb.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\M1284.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"8473ejp2jb"},{"Name":"integrity","Value":"sha256-OK84UslvkfTtPeyLbsQN6VW2YI1AP5BuwXz0lWA24hs="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/M1284.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"278917"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022OK84UslvkfTtPeyLbsQN6VW2YI1AP5BuwXz0lWA24hs=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/M1284.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\M1284.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-OK84UslvkfTtPeyLbsQN6VW2YI1AP5BuwXz0lWA24hs="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"278917"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022OK84UslvkfTtPeyLbsQN6VW2YI1AP5BuwXz0lWA24hs=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/M1303.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\M1303.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-1vkDc/5fwFTw9uxTtg7RJcOGl27ojXOKBDvMbawi6CM="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"324380"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00221vkDc/5fwFTw9uxTtg7RJcOGl27ojXOKBDvMbawi6CM=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/M1303.m9p9maqdmw.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\M1303.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"m9p9maqdmw"},{"Name":"integrity","Value":"sha256-1vkDc/5fwFTw9uxTtg7RJcOGl27ojXOKBDvMbawi6CM="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/M1303.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"324380"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00221vkDc/5fwFTw9uxTtg7RJcOGl27ojXOKBDvMbawi6CM=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/M1313.37otdri295.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\M1313.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"37otdri295"},{"Name":"integrity","Value":"sha256-QceFy6MiuFPmt1//RWcfRfdnV3t2ekLg0uC4Sz1NuWs="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/M1313.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"257525"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022QceFy6MiuFPmt1//RWcfRfdnV3t2ekLg0uC4Sz1NuWs=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/M1313.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\M1313.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-QceFy6MiuFPmt1//RWcfRfdnV3t2ekLg0uC4Sz1NuWs="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"257525"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022QceFy6MiuFPmt1//RWcfRfdnV3t2ekLg0uC4Sz1NuWs=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/MARYWHITETOP_ISABELBLACKSKIRT01.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\MARYWHITETOP_ISABELBLACKSKIRT01.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-HTFt/LuElbif\u002B4GsEOmO2GaEa79nrrTWJXWe5ltqwFo="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"420801"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022HTFt/LuElbif\u002B4GsEOmO2GaEa79nrrTWJXWe5ltqwFo=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/MARYWHITETOP_ISABELBLACKSKIRT01.nrs9x958xw.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\MARYWHITETOP_ISABELBLACKSKIRT01.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"nrs9x958xw"},{"Name":"integrity","Value":"sha256-HTFt/LuElbif\u002B4GsEOmO2GaEa79nrrTWJXWe5ltqwFo="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/MARYWHITETOP_ISABELBLACKSKIRT01.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"420801"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022HTFt/LuElbif\u002B4GsEOmO2GaEa79nrrTWJXWe5ltqwFo=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/messenger.lsqr120jss.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\messenger.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"lsqr120jss"},{"Name":"integrity","Value":"sha256-ZWmtz7tjgEEht57L95i83Sybw6tRbfRgLCqQZW66/vM="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/messenger.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"20230"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022ZWmtz7tjgEEht57L95i83Sybw6tRbfRgLCqQZW66/vM=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/messenger.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\messenger.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-ZWmtz7tjgEEht57L95i83Sybw6tRbfRgLCqQZW66/vM="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"20230"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022ZWmtz7tjgEEht57L95i83Sybw6tRbfRgLCqQZW66/vM=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/MinaTop_Front.hymuf3raa7.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\MinaTop_Front.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"hymuf3raa7"},{"Name":"integrity","Value":"sha256-R6Ueaaco7gXhLNVUP9DawB3fyB6gq1rJynWdK\u002BFPeb8="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/MinaTop_Front.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"73500"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022R6Ueaaco7gXhLNVUP9DawB3fyB6gq1rJynWdK\u002BFPeb8=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/MinaTop_Front.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\MinaTop_Front.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-R6Ueaaco7gXhLNVUP9DawB3fyB6gq1rJynWdK\u002BFPeb8="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"73500"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022R6Ueaaco7gXhLNVUP9DawB3fyB6gq1rJynWdK\u002BFPeb8=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/PastonTop_GwenShort01_800x_800x_8aaa1e58-ba7f-4ab5-b12f-60c9eda57147.ju7nvaypce.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\PastonTop_GwenShort01_800x_800x_8aaa1e58-ba7f-4ab5-b12f-60c9eda57147.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"ju7nvaypce"},{"Name":"integrity","Value":"sha256-e84dQRYVSOkrsFovQoKIAjvnfrxVxROlbQs313lI0iM="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/PastonTop_GwenShort01_800x_800x_8aaa1e58-ba7f-4ab5-b12f-60c9eda57147.webp"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"61946"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022e84dQRYVSOkrsFovQoKIAjvnfrxVxROlbQs313lI0iM=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/PastonTop_GwenShort01_800x_800x_8aaa1e58-ba7f-4ab5-b12f-60c9eda57147.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\PastonTop_GwenShort01_800x_800x_8aaa1e58-ba7f-4ab5-b12f-60c9eda57147.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-e84dQRYVSOkrsFovQoKIAjvnfrxVxROlbQs313lI0iM="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"61946"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022e84dQRYVSOkrsFovQoKIAjvnfrxVxROlbQs313lI0iM=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/pixel.modern(1).js.tải xuống">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\pixel.modern(1).js.tải xuống'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-e79PkO6q9jfVVAKKoXJHwKZ3gm6GRhacK2NqgcL2iFs="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"5891"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022e79PkO6q9jfVVAKKoXJHwKZ3gm6GRhacK2NqgcL2iFs=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/pixel.modern(1).js.xp66lh0fns.tải xuống">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\pixel.modern(1).js.tải xuống'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"xp66lh0fns"},{"Name":"integrity","Value":"sha256-e79PkO6q9jfVVAKKoXJHwKZ3gm6GRhacK2NqgcL2iFs="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/pixel.modern(1).js.t\u1EA3i xu\u1ED1ng"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"5891"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022e79PkO6q9jfVVAKKoXJHwKZ3gm6GRhacK2NqgcL2iFs=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/pixel.modern.js.rh47rk11kd.tải xuống">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\pixel.modern.js.tải xuống'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"rh47rk11kd"},{"Name":"integrity","Value":"sha256-fy0TA14x8O4i3df\u002BMpvixyvOYL2YWQrz0enWGDSH0pA="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/pixel.modern.js.t\u1EA3i xu\u1ED1ng"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"11120"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022fy0TA14x8O4i3df\u002BMpvixyvOYL2YWQrz0enWGDSH0pA=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/pixel.modern.js.tải xuống">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\pixel.modern.js.tải xuống'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-fy0TA14x8O4i3df\u002BMpvixyvOYL2YWQrz0enWGDSH0pA="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"11120"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022fy0TA14x8O4i3df\u002BMpvixyvOYL2YWQrz0enWGDSH0pA=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/predictive-search.bshl8z80ov.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\predictive-search.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"bshl8z80ov"},{"Name":"integrity","Value":"sha256-tb7CVJ\u002B/hjP/WKfTU8good6UWDkG3uTM8/gZAZUhhMU="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/predictive-search.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2699"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022tb7CVJ\u002B/hjP/WKfTU8good6UWDkG3uTM8/gZAZUhhMU=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/predictive-search.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\predictive-search.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-tb7CVJ\u002B/hjP/WKfTU8good6UWDkG3uTM8/gZAZUhhMU="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"2699"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022tb7CVJ\u002B/hjP/WKfTU8good6UWDkG3uTM8/gZAZUhhMU=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/preloads.js.tải xuống">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\preloads.js.tải xuống'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-BpIZwlmaqrJPcvrlDLEhchDmKsC/wXeLjXbGiXoH/8M="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"4585"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022BpIZwlmaqrJPcvrlDLEhchDmKsC/wXeLjXbGiXoH/8M=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/preloads.js.uqg5y7pxh1.tải xuống">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\preloads.js.tải xuống'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"uqg5y7pxh1"},{"Name":"integrity","Value":"sha256-BpIZwlmaqrJPcvrlDLEhchDmKsC/wXeLjXbGiXoH/8M="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/preloads.js.t\u1EA3i xu\u1ED1ng"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"4585"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022BpIZwlmaqrJPcvrlDLEhchDmKsC/wXeLjXbGiXoH/8M=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/product-page.5nuuqcmfa8.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\product-page.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"5nuuqcmfa8"},{"Name":"integrity","Value":"sha256-oSB7SK3QAEh57CJroQHDAmaaqGLvKnDx21aFAgWjEU4="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/product-page.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2863"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022oSB7SK3QAEh57CJroQHDAmaaqGLvKnDx21aFAgWjEU4=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/product-page.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\product-page.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-oSB7SK3QAEh57CJroQHDAmaaqGLvKnDx21aFAgWjEU4="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"2863"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022oSB7SK3QAEh57CJroQHDAmaaqGLvKnDx21aFAgWjEU4=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/product-pickup.83gdur3ded.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\product-pickup.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"83gdur3ded"},{"Name":"integrity","Value":"sha256-tCyiKBEsXloYQlZebJtX2OlvHKHptyfarJy3WPKxpdA="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/product-pickup.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1831"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022tCyiKBEsXloYQlZebJtX2OlvHKHptyfarJy3WPKxpdA=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/product-pickup.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\product-pickup.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-tCyiKBEsXloYQlZebJtX2OlvHKHptyfarJy3WPKxpdA="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1831"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022tCyiKBEsXloYQlZebJtX2OlvHKHptyfarJy3WPKxpdA=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/related-products.auauy7mabp.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\related-products.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"auauy7mabp"},{"Name":"integrity","Value":"sha256-nq8fY0IRNjSD1i8NAU1rqVKeQnbJlJFGGAmNMwq7D3s="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/related-products.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"43"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022nq8fY0IRNjSD1i8NAU1rqVKeQnbJlJFGGAmNMwq7D3s=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/related-products.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\related-products.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-nq8fY0IRNjSD1i8NAU1rqVKeQnbJlJFGGAmNMwq7D3s="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"43"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022nq8fY0IRNjSD1i8NAU1rqVKeQnbJlJFGGAmNMwq7D3s=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/script">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\script'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-z7xoFT\u002BYa\u002BAy0XvRiGrAoZfOYmlXjJ28GnHko57xyVQ="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"180387"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022z7xoFT\u002BYa\u002BAy0XvRiGrAoZfOYmlXjJ28GnHko57xyVQ=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/script.3rwo1k5leh">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\script'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"3rwo1k5leh"},{"Name":"integrity","Value":"sha256-z7xoFT\u002BYa\u002BAy0XvRiGrAoZfOYmlXjJ28GnHko57xyVQ="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/script"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"180387"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022z7xoFT\u002BYa\u002BAy0XvRiGrAoZfOYmlXjJ28GnHko57xyVQ=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/shopify-perf-kit-1.4.0.min.js.nkapzz2vkj.tải xuống">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\shopify-perf-kit-1.4.0.min.js.tải xuống'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"nkapzz2vkj"},{"Name":"integrity","Value":"sha256-x1D/\u002BZ9sLXUs5eLCkJu9\u002BtzrOgGeKGTy8kJ\u002BpgMiR2s="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/shopify-perf-kit-1.4.0.min.js.t\u1EA3i xu\u1ED1ng"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"23199"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022x1D/\u002BZ9sLXUs5eLCkJu9\u002BtzrOgGeKGTy8kJ\u002BpgMiR2s=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/shopify-perf-kit-1.4.0.min.js.tải xuống">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\shopify-perf-kit-1.4.0.min.js.tải xuống'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-x1D/\u002BZ9sLXUs5eLCkJu9\u002BtzrOgGeKGTy8kJ\u002BpgMiR2s="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"23199"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022x1D/\u002BZ9sLXUs5eLCkJu9\u002BtzrOgGeKGTy8kJ\u002BpgMiR2s=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/shop_events_listener-bbbf3223c550be0dd72914a2fa06aaa88eb8943e96f9ea31fb63e7e27e0f97f4.js.pbufdfru34.tải xuống">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\shop_events_listener-bbbf3223c550be0dd72914a2fa06aaa88eb8943e96f9ea31fb63e7e27e0f97f4.js.tải xuống'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"pbufdfru34"},{"Name":"integrity","Value":"sha256-u78yI8VQvg3XKRSi\u002BgaqqI64lD6W\u002Beox\u002B2Pn4n4Pl/Q="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/shop_events_listener-bbbf3223c550be0dd72914a2fa06aaa88eb8943e96f9ea31fb63e7e27e0f97f4.js.t\u1EA3i xu\u1ED1ng"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"9292"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022u78yI8VQvg3XKRSi\u002BgaqqI64lD6W\u002Beox\u002B2Pn4n4Pl/Q=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/shop_events_listener-bbbf3223c550be0dd72914a2fa06aaa88eb8943e96f9ea31fb63e7e27e0f97f4.js.tải xuống">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\shop_events_listener-bbbf3223c550be0dd72914a2fa06aaa88eb8943e96f9ea31fb63e7e27e0f97f4.js.tải xuống'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-u78yI8VQvg3XKRSi\u002BgaqqI64lD6W\u002Beox\u002B2Pn4n4Pl/Q="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"9292"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022u78yI8VQvg3XKRSi\u002BgaqqI64lD6W\u002Beox\u002B2Pn4n4Pl/Q=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/storefront-banner.js.tải xuống">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\storefront-banner.js.tải xuống'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-vJ1Bib1K0ABzZHNpM/pwNCvXUSum9nun/QV4gukD6nE="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"95534"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022vJ1Bib1K0ABzZHNpM/pwNCvXUSum9nun/QV4gukD6nE=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/storefront-banner.js.wzfbszfmku.tải xuống">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\storefront-banner.js.tải xuống'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"wzfbszfmku"},{"Name":"integrity","Value":"sha256-vJ1Bib1K0ABzZHNpM/pwNCvXUSum9nun/QV4gukD6nE="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/storefront-banner.js.t\u1EA3i xu\u1ED1ng"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"95534"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022vJ1Bib1K0ABzZHNpM/pwNCvXUSum9nun/QV4gukD6nE=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/swipe-listener.min.js.rb8eqn3azr.tải xuống">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\swipe-listener.min.js.tải xuống'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"rb8eqn3azr"},{"Name":"integrity","Value":"sha256-WRjc\u002BQmeSqj84L1fTZ6nQ9yb0OTf/01A9pB/SKjFz9g="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/swipe-listener.min.js.t\u1EA3i xu\u1ED1ng"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"3165"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022WRjc\u002BQmeSqj84L1fTZ6nQ9yb0OTf/01A9pB/SKjFz9g=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/swipe-listener.min.js.tải xuống">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\swipe-listener.min.js.tải xuống'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-WRjc\u002BQmeSqj84L1fTZ6nQ9yb0OTf/01A9pB/SKjFz9g="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"3165"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022WRjc\u002BQmeSqj84L1fTZ6nQ9yb0OTf/01A9pB/SKjFz9g=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/theme--async.3y2zuk0fiy.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\theme--async.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"3y2zuk0fiy"},{"Name":"integrity","Value":"sha256-VZgxsQVGe3iTROkjiHmElypXRMoEtnvhIlpfoj\u002Bj0Dc="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/theme--async.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"66747"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022VZgxsQVGe3iTROkjiHmElypXRMoEtnvhIlpfoj\u002Bj0Dc=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/theme--async.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\theme--async.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-VZgxsQVGe3iTROkjiHmElypXRMoEtnvhIlpfoj\u002Bj0Dc="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"66747"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022VZgxsQVGe3iTROkjiHmElypXRMoEtnvhIlpfoj\u002Bj0Dc=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/theme--critical.b6a9q3cnhf.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\theme--critical.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"b6a9q3cnhf"},{"Name":"integrity","Value":"sha256-PZ6luu2lciHd0msaYA6CJm9pHlCnw7PCT8rsH73iekM="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/theme--critical.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"69893"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022PZ6luu2lciHd0msaYA6CJm9pHlCnw7PCT8rsH73iekM=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/theme--critical.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\theme--critical.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-PZ6luu2lciHd0msaYA6CJm9pHlCnw7PCT8rsH73iekM="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"69893"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022PZ6luu2lciHd0msaYA6CJm9pHlCnw7PCT8rsH73iekM=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/TM1034copy_bbddce0c-8200-43a2-98b2-b80f2ebabe5d.j4ui0paije.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\TM1034copy_bbddce0c-8200-43a2-98b2-b80f2ebabe5d.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"j4ui0paije"},{"Name":"integrity","Value":"sha256-A42pVhi3VeRvHTCNAnXCf8DAADW4BEZqnvjfjD1MuzI="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/TM1034copy_bbddce0c-8200-43a2-98b2-b80f2ebabe5d.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"579073"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022A42pVhi3VeRvHTCNAnXCf8DAADW4BEZqnvjfjD1MuzI=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/TM1034copy_bbddce0c-8200-43a2-98b2-b80f2ebabe5d.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\TM1034copy_bbddce0c-8200-43a2-98b2-b80f2ebabe5d.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-A42pVhi3VeRvHTCNAnXCf8DAADW4BEZqnvjfjD1MuzI="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"579073"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022A42pVhi3VeRvHTCNAnXCf8DAADW4BEZqnvjfjD1MuzI=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/TM1114copy.c0zium1xk1.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\TM1114copy.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"c0zium1xk1"},{"Name":"integrity","Value":"sha256-RDiKnCSPPW/JmRddyPBvTShs9XG6iZPRbCZugj\u002BQ\u002BuY="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/TM1114copy.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"561964"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022RDiKnCSPPW/JmRddyPBvTShs9XG6iZPRbCZugj\u002BQ\u002BuY=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/TM1114copy.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\TM1114copy.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-RDiKnCSPPW/JmRddyPBvTShs9XG6iZPRbCZugj\u002BQ\u002BuY="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"561964"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022RDiKnCSPPW/JmRddyPBvTShs9XG6iZPRbCZugj\u002BQ\u002BuY=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/TM1119copy.bhj2d62khz.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\TM1119copy.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"bhj2d62khz"},{"Name":"integrity","Value":"sha256-H/Rm0KjlgWkoDq4EWGLrMMOXdptq5OEb3tkL2fBnXqY="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/TM1119copy.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"577391"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022H/Rm0KjlgWkoDq4EWGLrMMOXdptq5OEb3tkL2fBnXqY=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/TM1119copy.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\TM1119copy.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-H/Rm0KjlgWkoDq4EWGLrMMOXdptq5OEb3tkL2fBnXqY="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"577391"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022H/Rm0KjlgWkoDq4EWGLrMMOXdptq5OEb3tkL2fBnXqY=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/TM1124copy.742pzu3jur.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\TM1124copy.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"742pzu3jur"},{"Name":"integrity","Value":"sha256-Cf43HAgt6nuuc3Lxt\u002BCJh9bOHE29uBRn5VYh99iKT5Y="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/TM1124copy.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"552064"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022Cf43HAgt6nuuc3Lxt\u002BCJh9bOHE29uBRn5VYh99iKT5Y=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/TM1124copy.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\TM1124copy.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-Cf43HAgt6nuuc3Lxt\u002BCJh9bOHE29uBRn5VYh99iKT5Y="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"552064"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022Cf43HAgt6nuuc3Lxt\u002BCJh9bOHE29uBRn5VYh99iKT5Y=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/TM1130copy.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\TM1130copy.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-dGmM1GHoexBxoBMhV/B5DV0CuLiIqjano7qJvh0tCEU="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"585080"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022dGmM1GHoexBxoBMhV/B5DV0CuLiIqjano7qJvh0tCEU=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/TM1130copy.koclumcqrw.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\TM1130copy.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"koclumcqrw"},{"Name":"integrity","Value":"sha256-dGmM1GHoexBxoBMhV/B5DV0CuLiIqjano7qJvh0tCEU="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/TM1130copy.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"585080"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022dGmM1GHoexBxoBMhV/B5DV0CuLiIqjano7qJvh0tCEU=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/TM1137copy.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\TM1137copy.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-YauEikCVu0vJTXy\u002Boy2XLDfwMQ\u002BwyHJXu5q8m3AkueI="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"566010"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022YauEikCVu0vJTXy\u002Boy2XLDfwMQ\u002BwyHJXu5q8m3AkueI=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/TM1137copy.n205x9o7lu.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\TM1137copy.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"n205x9o7lu"},{"Name":"integrity","Value":"sha256-YauEikCVu0vJTXy\u002Boy2XLDfwMQ\u002BwyHJXu5q8m3AkueI="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/TM1137copy.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"566010"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022YauEikCVu0vJTXy\u002Boy2XLDfwMQ\u002BwyHJXu5q8m3AkueI=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/TM1162copy.3exxh5lga2.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\TM1162copy.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"3exxh5lga2"},{"Name":"integrity","Value":"sha256-taNcExu8FFPgWFXt3MKk5FwUw4Ea517m1Wh92UyELxc="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/TM1162copy.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"643493"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022taNcExu8FFPgWFXt3MKk5FwUw4Ea517m1Wh92UyELxc=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/TM1162copy.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\TM1162copy.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-taNcExu8FFPgWFXt3MKk5FwUw4Ea517m1Wh92UyELxc="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"643493"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022taNcExu8FFPgWFXt3MKk5FwUw4Ea517m1Wh92UyELxc=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/trekkie.storefront.68728afc2577e1593a48001edcb560128ef43fd2.min.js.a226f18yy2.tải xuống">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\trekkie.storefront.68728afc2577e1593a48001edcb560128ef43fd2.min.js.tải xuống'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"a226f18yy2"},{"Name":"integrity","Value":"sha256-8mJGxWrJAEUaooPUP3aXj3qexe2r\u002BZEXDzKq5Unvrds="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/trekkie.storefront.68728afc2577e1593a48001edcb560128ef43fd2.min.js.t\u1EA3i xu\u1ED1ng"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"99972"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u00228mJGxWrJAEUaooPUP3aXj3qexe2r\u002BZEXDzKq5Unvrds=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/trekkie.storefront.68728afc2577e1593a48001edcb560128ef43fd2.min.js.tải xuống">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\trekkie.storefront.68728afc2577e1593a48001edcb560128ef43fd2.min.js.tải xuống'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-8mJGxWrJAEUaooPUP3aXj3qexe2r\u002BZEXDzKq5Unvrds="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"99972"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u00228mJGxWrJAEUaooPUP3aXj3qexe2r\u002BZEXDzKq5Unvrds=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/yuri-top.7lfwbaia1a.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\yuri-top.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"7lfwbaia1a"},{"Name":"integrity","Value":"sha256-6wnyAqCC7BtAUYTrEtyF/HXnS8gUwo3Y8jAISAmRcyo="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/yuri-top.html"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"62720"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u00226wnyAqCC7BtAUYTrEtyF/HXnS8gUwo3Y8jAISAmRcyo=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/yuri-top.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\yuri-top.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-6wnyAqCC7BtAUYTrEtyF/HXnS8gUwo3Y8jAISAmRcyo="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"62720"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u00226wnyAqCC7BtAUYTrEtyF/HXnS8gUwo3Y8jAISAmRcyo=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/YuriFlowerTop_Back.cs8mqthvco.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\YuriFlowerTop_Back.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"cs8mqthvco"},{"Name":"integrity","Value":"sha256-BGzbfq\u002BMxbr0hxf5wqGUEg51CL/kS/6M5bYAtvRkU5I="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/YuriFlowerTop_Back.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"276675"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022BGzbfq\u002BMxbr0hxf5wqGUEg51CL/kS/6M5bYAtvRkU5I=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/YuriFlowerTop_Back.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\YuriFlowerTop_Back.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-BGzbfq\u002BMxbr0hxf5wqGUEg51CL/kS/6M5bYAtvRkU5I="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"276675"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022BGzbfq\u002BMxbr0hxf5wqGUEg51CL/kS/6M5bYAtvRkU5I=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/YuriFlowerTop_Details.fvdovpjl3d.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\YuriFlowerTop_Details.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"fvdovpjl3d"},{"Name":"integrity","Value":"sha256-xbA5LYn8LmS2hSvvTXkENW4cwNlN05fOdeyrRuZVVsw="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/YuriFlowerTop_Details.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"421831"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022xbA5LYn8LmS2hSvvTXkENW4cwNlN05fOdeyrRuZVVsw=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/YuriFlowerTop_Details.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\YuriFlowerTop_Details.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-xbA5LYn8LmS2hSvvTXkENW4cwNlN05fOdeyrRuZVVsw="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"421831"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022xbA5LYn8LmS2hSvvTXkENW4cwNlN05fOdeyrRuZVVsw=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/YuriFlowerTop_Front.01o7mofr2z.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\YuriFlowerTop_Front.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"01o7mofr2z"},{"Name":"integrity","Value":"sha256-nKQ212mmuUnFuR2FUYMELFWiP9uw\u002BMZO\u002B0um5VYle6Q="},{"Name":"label","Value":"_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/YuriFlowerTop_Front.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"172496"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022nKQ212mmuUnFuR2FUYMELFWiP9uw\u002BMZO\u002B0um5VYle6Q=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/Yuri Top _ The MAVEN Vietnam_files/YuriFlowerTop_Front.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Yuri Top _ The MAVEN Vietnam_files\YuriFlowerTop_Front.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-nKQ212mmuUnFuR2FUYMELFWiP9uw\u002BMZO\u002B0um5VYle6Q="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"172496"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022nKQ212mmuUnFuR2FUYMELFWiP9uw\u002BMZO\u002B0um5VYle6Q=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/YuriFlowerTop_Front.po92rflm8i.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\YuriFlowerTop_Front.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"po92rflm8i"},{"Name":"integrity","Value":"sha256-iQQ7cvJOeXk3b/CLGzRwFQX0Hc1oGtHdWIqL/CKmWzo="},{"Name":"label","Value":"_content/Web/Images/YuriFlowerTop_Front.webp"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"110828"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022iQQ7cvJOeXk3b/CLGzRwFQX0Hc1oGtHdWIqL/CKmWzo=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Web/Images/YuriFlowerTop_Front.webp">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\YuriFlowerTop_Front.webp'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-iQQ7cvJOeXk3b/CLGzRwFQX0Hc1oGtHdWIqL/CKmWzo="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"110828"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022iQQ7cvJOeXk3b/CLGzRwFQX0Hc1oGtHdWIqL/CKmWzo=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 15:36:37 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Web/js/site.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\site.js'))</AssetFile>

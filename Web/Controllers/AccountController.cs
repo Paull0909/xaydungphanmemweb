@@ -161,10 +161,11 @@ public async Task<IActionResult> Login(LoginViewModel model)
         /// /////////////////////////////////////// Logout ////////////////////////////////////
         /// </summary>
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Logout()
         {
             await signInManager.SignOutAsync();
-            return RedirectToAction("index", "home");
+            return RedirectToAction("Index", "Home");
         }
 
         /// <summary>
