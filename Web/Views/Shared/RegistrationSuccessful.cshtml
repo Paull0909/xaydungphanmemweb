@@ -1,36 +1,28 @@
-﻿@{
+﻿﻿@{
     ViewData["Title"] = "Registration Successful";
 }
 
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-md-8 offset-md-2">
-            <div class="card shadow">
-                <div class="card-header">
-                    <h3 class="card-title mb-0">
-                        Registration Successful
-                    </h3>
-                </div>
-                <div class="card-body">
-                    <p>
-                        Thank you for signing up with <strong>Dot Net Tutorials</strong>!
-                        We appreciate your interest in our services. Before you can log in,
-                        please confirm your email address by clicking on the verification link
-                        that was sent to your email inbox.
-                    </p>
+<div class="container mx-auto mt-10 px-4">
+    <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+        <div class="text-left mb-6">
+            <h3 class="text-2xl font-semibold text-gray-800">
+                Registration Successful
+            </h3>
+        </div>
+        <div class="text-left text-gray-600">
+            <p class="mb-4">
+                Thank you for signing up with <strong>Dot Net Tutorials</strong>! We appreciate your interest in our services. Before you can log in, please confirm your email address by clicking on the verification link that was sent to your email inbox.
+            </p>
 
-                    <p>
-                        If you can’t find the confirmation email or the link has expired,
-                        you can request another verification link below:
-                    </p>
+            <p class="mb-4">
+                If you can’t find the confirmation email or the link has expired, you can request another verification link below:
+            </p>
 
-                    <a class="btn btn-primary"
-                       asp-controller="Account"
-                       asp-action="ResendConfirmationEmail">
-                        Resend Confirmation Email
-                    </a>
-                </div>
-            </div>
+            <a class="btn bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
+               asp-controller="Account"
+               asp-action="ResendConfirmationEmail">
+                Resend Confirmation Email
+            </a>
         </div>
     </div>
 </div>

@@ -4,61 +4,424 @@
 @{
     ViewBag.Title = "All Users";
 }
-
-<h1>All Users</h1>
-
-@if (Model.Any())
-{
-    <a asp-action="Register" asp-controller="Account"
-       class="btn btn-primary mb-3" style="width:auto">
-        Add New User
-    </a>
-    foreach (var user in Model)
-    {
-        <div class="card mb-3">
-            <div class="card-header">
-                User Id : @user.Id
+<!-- Main Content -->
+<main class="p-6 md:ml-32 bg-gray-50 dark:bg-gray-900 min-h-screen w-full">
+    <!-- Header with Statistics -->
+    <div class="mb-8">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+            <div>
+                <h1 class="text-2xl font-bold text-gray-800 dark:text-white">
+                    User management
+                </h1>
+                <p class="text-gray-600 dark:text-gray-400">
+                    Manage and monitor all users in the system
+                </p>
             </div>
-            <div class="card-body">
-                <h5 class="card-title">@user.UserName</h5>
-            </div>
-            <div class="card-footer">
-                <form method="post" asp-action="DeleteUser" asp-route-UserId="@user.Id">
-                    <a asp-controller="Administration" asp-action="Edituser"
-                       asp-route-UserId="@user.Id" class="btn btn-primary">Edit</a>
-                    <span id="confirmDeleteSpan_@user.Id" style="display:none">
-                        <span>Are you sure you want to Delete?</span>
-                        <button type="submit" class="btn btn-danger">Yes</button>
-                        <a href="#" class="btn btn-primary"
-                           onclick="confirmDelete('@user.Id', false)">No</a>
-                    </span>
-                    <span id="deleteSpan_@user.Id">
-                        <a href="#" class="btn btn-danger"
-                           onclick="confirmDelete('@user.Id', true)">Delete</a>
-                    </span>
-                </form>
-            </div>
+            <button class="mt-4 md:mt-0 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg flex items-center transition-colors">
+                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"></path>
+                </svg>
+                Add User
+            </button>
         </div>
-    }
-}
-else
-{
-    <div class="card">
-        <div class="card-header">
-            No Users Added Yet
+
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 border border-gray-200 dark:border-gray-700">
+                <div class="flex items-center">
+                    <div class="p-3 rounded-full bg-blue-100 dark:bg-blue-900 mr-4">
+                        <svg class="w-6 h-6 text-blue-600 dark:text-blue-400"
+                             fill="currentColor"
+                             viewBox="0 0 24 24">
+                            <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm font-medium">
+                            Tổng người dùng
+                        </p>
+                        <p class="text-2xl font-bold text-gray-900 dark:text-white">
+                            1,482
+                        </p>
+                    </div>
+                </div>
+                <div class="mt-2">
+                    <span class="text-sm text-green-600 dark:text-green-400 flex items-center">
+                        <svg class="w-3 h-3 mr-1"
+                             fill="currentColor"
+                             viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                  d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z"
+                                  clip-rule="evenodd"></path>
+                        </svg>
+                        +12% tháng trước
+                    </span>
+                </div>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 border border-gray-200 dark:border-gray-700">
+                <div class="flex items-center">
+                    <div class="p-3 rounded-full bg-green-100 dark:bg-green-900 mr-4">
+                        <svg class="w-6 h-6 text-green-600 dark:text-green-400"
+                             fill="currentColor"
+                             viewBox="0 0 24 24">
+                            <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm9 14H6V10h12v10zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm font-medium">
+                            Đang hoạt động
+                        </p>
+                        <p class="text-2xl font-bold text-gray-900 dark:text-white">
+                            1,245
+                        </p>
+                    </div>
+                </div>
+                <div class="mt-2">
+                    <span class="text-sm text-green-600 dark:text-green-400 flex items-center">
+                        <svg class="w-3 h-3 mr-1"
+                             fill="currentColor"
+                             viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                  d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z"
+                                  clip-rule="evenodd"></path>
+                        </svg>
+                        +5% tháng trước
+                    </span>
+                </div>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 border border-gray-200 dark:border-gray-700">
+                <div class="flex items-center">
+                    <div class="p-3 rounded-full bg-yellow-100 dark:bg-yellow-900 mr-4">
+                        <svg class="w-6 h-6 text-yellow-600 dark:text-yellow-400"
+                             fill="currentColor"
+                             viewBox="0 0 24 24">
+                            <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm font-medium">
+                            Mới tháng này
+                        </p>
+                        <p class="text-2xl font-bold text-gray-900 dark:text-white">
+                            85
+                        </p>
+                    </div>
+                </div>
+                <div class="mt-2">
+                    <span class="text-sm text-red-600 dark:text-red-400 flex items-center">
+                        <svg class="w-3 h-3 mr-1"
+                             fill="currentColor"
+                             viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                  d="M14.707 10.293a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L9 12.586V5a1 1 0 012 0v7.586l2.293-2.293a1 1 0 011.414 0z"
+                                  clip-rule="evenodd"></path>
+                        </svg>
+                        -2% tháng trước
+                    </span>
+                </div>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 border border-gray-200 dark:border-gray-700">
+                <div class="flex items-center">
+                    <div class="p-3 rounded-full bg-red-100 dark:bg-red-900 mr-4">
+                        <svg class="w-6 h-6 text-red-600 dark:text-red-400"
+                             fill="currentColor"
+                             viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 11c-.55 0-1-.45-1-1V8c0-.55.45-1 1-1s1 .45 1 1v4c0 .55-.45 1-1 1zm1 4h-2v-2h2v2z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm font-medium">
+                            Đã khóa
+                        </p>
+                        <p class="text-2xl font-bold text-gray-900 dark:text-white">
+                            32
+                        </p>
+                    </div>
+                </div>
+                <div class="mt-2">
+                    <span class="text-sm text-green-600 dark:text-green-400 flex items-center">
+                        <svg class="w-3 h-3 mr-1"
+                             fill="currentColor"
+                             viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                  d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z"
+                                  clip-rule="evenodd"></path>
+                        </svg>
+                        -14% tháng trước
+                    </span>
+                </div>
+            </div>
         </div>
     </div>
-}
-<script>
-    function confirmDelete(uniqueId, isDeleteClicked) {
-        var deleteSpan = 'deleteSpan_' + uniqueId;
-        var confirmDeleteSpan = 'confirmDeleteSpan_' + uniqueId;
-        if (isDeleteClicked) {
-            $('#' + deleteSpan).hide();
-            $('#' + confirmDeleteSpan).show();
-        } else {
-            $('#' + deleteSpan).show();
-            $('#' + confirmDeleteSpan).hide();
-        }
-    }
-</script>
+
+    <!-- Search and filter -->
+    <div class="bg-white border-b border-gray-200">
+        <div class="px-4 py-3 sm:px-6">
+            <div class="flex gap-4 items-center">
+                <!-- Search input -->
+                <div class="w-1/3">
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i class="fas fa-search text-gray-400"></i>
+                        </div>
+                        <input type="text"
+                               id="search"
+                               class="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                               placeholder="Search users..." />
+                    </div>
+                </div>
+
+                <!-- Role select -->
+                <div class="w-1/3">
+                    <select class="block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        <option value="">All Roles</option>
+                        <option value="admin">Admin</option>
+                        <option value="user">User</option>
+                        <option value="editor">Editor</option>
+                    </select>
+                </div>
+
+                <!-- Status select -->
+                <div class="w-1/3">
+                    <select class="block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        <option value="">All Status</option>
+                        <option value="active">Active</option>
+                        <option value="inactive">Inactive</option>
+                        <option value="pending">Pending</option>
+                    </select>
+                </div>
+
+                <!-- Filter button -->
+                <button class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                              d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z"
+                              clip-rule="evenodd"></path>
+                    </svg>
+                    Lọc
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="bg-white shadow overflow-hidden rounded-b-lg mb-6">
+        <div class="overflow-x-auto">
+            <table class="min-w-full divide-y divide-gray-200">
+                <thead class="bg-gray-50">
+                    <tr>
+                        <th scope="col"
+                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            User
+                        </th>
+                        <th scope="col"
+                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Email
+                        </th>
+                        <th scope="col"
+                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Role
+                        </th>
+                        <th scope="col"
+                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Status
+                        </th>
+                        <th scope="col"
+                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Actions
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0 h-10 w-10">
+                                    <img class="h-10 w-10 rounded-full"
+                                         src="/api/placeholder/40/40"
+                                         alt="User avatar" />
+                                </div>
+                                <div class="ml-4">
+                                    <div class="text-sm font-medium text-gray-900">
+                                        John Doe
+                                    </div>
+                                    <div class="text-sm text-gray-500">ID: USR-001</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="text-sm text-gray-900">john@example.com</div>
+                            <div class="text-sm text-gray-500">Personal</div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-indigo-100 text-indigo-800">
+                                Admin
+                            </span>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                Active
+                            </span>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                            <div class="flex space-x-2">
+                                <button class="text-indigo-600 hover:text-indigo-900">
+                                    <a asp-controller="Administration" asp-action="EditUser">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                </button>
+                                <button class="text-red-600 hover:text-red-900">
+                                    <a asp-controller="Administration" asp-action="DeleteUser">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
+                                </button>
+                                <button class="text-gray-600 hover:text-gray-900">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0 h-10 w-10">
+                                    <img class="h-10 w-10 rounded-full"
+                                         src="/api/placeholder/40/40"
+                                         alt="User avatar" />
+                                </div>
+                                <div class="ml-4">
+                                    <div class="text-sm font-medium text-gray-900">
+                                        Jane Smith
+                                    </div>
+                                    <div class="text-sm text-gray-500">ID: USR-002</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="text-sm text-gray-900">jane@example.com</div>
+                            <div class="text-sm text-gray-500">Work</div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">
+                                Editor
+                            </span>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                Active
+                            </span>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                            <div class="flex space-x-2">
+                                <button class="text-indigo-600 hover:text-indigo-900">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="text-red-600 hover:text-red-900">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                                <button class="text-gray-600 hover:text-gray-900">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0 h-10 w-10">
+                                    <img class="h-10 w-10 rounded-full"
+                                         src="/api/placeholder/40/40"
+                                         alt="User avatar" />
+                                </div>
+                                <div class="ml-4">
+                                    <div class="text-sm font-medium text-gray-900">
+                                        David Johnson
+                                    </div>
+                                    <div class="text-sm text-gray-500">ID: USR-003</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="text-sm text-gray-900">david@example.com</div>
+                            <div class="text-sm text-gray-500">Personal</div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-gray-100 text-gray-800">
+                                User
+                            </span>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
+                                Pending
+                            </span>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                            <div class="flex space-x-2">
+                                <button class="text-indigo-600 hover:text-indigo-900">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="text-red-600 hover:text-red-900">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                                <button class="text-gray-600 hover:text-gray-900">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- Pagination -->
+        <div class="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6">
+            <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+                <div>
+                    <p class="text-sm text-gray-700">
+                        Showing <span class="font-medium">1</span> to
+                        <span class="font-medium">10</span> of
+                        <span class="font-medium">97</span> users
+                    </p>
+                </div>
+                <div>
+                    <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px"
+                         aria-label="Pagination">
+                        <a href="#"
+                           class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                            <span class="sr-only">Previous</span>
+                            <i class="fas fa-chevron-left"></i>
+                        </a>
+                        <a href="#"
+                           class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-indigo-50 text-sm font-medium text-indigo-600 hover:bg-gray-50">
+                            1
+                        </a>
+                        <a href="#"
+                           class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                            2
+                        </a>
+                        <a href="#"
+                           class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                            3
+                        </a>
+                        <span class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700">
+                            ...
+                        </span>
+                        <a href="#"
+                           class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                            10
+                        </a>
+                        <a href="#"
+                           class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                            <span class="sr-only">Next</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

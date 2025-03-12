@@ -1,8 +1,43 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+﻿
+@model List<Application.Entities.Category>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homepage</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+</head>
+<body>
+    @if (!User.IsInRole("Admin"))
+    {
+        <section class="relative w-full h-screen">
+            <div class="swiper mySwiper w-full h-full">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img alt="Banner 1"
+                             class="w-full h-full object-cover object-center"
+                             src="https://www.themavensaigon.com/cdn/shop/files/COVER_ce1b467f-6927-4cc4-a139-e7572d66e372.jpg?v=1740205039&width=2100" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img alt="Banner 2"
+                             class="w-full h-full object-cover object-center"
+                             src="https://theme.hstatic.net/200000740713/1001130726/14/slideshow_2.jpg?v=85" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img alt="Banner 3"
+                             class="w-full h-full object-cover"
+                             src="https://storage.googleapis.com/a1aa/image/psCiLZTG5GFgGh8dcfSIB4b16tu1vfyJdyxUjG0SNlU.jpg" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img alt="Banner 4"
+                             class="w-full h-full object-cover"
+                             src="https://storage.googleapis.com/a1aa/image/9GoBEdM3lhB-3F6nmGB6ngAKXatrHOkejOogO_yH0ls.jpg" />
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+    }
+</body>
+</html>
