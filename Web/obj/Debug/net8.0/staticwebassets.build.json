@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "JdKK4TNC/893EVyIB3eB4NL/zpYsDTEwUtveMmO+ue8=",
+  "Hash": "+fep8U0deCi5lx70gzmb9cvnxFvloXXyN2Z5O3FWmBc=",
   "Source": "Web",
   "BasePath": "_content/Web",
   "Mode": "Default",
@@ -1697,6 +1697,27 @@
       "OriginalItemSpec": "wwwroot\\Images\\YuriFlowerTop_Front.webp"
     },
     {
+      "Identity": "D:\\xaydungphanmemweb\\Web\\wwwroot\\js\\Category.js",
+      "SourceId": "Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\xaydungphanmemweb\\Web\\wwwroot\\",
+      "BasePath": "_content/Web",
+      "RelativePath": "js/Category#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "5raxm8h0oc",
+      "Integrity": "T0U3Vg8aH2TGg30Sw/3sa3WaliHnLwsVlDoVnSoIEYc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Category.js"
+    },
+    {
       "Identity": "D:\\xaydungphanmemweb\\Web\\wwwroot\\js\\site.js",
       "SourceId": "Web",
       "SourceType": "Discovered",
@@ -2939,7 +2960,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 12 Mar 2025 19:05:53 GMT"
+          "Value": "Thu, 13 Mar 2025 08:01:59 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2976,7 +2997,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 12 Mar 2025 19:05:53 GMT"
+          "Value": "Thu, 13 Mar 2025 08:01:59 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -9309,6 +9330,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-iQQ7cvJOeXk3b/CLGzRwFQX0Hc1oGtHdWIqL/CKmWzo="
+        }
+      ]
+    },
+    {
+      "Route": "js/Category.5raxm8h0oc.js",
+      "AssetFile": "D:\\xaydungphanmemweb\\Web\\wwwroot\\js\\Category.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2821"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"T0U3Vg8aH2TGg30Sw/3sa3WaliHnLwsVlDoVnSoIEYc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 13 Mar 2025 19:47:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5raxm8h0oc"
+        },
+        {
+          "Name": "label",
+          "Value": "js/Category.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-T0U3Vg8aH2TGg30Sw/3sa3WaliHnLwsVlDoVnSoIEYc="
+        }
+      ]
+    },
+    {
+      "Route": "js/Category.js",
+      "AssetFile": "D:\\xaydungphanmemweb\\Web\\wwwroot\\js\\Category.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2821"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"T0U3Vg8aH2TGg30Sw/3sa3WaliHnLwsVlDoVnSoIEYc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 13 Mar 2025 19:47:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-T0U3Vg8aH2TGg30Sw/3sa3WaliHnLwsVlDoVnSoIEYc="
         }
       ]
     },

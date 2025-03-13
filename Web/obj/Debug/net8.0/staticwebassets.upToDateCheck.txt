@@ -76,6 +76,7 @@ wwwroot\Images\Yuri Top _ The MAVEN Vietnam_files\YuriFlowerTop_Details.jpg
 wwwroot\Images\Yuri Top _ The MAVEN Vietnam_files\YuriFlowerTop_Front.jpg
 wwwroot\Images\Yuri Top _ The MAVEN Vietnam_files\yuri-top.html
 wwwroot\Images\YuriFlowerTop_Front.webp
+wwwroot\js\Category.js
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
 wwwroot\lib\bootstrap\dist\css\bootstrap.css.map

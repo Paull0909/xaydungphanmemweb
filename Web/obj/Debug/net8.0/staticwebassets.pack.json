@@ -317,6 +317,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\xaydungphanmemweb\\Web\\wwwroot\\js\\Category.js",
+      "PackagePath": "staticwebassets\\js\\Category.js"
+    },
+    {
       "Id": "D:\\xaydungphanmemweb\\Web\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

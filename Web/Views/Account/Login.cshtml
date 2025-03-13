@@ -7,6 +7,8 @@
         <form asp-controller="Account" asp-action="Login" method="post" class="space-y-6" novalidate>
             <!-- Email Field -->
             <div class="mb-4">
+                <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
                 <label asp-for="Email" class="block text-sm font-medium text-gray-900">Email</label>
                 <input asp-for="Email"
                        class="w-full p-2 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
