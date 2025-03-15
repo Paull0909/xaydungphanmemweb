@@ -18,6 +18,8 @@ namespace Web.Controllers
 
         public async Task<IActionResult> GetAllProduct()
         {
+            var catagory = await _unitOfWork.Categories.GetAllAsync();
+            ViewBag.Catagory = catagory;
             var product = await _unitOfWork.Products.GetAllAsync();
             if (product != null)
             {
@@ -31,44 +33,15 @@ namespace Web.Controllers
 
         }
 
-        [HttpGet]
-        public async Task<IActionResult> Create()
-        {
-            var catagory = await _unitOfWork.Categories.GetAllAsync();
-            return View(catagory);
-        }
         [HttpPost]
         public async Task<IActionResult> Create(CreateUpdateProductRequest request)
         {
             var product = _mapper.Map<CreateUpdateProductRequest, Product>(request);
             _unitOfWork.Products.Add(product);
-            if (request.img != null)
-            {
-                foreach (var item in request.img)
-                {
-                    item.product_id = product.product_id;
-                    _unitOfWork.ProductImageRepository.Add(item);
-                }
-            }
-            if(request.variants != null)
-            {
-                foreach (var item in request.variants)
-                {
-                    item.product_id = product.product_id;
-                    _unitOfWork.VariantsProductRepository.Add(item);
-                    if(item.Size != null)
-                    {
-                        foreach (var s in item.Size)
-                        {
-                            s.variants_product_id = item.Id;
-                            _unitOfWork.SizeProductsRepository.Add(s);
-                        }
-                    }
-                }
-            }
             var result = await _unitOfWork.CompleteAsync();
             if (result > 0)
             {
+                ViewBag.Product = "Them thanh cong";
                 return RedirectToAction("GetAllProduct");
             }
             else

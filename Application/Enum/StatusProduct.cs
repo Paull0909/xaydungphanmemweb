@@ -9,7 +9,6 @@ namespace Application.Enum
     public enum StatusProduct
     {
         Selling,
-        OutOfStock,
         SoldOut
     }
 }

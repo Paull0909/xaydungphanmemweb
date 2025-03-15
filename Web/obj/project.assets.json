@@ -4234,7 +4234,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ad\\.nuget\\packages\\": {},
+    "C:\\Users\\PC\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
@@ -4243,14 +4243,14 @@
       "projectUniqueName": "D:\\xaydungphanmemweb\\Web\\Web.csproj",
       "projectName": "Web",
       "projectPath": "D:\\xaydungphanmemweb\\Web\\Web.csproj",
-      "packagesPath": "C:\\Users\\ad\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
       "outputPath": "D:\\xaydungphanmemweb\\Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\ad\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
