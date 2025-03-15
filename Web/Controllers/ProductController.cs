@@ -2,6 +2,7 @@
 using Application.Entities;
 using Application.SeedWorks;
 using AutoMapper;
+using Azure.Core;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Web.Controllers
@@ -18,7 +19,25 @@ namespace Web.Controllers
 
         public async Task<IActionResult> GetAllProduct()
         {
-            var product = await _unitOfWork.Products.GetAllAsync();
+            ViewBag.Category = await _unitOfWork.Categories.GetAllAsync();
+            var pr = await _unitOfWork.Products.GetAllAsync();
+            List<ProductDTO> product = new List<ProductDTO>();
+            foreach (var item in pr)
+            {
+                var rr = _mapper.Map<Product, ProductDTO>(item);
+                product.Add(rr);
+            }
+            foreach (var i in product)
+            {
+                i.img = await _unitOfWork.ProductImageRepository.GetImgByIdProductAsync(i.product_id);
+                i.category = await _unitOfWork.Categories.GetCategoryByIdAsync(i.type_id);
+                var varent = await _unitOfWork.VariantsProductRepository.GetByProduct(i.product_id);
+                foreach(var j in varent)
+                {
+                    var size = await _unitOfWork.SizeProductsRepository.GetByProduct(j.Id);
+                    i.soluong = size.Sum(t => t.quantity);
+                }
+            }
             if (product != null)
             {
                 return View(product);
@@ -28,7 +47,6 @@ namespace Web.Controllers
                 ViewBag.Product = "Khong co du lieu nao";
                 return View();
             }
-
         }
 
         [HttpGet]
@@ -42,30 +60,6 @@ namespace Web.Controllers
         {
             var product = _mapper.Map<CreateUpdateProductRequest, Product>(request);
             _unitOfWork.Products.Add(product);
-            if (request.img != null)
-            {
-                foreach (var item in request.img)
-                {
-                    item.product_id = product.product_id;
-                    _unitOfWork.ProductImageRepository.Add(item);
-                }
-            }
-            if(request.variants != null)
-            {
-                foreach (var item in request.variants)
-                {
-                    item.product_id = product.product_id;
-                    _unitOfWork.VariantsProductRepository.Add(item);
-                    if(item.Size != null)
-                    {
-                        foreach (var s in item.Size)
-                        {
-                            s.variants_product_id = item.Id;
-                            _unitOfWork.SizeProductsRepository.Add(s);
-                        }
-                    }
-                }
-            }
             var result = await _unitOfWork.CompleteAsync();
             if (result > 0)
             {
@@ -85,6 +79,7 @@ namespace Web.Controllers
             product.ProductImages = await _unitOfWork.ProductImageRepository.GetListImgByIdProAsync(id);
             return View(product);
         }
+
         [HttpGet]
         public async Task<IActionResult> EditProduct(CreateUpdateProductRequest request)
         {

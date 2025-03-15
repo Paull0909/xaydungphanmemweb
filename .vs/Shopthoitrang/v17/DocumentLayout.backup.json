@@ -3,12 +3,40 @@
   "WorkspaceRootPath": "D:\\xaydungphanmemweb\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|d:\\xaydungphanmemweb\\web\\views\\administration\\listusers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|solutionrelative:web\\views\\administration\\listusers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|d:\\xaydungphanmemweb\\web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|solutionrelative:web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|d:\\xaydungphanmemweb\\web\\views\\administration\\edituser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|solutionrelative:web\\views\\administration\\edituser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|d:\\xaydungphanmemweb\\web\\views\\category\\getallcategory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|solutionrelative:web\\views\\category\\getallcategory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|d:\\xaydungphanmemweb\\web\\views\\category\\createcategory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|solutionrelative:web\\views\\category\\createcategory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|d:\\xaydungphanmemweb\\web\\views\\product\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|solutionrelative:web\\views\\product\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|d:\\xaydungphanmemweb\\web\\views\\product\\createproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|solutionrelative:web\\views\\product\\createproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|d:\\xaydungphanmemweb\\web\\controllers\\administrationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|solutionrelative:web\\controllers\\administrationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|d:\\xaydungphanmemweb\\web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|solutionrelative:web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|d:\\xaydungphanmemweb\\web\\views\\administration\\listroles.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -25,18 +53,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|d:\\xaydungphanmemweb\\web\\models\\forgotpasswordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|solutionrelative:web\\models\\forgotpasswordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|d:\\xaydungphanmemweb\\web\\views\\category\\getallcategory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|solutionrelative:web\\views\\category\\getallcategory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|d:\\xaydungphanmemweb\\web\\views\\administration\\listusers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|solutionrelative:web\\views\\administration\\listusers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|d:\\xaydungphanmemweb\\web\\views\\administration\\edituser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|solutionrelative:web\\views\\administration\\edituser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{907F2A7B-7AC8-4C2F-8413-997830E0362D}|Web\\Web.csproj|d:\\xaydungphanmemweb\\web\\views\\administration\\editusersinrole.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -74,24 +90,25 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 0,
               "Title": "ListUsers.cshtml",
               "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Views\\Administration\\ListUsers.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\Administration\\ListUsers.cshtml",
               "ToolTip": "D:\\xaydungphanmemweb\\Web\\Views\\Administration\\ListUsers.cshtml",
               "RelativeToolTip": "Web\\Views\\Administration\\ListUsers.cshtml",
-              "ViewState": "AgIAAOoAAAAAAAAAAAAAAAEAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAJMAAAAAAAAAAAAAALcAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-03-14T12:23:55.964Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
               "Title": "UserRolesViewModel.cs",
               "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Models\\User\\UserRolesViewModel.cs",
               "RelativeDocumentMoniker": "Web\\Models\\User\\UserRolesViewModel.cs",
@@ -104,7 +121,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 16,
               "Title": "EditUserViewModel.cs",
               "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Models\\User\\EditUserViewModel.cs",
               "RelativeDocumentMoniker": "Web\\Models\\User\\EditUserViewModel.cs",
@@ -116,49 +133,112 @@
               "IsPinned": true
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:2:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:3:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GetAllCategory.cshtml",
+              "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Views\\Category\\GetAllCategory.cshtml",
+              "RelativeDocumentMoniker": "Web\\Views\\Category\\GetAllCategory.cshtml",
+              "ToolTip": "D:\\xaydungphanmemweb\\Web\\Views\\Category\\GetAllCategory.cshtml",
+              "RelativeToolTip": "Web\\Views\\Category\\GetAllCategory.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-15T11:13:03.067Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
+              "Title": "EditUser.cshtml",
+              "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Views\\Administration\\EditUser.cshtml",
+              "RelativeDocumentMoniker": "Web\\Views\\Administration\\EditUser.cshtml",
+              "ToolTip": "D:\\xaydungphanmemweb\\Web\\Views\\Administration\\EditUser.cshtml",
+              "RelativeToolTip": "Web\\Views\\Administration\\EditUser.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-15T10:29:38.5Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "D:\\xaydungphanmemweb\\Web\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Web\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAK4AAAAAAAAAAAAAAL4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAA4BAAAAAAAAAAAAABsBAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-03-15T15:54:32.049Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Views\\Product\\Create.cshtml",
+              "RelativeDocumentMoniker": "Web\\Views\\Product\\Create.cshtml",
+              "ToolTip": "D:\\xaydungphanmemweb\\Web\\Views\\Product\\Create.cshtml",
+              "RelativeToolTip": "Web\\Views\\Product\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-15T16:06:55.55Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CreateCategory.cshtml",
+              "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Views\\Category\\CreateCategory.cshtml",
+              "RelativeDocumentMoniker": "Web\\Views\\Category\\CreateCategory.cshtml",
+              "ToolTip": "D:\\xaydungphanmemweb\\Web\\Views\\Category\\CreateCategory.cshtml",
+              "RelativeToolTip": "Web\\Views\\Category\\CreateCategory.cshtml",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-15T16:07:04.314Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CreateProduct.cshtml",
+              "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Views\\Product\\CreateProduct.cshtml",
+              "RelativeDocumentMoniker": "Web\\Views\\Product\\CreateProduct.cshtml",
+              "ToolTip": "D:\\xaydungphanmemweb\\Web\\Views\\Product\\CreateProduct.cshtml",
+              "RelativeToolTip": "Web\\Views\\Product\\CreateProduct.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-15T16:06:50.916Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\appsettings.json",
+              "RelativeDocumentMoniker": "Web\\appsettings.json",
+              "ToolTip": "D:\\xaydungphanmemweb\\Web\\appsettings.json",
+              "RelativeToolTip": "Web\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-15T16:00:28.632Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AdministrationController.cs",
+              "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Controllers\\AdministrationController.cs",
+              "RelativeDocumentMoniker": "Web\\Controllers\\AdministrationController.cs",
+              "ToolTip": "D:\\xaydungphanmemweb\\Web\\Controllers\\AdministrationController.cs",
+              "RelativeToolTip": "Web\\Controllers\\AdministrationController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAI8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-15T09:27:25.348Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "ListRoles.cshtml",
               "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Views\\Administration\\ListRoles.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\Administration\\ListRoles.cshtml",
@@ -166,25 +246,11 @@
               "RelativeToolTip": "Web\\Views\\Administration\\ListRoles.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-15T09:23:29.147Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-15T09:23:29.147Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AdministrationController.cs",
-              "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Controllers\\AdministrationController.cs",
-              "RelativeDocumentMoniker": "Web\\Controllers\\AdministrationController.cs",
-              "ToolTip": "D:\\xaydungphanmemweb\\Web\\Controllers\\AdministrationController.cs",
-              "RelativeToolTip": "Web\\Controllers\\AdministrationController.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAYwBQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-15T09:27:25.348Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 12,
               "Title": "ForgotPasswordViewModel.cs",
               "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Models\\ForgotPasswordViewModel.cs",
               "RelativeDocumentMoniker": "Web\\Models\\ForgotPasswordViewModel.cs",
@@ -192,12 +258,11 @@
               "RelativeToolTip": "Web\\Models\\ForgotPasswordViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-15T15:53:50.155Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-15T15:53:50.155Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 11,
               "Title": "ErrorViewModel.cs",
               "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Models\\ErrorViewModel.cs",
               "RelativeDocumentMoniker": "Web\\Models\\ErrorViewModel.cs",
@@ -205,12 +270,11 @@
               "RelativeToolTip": "Web\\Models\\ErrorViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-15T15:53:50.984Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-15T15:53:50.984Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 10,
               "Title": "LoginViewModel.cs",
               "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Models\\LoginViewModel.cs",
               "RelativeDocumentMoniker": "Web\\Models\\LoginViewModel.cs",
@@ -218,24 +282,11 @@
               "RelativeToolTip": "Web\\Models\\LoginViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-15T15:53:51.583Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-15T15:53:51.583Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "GetAllCategory.cshtml",
-              "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Views\\Category\\GetAllCategory.cshtml",
-              "RelativeDocumentMoniker": "Web\\Views\\Category\\GetAllCategory.cshtml",
-              "ToolTip": "D:\\xaydungphanmemweb\\Web\\Views\\Category\\GetAllCategory.cshtml",
-              "RelativeToolTip": "Web\\Views\\Category\\GetAllCategory.cshtml",
-              "ViewState": "AgIAABsAAAAAAAAAAAArwDEAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-15T11:13:03.067Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "EditRole.cshtml",
               "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Views\\Administration\\EditRole.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\Administration\\EditRole.cshtml",
@@ -247,7 +298,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "EditUsersInRole.cshtml",
               "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Views\\Administration\\EditUsersInRole.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\Administration\\EditUsersInRole.cshtml",
@@ -259,19 +310,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "EditUser.cshtml",
-              "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Views\\Administration\\EditUser.cshtml",
-              "RelativeDocumentMoniker": "Web\\Views\\Administration\\EditUser.cshtml",
-              "ToolTip": "D:\\xaydungphanmemweb\\Web\\Views\\Administration\\EditUser.cshtml",
-              "RelativeToolTip": "Web\\Views\\Administration\\EditUser.cshtml",
-              "ViewState": "AgIAAEkAAAAAAAAAAAAAAGQAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-15T10:29:38.5Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 17,
               "Title": "AccessDenied.cshtml",
               "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Views\\Administration\\AccessDenied.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\Administration\\AccessDenied.cshtml",
@@ -283,7 +322,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 18,
               "Title": "AccountController.cs",
               "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "Web\\Controllers\\AccountController.cs",
@@ -295,7 +334,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 19,
               "Title": "CreateRole.cshtml",
               "DocumentMoniker": "D:\\xaydungphanmemweb\\Web\\Views\\Administration\\CreateRole.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\Administration\\CreateRole.cshtml",

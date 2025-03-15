@@ -21,6 +21,9 @@ namespace Application.DTO.Products
         public StatusProduct status { get; set; }
         public int IsFeatured { get; set; }
         public int type_id { get; set; }
+        public Category category { get; set; }
+        public ProductImage img { get; set; }
+        public int soluong { get; set; }
         public string Desdescription { get; set; }
         public int advertisement_id { get; set; }
         public class AutoMapperProfiles : Profile
