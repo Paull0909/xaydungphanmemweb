@@ -16,7 +16,7 @@ namespace Web.Controllers
         public AdministrationController(RoleManager<Role> roleManager, UserManager<User> userManager)
         {
             _roleManager = roleManager;
-            _userManager=userManager;
+            _userManager = userManager;
         }
 
         [HttpGet]
