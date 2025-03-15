@@ -10,7 +10,6 @@ D:\Monweb\Shopthoitrang\Application\obj\Debug\net8.0\refint\Application.dll
 D:\Monweb\Shopthoitrang\Application\obj\Debug\net8.0\Application.pdb
 D:\Monweb\Shopthoitrang\Application\obj\Debug\net8.0\ref\Application.dll
 D:\Monweb\Shopthoitrang\Application\obj\Debug\net8.0\Application.csproj.AssemblyReference.cache
-D:\xaydungphanmemweb\Application\bin\Debug\net8.0\Application.dll
 D:\Monweb\xaydungphanmemweb\Application\bin\Debug\net8.0\Application.deps.json
 D:\Monweb\xaydungphanmemweb\Application\bin\Debug\net8.0\Application.runtimeconfig.json
 D:\Monweb\xaydungphanmemweb\Application\bin\Debug\net8.0\Application.dll
