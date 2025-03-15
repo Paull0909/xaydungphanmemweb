@@ -1,0 +1,19 @@
+# Loại bỏ thư mục build và obj
+Data/bin/
+Web/obj/
+Application/obj/
+
+# Loại bỏ file tạm của Visual Studio
+.vs/
+*.user
+*.suo
+*.cache
+*.pdb
+*.dll
+*.exe
+
+# Loại bỏ file của NuGet
+project.lock.json
+*.nuget.g.props
+*.nuget.g.targets
+*.nuget.cache

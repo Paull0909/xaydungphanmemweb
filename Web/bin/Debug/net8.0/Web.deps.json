@@ -902,7 +902,11 @@
         },
         "runtime": {
           "Application.dll": {
+<<<<<<< HEAD
             "assemblyVersion": "1.0.0.0",
+=======
+            "assemblyVersion": "1.0.0",
+>>>>>>> 3d447e2 (Ignore build, obj, and temporary files)
             "fileVersion": "1.0.0.0"
           }
         }
@@ -919,7 +923,11 @@
         },
         "runtime": {
           "Data.dll": {
+<<<<<<< HEAD
             "assemblyVersion": "1.0.0.0",
+=======
+            "assemblyVersion": "1.0.0",
+>>>>>>> 3d447e2 (Ignore build, obj, and temporary files)
             "fileVersion": "1.0.0.0"
           }
         }
