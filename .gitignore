@@ -18,7 +18,7 @@
 **/*.dll
 **/*.pdb
 **/*.cache
-**/*.json
+#**/*.json
 **/*.editorconfig
 **/*.props
 
