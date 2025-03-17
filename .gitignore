@@ -29,4 +29,4 @@ Data/bin/
 Data/obj/
 
 # Bat buoc git phai theo doi
-!Web/Views/*.cshtml
+!Web/Views/**/*.cshtml
