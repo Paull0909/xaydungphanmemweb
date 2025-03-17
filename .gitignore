@@ -8,7 +8,7 @@
 *.config
 
 # Bỏ qua các file JSON backup
-*.backup.json
+#*.backup.json
 
 # Bỏ qua thư mục Debug và các file build
 **/bin/
