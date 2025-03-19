@@ -2,7 +2,7 @@
 @{
     var UserId = ViewBag.UserId;
 }
-<div class="p-4 sm:ml-64">
+<div class="p-6 sm:ml-64">
     <div class="p-4 border-2 border-gray-200 border rounded-lg dark:border-gray-700">
         <main class="flex-1 p-10">
             <form method="post">
@@ -33,6 +33,7 @@
                                style="width:auto" />
                         <a asp-action="EditUser" asp-route-UserId="@UserId"
                            class="btn btn-primary" style="width:auto">Cancel</a>
+
                     </div>
                 </div>
             </form>
