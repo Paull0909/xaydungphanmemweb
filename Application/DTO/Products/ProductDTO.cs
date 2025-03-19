@@ -23,6 +23,8 @@ namespace Application.DTO.Products
         public int type_id { get; set; }
         public string Desdescription { get; set; }
         public int advertisement_id { get; set; }
+        public int soluong {  get; set; }
+        public ProductImage img { get; set; }
         public class AutoMapperProfiles : Profile
         {
             public AutoMapperProfiles()

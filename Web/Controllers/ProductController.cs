@@ -18,7 +18,25 @@ namespace Web.Controllers
 
         public async Task<IActionResult> GetAllProduct()
         {
-            var product = await _unitOfWork.Products.GetAllAsync();
+            ViewBag.Category = await _unitOfWork.Categories.GetAllAsync();
+            var pr = await _unitOfWork.Products.GetAllAsync();
+            List<ProductDTO> product = new List<ProductDTO>();
+            foreach (var item in pr)
+            {
+                var rr = _mapper.Map<Product, ProductDTO>(item);
+                product.Add(rr);
+            }
+            foreach (var i in product)
+            {
+                i.img = await _unitOfWork.ProductImageRepository.GetImgByIdProductAsync(i.product_id);
+                i.category = await _unitOfWork.Categories.GetCategoryByIdAsync(i.type_id);
+                var varent = await _unitOfWork.VariantsProductRepository.GetByProduct(i.product_id);
+                foreach (var j in varent)
+                {
+                    var size = await _unitOfWork.SizeProductsRepository.GetByProduct(j.Id);
+                    i.soluong = size.Sum(t => t.quantity);
+                }
+            }
             if (product != null)
             {
                 return View(product);
@@ -28,6 +46,7 @@ namespace Web.Controllers
                 ViewBag.Product = "Khong co du lieu nao";
                 return View();
             }
+
 
         }
 
