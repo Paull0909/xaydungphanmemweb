@@ -2,13 +2,14 @@
 
 <h1>@ViewData["Title"]</h1>
 
-<!-- Modal Thêm Sản Phẩm -->
-<div id="addProductModal"
-     class="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center">
+<!-- Modal Chỉnh sửa Sản Phẩm -->
+<div id="editProductModal" class="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center">
     <div class="bg-white p-8 rounded-2xl shadow-lg w-full max-w-2xl max-h-full overflow-y-auto">
-        <h2 class="text-2xl font-bold mb-6">Thêm sản phẩm mới</h2>
-        <form asp-controller="Product" asp-action="Create" method="post" enctype="multipart/form-data">
+        <h2 class="text-2xl font-bold mb-6">Chỉnh sửa sản phẩm</h2>
+        <form asp-controller="Product" asp-action="EditProduct" asp-route-id="@Model.product_id" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="product_id" value="@Model.product_id" />
             <div class="grid grid-cols-2 gap-2">
+                <!-- Tên sản phẩm -->
                 <div class="mb-4 col-span-2">
                     <label class="block mb-2 text-sm font-medium">Tên sản phẩm</label>
                     <input type="text"
@@ -17,19 +18,19 @@
                     <span asp-validation-for="product_name" class="text-danger"></span>
                 </div>
 
+                <!-- Giá -->
                 <div class="mb-4">
                     <label class="block mb-2 text-sm font-medium">Giá</label>
-                    <input type="number"
-                           min="0"
+                    <input type="number" min="0"
                            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
                            asp-for="price" />
                     <span asp-validation-for="price" class="text-danger"></span>
                 </div>
 
+                <!-- Giảm giá -->
                 <div class="mb-4">
                     <label class="block mb-2 text-sm font-medium">Giảm giá (%)</label>
-                    <input type="number"
-                           min="0"
+                    <input type="number" min="0"
                            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
                            asp-for="discount" />
                     <span asp-validation-for="discount" class="text-danger"></span>
@@ -66,7 +67,9 @@
                         <option value="">Chọn danh mục</option>
                         @foreach (var category in Model.Categories)
                         {
-                            <option value="@category.type_id">@category.type_name</option>
+                            <option value="@category.type_id" selected="@((category.type_id == Model.type_id) ? "selected" : "")">
+                                @category.type_name
+                            </option>
                         }
                     </select>
                     <span asp-validation-for="type_id" class="text-danger"></span>
@@ -90,7 +93,10 @@
                         {
                             foreach (var advertisement in Model.Advertisements)
                             {
-                                <option value="@advertisement.id">@advertisement.title</option>
+
+                                <option value="@advertisement.id" selected="@(advertisement.id == Model.advertisement_id ? "selected" : "")">
+                                    @advertisement.title
+                                </option>
                             }
                         }
                         else
@@ -100,73 +106,86 @@
                     </select>
                     <span asp-validation-for="advertisement_id" class="text-danger"></span>
                 </div>
-                <!-- Màu sắc, Size và Số lượng -->
+
                 <div class="mb-4 col-span-2">
                     <label class="block mb-2 text-sm font-medium">Màu sắc, Size và Số lượng</label>
                     <div id="colorSizeContainer">
-                        <div class="flex items-center gap-4 mb-2">
-                            <input type="text"
-                                   class="w-1/4 p-3 border border-gray-300 rounded-lg"
-                                   placeholder="Nhập màu sắc"
-                                   name="variants[0].Name"
-                                   asp-for="variants[0].Name" /> 
-                            <input type="text"
-                                   class="w-1/4 p-3 border border-gray-300 rounded-lg"
-                                   placeholder="Nhập size" name="variants[0].Size[0].Name" />
-                            <input type="number" min="0"
-                                   class="w-1/4 p-3 border border-gray-300 rounded-lg"
-                                   placeholder="Nhập số lượng" name="variants[0].Size[0].quantity" />
-                        </div>
+                        <!-- Lặp qua các variants -->
+                        @for (int i = 0; i < Model.variants.Count; i++)
+                        {
+                            var variant = Model.variants[i];
+
+                            <div class="variant-container flex items-center gap-4 mb-2" id="variant-@i">
+                                <!-- Nhập màu sắc -->
+                                <input type="text"
+                                       class="w-1/4 p-3 border border-gray-300 rounded-lg"
+                                       placeholder="Nhập màu sắc"
+                                       name="variants[@i].Name"
+                                       value="@variant.Name" />  <!-- Hiển thị màu sắc hiện tại -->
+                                <!-- Lặp qua các size của mỗi variant -->
+                                @foreach (var size in variant.Size)
+                                {
+                                        <!-- Nhập size -->
+                                        <input type="text"
+                                               class="w-1/4 p-3 border border-gray-300 rounded-lg"
+                                               placeholder="Nhập size"
+                                               name="variants[@i].Size[@size.Name].Name"
+                                               value="@size.Name" />  <!-- Hiển thị tên size hiện tại -->
+                                        <!-- Nhập số lượng -->
+                                        <input type="number" min="0"
+                                               class="w-1/4 p-3 border border-gray-300 rounded-lg"
+                                               placeholder="Nhập số lượng"
+                                               name="variants[@i].Size[@size.Name].Quantity"
+                                               value="@size.quantity" />  <!-- Hiển thị số lượng hiện tại -->
+                                }
+
+                                <!-- Nếu đây là biến thể thứ 2 trở đi, hiển thị nút xóa -->
+                                @if (i > 0)
+                                {
+                                    <button type="button" class="px-4 py-2 bg-red-500 text-white rounded-lg" onclick="removeColorSizeField(this)">Xóa</button>
+                                }
+                            </div>
+                        }
                     </div>
+
+                    <!-- Nút thêm màu sắc, size và số lượng -->
                     <button type="button"
                             class="px-4 py-2 bg-green-500 text-white rounded-lg"
                             onclick="addColorSizeField()">
                         Thêm màu, size và số lượng
                     </button>
                 </div>
+
+
+
                 <!-- Hình ảnh sản phẩm -->
-                <div id="imageFormContainer" class="mb-4 col-span-2">
-                    <label class="block mb-2 text-sm font-medium" for="ImagePath">Hình ảnh sản phẩm</label>
-                    <input type="text"
-                           class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
-                           name="img[0].ImagePath"
-                           placeholder="Nhập tên hình ảnh" />
-                    <span class="text-danger" id="imagePathError"></span>
+                <div id="imageFormContainer" class="mb-4 col-span-2 ">
+                    @for (int i = 0; i < Model.img.Count; i++)
+                    {
+                        <div>
+                            <label class="block mb-2 text-sm font-medium" for="ImagePath">Hình ảnh sản phẩm</label>
+                            <input type="text" class="w-full p-3 border border-gray-300 rounded-lg"
+                                   asp-for="img[i].ImagePath" placeholder="Nhập tên hình ảnh" />
 
-                    <label class="block mb-2 text-sm font-medium" for="Caption">Caption</label>
-                    <input type="text"
-                           class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
-                           name="img[0].Caption"
-                           placeholder="Nhập Caption cho hình ảnh" />
-                    <span class="text-danger" id="captionError"></span>
+                            <label class="block mb-2 text-sm font-medium" for="Caption">Caption</label>
+                            <input type="text" class="w-full p-3 border border-gray-300 rounded-lg"
+                                   asp-for="img[i].Caption" placeholder="Nhập Caption cho hình ảnh" />
+                        </div>
+                    }
                 </div>
-
-                <!-- Nút thêm hình ảnh -->
-                <button type="button" class="px-4 py-2 bg-green-500 text-white rounded-lg" onclick="addImageField()">Thêm Hình ảnh</button>
-
             </div>
-
+            <!-- Nút thêm hình ảnh -->
+            <button type="button" class="px-4 py-2 bg-green-500 text-white rounded-lg" onclick="addImageField()">Thêm Hình ảnh</button>
             <div class="flex justify-end mt-6">
                 <a asp-controller="Product" asp-action="GetAllProduct" type="button"
                    class="px-6 py-3 bg-red-500 text-white rounded-lg shadow-md hover:bg-red-600 transition"
                    onclick="closeAddProductModal()">
                     Hủy
                 </a>
-                <button type="submit"
-                        class="ml-3 px-6 py-3 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition">
+                <button type="submit" class="ml-3 px-6 py-3 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition">
                     Lưu
                 </button>
             </div>
         </form>
     </div>
 </div>
-
-@if (ViewBag.Product != null)
-{
-    <div class="alert alert-danger mt-3">
-        @ViewBag.Product
-    </div>
-}
-<script>
-
-</script>

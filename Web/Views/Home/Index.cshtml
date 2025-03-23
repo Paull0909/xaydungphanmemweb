@@ -1,16 +1,8 @@
-﻿@model List<Application.Entities.Category>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Homepage</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-</head>
-<body>
-    @if (!User.IsInRole("Admin"))
+﻿@model List<Web.Models.Product.ProductViewModel>
+
+@if (!User.IsInRole("Admin"))
     {
-        <section class="relative w-full h-screen">
+        <section class="flex flex-col min-w-screen relative w-full h-screen">
             <div class="swiper mySwiper w-full h-full">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
@@ -37,6 +29,35 @@
                 <div class="swiper-pagination"></div>
             </div>
         </section>
+<section class="px-6 py-12 bg-gray-50">
+    <h2 class="text-2xl font-bold text-center">Shop by Category</h2>
+
+    @if (ViewBag.Message != null)
+    {
+        <p class="text-center text-red-600">@ViewBag.Message</p>
     }
-</body>
-</html>
+
+    <div class="mx-auto mt-6 grid grid-cols-2 md:grid-cols-3 gap-6 lg:grid-cols-4">
+        @foreach (var product in Model)
+        {
+            <div class="bg-white rounded-lg shadow-lg p-4 hover:shadow-xl transition transform hover:scale-105">
+                <a href="#">
+                    <img src="@Url.Content("~/images/" + product.ImagePath)"
+                         class="rounded-lg w-full h-auto object-cover" alt="@product.ProductName" />
+                    <div class="mt-4 flex justify-between">
+                        <h3 class="font-semibold">@product.ProductName</h3>
+                        <p class="price text-red-600 font-medium">@product.Price.ToString("C")</p>
+                    </div>
+                    <!-- Hiển thị tên danh mục -->
+                    <div class="mt-2 text-sm text-gray-500">
+                        <span>Danh mục: @product.TypeName</span>
+                    </div>
+                </a>
+            </div>
+        }
+    </div>
+</section>
+
+
+    }
+

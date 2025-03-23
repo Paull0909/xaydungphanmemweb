@@ -2,7 +2,9 @@
 using Application.Entities;
 using Application.SeedWorks;
 using AutoMapper;
+using Azure.Core;
 using Microsoft.AspNetCore.Mvc;
+using Web.Models.Product;
 
 namespace Web.Controllers
 {
@@ -18,25 +20,48 @@ namespace Web.Controllers
 
         public async Task<IActionResult> GetAllProduct()
         {
-            var product = await _unitOfWork.Products.GetAllAsync();
-            if (product != null)
+            var products = await _unitOfWork.Products.GetAllAsync();
+            var categories = await _unitOfWork.Categories.GetAllAsync();
+            var productsimg = await _unitOfWork.ProductImageRepository.GetAllAsync();
+            // Check if products is null or empty
+            if (products == null || !products.Any())
             {
-                return View(product);
-            }
-            else
-            {
-                ViewBag.Product = "Khong co du lieu nao";
-                return View();
+                ViewBag.Message = "Không có sản phẩm nào";  
+                return View(new List<ProductViewModel>());
             }
 
+            // Proceed with the normal logic if products are found
+            var productViewModels = products.Select(p => new ProductViewModel
+            {
+                ProductId = p.product_id,
+                ProductName = p.product_name,
+                Price = p.price,
+                Discount = p.discount,
+                Status = p.status,
+                TypeName = p.Category?.type_name ?? "Không xác định",
+                ImagePath = !string.IsNullOrEmpty(p.ProductImages?.FirstOrDefault()?.ImagePath)
+            ? p.ProductImages.FirstOrDefault()?.ImagePath
+            : "default.jpg"
+
+            }).ToList();
+
+            return View(productViewModels);
         }
-
         [HttpGet]
         public async Task<IActionResult> Create()
         {
-            var catagory = await _unitOfWork.Categories.GetAllAsync();
-            return View(catagory);
+            var categories = await _unitOfWork.Categories.GetAllAsync();
+            var advertisement = await _unitOfWork.AdventisementRepository.GetAllAsync();
+
+            var model = new CreateUpdateProductRequest
+            {
+                Categories = categories,
+                Advertisements=advertisement
+            };
+
+            return View(model); 
         }
+
         [HttpPost]
         public async Task<IActionResult> Create(CreateUpdateProductRequest request)
         {
@@ -56,7 +81,7 @@ namespace Web.Controllers
                 {
                     item.product_id = product.product_id;
                     _unitOfWork.VariantsProductRepository.Add(item);
-                    if(item.Size != null)
+                    if (item.Size != null)
                     {
                         foreach (var s in item.Size)
                         {
@@ -77,15 +102,46 @@ namespace Web.Controllers
                 return RedirectToAction("Create");
             }
         }
-
+        [HttpGet]
         public async Task<IActionResult> EditProduct(int id)
         {
             var product = await _unitOfWork.Products.GetByIdAsync(id);
-            ViewBag.Category = await _unitOfWork.Categories.GetAllAsync();
-            product.ProductImages = await _unitOfWork.ProductImageRepository.GetListImgByIdProAsync(id);
-            return View(product);
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            // Lấy danh mục và quảng cáo
+            var categories = await _unitOfWork.Categories.GetAllAsync();
+            var advertisements = await _unitOfWork.AdventisementRepository.GetAllAsync();
+
+            // Lấy danh sách hình ảnh của sản phẩm
+            var productImages = await _unitOfWork.ProductImageRepository.GetListImgByIdProAsync(id);
+
+            var variants = await _unitOfWork.VariantsProductRepository.GetAllAsync();
+            var sizeproduct = await _unitOfWork.SizeProductsRepository.GetAllAsync();
+            foreach (var variant in product.variants)
+            {
+                variant.Size = variant.Size.ToList();  // Chuyển ICollection<Size_Product> thành List<Size_Product>
+            }
+
+            var model = _mapper.Map<CreateUpdateProductRequest>(product);
+            var products = _unitOfWork.Products.GetByIdAsync(id);
+            // Kiểm tra lại danh sách Size đã được chuyển thành List
+            foreach (var variant in model.variants)
+            {
+                Console.WriteLine($"Variant: {variant.Name}, Size Count: {variant.Size.Count}");
+            }
+            // Gán các giá trị bổ sung vào model
+            model.Categories = categories;
+            model.Advertisements = advertisements;
+            model.img = productImages;
+            model.variants = variants.ToList();
+
+            return View(model);
         }
-        [HttpGet]
+
+        [HttpPost]
         public async Task<IActionResult> EditProduct(CreateUpdateProductRequest request)
         {
             var product = await _unitOfWork.Products.GetByIdAsync(request.product_id);
