@@ -25,13 +25,6 @@ namespace Web.Controllers
             return View(categories);
         }
 
-
-        [HttpGet]
-        public IActionResult CreateCategory()
-        {
-            return View();
-        }
-
         [HttpPost]
         public async Task<IActionResult> CreateCategory(CreateUpdateCateoryRequest request)
         {

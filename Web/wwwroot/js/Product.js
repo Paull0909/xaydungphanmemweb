@@ -91,7 +91,7 @@ function addProduct() {
             .value,
     }));
 }
-function addColorSizeField() {
+    function addColorSizeField() {
     const container = document.getElementById("colorSizeContainer");
     const index = container.children.length;  // Xác định chỉ số cho trường mới
 
@@ -115,9 +115,6 @@ function addColorSizeField() {
     container.appendChild(newField);
 }
 
-function removeImageField(element) {
-    element.parentElement.remove();
-}
 
 function removeColorSizeField(button) {
     button.parentElement.remove();  
