@@ -53,6 +53,7 @@ function addProduct() {
 }
 
 function generateFields() {
+    var productId = document.getElementById("product-data").getAttribute("data-product-id");
     const cataProductCount = parseInt(document.getElementById("ProductCount").value) || 0;
     const sizeCount = parseInt(document.getElementById("sizeCount").value) || 0;
     const fieldsContainer = document.getElementById("fieldsContainer");
@@ -77,7 +78,7 @@ function generateFields() {
                   <!-- Màu sắc sản phẩm -->
                    <input type="text" name="[${i}].Name" class="w-full p-2 border rounded mb-3" required />    
                   <!-- Truyền product_id nếu cần -->
-                  <input type="hidden" name="variants[${i}].product_id" value="/* Giá trị product_id */">
+                <input type="hidden" name="variants[${i}].product_id" value="${productId}" />
 
                   <div id="sizesContainer-${i}">
                       ${generateSizeFields(i, sizeCount)}

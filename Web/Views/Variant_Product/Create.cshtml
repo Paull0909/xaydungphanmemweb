@@ -2,8 +2,7 @@
 
 <div id="detailModal" class="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center overflow-auto">
     <div class="bg-white p-8 rounded-2xl shadow-lg w-full max-w-lg max-h-full overflow-y-auto">
-        <form asp-action="Create" asp-controller="Variant_Product" method="post" >
-            <input type="hidden" asp-for="product_id" value="@Model.product_id" />
+        <form asp-action="Create" asp-controller="Variant_Product" method="post">
             <div class="bg-white p-6 rounded-lg shadow-lg">
                 <h2 class="text-xl font-semibold mb-4">
                     Quản lý màu sắc & Sizes
@@ -15,7 +14,7 @@
                            class="w-full p-2 border rounded-lg"
                            min="1"
                            value="1"
-                           oninput="generateFields()" />
+                           oninput="generateFields(@Model.product_id)" />
                 </div>
 
                 <div class="mb-4">
@@ -25,16 +24,16 @@
                            class="w-full p-2 border rounded-lg"
                            min="1"
                            value="1"
-                           oninput="generateFields()" />
+                           oninput="generateFields(@Model.product_id)" />
                 </div>
-
+                <div id="product-data" data-product-id="@Model.product_id"></div>
                 <!-- Vùng chứa các trường nhập -->
                 <div id="fieldsContainer" class="mt-4"></div>
             </div>
             <div class="flex justify-end mt-6">
                 <a asp-controller="Product" asp-action="GetAllProduct" type="button"
                    class="px-6 py-3 bg-red-500 text-white rounded-lg shadow-md hover:bg-red-600 transition"
-                   onclick="closeDetailModal1()">
+                   onclick="closeDetailModal()">
                     Hủy
                 </a>
                 <button type="submit"
@@ -45,6 +44,7 @@
         </form>
     </div>
 </div>
+
 
 <script>
     function toggleDropdown(event) {
@@ -101,55 +101,56 @@
       }));
     }
 
-        function generateFields() {
-      const cataProductCount = parseInt(document.getElementById("ProductCount").value) || 0;
-      const sizeCount =   parseInt(document.getElementById("sizeCount").value) || 0;
-      const fieldsContainer = document.getElementById("fieldsContainer");
-      fieldsContainer.innerHTML = "";
+    function generateFields() {
+        var productId = document.getElementById("product-data").getAttribute("data-product-id");
+        const cataProductCount = parseInt(document.getElementById("ProductCount").value) || 0;
+        const sizeCount = parseInt(document.getElementById("sizeCount").value) || 0;
+        const fieldsContainer = document.getElementById("fieldsContainer");
+        fieldsContainer.innerHTML = "";
 
-      // Tạo các biến thể sản phẩm (có thể thêm nhiều biến thể)
-      for (let i = 0; i < cataProductCount; i++) {
-        const productDiv = document.createElement("div");
-        productDiv.classList.add(
-          "bg-gray-50",
-          "p-4",
-          "rounded-lg",
-          "shadow-md",
-          "mb-4"
-        );
+        // Tạo các biến thể sản phẩm (có thể thêm nhiều biến thể)
+        for (let i = 0; i < cataProductCount; i++) {
+            const productDiv = document.createElement("div");
+            productDiv.classList.add(
+                "bg-gray-50",
+                "p-4",
+                "rounded-lg",
+                "shadow-md",
+                "mb-4"
+            );
 
-        productDiv.innerHTML = `
-                  <div class="flex justify-between items-center mb-2">
-                      <h3 class="font-semibold">Biến thể sản phẩm ${i + 1}</h3>
-                      <button onclick="removeProduct(this)" class="text-red-500 text-sm font-semibold">Xóa</button>
-                  </div>
-                  <!-- Màu sắc sản phẩm -->
-                   <input type="text" name="[${i}].Name" class="w-full p-2 border rounded mb-3" required />    
-                  <!-- Truyền product_id nếu cần -->
-                  <input type="hidden" name="variants[${i}].product_id" value="/* Giá trị product_id */">
+            productDiv.innerHTML = `
+                      <div class="flex justify-between items-center mb-2">
+                          <h3 class="font-semibold">Biến thể sản phẩm ${i + 1}</h3>
+                          <button onclick="removeProduct(this)" class="text-red-500 text-sm font-semibold">Xóa</button>
+                      </div>
+                      <!-- Màu sắc sản phẩm -->
+                       <input type="text" name="[${i}].Name" class="w-full p-2 border rounded mb-3" required />
+                      <!-- Truyền product_id nếu cần -->
+                    <input type="hidden" name="[${i}].product_id" value="${productId}" />
 
-                  <div id="sizesContainer-${i}">
-                      ${generateSizeFields(i, sizeCount)}
-                  </div>
-              `;
+                      <div id="sizesContainer-${i}">
+                          ${generateSizeFields(i, sizeCount)}
+                      </div>
+                  `;
 
-        fieldsContainer.appendChild(productDiv);
-      }
+            fieldsContainer.appendChild(productDiv);
+        }
     }
 
     function generateSizeFields(variantIndex, sizeCount) {
-      let html = "";
-      for (let j = 0; j < sizeCount; j++) {
-        html += `
-                  <div class="flex gap-2 mb-2">
-                      <!-- Tên Size -->
-                    <input type="text" name="[${variantIndex}].sizes[${j}].Name" class="flex-1 p-2 border rounded" placeholder="Tên size" />
-                  <input type="number" name="[${variantIndex}].sizes[${j}].quantity" class="w-1/4 p-2 border rounded" placeholder="Số lượng" min="1" />
-                      <button onclick="removeElement(this)" class="text-red-500 text-sm"><i class="fas fa-trash"></i></button>
-                  </div>
-              `;
-      }
-      return html;
+        let html = "";
+        for (let j = 0; j < sizeCount; j++) {
+            html += `
+                      <div class="flex gap-2 mb-2">
+                          <!-- Tên Size -->
+                        <input type="text" name="[${variantIndex}].sizes[${j}].Name" class="flex-1 p-2 border rounded" placeholder="Tên size" />
+                      <input type="number" name="[${variantIndex}].sizes[${j}].quantity" class="w-1/4 p-2 border rounded" placeholder="Số lượng" min="1" />
+                          <button onclick="removeElement(this)" class="text-red-500 text-sm"><i class="fas fa-trash"></i></button>
+                      </div>
+                  `;
+        }
+        return html;
     }
 
 

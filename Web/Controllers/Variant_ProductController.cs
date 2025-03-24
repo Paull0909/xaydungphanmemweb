@@ -32,16 +32,18 @@ namespace Web.Controllers
         {
             foreach (var item in request)
             {
+
                 var varian = _mapper.Map<CreateUpdateVariantsProductRequest, Variants_product>(item);
                 _unitOfWork.VariantsProductRepository.Add(varian);
+                await _unitOfWork.CompleteAsync();
                 foreach (var i in item.sizes)
                 {
                     i.variants_product_id = varian.Id;
                     _unitOfWork.SizeProductsRepository.Add(i);
                 }
             }
-            var resul = await _unitOfWork.CompleteAsync();
-            return View(resul);
+            await _unitOfWork.CompleteAsync();
+            return RedirectToAction("GetAllProduct", "Product");
         }
     }
 }
