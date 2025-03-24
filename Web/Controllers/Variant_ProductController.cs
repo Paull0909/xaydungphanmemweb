@@ -1,4 +1,5 @@
-﻿using Application.DTO.VariantsProducts;
+﻿using Application.DTO.Products;
+using Application.DTO.VariantsProducts;
 using Application.Entities;
 using Application.SeedWorks;
 using AutoMapper;
@@ -15,6 +16,17 @@ namespace Web.Controllers
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
+        [HttpGet]
+        public async Task<IActionResult> Create(int id)
+        {
+            var product = await _unitOfWork.Products.GetByIdAsync(id);
+            var request = new CreateUpdateVariantsProductRequest
+            {
+                product_id = product.product_id,
+            };
+
+            return View(request);
+        }
         [HttpPost]
         public async Task<IActionResult> Create(List<CreateUpdateVariantsProductRequest> request)
         {
@@ -26,11 +38,6 @@ namespace Web.Controllers
                 {
                     i.variants_product_id = varian.Id;
                     _unitOfWork.SizeProductsRepository.Add(i);
-                }
-                foreach (var j in item.images)
-                {
-                    j.product_id = varian.product_id;
-                    _unitOfWork.ProductImageRepository.Add(j);
                 }
             }
             var resul = await _unitOfWork.CompleteAsync();

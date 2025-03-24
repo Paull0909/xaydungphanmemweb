@@ -1,57 +1,238 @@
-﻿@{
-    ViewData["Title"] = "Danh Sách Sản Phẩm";
-}
-<div class="p-8 sm:ml-32 w-full">
-    <div class="border-2 border-gray-200 border rounded-lg dark:border-gray-700 w-full sm:max-w-8xl mx-auto">
-        <div class="bg-gray-100 dark:bg-gray-900 p-4 w-full max-w-full relative">
-            <div class="flex justify-center w-full">
-                <h1 class="text-3xl font-semibold text-gray-800 dark:text-gray-100 ">
-                    Product List
-                </h1>
+﻿@model List<Application.DTO.Products.ProductDTO>
+@using Application.Enum
+<main class="p-6 md:ml-32 bg-gray-50 dark:bg-gray-900 min-h-screen w-full">
+    <!-- Top header -->
+    <header class="bg-white shadow-sm z-10">
+        <div class="px-4 py-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <h1 class="text-xl font-semibold text-gray-800">
+                Quản lý sản phẩm
+            </h1>
+            <div class="flex items-center space-x-4">
+                <button class="p-2 text-gray-500 rounded-full hover:bg-gray-100">
+                    <i class="fas fa-bell"></i>
+                </button>
+                <button class="md:hidden p-2 text-gray-500 rounded-full hover:bg-gray-100">
+                    <i class="fas fa-search"></i>
+                </button>
             </div>
+        </div>
+    </header>
 
-            <div class="absolute top-4 right-4">
-                <a asp-action="Create" asp-controller="Product" class="px-4 py-2 text-sm text-white bg-blue-600 rounded hover:bg-blue-500 dark:bg-blue-500 dark:hover:bg-blue-400">
-                    Create
+    <!-- Page content -->
+    <main class="flex-1 overflow-y-auto p-4 bg-gray-100">
+        <!-- Stats cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+            <div class="bg-white rounded-lg shadow p-5">
+                <div class="flex justify-between">
+                    <div>
+                        <p class="text-sm text-gray-500">Tổng sản phẩm</p>
+                        <p class="text-2xl font-bold text-gray-800">243</p>
+                    </div>
+                    <div class="p-3 bg-blue-100 rounded-lg">
+                        <i class="fas fa-box-open text-blue-600"></i>
+                    </div>
+                </div>
+                <div class="flex items-center mt-4">
+                    <span class="text-green-500 text-sm flex items-center">
+                        <i class="fas fa-arrow-up mr-1"></i> 12%
+                    </span>
+                    <span class="text-xs text-gray-500 ml-2">So với tháng trước</span>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg shadow p-5">
+                <div class="flex justify-between">
+                    <div>
+                        <p class="text-sm text-gray-500">Còn hàng</p>
+                        <p class="text-2xl font-bold text-gray-800">198</p>
+                    </div>
+                    <div class="p-3 bg-green-100 rounded-lg">
+                        <i class="fas fa-check-circle text-green-600"></i>
+                    </div>
+                </div>
+                <div class="flex items-center mt-4">
+                    <span class="text-green-500 text-sm flex items-center">
+                        <i class="fas fa-arrow-up mr-1"></i> 5%
+                    </span>
+                    <span class="text-xs text-gray-500 ml-2">So với tháng trước</span>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg shadow p-5">
+                <div class="flex justify-between">
+                    <div>
+                        <p class="text-sm text-gray-500">Hết hàng</p>
+                        <p class="text-2xl font-bold text-gray-800">45</p>
+                    </div>
+                    <div class="p-3 bg-red-100 rounded-lg">
+                        <i class="fas fa-exclamation-circle text-red-600"></i>
+                    </div>
+                </div>
+                <div class="flex items-center mt-4">
+                    <span class="text-red-500 text-sm flex items-center">
+                        <i class="fas fa-arrow-up mr-1"></i> 8%
+                    </span>
+                    <span class="text-xs text-gray-500 ml-2">So với tháng trước</span>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg shadow p-5">
+                <div class="flex justify-between">
+                    <div>
+                        <p class="text-sm text-gray-500">Doanh thu (tháng)</p>
+                        <p class="text-2xl font-bold text-gray-800">68.5M₫</p>
+                    </div>
+                    <div class="p-3 bg-purple-100 rounded-lg">
+                        <i class="fas fa-chart-line text-purple-600"></i>
+                    </div>
+                </div>
+                <div class="flex items-center mt-4">
+                    <span class="text-green-500 text-sm flex items-center">
+                        <i class="fas fa-arrow-up mr-1"></i> 15%
+                    </span>
+                    <span class="text-xs text-gray-500 ml-2">So với tháng trước</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search and actions bar -->
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6 gap-4">
+            <div class="relative flex-1 max-w-md">
+                <input type="search"
+                       class="pl-10 pr-4 py-3 w-full rounded-lg border border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                       placeholder="Tìm kiếm sản phẩm..." />
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <i class="fa fa-search text-gray-400"></i>
+                </div>
+            </div>
+            <div class="flex space-x-3">
+                <button class="px-4 py-3 bg-white border border-gray-300 text-gray-700 rounded-lg flex items-center justify-center space-x-2 hover:bg-gray-50">
+                    <i class="fa fa-filter"></i>
+                    <span>Bộ lọc</span>
+                </button>
+                <a asp-controller="Product" asp-action="Create"
+                        class="px-4 py-3 bg-blue-600 text-white rounded-lg flex items-center justify-center space-x-2 hover:bg-blue-700 transition">
+                    <i class="fa fa-plus"></i>
+                    <span>Thêm sản phẩm</span>
                 </a>
             </div>
+        </div>
 
-            <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-8">
-                <table class="w-full text-sm text-left text-gray-700 dark:text-gray-400">
-                    <thead class="text-xs text-gray-700 uppercase bg-gray-200 dark:bg-gray-800 dark:text-gray-400">
+        <!-- Filters -->
+        <div class="bg-white p-6 rounded-lg shadow-sm mb-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Danh mục</label>
+                    <select class="w-full p-3 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option value="">Tất cả danh mục</option>
+                        <option value="ao">Áo</option>
+                        <option value="quan">Quần</option>
+                        <option value="vay">Váy</option>
+                        <option value="dam">Đầm</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Trạng thái</label>
+                    <select class="w-full p-3 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option value="">Tất cả trạng thái</option>
+                        <option value="active">Còn hàng</option>
+                        <option value="inactive">Hết hàng</option>
+                        <option value="pending">Đang nhập</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Sắp xếp theo</label>
+                    <select class="w-full p-3 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option value="newest">Mới nhất</option>
+                        <option value="oldest">Cũ nhất</option>
+                        <option value="price_high">Giá cao đến thấp</option>
+                        <option value="price_low">Giá thấp đến cao</option>
+                        <option value="bestseller">Bán chạy nhất</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+            <div class="flex items-center justify-between px-6 py-4 border-b">
+                <div class="flex items-center">
+                    <input type="checkbox" class="rounded border-gray-600 bg-gray-200 text-blue-600 focus:ring-blue-500 mr-3" />
+                    <span class="text-sm font-medium text-gray-700">Chọn tất cả</span>
+                </div>
+                <div class="flex space-x-2">
+                    <button class="px-3 py-2 bg-gray-100 text-gray-700 rounded flex items-center space-x-1 hover:bg-gray-200">
+                        <i class="fas fa-download text-sm"></i>
+                        <span class="text-sm">Xuất</span>
+                    </button>
+                    <button class="px-3 py-2 bg-red-50 text-red-600 rounded flex items-center space-x-1 hover:bg-red-100">
+                        <i class="fas fa-trash text-sm"></i>
+                        <span class="text-sm">Xóa</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead class="bg-gray-50">
                         <tr>
-                            <th scope="col" class="px-2 py-4 text-left min-w-[150px]">Product Id</th>
-                            <th scope="col" class="px-2 py-4 text-left min-w-[200px]">Product Name</th> <!-- Tăng chiều rộng -->
-                            <th scope="col" class="px-2 py-4 text-left min-w-[120px]">Price</th>
-                            <th scope="col" class="px-2 py-4 text-left min-w-[120px]">Discount</th>
-                            <th scope="col" class="px-2 py-4 text-left min-w-[120px]">Status</th>
-                            <th scope="col" class="px-2 py-4 text-left min-w-[120px]">Is Featured</th>
-                            <th scope="col" class="px-2 py-4 text-left min-w-[150px]">Category</th>
-                            <th scope="col" class="px-2 py-4 text-left min-w-[300px]">Description</th> <!-- Tăng chiều rộng cho Description -->
-                            <th scope="col" class="px-2 py-4 text-left min-w-[150px]">Advertisement Id</th>
-                            <th scope="col" class="px-2 py-4 text-left min-w-[150px]">Action</th>
+                            <th class="p-4 text-left">
+                                <input type="checkbox" class="rounded border-gray-300 text-blue-600 focus:ring-blue-500" />
+                            </th>
+                            <th class="p-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Sản phẩm</th>
+                            <th class="p-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Mã SP</th>
+                            <th class="p-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Giá</th>
+                            <th class="p-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Giảm giá (%)</th>
+                            <th class="p-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Trạng thái</th>
+                            <th class="p-4 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Hành động</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="divide-y divide-gray-200">
                         @foreach (var item in Model)
                         {
-                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                <td class="px-2 py-4 text-left">@item.product_id</td>
-                                <td class="px-2 py-4 text-left">@item.product_name</td>
-                                <td class="px-2 py-4 text-left">@item.price</td>
-                                <td class="px-2 py-4 text-left">@item.discount</td>
-                                <td class="px-2 py-4 text-left">@item.status</td>
-                                <td class="px-2 py-4 text-left">@(@item.IsFeatured == 1 ? "Yes" : "No")</td>
-                                <td class="px-2 py-4 text-left">@item.type_id</td>
-                                <td class="px-2 py-4 text-left break-words max-w-xs">@item.Desdescription</td> <!-- Tăng chiều rộng cho Description -->
-                                <td class="px-2 py-4 text-left">@item.advertisement_id</td>
-                                <td class="px-2 py-4 text-left">
-                                    <a asp-action="EditProduct" asp-controller="Product" asp-route-id="@item.product_id" class="px-3 py-1 text-xs text-white bg-blue-600 rounded dark:bg-blue-500">
-                                        Edit
-                                    </a>
-                                    <a asp-action="DeleteProduct" asp-controller="Product" asp-route-id="@item.product_id" class="px-3 py-1 text-xs text-white bg-red-600 rounded dark:bg-red-500">
-                                        Delete
-                                    </a>
+                            <tr class="hover:bg-gray-50">
+                                <td class="p-4">
+                                    <input type="checkbox" class="rounded border-gray-300 bg-gray-200 text-blue-600 focus:ring-blue-500" />
+                                </td>
+                                <td class="p-4">
+                                    <div class="flex items-center">
+                                        <div class="h-16 w-16 flex-shrink-0 mr-4">
+                                            <img src="@item.img?.ImagePath" alt="Product" class="h-16 w-16 rounded-lg object-cover" />
+                                        </div>
+                                        <div>
+                                            <div class="font-medium text-gray-900">@item.product_name</div>
+                                            <div class="text-sm text-gray-500">Thương hiệu: @item.category?.type_name</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="p-4 text-sm text-gray-500">@item.product_id</td>
+                                <td class="p-4">
+                                    <div class="text-sm font-semibold text-gray-900">@item.price.ToString("C0")</div>
+                                    <div class="text-xs text-red-500 line-through">@item.discount.ToString("C0")</div>
+                                </td>
+                                <td class="p-4">
+                                    <span class="px-2 py-1 text-xs">@item.discount %</span>
+                                </td>
+                                <td class="p-4">
+                                    <span class="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full
+                                           @(item.status == StatusProduct.Selling ? "bg-green-100 text-green-800" :
+                                            item.status == StatusProduct.OutOfStock ? "bg-yellow-100 text-yellow-800" :
+                                            item.status == StatusProduct.SoldOut ? "bg-red-100 text-red-800" : "")">
+                                        @(item.status == StatusProduct.Selling ? "Đang bán" :
+                                            item.status == StatusProduct.OutOfStock ? "Hết hàng" :
+                                            item.status == StatusProduct.SoldOut ? "Đã bán" : "")
+                                    </span>
+                                </td>
+                                <td class="p-4 text-right">
+                                    <div class="flex justify-end space-x-2">
+                                        <a asp-action="Create" asp-controller="Variant_Product" asp-route-id="@item.product_id" class="p-2 text-gray-500 bg-gray-100 rounded hover:bg-gray-200">
+                                            <i class="fas fa-eye text-sm"></i>
+                                        </a>
+
+                                        <button class="p-2 text-gray-500 bg-gray-100 rounded hover:bg-gray-200">
+                                            <i class="fas fa-edit text-sm"></i>
+                                        </button>
+                                        <a asp-action="DeleteProduct" asp-controller="Product" asp-route-id="@item.product_id"
+                                           class="p-2 text-red-500 bg-red-50 rounded hover:bg-red-100"
+                                           onclick="return confirm('Bạn có chắc chắn muốn xóa sản phẩm này?');">
+                                            <i class="fas fa-trash text-sm"></i>
+                                        </a>
+                                    </div>
                                 </td>
                             </tr>
                         }
@@ -59,5 +240,8 @@
                 </table>
             </div>
         </div>
-    </div>
-</div>
+    </main>
+    <script>
+
+    </script>
+</main>

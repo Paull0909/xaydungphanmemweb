@@ -9,6 +9,7 @@ namespace Application.DTO.SizeProducts
         public string Name { get; set; }
         public int variants_product_id { get; set; }
         public int quantity { get; set; }
+        public List<SizeProductDTO> Sizes { get; set; }
         public class AutoMapperProfiles : Profile
         {
             public AutoMapperProfiles()

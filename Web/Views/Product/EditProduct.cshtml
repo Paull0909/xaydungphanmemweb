@@ -1,0 +1,96 @@
+﻿@model Application.DTO.VariantsProducts.CreateUpdateVariantsProductRequest
+<main class="p-6 md:ml-32 bg-gray-50 dark:bg-gray-900 min-h-screen w-full">
+<form asp-action="CreateVariant" asp-controller="Variant_Product" method="post">
+    <div class="bg-white p-6 rounded-lg shadow-lg">
+        <h2 class="text-xl font-semibold mb-4">Quản lý màu sắc & Sizes</h2>
+
+        <div class="mb-4">
+            <label class="block text-sm font-medium">Số lượng màu sản phẩm</label>
+            <input type="number"
+                   id="ProductCount"
+                   class="w-full p-2 border rounded-lg"
+                   min="1"
+                   value="1"
+                   oninput="generateFields()" />
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-sm font-medium">Số lượng Sizes cho mỗi sản phẩm</label>
+            <input type="number"
+                   id="sizeCount"
+                   class="w-full p-2 border rounded-lg"
+                   min="1"
+                   value="1"
+                   oninput="generateFields()" />
+        </div>
+
+        <!-- Vùng chứa các trường nhập cho màu sắc và kích thước -->
+        <div id="fieldsContainer" class="mt-4"></div>
+    </div>
+
+    <div class="flex justify-end mt-6">
+        <button type="button"
+                class="px-6 py-3 bg-red-500 text-white rounded-lg shadow-md hover:bg-red-600 transition"
+                onclick="closeDetailModal()">
+            Hủy
+        </button>
+        <button type="submit"
+                class="ml-3 px-6 py-3 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition">
+            Lưu
+        </button>
+    </div>
+</form>
+</main>
+<script>
+    // Hàm tạo các trường nhập cho biến thể và kích thước
+    function generateFields() {
+        const cataProductCount = parseInt(document.getElementById("ProductCount").value) || 0;
+        const sizeCount = parseInt(document.getElementById("sizeCount").value) || 0;
+        const fieldsContainer = document.getElementById("fieldsContainer");
+
+        fieldsContainer.innerHTML = ""; // Xóa các trường trước đó
+
+        // Tạo các trường nhập cho mỗi biến thể (product)
+        for (let i = 0; i < cataProductCount; i++) {
+            const productDiv = document.createElement("div");
+            productDiv.classList.add("bg-gray-50", "p-4", "rounded-lg", "shadow-md", "mb-4");
+
+            productDiv.innerHTML = `
+                <div class="flex justify-between items-center mb-2">
+                    <h3 class="font-semibold">Sản phẩm ${i + 1}</h3>
+                    <button onclick="removeProduct(this)" class="text-red-500 text-sm font-semibold">Xóa</button>
+                </div>
+                <input type="text" name="variants[${i}].Name" class="w-full p-2 border rounded-lg mb-3" placeholder="Nhập màu sản phẩm" required />
+
+                <div id="sizesContainer-${i}">
+                    ${generateSizeFields(i, sizeCount)} <!-- Tạo các trường nhập cho kích thước -->
+                </div>
+            `;
+
+            fieldsContainer.appendChild(productDiv);
+        }
+    }
+
+    // Hàm tạo các trường kích thước cho mỗi biến thể
+    function generateSizeFields(productIndex, sizeCount) {
+        let html = "";
+        for (let j = 0; j < sizeCount; j++) {
+            html += `
+                <div class="flex gap-2 mb-2">
+                    <input type="text" name="variants[${productIndex}].sizes[${j}].Name" class="flex-1 p-2 border rounded-lg" placeholder="Size ${j + 1}" required />
+                    <input type="number" name="variants[${productIndex}].sizes[${j}].Quantity" class="w-1/4 p-2 border rounded-lg" placeholder="Số lượng" min="1" required />
+                    <button onclick="removeElement(this)" class="text-red-500 text-sm"><i class="fas fa-trash"></i></button>
+                </div>
+            `;
+        }
+        return html;
+    }
+
+    function removeElement(element) {
+        element.closest(".flex").remove(); // Xóa một trường Size cụ thể
+    }
+
+    function removeProduct(element) {
+        element.closest(".bg-gray-50").remove(); // Xóa toàn bộ sản phẩm (variant)
+    }
+</script>

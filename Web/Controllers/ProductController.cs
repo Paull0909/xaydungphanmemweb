@@ -45,16 +45,21 @@ namespace Web.Controllers
             {
                 ViewBag.Product = "Khong co du lieu nao";
                 return View();
-            }
-
-
+            }     
         }
-
         [HttpGet]
         public async Task<IActionResult> Create()
         {
-            var catagory = await _unitOfWork.Categories.GetAllAsync();
-            return View(catagory);
+            var categories = await _unitOfWork.Categories.GetAllAsync();
+            var advertisement = await _unitOfWork.AdventisementRepository.GetAllAsync();
+
+            var model = new CreateUpdateProductRequest
+            {
+                Categories = categories,
+                Advertisements = advertisement
+            };
+
+            return View(model);
         }
         [HttpPost]
         public async Task<IActionResult> Create(CreateUpdateProductRequest request)
