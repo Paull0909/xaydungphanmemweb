@@ -20,5 +20,17 @@ namespace Data.Repositories
             var size = _context.Size_Product.Where(x => x.variants_product_id==id).ToList();
             return size;
         }
+        public async Task<bool> Loadwhenbuyer(int id, string name, int soluong)
+        {
+            var i = _context.Size_Product.FirstOrDefault(t => t.variants_product_id == id & t.Name == name);
+            if (i.quantity >= soluong)
+            {
+                i.quantity = i.quantity - soluong;
+                _context.Size_Product.Update(i);
+                _context.SaveChanges();
+                return true;
+            }
+            else return false;
+        }
     }
 }

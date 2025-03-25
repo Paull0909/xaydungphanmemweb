@@ -33,12 +33,9 @@ namespace Web.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> CreateOrdersByProduct(CreateUpdateOrderDetailRequest a)
+        public async Task<IActionResult> CreateOrdersByProduct(ProductBuyer a)
         {
-            var img = await _unitOfWork.ProductImageRepository.GetListImgByIdProAsync(a.product_id);
-            var name = await _unitOfWork.Products.GetByIdAsync(a.product_id);
-            a.name_product = name.product_name;
-            a.Images = img;
+            a.img = await _unitOfWork.ProductImageRepository.GetImgByIdProductAsync(a.product_id);
             return View(a);
         }
         [HttpPost]
@@ -46,39 +43,31 @@ namespace Web.Controllers
         {
             if (a != null || od  != null)
             {
-                var or = _mapper.Map<CreateUpdateOrderRequest, Order>(od);
-                _unitOfWork.OrderRepository.Add(or);
-                var result = await _unitOfWork.CompleteAsync();
-                if (result > 0)
-                {
+                    var or = _mapper.Map<CreateUpdateOrderRequest, Order>(od);
+                    _unitOfWork.OrderRepository.Add(or);
+                    //var result = await _unitOfWork.CompleteAsync();
                     a.product_id = or.bill_id;
                     var ord = _mapper.Map<CreateUpdateOrderDetailRequest, OrderDetail>(a);
                     _unitOfWork.OrderDetailRepository.Add(ord);
-                    TotalRevenue t = new TotalRevenue();
-                    var total = await _unitOfWork.TotalRevenueRepository.GetByDate(DateTime.Now);
-                    if (total != null)
+                    var variant = await _unitOfWork.VariantsProductRepository.Loadwhenbuyer(ord.product_id, ord.Cata_product);
+                    var size = await _unitOfWork.SizeProductsRepository.Loadwhenbuyer(variant.Id, ord.Size, ord.quantity);
+                    if(size == false)
                     {
-                        total.tongdoanhthu += or.Totalprice;
-                        total.numberofsales += 1;
+                        return View("CreateOrdersByProduct");
                     }
-                    else
+                    TotalRevenue t = new TotalRevenue
                     {
-                        t.tongdoanhthu = or.Totalprice;
-                        t.date = DateTime.Now;
-                        t.numberofsales = 1;
-                    }
+                        tongdoanhthu = or.Totalprice,
+                        date = DateTime.Now,
+                        numberofsales = 1
+                    };
+                    await _unitOfWork.TotalRevenueRepository.AddWhenbyOder(t);
                     _unitOfWork.CompleteAsync();
                     return View(a);
-                }
-                else
-                {
-                    ViewBag.Orders = "Mua hang khong thanh cong";
-                    return View(a);
-                }
             }
             else
             {
-                ViewBag.Orders = "Mua hang khong thanh cong";
+                ViewBag.Orders = "Loi khi mua hang";
                 return View(a);
             }
         }
@@ -117,7 +106,20 @@ namespace Web.Controllers
                         item.product_id = or.bill_id;
                         var ord = _mapper.Map<CreateUpdateOrderDetailRequest, OrderDetail>(item);
                         _unitOfWork.OrderDetailRepository.Add(ord);
+                        var variant = await _unitOfWork.VariantsProductRepository.Loadwhenbuyer(ord.product_id, ord.Cata_product);
+                        var size = await _unitOfWork.SizeProductsRepository.Loadwhenbuyer(variant.Id, ord.Size, ord.quantity);
+                        if (size == false)
+                        {
+                            return View("CreateOrdersByProduct");
+                        }
                     }
+                    TotalRevenue t = new TotalRevenue
+                    {
+                        tongdoanhthu = or.Totalprice,
+                        date = DateTime.Now,
+                        numberofsales = 1
+                    };
+                    await _unitOfWork.TotalRevenueRepository.AddWhenbyOder(t);
                     _unitOfWork.CompleteAsync();
                     return View(result);
                 }
