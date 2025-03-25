@@ -1,55 +1,129 @@
 ﻿@model Application.DTO.Products.CreateUpdateProductRequest
-<div class="p-4 sm:ml-64">
-    <div class="p-4 border-2 border-gray-200 border rounded-lg dark:border-gray-700">
-        <main class="flex-1 p-10">
-            <div class="max-w-lg mx-auto p-4 bg-white rounded-lg shadow-md">
-                <h2 class="text-xl font-semibold mb-4">Thêm Sản Phẩm</h2>
-                <div>
-                    <h3>@ViewBag.Product</h3>
+
+<h1>@ViewData["Title"]</h1>
+
+<!-- Modal Thêm Sản Phẩm -->
+<div id="addProductModal"
+     class="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center">
+    <div class="bg-white p-8 rounded-2xl shadow-lg w-full max-w-2xl max-h-full overflow-y-auto">
+        <h2 class="text-2xl font-bold mb-6">Thêm sản phẩm mới</h2>
+        <form method="post" asp-controller="Product" asp-action="Create" enctype="multipart/form-data">
+            <div class="grid grid-cols-2 gap-2">
+                <div class="mb-4 col-span-2">
+                    <label class="block mb-2 text-sm font-medium">Tên sản phẩm</label>
+                    <input type="text"
+                           class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+                           asp-for="product_name" />
+                    <span asp-validation-for="product_name" class="text-danger"></span>
                 </div>
-                <form asp-action="CreateProduct" asp-controller="Product" method="post" class="space-y-4">
-                    <div>
-                        <label for="product_name" class="block text-sm font-medium">Tên sản phẩm</label>
-                        <input asp-for="product_name" class="w-full p-2 border rounded" />
-                        <span asp-validation-for="product_name" class="text-red-500 text-sm"></span>
-                    </div>
-                    <div>
-                        <label for="price" class="block text-sm font-medium">Giá</label>
-                        <input asp-for="price" type="number" class="w-full p-2 border rounded" />
-                        <span asp-validation-for="price" class="text-red-500 text-sm"></span>
-                    </div>
-                    <div>
-                        <label for="discount" class="block text-sm font-medium">Giảm giá (%)</label>
-                        <input asp-for="discount" type="number" class="w-full p-2 border rounded" />
-                        <span asp-validation-for="discount" class="text-red-500 text-sm"></span>
-                    </div>
-                    <div>
-                        <label for="status" class="block text-sm font-medium">Trạng thái</label>
-                        <input asp-for="status" type="number" class="w-full p-2 border rounded" />
-                        <span asp-validation-for="status" class="text-red-500 text-sm"></span>
-                    </div>
-                    <div>
-                        <label for="type_id" class="block text-sm font-medium">Loại sản phẩm</label>
-                        <input asp-for="type_id" type="number" class="w-full p-2 border rounded" />
-                        <span asp-validation-for="type_id" class="text-red-500 text-sm"></span>
-                    </div>
-                    <div>
-                        <label for="description" class="block text-sm font-medium">Mô tả</label>
-                        <textarea asp-for="Desdescription" class="w-full p-2 border rounded"></textarea>
-                    </div>
-                    <div>
-                        <label for="advertisement_id" class="block text-sm font-medium">Quảng cáo ID</label>
-                        <input asp-for="advertisement_id" type="number" class="w-full p-2 border rounded" />
-                    </div>
-                    <button type="submit" class="bg-blue-500 text-white p-2 rounded">Thêm sản phẩm</button>
-                </form>
+
+                <div class="mb-4">
+                    <label class="block mb-2 text-sm font-medium">Giá</label>
+                    <input type="number"
+                           min="0"
+                           class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+                           asp-for="price" />
+                    <span asp-validation-for="price" class="text-danger"></span>
+                </div>
+
+                <div class="mb-4">
+                    <label class="block mb-2 text-sm font-medium">Giảm giá (%)</label>
+                    <input type="number"
+                           min="0"
+                           class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+                           asp-for="discount" />
+                    <span asp-validation-for="discount" class="text-danger"></span>
+                </div>
+
+                <!-- Trạng thái sản phẩm -->
+                <div class="mb-4">
+                    <label class="block mb-2 text-sm font-medium">Trạng thái</label>
+                    <select class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+                            asp-for="status">
+                        <option value="1">Hết hàng</option>
+                        <option value="2">Đã bán</option>
+                        <option value="3">Đang bán</option>
+                    </select>
+                    <span asp-validation-for="status" class="text-danger"></span>
+                </div>
+
+                <!-- Sản phẩm nổi bật -->
+                <div class="mb-4">
+                    <label class="block mb-2 text-sm font-medium">Sản phẩm nổi bật</label>
+                    <select class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+                            asp-for="IsFeatured">
+                        <option value="1">Có</option>
+                        <option value="0">Không</option>
+                    </select>
+                    <span asp-validation-for="IsFeatured" class="text-danger"></span>
+                </div>
+
+                <!-- Danh mục -->
+                <div class="mb-4 col-span-2">
+                    <label class="block mb-2 text-sm font-medium">Danh mục</label>
+                    <select class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+                            asp-for="type_id">
+                        <option value="">Chọn danh mục</option>
+                        @foreach (var category in Model.Categories)
+                        {
+                            <option value="@category.type_id">@category.type_name</option>
+                        }
+                    </select>
+                    <span asp-validation-for="type_id" class="text-danger"></span>
+                </div>
+
+                <!-- Mô tả -->
+                <div class="mb-4 col-span-2">
+                    <label class="block mb-2 text-sm font-medium">Mô tả</label>
+                    <textarea class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+                              asp-for="Desdescription" placeholder="Nhập mô tả cho sản phẩm..." rows="3"></textarea>
+                    <span asp-validation-for="Desdescription" class="text-danger"></span>
+                </div>
+
+                <!-- Mã quảng cáo -->
+                <div class="mb-4 col-span-2">
+                    <label class="block mb-2 text-sm font-medium">Mã quảng cáo</label>
+                    <select class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+                            asp-for="advertisement_id">
+                        <option value="">Chọn quảng cáo</option>
+                        @if (Model.Advertisements != null)
+                        {
+                            foreach (var advertisement in Model.Advertisements)
+                            {
+                                <option value="@advertisement.id">@advertisement.title</option>
+                            }
+                        }
+                        else
+                        {
+                            <option value="">Không có quảng cáo nào</option>
+                        }
+                    </select>
+                 @*    <span asp-validation-for="advertisement_id" class="text-danger"></span> *@
+                </div>
+
             </div>
 
-        </main>
+            <div class="flex justify-end mt-6">
+                <a asp-controller="Product" asp-action="GetAllProduct" type="button"
+                   class="px-6 py-3 bg-red-500 text-white rounded-lg shadow-md hover:bg-red-600 transition"
+                   onclick="closeAddProductModal()">
+                    Hủy
+                </a>
+                <button type="submit"
+                        class="ml-3 px-6 py-3 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition">
+                    Lưu
+                </button>
+            </div>
+        </form>
     </div>
 </div>
 
-
-@section Scripts {
-    <partial name="_ValidationScriptsPartial" />
+@if (ViewBag.Product != null)
+{
+    <div class="alert alert-danger mt-3">
+        @ViewBag.Product
+    </div>
 }
+<script>
+
+</script>

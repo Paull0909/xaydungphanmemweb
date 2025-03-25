@@ -13,7 +13,6 @@ namespace Application.DTO.Products
     {
         public int product_id { get; set; }
         public string product_name { get; set; }
-
         public decimal price { get; set; }
         public int discount { get; set; }
         public StatusProduct status { get; set; }
@@ -23,6 +22,9 @@ namespace Application.DTO.Products
         public int advertisement_id { get; set; }
         public List<ProductImage> img { set; get; }
         public List<Variants_product> variants { get; set; }
+        public IEnumerable<Category> Categories { get; set; }
+        public IEnumerable<Advertisement> Advertisements { get; set; }
+
         public class AutoMapperProfiles : Profile
         {
             public AutoMapperProfiles()

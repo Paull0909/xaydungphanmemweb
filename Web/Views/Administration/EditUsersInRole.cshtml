@@ -2,39 +2,43 @@
 @{
     var roleId = ViewBag.roleId;
 }
-<div class="p-4 sm:ml-64">
-    <div class="p-4 border-2 border-gray-200 border rounded-lg dark:border-gray-700">
-        <main class="flex-1 p-10">
-            <form method="post">
-                <div class="card">
-
-                    <div class="card-header">
-                        <h3>Role: @ViewBag.RollName </h3>
-                    </div>
-                    <div class="card-header">
-                        <h4>Add or Remove Users From This Role</h4>
-                    </div>
-                    <div class="card-body">
-                        @for (int i = 0; i < Model.Count; i++)
-                        {
-                            <div class="form-check m-1">
-                                <input type="hidden" asp-for="@Model[i].UserId" />
-                                <input type="hidden" asp-for="@Model[i].UserName" />
-                                <input asp-for="@Model[i].IsSelected" class="form-check-input" />
-                                <label class="form-check-label" asp-for="@Model[i].IsSelected">
-                                    @Model[i].UserName
-                                </label>
-                            </div>
-                        }
-                    </div>
-                    <div class="card-footer">
-                        <input type="submit" value="Update" class="btn btn-primary"
-                               style="width:auto" />
-                        <a asp-action="EditRole" asp-route-roleId="@roleId"
-                           class="btn btn-primary" style="width:auto">Cancel</a>
-                    </div>
-                </div>
-            </form>
-        </main>
+<main class="p-6 md:ml-32 bg-gray-50 dark:bg-gray-900 min-h-screen w-full">
+<!-- User Role Management -->
+    <div class="px-6 py-4 border-b border-gray-200">
+        <h2 class="text-xl font-semibold text-gray-800">Role: @ViewBag.RollName</h2>
+        <p class="mt-1 text-sm text-gray-500">
+            Add or Remove Users From This Role
+        </p>
     </div>
-</div>
+    <div class="p-6">
+        <form method="post">
+            <!-- User List -->
+            <div class="max-h-128 overflow-y-auto border border-gray-200 rounded-md mb-6">
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    <div class="p-4 hover:bg-gray-50 flex items-center border-b border-gray-200">
+                        <input type="hidden" asp-for="@Model[i].UserId" />
+                        <input type="hidden" asp-for="@Model[i].UserName" />
+                        <input asp-for="@Model[i].IsSelected" type="checkbox"
+                               class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded ring-1 ring-gray-400" />
+                        <label class="ml-3 block text-sm font-medium text-gray-700" asp-for="@Model[i].IsSelected">
+                            @Model[i].UserName
+                        </label>
+                    </div>
+                }
+            </div>
+
+            <!-- Buttons -->
+            <div class="flex space-x-3">
+                <button type="submit"
+                        class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded transition duration-200 flex items-center">
+                    <i class="fas fa-save mr-2"></i> Update
+                </button>
+                <a asp-action="EditRole" asp-route-roleId="@roleId"
+                   class="bg-gray-200 hover:bg-gray-300 text-gray-700 py-2 px-4 rounded transition duration-200 flex items-center">
+                    <i class="fas fa-times mr-2"></i> Cancel
+                </a>
+            </div>
+        </form>
+    </div>
+</main>

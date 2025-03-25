@@ -27,9 +27,10 @@ namespace Data.Repositories
             throw new NotImplementedException();
         }
 
-        public Task<Category> GetCategoryByIdAsync(int id)
+        public async Task<Category> GetCategoryByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            var c = await _context.Categories.FindAsync(id);
+            return c;
         }
 
         public async Task<PagedResult<CategoryDTO>> GetCategoryPagingAsync(PagedRequest request)
