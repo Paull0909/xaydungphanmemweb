@@ -16,14 +16,14 @@ namespace Web.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var total = await _unitOfWork.TotalRevenueRepository.GetAll();
+            var total = await _unitOfWork.TotalRevenueRepository.GetAllforYear();
             return View(total);
         }
         
         [HttpGet]
-        public async Task<IActionResult> GetTotalbyYear(int Year)
+        public async Task<IActionResult> GetTotalbyYear(int year)
         {
-            var total = await _unitOfWork.TotalRevenueRepository.GetAllforYear(Year);
+            var total = await _unitOfWork.TotalRevenueRepository.GetDetailforYear(year);
             return View(total);
         }
     }

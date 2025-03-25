@@ -15,6 +15,11 @@ namespace Data.Repositories
             _mapper = mapper;
         }
 
+        public Task<int> AddWhenBuyer(OrderDetail d)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<List<OrderDetail>> GetAllByBill(int id)
         {
             var ord = _context.OrderDetails.Where(x => x.bill_id == id).ToList();

@@ -58,5 +58,11 @@ namespace Data.Repositories
             };
             return pagedResponse;
         }
+
+        public async Task<Variants_product> Loadwhenbuyer(int id, string name)
+        {
+            var i = _context.Variants_product.FirstOrDefault(t => t.product_id == id & t.Name == name);
+            return i;
+        }
     }
 }

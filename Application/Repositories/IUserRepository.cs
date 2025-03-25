@@ -8,5 +8,6 @@ namespace Application.Repositories
     public interface IUserRepository : IRepository<User, Guid>
     {
         Task<PagedResult<UserDTO>> GetUserPagingAsync(PagedRequest request);
+        
     }
 }
