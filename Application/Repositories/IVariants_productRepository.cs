@@ -9,5 +9,6 @@ namespace Application.Repositories
     {
         Task<PagedResult<VariantsProductDTO>> GetVariantsProductPagingAsync(PagedRequest request);
         Task<List<Variants_product>> GetByProduct(int id);
+        Task<Variants_product> Loadwhenbuyer(int id,string name);
     }
 }

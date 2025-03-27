@@ -21,7 +21,8 @@ namespace Web.Controllers
             ViewBag.Category = await _unitOfWork.Categories.GetAllAsync();
             var pr = await _unitOfWork.Products.GetAllAsync();
             List<ProductDTO> product = new List<ProductDTO>();
-            foreach (var item in pr)
+            foreach (var item in 
+                pr)
             {
                 var rr = _mapper.Map<Product, ProductDTO>(item);
                 product.Add(rr);
@@ -65,31 +66,7 @@ namespace Web.Controllers
         public async Task<IActionResult> Create(CreateUpdateProductRequest request)
         {
             var product = _mapper.Map<CreateUpdateProductRequest, Product>(request);
-            _unitOfWork.Products.Add(product);
-            if (request.img != null)
-            {
-                foreach (var item in request.img)
-                {
-                    item.product_id = product.product_id;
-                    _unitOfWork.ProductImageRepository.Add(item);
-                }
-            }
-            if(request.variants != null)
-            {
-                foreach (var item in request.variants)
-                {
-                    item.product_id = product.product_id;
-                    _unitOfWork.VariantsProductRepository.Add(item);
-                    if(item.Size != null)
-                    {
-                        foreach (var s in item.Size)
-                        {
-                            s.variants_product_id = item.Id;
-                            _unitOfWork.SizeProductsRepository.Add(s);
-                        }
-                    }
-                }
-            }
+            _unitOfWork.Products.Add(product);          
             var result = await _unitOfWork.CompleteAsync();
             if (result > 0)
             {

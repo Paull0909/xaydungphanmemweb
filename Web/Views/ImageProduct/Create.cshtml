@@ -1,0 +1,57 @@
+﻿@model Application.DTO.ProductImages.CreateUpdateProductImageRequest
+
+<div id="imageModal"
+     class="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center overflow-auto">
+    <form asp-controller="ImageProduct" asp-action="Create" method="post">
+        <div class="bg-white p-8 rounded-2xl shadow-lg w-full max-w-2xl max-h-full overflow-y-auto">
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-semibold mb-4">Quản lý hình ảnh</h2>
+                <input type="hidden" name="[0].product_id" value="@Model.product_id" />
+                <div id="productImage">
+                    <div class="flex items-center gap-4 mb-2" id="imageField_0">
+                        <input type="text" class="w-full p-3 border border-gray-300 rounded-lg" name="[0].ImagePath" placeholder="Nhập link hình ảnh" />
+                        <input type="text" class="w-full p-3 border border-gray-300 rounded-lg" name="[0].Caption" placeholder="Nhập mô tả hình ảnh" />
+                        <span class="w-52"></span>
+                    </div>
+                </div>
+                <button type="button" class="px-4 py-2 bg-green-500 text-white rounded-lg mt-2" onclick="addImageField()">
+                    Thêm hình ảnh
+                </button>
+            </div>
+            <div class="flex justify-end mt-6">
+                <a asp-controller="Product" asp-action="GetAllProduct" class="px-6 py-3 bg-red-500 text-white rounded-lg shadow-md hover:bg-red-600 transition" onclick="closeImageModal()">
+                    Hủy
+                </a>
+                <button type="submit" class="ml-3 px-6 py-3 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition" onclick="setDateCreated()">
+                    Lưu
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    let imageIndex = 1; // Khởi tạo chỉ mục từ 1
+
+    // Thêm trường hình ảnh mới
+    function addImageField() {
+        const container = document.getElementById("productImage");
+        const newField = document.createElement("div");
+        newField.className = "flex items-center gap-4 mb-2";
+        // Nếu là trường đầu tiên thì không có nút xóa
+        newField.innerHTML = `
+            <input type="hidden" name="[${imageIndex}].product_id" value="@Model.product_id" />
+            <input type="text" class="w-full p-3 border border-gray-300 rounded-lg" name="[${imageIndex}].ImagePath" placeholder="Nhập link hình ảnh">
+            <input type="text" class="w-full p-3 border border-gray-300 rounded-lg" name="[${imageIndex}].Caption" placeholder="Nhập mô tả hình ảnh">
+            ${imageIndex > 0 ? '<button type="button" class="px-4 py-2 bg-red-500 text-white rounded-lg" onclick="removeImageField(this)">Xóa</button>' : ''}
+        `;
+        container.appendChild(newField);
+        imageIndex++; // Tăng chỉ mục sau khi thêm trường mới
+    }
+
+    // Xóa trường hình ảnh
+    function removeImageField(button) {
+        button.parentElement.remove();
+        imageIndex--; // Giảm chỉ mục nếu xóa trường
+    }
+</script>

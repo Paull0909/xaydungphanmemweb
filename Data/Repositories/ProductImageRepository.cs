@@ -18,7 +18,7 @@ namespace Data.Repositories
 
         public async Task<ProductImage> GetImgByIdProductAsync(int id)
         {
-            var img = _context.ProductImages.Find(id);
+            var img = _context.ProductImages.FirstOrDefault(t => t.product_id == id);
             return img;
         }
 
