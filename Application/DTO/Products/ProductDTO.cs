@@ -25,6 +25,7 @@ namespace Application.DTO.Products
         public int advertisement_id { get; set; }
         public int soluong {  get; set; }
         public ProductImage img { get; set; }
+        public List<Variants_product> variants{ get; set; }
         public Category category { get; set; }
 
         public class AutoMapperProfiles : Profile
