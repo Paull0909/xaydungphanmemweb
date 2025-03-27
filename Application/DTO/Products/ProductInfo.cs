@@ -1,6 +1,4 @@
-﻿using Application.DTO.Categorys;
-using Application.DTO.VariantsProducts;
-using Application.Entities;
+﻿using Application.Entities;
 using Application.Enum;
 using AutoMapper;
 using System;
@@ -11,8 +9,9 @@ using System.Threading.Tasks;
 
 namespace Application.DTO.Products
 {
-    public class ProductDTO
+     public class ProductInfo
     {
+
         public int product_id { get; set; }
         public string product_name { get; set; }
 
@@ -23,16 +22,16 @@ namespace Application.DTO.Products
         public int type_id { get; set; }
         public string Desdescription { get; set; }
         public int advertisement_id { get; set; }
-        public int soluong {  get; set; }
-        public ProductImage img { get; set; }
-        public List<Variants_product> variants{ get; set; }
+        public int soluong { get; set; }
+        public List<ProductImage> imgs { get; set; }
+        public List<Variants_product> variants { get; set; }
         public Category category { get; set; }
 
         public class AutoMapperProfiles : Profile
         {
             public AutoMapperProfiles()
             {
-                CreateMap<Entities.Product, ProductDTO>();
+                CreateMap<Entities.Product, ProductInfo>();
             }
         }
     }

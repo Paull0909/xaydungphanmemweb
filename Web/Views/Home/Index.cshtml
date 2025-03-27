@@ -1,42 +1,63 @@
-﻿@model List<Application.Entities.Category>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Homepage</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-</head>
-<body>
-    @if (!User.IsInRole("Admin"))
-    {
-        <section class="relative w-full h-screen">
-            <div class="swiper mySwiper w-full h-full">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <img alt="Banner 1"
-                             class="w-full h-full object-cover object-center"
-                             src="https://www.themavensaigon.com/cdn/shop/files/COVER_ce1b467f-6927-4cc4-a139-e7572d66e372.jpg?v=1740205039&width=2100" />
-                    </div>
-                    <div class="swiper-slide">
-                        <img alt="Banner 2"
-                             class="w-full h-full object-cover object-center"
-                             src="https://theme.hstatic.net/200000740713/1001130726/14/slideshow_2.jpg?v=85" />
-                    </div>
-                    <div class="swiper-slide">
-                        <img alt="Banner 3"
-                             class="w-full h-full object-cover"
-                             src="https://storage.googleapis.com/a1aa/image/psCiLZTG5GFgGh8dcfSIB4b16tu1vfyJdyxUjG0SNlU.jpg" />
-                    </div>
-                    <div class="swiper-slide">
-                        <img alt="Banner 4"
-                             class="w-full h-full object-cover"
-                             src="https://storage.googleapis.com/a1aa/image/9GoBEdM3lhB-3F6nmGB6ngAKXatrHOkejOogO_yH0ls.jpg" />
-                    </div>
+﻿@model List<Application.DTO.Products.ProductDTO>
+@if (!User.IsInRole("Admin"))
+{
+    //Banner
+    <section class="relative w-full h-screen">
+        <div class="swiper mySwiper w-full h-full">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img alt="Banner 1"
+                         class="w-full h-full object-cover object-center"
+                         src="https://www.themavensaigon.com/cdn/shop/files/COVER_ce1b467f-6927-4cc4-a139-e7572d66e372.jpg?v=1740205039&width=2100" />
                 </div>
-                <div class="swiper-pagination"></div>
+                <div class="swiper-slide">
+                    <img alt="Banner 2"
+                         class="w-full h-full object-cover object-center"
+                         src="https://theme.hstatic.net/200000740713/1001130726/14/slideshow_2.jpg?v=85" />
+                </div>
+                <div class="swiper-slide">
+                    <img alt="Banner 3"
+                         class="w-full h-full object-cover"
+                         src="https://storage.googleapis.com/a1aa/image/psCiLZTG5GFgGh8dcfSIB4b16tu1vfyJdyxUjG0SNlU.jpg" />
+                </div>
+                <div class="swiper-slide">
+                    <img alt="Banner 4"
+                         class="w-full h-full object-cover"
+                         src="https://storage.googleapis.com/a1aa/image/9GoBEdM3lhB-3F6nmGB6ngAKXatrHOkejOogO_yH0ls.jpg" />
+                </div>
             </div>
-        </section>
-    }
-</body>
-</html>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    //Product
+    <section class="px-6 py-12 bg-gray-50">
+        <div class="mx-auto mt-6 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 text-center">
+            @foreach (var item in Model)
+            {
+                var discountedPrice = item.price - (item.price * item.discount / 100);
+
+                <div class="bg-white rounded-lg shadow-lg p-4 hover:shadow-xl transition transform hover:scale-105">
+                    <a asp-controller="Home" asp-action="InfoProduct" asp-route-id="@item.product_id">
+                        <img src="@item.img?.ImagePath"
+                             class="rounded-lg w-full h-auto object-cover"
+                             alt="@item.product_name" />
+                        <h3 class="mt-4 font-semibold">@item.product_name</h3>
+                        <div class="flex justify-center items-center space-x-2 mt-2">
+                            @if (item.discount > 0)
+                            {
+                                <p class="text-sm text-gray-500 line-through mr-8">@item.price.ToString("N0")₫</p>
+                                <p class="price text-red-600 font-bold">@discountedPrice.ToString("N0")₫</p>
+                            }
+                            else
+                            {
+                                <p class="price text-red-600 font-bold">@item.price.ToString("N0")₫</p>
+                            }
+                        </div>
+                    </a>
+                </div>
+            }
+        </div>
+    </section>
+
+}
+

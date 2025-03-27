@@ -1,3 +1,7 @@
+using Application.DTO.Products;
+using Application.Entities;
+using Application.SeedWorks;
+using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -7,23 +11,57 @@ namespace Web.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        [AllowAnonymous]
-        public IActionResult Index()
+        private readonly IMapper _mapper;
+        private readonly IUnitOfWork _unitOfWork;
+        public HomeController(IUnitOfWork unitOfWork, IMapper mapper)
         {
-            return View();
+            _unitOfWork = unitOfWork;
+            _mapper = mapper;
         }
-        [Authorize]
-        public IActionResult Privacy()
+        public async Task<IActionResult> Index()
         {
-            return View();
-        }
+            ViewBag.Category = await _unitOfWork.Categories.GetAllAsync();
+            var pr = await _unitOfWork.Products.GetAllAsync();
+            List<ProductDTO> product = new List<ProductDTO>();
+            foreach (var item in pr)
+            {
+                var rr = _mapper.Map<Product, ProductDTO>(item);
+                product.Add(rr);
+            }
+            foreach (var i in product)
+            {
+                i.img = await _unitOfWork.ProductImageRepository.GetImgByIdProductAsync(i.product_id);
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+            }
+            if (product != null)
+            {
+                return View(product);
+            }
+            else
+            {
+                ViewBag.Product = "Khong co du lieu nao";
+                return View();
+            }
+        }
+        public async Task<IActionResult> InfoProduct(int id)
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            var pr = await _unitOfWork.Products.GetByIdAsync(id);
+            ProductInfo product = _mapper.Map<Product, ProductInfo>(pr);
+            product.imgs = await _unitOfWork.ProductImageRepository.GetListImgByIdProAsync(pr.product_id);
+            product.variants = await _unitOfWork.VariantsProductRepository.GetByProduct(pr.product_id);
+            foreach(var item in product.variants)
+            {
+                item.Size = await _unitOfWork.SizeProductsRepository.GetByProduct(item.Id);
+            }
+            if (product != null)
+            {
+                return View(product);
+            }
+            else
+            {
+                ViewBag.Product = "Khong co du lieu nao";
+                return View();
+            }
         }
     }
 }

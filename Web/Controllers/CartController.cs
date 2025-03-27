@@ -57,7 +57,7 @@ namespace Web.Controllers
             else
             {
                 ViewBag.Cart = "Them san pham that bai vui long chon lai";
-                return View();
+                return View("GetAllById");
             }                
         }
     }

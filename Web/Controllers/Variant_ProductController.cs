@@ -27,7 +27,6 @@ namespace Web.Controllers
 
             return View(request);
         }
-
         [HttpPost]
         public async Task<IActionResult> Create(List<CreateUpdateVariantsProductRequest> request)
         {

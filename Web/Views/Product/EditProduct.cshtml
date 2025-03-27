@@ -1,46 +1,48 @@
 ﻿@model Application.DTO.VariantsProducts.CreateUpdateVariantsProductRequest
-<main class="p-6 md:ml-32 bg-gray-50 dark:bg-gray-900 min-h-screen w-full">
-<form asp-action="CreateVariant" asp-controller="Variant_Product" method="post">
-    <div class="bg-white p-6 rounded-lg shadow-lg">
-        <h2 class="text-xl font-semibold mb-4">Quản lý màu sắc & Sizes</h2>
+<div class="p-6 sm:ml-64 bg-gray-50 min-h-screen">
+    <div class="flex flex-col flex-1 overflow-hidden">
+        <form asp-action="CreateVariant" asp-controller="Variant_Product" method="post">
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-semibold mb-4">Quản lý màu sắc & Sizes</h2>
 
-        <div class="mb-4">
-            <label class="block text-sm font-medium">Số lượng màu sản phẩm</label>
-            <input type="number"
-                   id="ProductCount"
-                   class="w-full p-2 border rounded-lg"
-                   min="1"
-                   value="1"
-                   oninput="generateFields()" />
-        </div>
+                <div class="mb-4">
+                    <label class="block text-sm font-medium">Số lượng màu sản phẩm</label>
+                    <input type="number"
+                           id="ProductCount"
+                           class="w-full p-2 border rounded-lg"
+                           min="1"
+                           value="1"
+                           oninput="generateFields()" />
+                </div>
 
-        <div class="mb-4">
-            <label class="block text-sm font-medium">Số lượng Sizes cho mỗi sản phẩm</label>
-            <input type="number"
-                   id="sizeCount"
-                   class="w-full p-2 border rounded-lg"
-                   min="1"
-                   value="1"
-                   oninput="generateFields()" />
-        </div>
+                <div class="mb-4">
+                    <label class="block text-sm font-medium">Số lượng Sizes cho mỗi sản phẩm</label>
+                    <input type="number"
+                           id="sizeCount"
+                           class="w-full p-2 border rounded-lg"
+                           min="1"
+                           value="1"
+                           oninput="generateFields()" />
+                </div>
 
-        <!-- Vùng chứa các trường nhập cho màu sắc và kích thước -->
-        <div id="fieldsContainer" class="mt-4"></div>
+                <!-- Vùng chứa các trường nhập cho màu sắc và kích thước -->
+                <div id="fieldsContainer" class="mt-4"></div>
+            </div>
+
+            <div class="flex justify-end mt-6">
+                <button type="button"
+                        class="px-6 py-3 bg-red-500 text-white rounded-lg shadow-md hover:bg-red-600 transition"
+                        onclick="closeDetailModal()">
+                    Hủy
+                </button>
+                <button type="submit"
+                        class="ml-3 px-6 py-3 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition">
+                    Lưu
+                </button>
+            </div>
+        </form>
     </div>
-
-    <div class="flex justify-end mt-6">
-        <button type="button"
-                class="px-6 py-3 bg-red-500 text-white rounded-lg shadow-md hover:bg-red-600 transition"
-                onclick="closeDetailModal()">
-            Hủy
-        </button>
-        <button type="submit"
-                class="ml-3 px-6 py-3 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition">
-            Lưu
-        </button>
-    </div>
-</form>
-</main>
+</div>
 <script>
     // Hàm tạo các trường nhập cho biến thể và kích thước
     function generateFields() {

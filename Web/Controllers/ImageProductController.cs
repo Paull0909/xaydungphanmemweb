@@ -28,7 +28,6 @@ namespace Web.Controllers
 
             return View(request);
         }
-        [HttpPost]
         public async Task<IActionResult> Create(List<CreateUpdateProductImageRequest> list)
         {
             foreach(var i in list)
@@ -37,7 +36,7 @@ namespace Web.Controllers
                 var img = _mapper.Map<CreateUpdateProductImageRequest, ProductImage>(i);
                  _unitOfWork.ProductImageRepository.Add(img);
             }
-           await _unitOfWork.CompleteAsync();
+            _unitOfWork.CompleteAsync();
             return RedirectToAction("GetAllProduct", "Product");
         }
         public async Task<IActionResult> Delete(int id)

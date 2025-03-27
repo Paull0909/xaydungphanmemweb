@@ -21,8 +21,7 @@ namespace Web.Controllers
             ViewBag.Category = await _unitOfWork.Categories.GetAllAsync();
             var pr = await _unitOfWork.Products.GetAllAsync();
             List<ProductDTO> product = new List<ProductDTO>();
-            foreach (var item in 
-                pr)
+            foreach (var item in pr)
             {
                 var rr = _mapper.Map<Product, ProductDTO>(item);
                 product.Add(rr);
@@ -78,7 +77,6 @@ namespace Web.Controllers
                 return RedirectToAction("Create");
             }
         }
-
         public async Task<IActionResult> EditProduct(int id)
         {
             var product = await _unitOfWork.Products.GetByIdAsync(id);
