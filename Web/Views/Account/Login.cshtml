@@ -66,13 +66,12 @@
             <hr class="flex-grow border-gray-300" />
         </div>
         <button class="w-full flex items-center justify-center bg-white border p-2 rounded-md shadow-sm mb-2 hover:bg-gray-100 external-login-btn"
-                asp-controller="Account"
-                asp-action="ExternalLogin"
-                asp-route-provider="Google"
-                asp-route-returnUrl="@Model.ReturnUrl">
+                data-provider="Google"
+                data-url="@Url.Action("ExternalLogin", "Account", new { provider = "Google", returnUrl = Model.ReturnUrl })">
             <img src="https://www.svgrepo.com/show/355037/google.svg" class="w-5 h-5 mr-2" alt="Google" />
             Sign in with Google
         </button>
+
         <!-- Resend Confirmation Email Link -->
         <div class="text-center mt-3">
             <a class="text-sm text-blue-600"
