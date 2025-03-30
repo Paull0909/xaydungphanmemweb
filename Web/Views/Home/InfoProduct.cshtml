@@ -1,5 +1,5 @@
 ﻿@model Application.DTO.Products.ProductInfo
-
+@using System.Security.Claims
 <!-- Product Section -->
 <section class="bg-white py-12 px-6 md:px-0">
     <div class="container mx-auto p-6 pt-0 flex flex-col md:flex-row gap-10">
@@ -21,45 +21,72 @@
                  alt="Product"
                  class="w-full object-cover" />
         </div>
-
         <!-- Product Details -->
         <div class="w-full md:w-1/3 px-10 flex flex-col gap-4">
             <h1 class="text-3xl font-semibold">@Model.product_name</h1>
-            <div class="flex justify-start items-center space-x-2 mt-2">
-                @if (@Model.discount > 0)
-                {
-                    var discountedPrice = @Model.price - (@Model.price * @Model.discount / 100);
-
-                    <p class="text-sm text-gray-500 line-through mr-4">@Model.price.ToString("N0")₫</p>
-                    <p class="text-xl text-red-600 font-bold">@discountedPrice.ToString("N0")₫</p>
-                }
-                else
-                {
-                    <p class="price text-red-600 font-bold">@Model.price.ToString("N0")₫</p>
-                }
-            </div>
-
-            <div class="mt-4">
-                <h2 class="text-lg font-medium">Size</h2>
-                <div class="flex gap-4 mt-2">
-                    @foreach (var variant in Model.variants)
+            <form id="cartForm" asp-controller="Cart" asp-action="CreateCart" method="post">
+                <div class="flex justify-start items-center space-x-2 mt-2">
+                    @if (@Model.discount > 0)
                     {
-                        <button class="size-button px-4 py-2 border rounded text-gray-500"
-                                data-size="@variant.Name">
-                            @variant.Name
-                        </button>
+                        var discountedPrice = @Model.price - (@Model.price * @Model.discount / 100);
+                        <p class="text-sm text-gray-500 line-through mr-4">@Model.price.ToString("N0")₫</p>
+                        <p class="text-xl text-red-600 font-bold">@discountedPrice.ToString("N0")₫</p>
+                        <input type="hidden" id="productPrice" name="Price" value="@discountedPrice" />
+                    }
+                    else
+                    {
+                        <p class="price text-red-600 font-bold">@Model.price.ToString("N0")₫</p>
+                        <input type="hidden" id="productPrice" name="Price" value="@Model.price" />
                     }
                 </div>
-            </div>
+                <!-- Chọn Màu -->
+                <div class="mt-4">
+                    <h2 class="text-lg font-medium">Chọn Màu</h2>
+                    <div class="flex gap-4 mt-2">
+                        @foreach (var variant in Model.variants)
+                        {
+                            <button type="button"
+                                    class="color-button px-4 py-2 border rounded text-gray-500 hover:bg-gray-200 hover:border-blue-500 hover:text-blue-500"
+                                    data-color="@variant.Name"
+                                    onclick="selectColor('@variant.Name')">
+                                @variant.Name
+                            </button>
+                        }
+                    </div>
+                </div>
 
-            <form asp-controller="Cart" asp-action="CreateCart" method="post">
+                <!-- Chọn Size -->
+                <div class="mt-4">
+                    <h2 class="text-lg font-medium">Chọn Size</h2>
+                    <div class="flex gap-4 mt-2" id="size-container">
+                        @foreach (var variant in Model.variants)
+                        {
+                            <div class="size-group hidden" data-color="@variant.Name">
+                                @foreach (var size in variant.Size)
+                                {
+                                    <button type="button"
+                                            class="size-button px-4 py-2 border rounded text-gray-500 hover:bg-gray-200 hover:border-blue-500 hover:text-blue-500"
+                                            data-size="@size.Name"
+                                            data-stock="@size.quantity"
+                                            onclick="selectSize('@size.Name', @size.quantity)">
+                                        @size.Name
+                                    </button>
+                                }
+                            </div>
+                        }
+                    </div>
+                </div>
+                <input type="hidden" id="selectedColorInput" name="Loai" />
+                <input type="hidden" id="selectedSizeInput" name="Size" />
                 <input type="hidden" name="product_id" value="@Model.product_id" />
-                <input type="hidden" name="UserId" value="@User.Identity.Name" />  
+                <input type="hidden" id="userIdInput" name="UserId" value="@User.FindFirstValue(ClaimTypes.NameIdentifier)" />
+                <input type="hidden" id="currentDateTime" name="DateCreated" />
+                <div id="quantity-info" class="mt-4 text-gray-500"></div>
                 <div class="mt-4">
                     <label for="Quantity" class="block text-lg font-medium">Số lượng</label>
                     <input type="number" name="Quantity" id="Quantity" class="border rounded px-4 py-2 w-full" min="1" value="1" />
                 </div>
-                <button type="submit"
+                <button type="submit" id="addToCart"
                         class="w-full mt-4 bg-gray-300 text-gray-600 py-3 rounded">
                     ADD TO CART
                 </button>
@@ -142,5 +169,29 @@
             </div>
         </div>
     </div>
+    <!-- Modal Thông báo -->
+    <div id="loginModal" class="hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center">
+        <div class="bg-white p-6 rounded-lg shadow-lg w-1/3">
+            <h3 class="text-xl font-semibold text-center">Vui lòng đăng nhập để mua hàng</h3>
+            <div class="flex justify-center mt-4">
+                <button id="okButton" class="px-4 py-2 bg-blue-500 text-white rounded">OK</button>
+            </div>
+        </div>
+    </div>
 </section>
 <hr />
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let userId = document.getElementById("userIdInput").value.trim();
+
+        console.log("User ID từ input:", userId); // Kiểm tra trên console
+
+        document.getElementById("cartForm").addEventListener("submit", function (event) {
+            if (!userId) {
+                event.preventDefault();
+                document.getElementById("loginModal").classList.remove("hidden");
+            }
+        });
+    });
+
+</script>

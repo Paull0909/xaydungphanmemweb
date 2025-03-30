@@ -1,9 +1,20 @@
 ﻿@model LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+}
 
 <div class="flex items-center justify-center min-h-full bg-gray-100">
     <div class="w-full max-w-md bg-white p-8 rounded-lg shadow-md">
         <h3 class="mt-10 text-center text-2xl font-bold tracking-tight text-gray-900">Sign In</h3>
-
+        @if (!ViewData.ModelState.IsValid)
+        {
+            <div class="text-red-500 text-sm mb-4">
+                @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                {
+                    <p>@error.ErrorMessage</p>
+                }
+            </div>
+        }
         <form asp-controller="Account" asp-action="Login" method="post" class="space-y-6" novalidate>
             <!-- Email Field -->
             <div class="mb-4">
@@ -11,7 +22,7 @@
                 <input asp-for="Email"
                        class="w-full p-2 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                        placeholder="name@gmail.com" />
-                <span asp-validation-for="Email" class="text-danger"></span>
+                <span asp-validation-for="Email" class="text-danger text-red-500"></span>
             </div>
 
             <!-- Password Field -->
@@ -26,15 +37,15 @@
                              alt="toggle password visibility" class="w-4" />
                     </button>
                 </div>
-                <span asp-validation-for="Password" class="text-danger"></span>
+                <span asp-validation-for="Password" class="text-danger text-red-500"></span>
             </div>
 
+            <!-- Remember Me & Forgot Password -->
             <div class="flex justify-between items-center mb-4">
                 <div>
                     <input asp-for="RememberMe" type="checkbox" class="mr-2" />
                     <label asp-for="RememberMe" class="text-sm text-gray-600">Remember me</label>
                 </div>
-                <!-- Forgot password link -->
                 <a asp-controller="Account" asp-action="ForgotPassword" class="text-sm text-blue-600">Forgot password?</a>
             </div>
 
@@ -43,21 +54,22 @@
             </button>
         </form>
 
-        <!-- Register & Forgot Password Options -->
+        <!-- Register Option -->
         <p class="text-gray-500 text-sm mb-6 text-center">
             Don’t have an account? <a asp-controller="Account" asp-action="Register" class="text-blue-600 font-medium">Sign up.</a>
         </p>
 
+        <!-- External Login -->
         <div class="flex items-center my-4">
             <hr class="flex-grow border-gray-300" />
             <span class="px-2 text-gray-500">or</span>
             <hr class="flex-grow border-gray-300" />
         </div>
-
-        <!-- External Login -->
         <button class="w-full flex items-center justify-center bg-white border p-2 rounded-md shadow-sm mb-2 hover:bg-gray-100 external-login-btn"
-                data-provider="Google"
-                data-url="@Url.Action("ExternalLogin", "Account", new { provider = "Google", returnUrl = Model.ReturnUrl })">
+                asp-controller="Account"
+                asp-action="ExternalLogin"
+                asp-route-provider="Google"
+                asp-route-returnUrl="@Model.ReturnUrl">
             <img src="https://www.svgrepo.com/show/355037/google.svg" class="w-5 h-5 mr-2" alt="Google" />
             Sign in with Google
         </button>

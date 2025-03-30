@@ -7,6 +7,7 @@
             <div class="bg-white p-6 rounded-lg shadow-lg">
                 <h2 class="text-xl font-semibold mb-4">Quản lý hình ảnh</h2>
                 <input type="hidden" name="[0].product_id" value="@Model.product_id" />
+                <input type="hidden" id="currentDateTime" name="[0].DateCreated" />
                 <div id="productImage">
                     <div class="flex items-center gap-4 mb-2" id="imageField_0">
                         <input type="text" class="w-full p-3 border border-gray-300 rounded-lg" name="[0].ImagePath" placeholder="Nhập link hình ảnh" />
@@ -29,29 +30,6 @@
         </div>
     </form>
 </div>
-
 <script>
-    let imageIndex = 1; // Khởi tạo chỉ mục từ 1
 
-    // Thêm trường hình ảnh mới
-    function addImageField() {
-        const container = document.getElementById("productImage");
-        const newField = document.createElement("div");
-        newField.className = "flex items-center gap-4 mb-2";
-        // Nếu là trường đầu tiên thì không có nút xóa
-        newField.innerHTML = `
-            <input type="hidden" name="[${imageIndex}].product_id" value="@Model.product_id" />
-            <input type="text" class="w-full p-3 border border-gray-300 rounded-lg" name="[${imageIndex}].ImagePath" placeholder="Nhập link hình ảnh">
-            <input type="text" class="w-full p-3 border border-gray-300 rounded-lg" name="[${imageIndex}].Caption" placeholder="Nhập mô tả hình ảnh">
-            ${imageIndex > 0 ? '<button type="button" class="px-4 py-2 bg-red-500 text-white rounded-lg" onclick="removeImageField(this)">Xóa</button>' : ''}
-        `;
-        container.appendChild(newField);
-        imageIndex++; // Tăng chỉ mục sau khi thêm trường mới
-    }
-
-    // Xóa trường hình ảnh
-    function removeImageField(button) {
-        button.parentElement.remove();
-        imageIndex--; // Giảm chỉ mục nếu xóa trường
-    }
 </script>

@@ -35,7 +35,6 @@
             @foreach (var item in Model)
             {
                 var discountedPrice = item.price - (item.price * item.discount / 100);
-
                 <div class="bg-white rounded-lg shadow-lg p-4 hover:shadow-xl transition transform hover:scale-105">
                     <a asp-controller="Home" asp-action="InfoProduct" asp-route-id="@item.product_id">
                         <img src="@item.img?.ImagePath"

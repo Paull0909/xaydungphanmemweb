@@ -32,7 +32,6 @@ namespace Web.Controllers
         {
             foreach(var i in list)
             {
-                i.DateCreated = DateTime.UtcNow;
                 var img = _mapper.Map<CreateUpdateProductImageRequest, ProductImage>(i);
                  _unitOfWork.ProductImageRepository.Add(img);
             }

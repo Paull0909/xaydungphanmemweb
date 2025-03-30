@@ -5,8 +5,9 @@ using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Security.Claims;
 using Web.Models;
-
+using System.Security.Claims;
 namespace Web.Controllers
 {
     public class HomeController : Controller
@@ -45,6 +46,8 @@ namespace Web.Controllers
         }
         public async Task<IActionResult> InfoProduct(int id)
         {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            ViewBag.UserId = userId;
             var pr = await _unitOfWork.Products.GetByIdAsync(id);
             ProductInfo product = _mapper.Map<Product, ProductInfo>(pr);
             product.imgs = await _unitOfWork.ProductImageRepository.GetListImgByIdProAsync(pr.product_id);

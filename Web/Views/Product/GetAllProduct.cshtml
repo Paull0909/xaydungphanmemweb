@@ -256,20 +256,18 @@
                     </form>
                 </div>
             </div>
-            <script>
-                function openDetailModal(button) {
-                    let productId = button.getAttribute("data-id");
-                    document.getElementById('detailModal').classList.remove('hidden');
-                    document.getElementById("productIdHidden").value = productId;
-                    document.getElementById("productIdHiddenImage").value = productId;
-                }
-
-                function closeDetailModal() {
-                    document.getElementById('detailModal').classList.add('hidden');
-                }
-
-            </script>
-
         </main>
     </div>
 </div>
+<script>
+        function openDetailModal (button) {
+        let productId = button.getAttribute("data-id");
+        document.getElementById('detailModal').classList.remove('hidden');
+        document.getElementById("productIdHidden").value = productId;
+        document.getElementById("productIdHiddenImage").value = productId;
+    }
+
+    function closeDetailModal() {
+        document.getElementById('detailModal').classList.add('hidden');
+    }
+</script>
