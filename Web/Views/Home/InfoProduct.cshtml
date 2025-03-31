@@ -1,5 +1,6 @@
 ﻿@model Application.DTO.Products.ProductInfo
 @using System.Security.Claims
+@using System.Globalization
 <!-- Product Section -->
 <section class="bg-white py-12 px-6 md:px-0">
     <div class="container mx-auto p-6 pt-0 flex flex-col md:flex-row gap-10">
@@ -31,12 +32,12 @@
                         var discountedPrice = @Model.price - (@Model.price * @Model.discount / 100);
                         <p class="text-sm text-gray-500 line-through mr-4">@Model.price.ToString("N0")₫</p>
                         <p class="text-xl text-red-600 font-bold">@discountedPrice.ToString("N0")₫</p>
-                        <input type="hidden" id="productPrice" name="Price" value="@discountedPrice.ToString("N0")" />
+                        <input type="hidden" id="productPrice" name="Price" value="@discountedPrice.ToString("F0", CultureInfo.InvariantCulture)" />
                     }
                     else
                     {
                         <p class="price text-red-600 font-bold">@Model.price.ToString("N0")₫</p>
-                        <input type="hidden" id="productPrice" name="Price" value="@((Model.price).ToString("0.##"))" />
+                        <input type="hidden" id="productPrice" name="Price" value="@Model.price.ToString("F0", CultureInfo.InvariantCulture)" />
                     }
                 </div>
                 <!-- Chọn Màu -->
