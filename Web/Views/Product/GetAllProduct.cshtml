@@ -211,7 +211,7 @@
                                     </td>
                                     <td class="p-4 text-right">
                                         <div class="flex justify-end space-x-2">
-                                            <button onclick="openDetailModal(this)"
+                                            <button onclick="openDetailModal1(this)"
                                                     data-id="@item.product_id"
                                                     class="p-2 text-gray-500 bg-gray-100 rounded hover:bg-gray-200">
                                                 <i class="fas fa-eye text-sm"></i>
@@ -260,7 +260,7 @@
     </div>
 </div>
 <script>
-        function openDetailModal (button) {
+    function openDetailModal1(button) {
         let productId = button.getAttribute("data-id");
         document.getElementById('detailModal').classList.remove('hidden');
         document.getElementById("productIdHidden").value = productId;

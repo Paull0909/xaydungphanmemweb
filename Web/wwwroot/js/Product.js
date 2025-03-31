@@ -16,4 +16,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.getElementById("currentDateTime").value = getCurrentDateTime();
 });
+
 //////////////////VariantProduct///////////////////////

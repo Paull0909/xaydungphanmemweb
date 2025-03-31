@@ -31,12 +31,12 @@
                         var discountedPrice = @Model.price - (@Model.price * @Model.discount / 100);
                         <p class="text-sm text-gray-500 line-through mr-4">@Model.price.ToString("N0")₫</p>
                         <p class="text-xl text-red-600 font-bold">@discountedPrice.ToString("N0")₫</p>
-                        <input type="hidden" id="productPrice" name="Price" value="@discountedPrice" />
+                        <input type="hidden" id="productPrice" name="Price" value="@discountedPrice.ToString("N0")" />
                     }
                     else
                     {
                         <p class="price text-red-600 font-bold">@Model.price.ToString("N0")₫</p>
-                        <input type="hidden" id="productPrice" name="Price" value="@Model.price" />
+                        <input type="hidden" id="productPrice" name="Price" value="@((Model.price).ToString("0.##"))" />
                     }
                 </div>
                 <!-- Chọn Màu -->
@@ -76,20 +76,32 @@
                         }
                     </div>
                 </div>
-                <input type="hidden" id="selectedColorInput" name="Loai" />
+@*                 <input type="hidden" id="selectedColorInput" name="Loai" /> *@
+                <input type="hidden" id="userIdInput" name="UserId" value="@User.FindFirstValue(ClaimTypes.NameIdentifier)" />
+                <input type="hidden" id="selectedColorInput" name="variant" />
+
                 <input type="hidden" id="selectedSizeInput" name="Size" />
                 <input type="hidden" name="product_id" value="@Model.product_id" />
-                <input type="hidden" id="userIdInput" name="UserId" value="@User.FindFirstValue(ClaimTypes.NameIdentifier)" />
+                <input type="hidden" name="type_id" value="@Model.type_id" />
+                <input type="hidden" name="product_name" value="@Model.product_name" />
                 <input type="hidden" id="currentDateTime" name="DateCreated" />
                 <div id="quantity-info" class="mt-4 text-gray-500"></div>
                 <div class="mt-4">
                     <label for="Quantity" class="block text-lg font-medium">Số lượng</label>
-                    <input type="number" name="Quantity" id="Quantity" class="border rounded px-4 py-2 w-full" min="1" value="1" />
+                    <input type="number" name="soluong" id="Quantity" class="border rounded px-4 py-2 w-32" min="1" value="1" />
+@*                     <input type="number" name="soluong" id="Quantity" class="border rounded px-4 py-2 w-32" min="1" value="1" /> *@
                 </div>
-                <button type="submit" id="addToCart"
-                        class="w-full mt-4 bg-gray-300 text-gray-600 py-3 rounded">
-                    ADD TO CART
-                </button>
+                <div class="flex gap-4">
+                    <button type="submit" id="addToCart" form="cartForm"
+                            class="w-full mt-4 bg-gray-300 text-gray-600 py-3 rounded">
+                        ADD TO CART
+                    </button>
+
+                    <button type="submit" id="buyNow"
+                            class="w-full mt-4 bg-gray-300 text-gray-600 py-3 rounded">
+                        BUY NOW
+                    </button>
+                </div>
             </form>
 
             <div class="mt-6 border-t pt-4">
@@ -184,7 +196,7 @@
     document.addEventListener("DOMContentLoaded", function () {
         let userId = document.getElementById("userIdInput").value.trim();
 
-        console.log("User ID từ input:", userId); // Kiểm tra trên console
+        console.log("User ID từ input:", userId);
 
         document.getElementById("cartForm").addEventListener("submit", function (event) {
             if (!userId) {
@@ -193,5 +205,39 @@
             }
         });
     });
+        document.getElementById("okButton").onclick = function () {
+        window.location.href = "/Account/Login";
+    };
+        document.addEventListener("DOMContentLoaded", function () {
+        const buyNowButton = document.getElementById("buyNow");
+        const cartForm = document.getElementById("cartForm");
+        if (buyNowButton) {
+            buyNowButton.addEventListener("click", function () {
+                cartForm.action = "/Orders/CreateOrdersByProduct";
+                cartForm.method = "GET";
+            });
+        }
+    });
+        function checkForm() {
+        const submitButton = document.querySelector("#addToCart");
+        const submitButtonBuy = document.querySelector("#buyNow");
 
+        if (selectedColor && selectedSize) {
+            submitButton?.removeAttribute("disabled");
+            submitButton?.classList.remove("bg-gray-300", "text-gray-600");
+            submitButton?.classList.add("bg-blue-500", "text-white");
+
+            submitButtonBuy?.removeAttribute("disabled");
+            submitButtonBuy?.classList.remove("bg-gray-300", "text-gray-600");
+            submitButtonBuy?.classList.add("bg-blue-500", "text-white");
+        } else {
+            submitButton?.setAttribute("disabled", "true");
+            submitButton?.classList.add("bg-gray-300", "text-gray-600");
+            submitButton?.classList.remove("bg-blue-500", "text-white");
+
+            submitButtonBuy?.setAttribute("disabled", "true");
+            submitButtonBuy?.classList.add("bg-gray-300", "text-gray-600");
+            submitButtonBuy?.classList.remove("bg-blue-500", "text-white");
+        }
+    }
 </script>

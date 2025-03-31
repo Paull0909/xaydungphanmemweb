@@ -43,19 +43,7 @@ document.getElementById('Quantity').addEventListener('input', function () {
     }
 });
 
-function checkForm() {
-    const submitButton = document.querySelector("#addToCart");
 
-    if (selectedColor && selectedSize) {
-        submitButton.removeAttribute("disabled");
-        submitButton.classList.remove("bg-gray-300", "text-gray-600");
-        submitButton.classList.add("bg-blue-500", "text-white");
-    } else {
-        submitButton.setAttribute("disabled", "true");
-        submitButton.classList.add("bg-gray-300", "text-gray-600");
-        submitButton.classList.remove("bg-blue-500", "text-white");
-    }
-}
 document.addEventListener("DOMContentLoaded", function () {
     const submitButton = document.querySelector("#addToCart");
     if (submitButton) {

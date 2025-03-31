@@ -31,5 +31,26 @@
     </form>
 </div>
 <script>
+           function addImageField() {
+        const productImageDiv = document.getElementById('productImage');
+        const newIndex = productImageDiv.children.length;
+        const newField = `
+            <div class="flex items-center gap-4 mb-2" id="imageField_${newIndex}">
+                <input type="text" class="w-full p-3 border border-gray-300 rounded-lg" name="[${newIndex}].ImagePath" placeholder="Nhập link hình ảnh" />
+                <input type="text" class="w-full p-3 border border-gray-300 rounded-lg" name="[${newIndex}].Caption" placeholder="Nhập mô tả hình ảnh" />
+                <button type="button" class="px-4 py-2 bg-red-500 text-white rounded-lg" onclick="removeImageField(${newIndex})">
+                    Xóa
+                </button>
+            </div>
+        `;
+
+        productImageDiv.insertAdjacentHTML('beforeend', newField);
+    }
+    function removeImageField(index) {
+        const fieldToRemove = document.getElementById(`imageField_${index}`);
+        if (fieldToRemove) {
+            fieldToRemove.remove();
+        }
+    }
 
 </script>
