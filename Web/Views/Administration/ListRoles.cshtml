@@ -5,83 +5,85 @@
     ViewBag.Title = "All Roles";
 }
 
-<main class="p-6 md:ml-32 bg-gray-50 dark:bg-gray-900 min-h-screen w-full">
-    <!-- Role List View -->
-    <div class="bg-white rounded-lg shadow mb-6" id="role-list">
-        <div class="px-6 py-4 flex justify-between items-center border-b border-gray-200">
-            <h2 class="text-xl font-semibold text-gray-800">Role Management</h2>
-            <a asp-action="CreateRole" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded transition duration-200 flex items-center">
-                <i class="fas fa-plus-circle mr-2"></i> Create New Role
-            </a>
-        </div>
-        
-        <div class="divide-y divide-gray-200">
-            @foreach (var role in Model)
-            {
-                <div class="px-6 py-4">
-                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
-                        <div class="col-span-3 lg:col-span-1">
-                            <p class="text-sm font-medium text-gray-500">Role ID</p>
-                            <p class="mt-1 text-sm text-gray-900">@role.Id</p>
-                        </div>
-                        <div class="col-span-3 lg:col-span-1">
-                            <p class="text-sm font-medium text-gray-500">Role Name</p>
-                            <p class="mt-1 text-sm font-medium text-gray-900">@role.Name</p>
-                        </div>
-                        <div class="col-span-3 lg:col-span-1">
-                            <p class="text-sm font-medium text-gray-500">Description</p>
-                            <p class="mt-1 text-sm text-gray-900">@role.Description</p>
-                        </div>
-                    </div>
-                    <div class="mt-4 flex space-x-3">
-                        <a asp-controller="Administration" asp-action="EditRole" asp-route-roleId="@role.Id"
-                           class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded text-sm transition duration-200 flex items-center">
-                            <i class="fas fa-edit mr-2"></i> Edit
-                        </a>
-                        <!-- Cập nhật nút Delete để gọi modal xác nhận -->
-                        <button type="button" onclick="confirmDelete('@role.Id')"
-                                class="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded text-sm transition duration-200 flex items-center">
-                            <i class="fas fa-trash-alt mr-2"></i> Delete
-                        </button>
-                    </div>
-                </div>
+<div class="p-6 sm:ml-64 bg-gray-50 min-h-screen">
+    <div class="flex flex-col flex-1 overflow-hidden">
+        <!-- Role List View -->
+        <div class="bg-white rounded-lg shadow mb-6" id="role-list">
+            <div class="px-6 py-4 flex justify-between items-center border-b border-gray-200">
+                <h2 class="text-xl font-semibold text-gray-800">Role Management</h2>
+                <a asp-action="CreateRole" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded transition duration-200 flex items-center">
+                    <i class="fas fa-plus-circle mr-2"></i> Create New Role
+                </a>
+            </div>
 
-                <!-- Modal xác nhận xoá -->
-                <div class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 hidden" id="deleteModal_@role.Id">
-                    <div class="bg-white w-1/3 p-6 rounded-lg shadow-lg dark:bg-gray-800">
-                        <div class="flex flex-col items-center justify-center mb-6 text-center">
-                            <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-4">
-                                Bạn có chắc chắn muốn xoá vai trò này?
-                            </h2>
-                            <form asp-controller="Administration" asp-action="DeleteRole" method="post" class="w-full">
-                                <input type="hidden" name="roleId" value="@role.Id" />
-                                <div class="flex justify-center gap-4">
-                                    <!-- Nút Hủy -->
-                                    <button type="button" class="px-6 py-3 bg-red-500 text-white rounded-lg shadow-md hover:bg-red-600 transition" onclick="closeModal('@role.Id')">
-                                        Hủy
-                                    </button>
-                                    <!-- Nút Xoá -->
-                                    <button type="submit" class="px-6 py-3 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition">
-                                        Xoá
-                                    </button>
-                                </div>
-                            </form>
+            <div class="divide-y divide-gray-200">
+                @foreach (var role in Model)
+                {
+                    <div class="px-6 py-4">
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                            <div class="col-span-3 lg:col-span-1">
+                                <p class="text-sm font-medium text-gray-500">Role ID</p>
+                                <p class="mt-1 text-sm text-gray-900">@role.Id</p>
+                            </div>
+                            <div class="col-span-3 lg:col-span-1">
+                                <p class="text-sm font-medium text-gray-500">Role Name</p>
+                                <p class="mt-1 text-sm font-medium text-gray-900">@role.Name</p>
+                            </div>
+                            <div class="col-span-3 lg:col-span-1">
+                                <p class="text-sm font-medium text-gray-500">Description</p>
+                                <p class="mt-1 text-sm text-gray-900">@role.Description</p>
+                            </div>
+                        </div>
+                        <div class="mt-4 flex space-x-3">
+                            <a asp-controller="Administration" asp-action="EditRole" asp-route-roleId="@role.Id"
+                               class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded text-sm transition duration-200 flex items-center">
+                                <i class="fas fa-edit mr-2"></i> Edit
+                            </a>
+                            <!-- Cập nhật nút Delete để gọi modal xác nhận -->
+                            <button type="button" onclick="confirmDelete('@role.Id')"
+                                    class="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded text-sm transition duration-200 flex items-center">
+                                <i class="fas fa-trash-alt mr-2"></i> Delete
+                            </button>
                         </div>
                     </div>
-                </div>
+
+                    <!-- Modal xác nhận xoá -->
+                    <div class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 hidden" id="deleteModal_@role.Id">
+                        <div class="bg-white w-1/3 p-6 rounded-lg shadow-lg dark:bg-gray-800">
+                            <div class="flex flex-col items-center justify-center mb-6 text-center">
+                                <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-4">
+                                    Bạn có chắc chắn muốn xoá vai trò này?
+                                </h2>
+                                <form asp-controller="Administration" asp-action="DeleteRole" method="post" class="w-full">
+                                    <input type="hidden" name="roleId" value="@role.Id" />
+                                    <div class="flex justify-center gap-4">
+                                        <!-- Nút Hủy -->
+                                        <button type="button" class="px-6 py-3 bg-red-500 text-white rounded-lg shadow-md hover:bg-red-600 transition" onclick="closeModal('@role.Id')">
+                                            Hủy
+                                        </button>
+                                        <!-- Nút Xoá -->
+                                        <button type="submit" class="px-6 py-3 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition">
+                                            Xoá
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <script>
+            // Hiển thị modal xác nhận xoá
+            function confirmDelete(roleId) {
+                document.getElementById('deleteModal_' + roleId).classList.remove('hidden');
             }
-        </div>
+
+            // Đóng modal
+            function closeModal(roleId) {
+                document.getElementById('deleteModal_' + roleId).classList.add('hidden');
+            }
+        </script>
+
     </div>
-    <script>
-        // Hiển thị modal xác nhận xoá
-        function confirmDelete(roleId) {
-            document.getElementById('deleteModal_' + roleId).classList.remove('hidden');
-        }
-
-        // Đóng modal
-        function closeModal(roleId) {
-            document.getElementById('deleteModal_' + roleId).classList.add('hidden');
-        }
-    </script>
-
-</main>
+</div>

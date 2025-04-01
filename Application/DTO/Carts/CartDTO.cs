@@ -1,4 +1,6 @@
-﻿using AutoMapper;
+﻿using Application.DTO.Products;
+using Application.Entities;
+using AutoMapper;
 
 namespace Application.DTO.Carts
 {
@@ -12,6 +14,8 @@ namespace Application.DTO.Carts
         public string Loai { set; get; }
         public DateTime DateCreated { get; set; }
         public Guid UserId { set; get; }
+        public ProductDTO Products { get; set; }
+        public ProductImage ProductImages { get; set; }
         public class AutoMapperProfiles : Profile
         {
             public AutoMapperProfiles()

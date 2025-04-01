@@ -17,9 +17,9 @@ namespace Web.Controllers
             _mapper = mapper;
         }
         [HttpGet]
-        public async Task<IActionResult> Create(int id)
+        public async Task<IActionResult> Create([FromQuery] int product_id)
         {
-            var product = await _unitOfWork.Products.GetByIdAsync(id);
+            var product = await _unitOfWork.Products.GetByIdAsync(product_id);
             var request = new CreateUpdateVariantsProductRequest
             {
                 product_id = product.product_id,

@@ -45,8 +45,8 @@ namespace Web.Controllers
             {
                     var or = _mapper.Map<CreateUpdateOrderRequest, Order>(od);
                     _unitOfWork.OrderRepository.Add(or);
-                    //var result = await _unitOfWork.CompleteAsync();
-                    a.product_id = or.bill_id;
+                    var result = await _unitOfWork.CompleteAsync();
+                    a.bill_id = or.bill_id;
                     var ord = _mapper.Map<CreateUpdateOrderDetailRequest, OrderDetail>(a);
                     _unitOfWork.OrderDetailRepository.Add(ord);
                     var variant = await _unitOfWork.VariantsProductRepository.Loadwhenbuyer(ord.product_id, ord.Cata_product);

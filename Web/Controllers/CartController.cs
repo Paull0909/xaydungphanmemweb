@@ -3,6 +3,7 @@ using Application.Entities;
 using Application.SeedWorks;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace Web.Controllers
 {
@@ -15,7 +16,7 @@ namespace Web.Controllers
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
-        [HttpPost]
+        [HttpGet]
         public async Task<IActionResult> GetAllById(Guid id)
         {
             var cart = await _unitOfWork.CartRepository.GetAllByUser(id);
@@ -32,13 +33,15 @@ namespace Web.Controllers
                 return View("GetAllById");
             }
             _unitOfWork.CartRepository.Remove(cart);
-            return RedirectToAction("GetAllById");
+            await _unitOfWork.CompleteAsync();
+            return RedirectToAction("GetAllById", new { id = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)) });
+
         }
 
         [HttpPost]
         public async Task<IActionResult> CreateCart(CreateUpdateCartRequest request)
         {
-            if (request == null)
+            if (request != null)
             {
                 var cart = _mapper.Map<CreateUpdateCartRequest, Cart>(request);
                 _unitOfWork.CartRepository.Add(cart);
@@ -57,8 +60,9 @@ namespace Web.Controllers
             else
             {
                 ViewBag.Cart = "Them san pham that bai vui long chon lai";
-                return View();
-            }                
+                return View("GetAllById");
+            }    
+            
         }
     }
 }
