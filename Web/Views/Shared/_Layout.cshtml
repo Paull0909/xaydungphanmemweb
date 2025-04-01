@@ -1,7 +1,7 @@
 ﻿﻿@using Application.Entities
 @using Microsoft.AspNetCore.Identity
 @inject SignInManager<User> SignInManager
-
+@using System.Security.Claims
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +17,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 </head>
-<body class="flex flex-col min-w-screen w-full">
+<body class="flex flex-col min-h-screen w-full">
     @if (!User.IsInRole("Admin"))
     {
         <header class="bg-gray-200 shadow-md w-full">
@@ -30,15 +30,24 @@
                     <div class="flex lg:justify-end items-center gap-x-4 ml-auto">
                         <!-- Search -->
                         <div class="relative">
-                            <input type="text" placeholder="Search" class="px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-600 w-60 pr-10 text-left"> <!-- Thêm pr-10 để tạo khoảng cách cho biểu tượng -->
+                            <input type="text" placeholder="Search" class="px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-600 w-60 pr-10 text-left"> 
                             <span class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 mt-2.5">
                                 <i class="fas fa-search"></i>
                             </span>
                         </div>
+                        @if (User.Identity.IsAuthenticated)
+                        {
                         <!-- Icon Shopping -->
-                        <a asp-controller="Cart" asp-action="GetAllById" class="text-gray-500 hover:text-gray-900">
+                        <a asp-controller="Cart" asp-action="GetAllById" asp-route-id="@Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier))" id="userIdInput" class="text-gray-500 hover:text-gray-900">
                             <i class="fas fa-shopping-cart"></i>
                         </a>
+                        }
+                        else
+                        {
+                            <a asp-action="Login" asp-controller="Account" class="text-gray-500 hover:text-gray-900">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        }
                     </div>
                     <button id="menu-toggle" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
                         <span class="sr-only">Open main menu</span>
@@ -62,13 +71,21 @@
                                 <i class="fas fa-search"></i>
                             </span>
                         </div>
-
+                        @if (User.Identity.IsAuthenticated)
+                        {
                         <!-- Icon Shopping-->
                         <div class="flex justify-center items-center w-10 pl-8">
-                            <a href="#" class="text-gray-500 hover:text-gray-900">
+                            <a asp-controller ="Cart" asp-action="GetAllById" asp-route-id="@Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier))" id="userIdInput" class="text-gray-500 hover:text-gray-900">
                                 <i class="fas fa-shopping-cart"></i>
                             </a>
                         </div>
+                        }
+                        else
+                        {
+                            <a  asp-action="Login" asp-controller="Account" class="text-gray-500 hover:text-gray-900">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        }
                     </div>
                     @if (User.Identity.IsAuthenticated)
                     {
@@ -93,7 +110,7 @@
                     }
                     else
                     {
-                        <a asp-action="Login" asp-controller="Account" class="text-gray-500 hover:text-gray-900 font-medium w-32">Sign In</a>
+                        <a asp-action="Login" asp-controller="Account" class="text-gray-500 hover:text-gray-900 font-medium w-32 pl-8">Sign In</a>
                         <div class="h-6 w-px bg-gray-300"></div>
                         <a asp-action="Register" asp-controller="Account" class="text-gray-500 hover:text-gray-900 font-medium w-32">Sign Up</a>
                     }
@@ -277,11 +294,9 @@
             </div>
         </aside>
     }
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+    <main role="main" class="pb-3 w-full h-full bg-gray-50">
+        @RenderBody()
+    </main>
     @if (!User.IsInRole("Admin"))
     {
         <footer class="px-6 py-12">
@@ -356,7 +371,8 @@
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
     <script src="~/js/Category.js"></script>
     <script src="~/js/javascript.js"></script>
-@*     <script src="~/js/Product.js"></script> *@
+    <script src="~/js/Home.js"></script>
+    <script src="~/js/Product.js"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>

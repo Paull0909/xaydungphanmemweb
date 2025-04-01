@@ -77,7 +77,6 @@ namespace Web.Controllers
                 return RedirectToAction("Create");
             }
         }
-
         public async Task<IActionResult> EditProduct(int id)
         {
             var product = await _unitOfWork.Products.GetByIdAsync(id);

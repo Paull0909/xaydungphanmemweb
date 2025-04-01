@@ -1,4 +1,5 @@
 ﻿using Application.DTO.ProductImages;
+using Application.DTO.VariantsProducts;
 using Application.Entities;
 using Application.SeedWorks;
 using AutoMapper;
@@ -16,6 +17,18 @@ namespace Web.Controllers
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
+        [HttpGet]
+        public async Task<IActionResult> Create([FromQuery] int product_id)
+        {
+            var product = await _unitOfWork.Products.GetByIdAsync(product_id);
+            var request = new CreateUpdateProductImageRequest
+            {
+                product_id = product.product_id,
+            };
+
+            return View(request);
+        }
+        [HttpPost]
         public async Task<IActionResult> Create(List<CreateUpdateProductImageRequest> list)
         {
             foreach(var i in list)
@@ -24,7 +37,7 @@ namespace Web.Controllers
                  _unitOfWork.ProductImageRepository.Add(img);
             }
             _unitOfWork.CompleteAsync();
-            return View();
+            return RedirectToAction("GetAllProduct", "Product");
         }
         public async Task<IActionResult> Delete(int id)
         {

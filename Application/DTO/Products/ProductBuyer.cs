@@ -12,6 +12,7 @@ namespace Application.DTO.Products
         public decimal price { get; set; }
         public int type_id { get; set; }
         public int soluong { get; set; }
+        public int id_variant { get; set; }
         public string size { get; set; }
         public string variant { get; set; }
         public ProductImage img { get; set; }

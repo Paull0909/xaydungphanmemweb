@@ -19,7 +19,7 @@ namespace Web.Controllers
         //Both UserManager and SignInManager services are injected into the AccountController
         //using constructor injection
         private readonly EmailSenderService emailSender;
-        public AccountController(UserManager<User> userManager,SignInManager<User> signInManager, EmailSenderService emailSenderService)
+        public AccountController(UserManager<User> userManager, SignInManager<User> signInManager, EmailSenderService emailSenderService)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
@@ -97,65 +97,65 @@ namespace Web.Controllers
 
             return View(model);
         }
-       [HttpPost]
-public async Task<IActionResult> Login(LoginViewModel model)
-{
-    if (ModelState.IsValid)
-    {
-        // 1. Find user by email
-        var user = await userManager.FindByEmailAsync(model.Email);
-        if (user == null)
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginViewModel model)
         {
-            // Avoid enumerating which part is invalid, just show generic error
-            ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+            if (ModelState.IsValid)
+            {
+                // 1. Find user by email
+                var user = await userManager.FindByEmailAsync(model.Email);
+                if (user == null)
+                {
+                    // Avoid enumerating which part is invalid, just show generic error
+                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                    model.ExternalLogins = (await signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
+                    return View(model);
+                }
+
+                // 2. Check password
+                var result = await signInManager.CheckPasswordSignInAsync(user, model.Password, lockoutOnFailure: false);
+
+                if (result.Succeeded)
+                {
+                    // 3. Now that we know the password is correct, check if email is confirmed
+                    if (!user.EmailConfirmed)
+                    {
+                        // Show a specific error message
+                        ModelState.AddModelError(string.Empty, "Your email address is not confirmed. Please confirm your email before logging in.");
+                        model.ExternalLogins = (await signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
+                        return View(model);
+                    }
+
+                    // 4. If email is confirmed, manually sign-in the user
+                    await signInManager.SignInAsync(user, isPersistent: model.RememberMe);
+
+                    // 5. Redirect user after successful sign in
+                    if (!string.IsNullOrEmpty(model.ReturnUrl) && Url.IsLocalUrl(model.ReturnUrl))
+                    {
+                        return Redirect(model.ReturnUrl);
+                    }
+
+                    return RedirectToAction(nameof(HomeController.Index), "Home");
+                }
+                if (result.RequiresTwoFactor)
+                {
+                    // Handle two-factor authentication case
+                }
+                if (result.IsLockedOut)
+                {
+                    // Handle lockout scenario
+                }
+                else
+                {
+                    // Generic failure message for invalid credentials
+                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                }
+            }
+
+            // If we got this far, something failed, redisplay the login form
             model.ExternalLogins = (await signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             return View(model);
         }
-
-        // 2. Check password
-        var result = await signInManager.CheckPasswordSignInAsync(user, model.Password, lockoutOnFailure: false);
-
-        if (result.Succeeded)
-        {
-            // 3. Now that we know the password is correct, check if email is confirmed
-            if (!user.EmailConfirmed)
-            {
-                // Show a specific error message
-                ModelState.AddModelError(string.Empty, "Your email address is not confirmed. Please confirm your email before logging in.");
-                model.ExternalLogins = (await signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
-                return View(model);
-            }
-
-            // 4. If email is confirmed, manually sign-in the user
-            await signInManager.SignInAsync(user, isPersistent: model.RememberMe);
-
-            // 5. Redirect user after successful sign in
-            if (!string.IsNullOrEmpty(model.ReturnUrl) && Url.IsLocalUrl(model.ReturnUrl))
-            {
-                return Redirect(model.ReturnUrl);
-            }
-
-            return RedirectToAction(nameof(HomeController.Index), "Home");
-        }
-        if (result.RequiresTwoFactor)
-        {
-            // Handle two-factor authentication case
-        }
-        if (result.IsLockedOut)
-        {
-            // Handle lockout scenario
-        }
-        else
-        {
-            // Generic failure message for invalid credentials
-            ModelState.AddModelError(string.Empty, "Invalid login attempt.");
-        }
-    }
-
-    // If we got this far, something failed, redisplay the login form
-    model.ExternalLogins = (await signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
-    return View(model);
-}
 
         /// <summary>
         /// /////////////////////////////////////// Logout ////////////////////////////////////
@@ -297,7 +297,7 @@ public async Task<IActionResult> Login(LoginViewModel model)
         /// <summary>
         /////////////////////////////////////////////////// Xac nhan email ////////////////////////////////////////////////////////////// 
         /// </summary>
-        private async Task SendConfirmationEmail(string email,User user)
+        private async Task SendConfirmationEmail(string email, User user)
         {
             // Generate the email confirmation token
             var token = await userManager.GenerateEmailConfirmationTokenAsync(user);
@@ -584,6 +584,6 @@ public async Task<IActionResult> Login(LoginViewModel model)
         {
             return View();
         }
-        
+
     }
 }

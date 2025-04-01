@@ -24,3 +24,31 @@
     transform: rotate(-180deg);
 }
 
+.payment-option.selected {
+    background-color: #EBF4FF;
+    border-left: 4px solid #3B82F6;
+}
+.radio-custom {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #D1D5DB;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+}
+.radio-custom.selected {
+    border-color: #3B82F6;
+}
+.radio-custom.selected:after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background: #3B82F6;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    border-radius: 50%;
+}
+.payment-option {
+    transition: all 0.2s ease;
+}

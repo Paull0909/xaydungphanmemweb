@@ -2,45 +2,47 @@
 @{
     var UserId = ViewBag.UserId;
 }
-<main class="p-6 md:ml-32 bg-gray-50 dark:bg-gray-900 min-h-screen w-full ">
-    <div class="bg-white rounded-lg shadow-lg justify-content" id="manage-users">
-        <form method="post">
-            <div class="px-6 py-4 border-b border-gray-200">
-                <h2 class="text-xl font-semibold text-gray-800">User: @ViewBag.UserName</h2>
-                <p class="mt-1 text-sm text-gray-500">
-                    Add or Remove Users From This Role
-                </p>
-            </div>
-            <div class="p-6">
-                <div class="max-h-64 overflow-y-auto border border-gray-200 rounded-md mb-6">
-                    @for (int i = 0; i < Model.Count; i++)
-                    {
-                        <div class="p-4 hover:bg-gray-50 flex items-center @(i > 0 ? "border-t border-gray-200" : "")">
-                            <input type="hidden" asp-for="@Model[i].RoleId" 
-                            class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" />
-                            <input type="hidden" asp-for="@Model[i].RoleName" 
-                            class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" />
-
-                            <input asp-for="@Model[i].IsSelected" class="form-check-input"/>
-                            <label asp-for="@Model[i].IsSelected"
-                                   class="ml-3 block text-sm font-medium text-gray-700">
-                                @Model[i].RoleName - @Model[i].Description
-                            </label>
-
-                        </div>
-                    }
+<div class="p-6 sm:ml-64 bg-gray-50 min-h-screen">
+    <div class="flex flex-col flex-1 overflow-hidden">
+        <div class="bg-white rounded-lg shadow-lg justify-content" id="manage-users">
+            <form method="post">
+                <div class="px-6 py-4 border-b border-gray-200">
+                    <h2 class="text-xl font-semibold text-gray-800">User: @ViewBag.UserName</h2>
+                    <p class="mt-1 text-sm text-gray-500">
+                        Add or Remove Users From This Role
+                    </p>
                 </div>
-                <div class="flex space-x-3">
-                    <button type="submit"
-                            class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-6 rounded-lg transition duration-200 flex items-center">
-                        <i class="fas fa-save mr-2"></i> Update
-                    </button>
-                    <a asp-action="EditUser" asp-route-UserId="@UserId"
-                            class="bg-gray-200 hover:bg-gray-300 text-gray-700 py-2 px-6 rounded-lg transition duration-200 flex items-center">
-                        <i class="fas fa-times mr-2"></i> Cancel
-                    </a>
+                <div class="p-6">
+                    <div class="max-h-64 overflow-y-auto border border-gray-200 rounded-md mb-6">
+                        @for (int i = 0; i < Model.Count; i++)
+                        {
+                            <div class="p-4 hover:bg-gray-50 flex items-center @(i > 0 ? "border-t border-gray-200" : "")">
+                                <input type="hidden" asp-for="@Model[i].RoleId"
+                                       class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" />
+                                <input type="hidden" asp-for="@Model[i].RoleName"
+                                       class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" />
+
+                                <input asp-for="@Model[i].IsSelected" class="form-check-input" />
+                                <label asp-for="@Model[i].IsSelected"
+                                       class="ml-3 block text-sm font-medium text-gray-700">
+                                    @Model[i].RoleName - @Model[i].Description
+                                </label>
+
+                            </div>
+                        }
+                    </div>
+                    <div class="flex space-x-3">
+                        <button type="submit"
+                                class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-6 rounded-lg transition duration-200 flex items-center">
+                            <i class="fas fa-save mr-2"></i> Update
+                        </button>
+                        <a asp-action="EditUser" asp-route-UserId="@UserId"
+                           class="bg-gray-200 hover:bg-gray-300 text-gray-700 py-2 px-6 rounded-lg transition duration-200 flex items-center">
+                            <i class="fas fa-times mr-2"></i> Cancel
+                        </a>
+                    </div>
                 </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
-</main>
+</div>

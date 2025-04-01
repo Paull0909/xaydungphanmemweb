@@ -5,8 +5,9 @@ using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Security.Claims;
 using Web.Models;
-
+using System.Security.Claims;
 namespace Web.Controllers
 {
     public class HomeController : Controller
@@ -31,6 +32,7 @@ namespace Web.Controllers
             foreach (var i in product)
             {
                 i.img = await _unitOfWork.ProductImageRepository.GetImgByIdProductAsync(i.product_id);
+
             }
             if (product != null)
             {
@@ -44,9 +46,11 @@ namespace Web.Controllers
         }
         public async Task<IActionResult> InfoProduct(int id)
         {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            ViewBag.UserId = userId;
             var pr = await _unitOfWork.Products.GetByIdAsync(id);
-            ProductDTO product = _mapper.Map<Product, ProductDTO>(pr);
-            product.img = await _unitOfWork.ProductImageRepository.GetImgByIdProductAsync(pr.product_id);
+            ProductInfo product = _mapper.Map<Product, ProductInfo>(pr);
+            product.imgs = await _unitOfWork.ProductImageRepository.GetListImgByIdProAsync(pr.product_id);
             product.variants = await _unitOfWork.VariantsProductRepository.GetByProduct(pr.product_id);
             foreach(var item in product.variants)
             {
