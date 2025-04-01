@@ -28,6 +28,7 @@ namespace Web.Controllers
 
             return View(request);
         }
+        [HttpPost]
         public async Task<IActionResult> Create(List<CreateUpdateProductImageRequest> list)
         {
             foreach(var i in list)

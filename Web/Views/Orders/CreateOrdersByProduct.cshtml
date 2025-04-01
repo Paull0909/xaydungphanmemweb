@@ -8,8 +8,7 @@
             <input type="email" name="ShipEmail" placeholder="Email" class="w-full p-3 border rounded-md mb-4 focus:ring-2 focus:ring-blue-400" required>
             <input type="text" name="ShipName" placeholder="Name" class="w-full p-3 border rounded-md mb-4" required>
             <input type="text" name="ShipAddress" placeholder="Address" class="w-full p-3 border rounded-md mb-4" required>
-
-            <!-- Các trường ẩn quan trọng -->
+            <input type="tel" name="ShipPhoneNumber" placeholder="Phone" class="w-full p-3 border rounded-md mb-6" required>
             <input type="hidden" id="userIdInput" name="UserId" value="@User.FindFirstValue(ClaimTypes.NameIdentifier)" />
             <input type="hidden" id="currentDateTime" name="OrderDate" />
             <input type="hidden" name="product_id" value="@Model.product_id" />
@@ -21,7 +20,7 @@
             <input type="hidden" name="Totalprice" value="@((Model.price * Model.soluong) + 30000)" />
             <input type="hidden" name="ShippingFee" value="30000" />
 
-            <input type="tel" name="ShipPhoneNumber" placeholder="Phone" class="w-full p-3 border rounded-md mb-6" required>
+
 
             <div class="bg-white p-6 shadow-md rounded-lg">
                 <h2 class="text-xl font-bold mb-2">Payment</h2>

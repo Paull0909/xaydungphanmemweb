@@ -183,7 +183,10 @@
                                     <td class="p-4">
                                         <div class="flex items-center">
                                             <div class="h-16 w-16 flex-shrink-0 mr-4">
-                                                <img src="@item.img?.ImagePath" alt="Product Image" class="h-16 w-16 rounded-lg object-cover" />
+                                                <img src="@item.img?.ImagePath"
+                                                     alt="Product Image"
+                                                     class="h-16 w-16 rounded-lg object-cover"
+                                                     onerror="this.onerror=null;this.src='default-image.png';" />
                                             </div>
                                             <div>
                                                 <div class="font-medium text-gray-900">@item.product_name</div>
