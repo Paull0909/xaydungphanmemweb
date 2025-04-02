@@ -49,7 +49,7 @@ namespace Web.Controllers
                 if (result > 0)
                 {
                     ViewBag.Category = "Da them vao gio hang";
-                    return RedirectToAction("GetAllCategory");
+                    return RedirectToAction("Index", "Home");
                 }
                 else
                 {
