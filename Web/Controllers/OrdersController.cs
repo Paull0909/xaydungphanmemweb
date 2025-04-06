@@ -19,12 +19,13 @@ namespace Web.Controllers
             _mapper = mapper;
         }
 
-        [HttpPost]
+        [HttpGet]
         public async Task<IActionResult> GetAllByIdUser(Guid id)
         {
-            var or = _unitOfWork.OrderRepository.GetAllByUser(id);
+            var or = await _unitOfWork.OrderRepository.GetAllByUser(id);
             return View(or);
         }
+
 
         [HttpGet]
         public async Task<IActionResult> GetAllByBillId(int id)
@@ -32,7 +33,6 @@ namespace Web.Controllers
             var ord = _unitOfWork.OrderDetailRepository.GetAllByBill(id);
             return View(ord);
         }
-
         [HttpGet]
         public async Task<IActionResult> CreateOrdersByProduct(ProductBuyer a)
         {

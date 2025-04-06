@@ -218,9 +218,9 @@
                                                     class="p-2 text-gray-500 bg-gray-100 rounded hover:bg-gray-200">
                                                 <i class="fas fa-eye text-sm"></i>
                                             </button>
-                                            <button class="p-2 text-gray-500 bg-gray-100 rounded hover:bg-gray-200">
+                                            <a asp-controller="Product" asp-action="EditProduct" asp-route-id="@item.product_id" class="p-2 text-gray-500 bg-gray-100 rounded hover:bg-gray-200">
                                                 <i class="fas fa-edit text-sm"></i>
-                                            </button>
+                                            </a>
                                             <a asp-controller="Product" asp-action="DeleteProduct" asp-route-id="@item.product_id" class="p-2 text-red-500 bg-red-50 rounded hover:bg-red-100">
                                                 <i class="fas fa-trash text-sm"></i>
                                             </a>

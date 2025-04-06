@@ -5,18 +5,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- ✅ Tailwind CSS v3 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- ✅ Tailwind config nếu cần -->
+    <script>
+        tailwind.config = {
+        theme: {
+        extend: {
+        colors: {
+        indigo: tailwind.colors.indigo,
+        blue: tailwind.colors.blue,
+        }
+        }
+        }
+        }
+    </script>
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - ASPNETCoreIdentityDemo</title>
+
+    <!-- Các thư viện khác (Bootstrap, FontAwesome, Flowbite...) -->
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/style.css" />
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body class="flex flex-col min-h-screen w-full">
     @if (!User.IsInRole("Admin"))
     {
@@ -39,7 +58,7 @@
                         {
                             <!-- Icon Shopping -->
                             <a asp-controller="Cart" asp-action="GetAllById" asp-route-id="@Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier))"
-                               class="text-gray-500 hover:text-gray-900 relative">
+                            class="text-gray-500 hover:text-gray-900 relative">
                                 <i class="fas fa-shopping-cart"></i>
                                 @if (ViewBag.CartItemCount > 0)
                                 {
@@ -62,12 +81,15 @@
                     </button>
                 </div>
                 <div class="hidden lg:flex lg:gap-x-12 justify-center w-auto mx-auto">
-                    <ul class="flex space-x-10 text-gray-700">
-                        <li><a class="hover:text-gray-900 text-xl font-medium">Women</a></li>
-                        <li><a class="hover:text-gray-900 text-xl font-medium">Men</a></li>
-                        <li><a class="hover:text-gray-900 text-xl font-medium">Company</a></li>
-                        <li><a class="hover:text-gray-900 text-xl font-medium">Stores</a></li>
-                    </ul>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <ul class="flex space-x-10 text-gray-700">
+                            <li><a asp-action="GetAllByIdUser" asp-controller="Orders" asp-route-id="@Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier))"  class="hover:text-gray-900 text-xl font-medium">Women</a></li>
+                            <li><a class="hover:text-gray-900 text-xl font-medium">Men</a></li>
+                            <li><a class="hover:text-gray-900 text-xl font-medium">Company</a></li>
+                            <li><a class="hover:text-gray-900 text-xl font-medium">Stores</a></li>
+                        </ul>
+                    }
                 </div>
                 <div class="hidden lg:flex lg:justify-between items-center lg:gap-x-4 pl-0 w-1/2">
                     <div class="flex items-center gap-x-4 w-full">
@@ -378,6 +400,7 @@
     <script src="~/js/Category.js"></script>
     <script src="~/js/javascript.js"></script>
     <script src="~/js/Home.js"></script>
+    <script src="~/js/Total.js"></script>
     <script src="~/js/Product.js"></script>
     <script src="~/js/CreateOrders.js"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
@@ -385,13 +408,11 @@
     <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
-
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <!-- jQuery Validation Plugin -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
     <!-- jQuery Unobtrusive Validation (to bridge ASP.NET Core MVC validation with jQuery Validate) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
 </body>
 </html>

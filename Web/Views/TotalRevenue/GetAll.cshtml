@@ -1,1 +1,46 @@
 ﻿@model List<Application.DTO.TotalRevenues.TotalRevenuesGetYear>
+@{
+    decimal totalRevenue = Model.Sum(x => x.Totalprice);
+    int totalInvoices = Model.Sum(x => x.NumberofSales);
+}
+<div class="p-6 sm:ml-64 bg-gray-50 min-h-screen">
+    <div class="flex flex-col flex-1 overflow-hidden">
+        <main class="flex-1 p-10">
+            <h1 class="text-3xl font-bold mb-6">Dashboard</h1>
+
+            <!-- Cards Section -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                <div class="bg-white p-6 shadow-md rounded-lg">
+                    <h2 class="text-lg font-semibold mb-2">Tổng doanh thu</h2>
+                    <p class="text-2xl font-bold">@totalRevenue.ToString("N0") VNĐ</p>
+                </div>
+                <div class="bg-white p-6 shadow-md rounded-lg">
+                    <h2 class="text-lg font-semibold mb-2">Tổng số thành viên</h2>
+                    <p class="text-2xl font-bold">1,234</p>
+                </div>
+                <div class="bg-white p-6 shadow-md rounded-lg">
+                    <h2 class="text-lg font-semibold mb-2">Tổng số hóa đơn</h2>
+                    <p class="text-2xl font-bold">@totalInvoices.ToString("N0")</p>
+                </div>
+            </div>
+
+            <!-- Chart Section -->
+            <div class="bg-white shadow-md rounded-lg p-4 w-full sm:p-8">
+                <h2 class="text-lg sm:text-2xl font-bold text-gray-700 mb-4 sm:mb-6 text-center">
+                    Thống kê doanh thu theo năm
+                </h2>
+                <div class="flex flex-col gap-4 mx-auto max-w-6xl text-center text-2xl">
+                    @foreach (var year in Model.OrderBy(x => x.Date))
+                    {
+                        <a asp-action="GetTotalbyYear" asp-controller="TotalRevenue" asp-route-year="@year.Date"
+                           class=" p-3 bg-blue-500 text-white rounded-lg shadow-lg transition-transform transform hover:scale-105">
+                            Doanh thu năm @year.Date
+                        </a>
+                    }
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+
