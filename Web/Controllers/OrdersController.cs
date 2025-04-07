@@ -1,11 +1,13 @@
 ﻿using Application.DTO.Carts;
 using Application.DTO.OrderDetails;
 using Application.DTO.Orders;
+using Application.DTO.ProductImages;
 using Application.DTO.Products;
 using Application.Entities;
 using Application.SeedWorks;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Cryptography;
 
 namespace Web.Controllers
 {
@@ -30,9 +32,21 @@ namespace Web.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllByBillId(int id)
         {
-            var ord = _unitOfWork.OrderDetailRepository.GetAllByBill(id);
-            return View(ord);
+            var list = await _unitOfWork.OrderDetailRepository.GetAllByBill(id);
+            List<OrderDetailDTO> orderDetails = new List<OrderDetailDTO>();
+            foreach (var i in list)
+            {
+                var ord = _mapper.Map<OrderDetail, OrderDetailDTO>(i);
+                orderDetails.Add(ord);
+            }               
+            foreach(var i in orderDetails)
+            {
+                var img = await _unitOfWork.ProductImageRepository.GetImgByIdProductAsync(i.product_id);
+                i.imageDTO = _mapper.Map<ProductImage, ProductImageDTO>(img);
+            }
+            return View(list);
         }
+
         [HttpGet]
         public async Task<IActionResult> CreateOrdersByProduct(ProductBuyer a)
         {
