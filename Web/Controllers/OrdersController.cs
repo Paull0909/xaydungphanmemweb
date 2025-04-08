@@ -1,10 +1,13 @@
-﻿using Application.DTO.OrderDetails;
+﻿using Application.DTO.Carts;
+using Application.DTO.OrderDetails;
 using Application.DTO.Orders;
+using Application.DTO.ProductImages;
 using Application.DTO.Products;
 using Application.Entities;
 using Application.SeedWorks;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Cryptography;
 
 namespace Web.Controllers
 {
@@ -18,18 +21,30 @@ namespace Web.Controllers
             _mapper = mapper;
         }
 
-        [HttpPost]
+        [HttpGet]
         public async Task<IActionResult> GetAllByIdUser(Guid id)
         {
-            var or = _unitOfWork.OrderRepository.GetAllByUser(id);
+            var or = await _unitOfWork.OrderRepository.GetAllByUser(id);
             return View(or);
         }
+
 
         [HttpGet]
         public async Task<IActionResult> GetAllByBillId(int id)
         {
-            var ord = _unitOfWork.OrderDetailRepository.GetAllByBill(id);
-            return View(ord);
+            var list = await _unitOfWork.OrderDetailRepository.GetAllByBill(id);
+            List<OrderDetailDTO> orderDetails = new List<OrderDetailDTO>();
+            foreach (var i in list)
+            {
+                var ord = _mapper.Map<OrderDetail, OrderDetailDTO>(i);
+                orderDetails.Add(ord);
+            }               
+            foreach(var i in orderDetails)
+            {
+                var img = await _unitOfWork.ProductImageRepository.GetImgByIdProductAsync(i.product_id);
+                i.imageDTO = _mapper.Map<ProductImage, ProductImageDTO>(img);
+            }
+            return View(orderDetails);
         }
 
         [HttpGet]
@@ -63,7 +78,7 @@ namespace Web.Controllers
                     };
                     await _unitOfWork.TotalRevenueRepository.AddWhenbyOder(t);
                     _unitOfWork.CompleteAsync();
-                    return View(a);
+                    return RedirectToAction("Index", "Home");
             }
             else
             {
@@ -77,10 +92,14 @@ namespace Web.Controllers
         {
             if (id.Count>0)
             {
-                List<Cart> list = new List<Cart>();
+                List<CartDTO> list = new List<CartDTO>();
                 foreach (var item in id)
                 {
-                    var cart = await _unitOfWork.CartRepository.GetByIdAsync(item);
+                    var i = await _unitOfWork.CartRepository.GetByIdAsync(item);
+                    var cart = _mapper.Map<Cart, CartDTO>(i);
+                    var pr = await _unitOfWork.Products.GetByIdAsync(cart.product_id);
+                    cart.Products = _mapper.Map<Product, ProductDTO>(pr);
+                    cart.ProductImages = await _unitOfWork.ProductImageRepository.GetImgByIdProductAsync(cart.product_id);
                     list.Add(cart);
                 }
                 return View(list);
@@ -103,7 +122,7 @@ namespace Web.Controllers
                 {
                     foreach (var item in list)
                     {
-                        item.product_id = or.bill_id;
+                        item.bill_id = or.bill_id;
                         var ord = _mapper.Map<CreateUpdateOrderDetailRequest, OrderDetail>(item);
                         _unitOfWork.OrderDetailRepository.Add(ord);
                         var variant = await _unitOfWork.VariantsProductRepository.Loadwhenbuyer(ord.product_id, ord.Cata_product);
@@ -121,7 +140,7 @@ namespace Web.Controllers
                     };
                     await _unitOfWork.TotalRevenueRepository.AddWhenbyOder(t);
                     _unitOfWork.CompleteAsync();
-                    return View(result);
+                    return RedirectToAction("Index", "Home");
                 }
                 else
                 {

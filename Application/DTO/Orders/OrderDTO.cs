@@ -1,4 +1,6 @@
 ﻿using Application.DTO.Adventisements;
+using Application.DTO.OrderDetails;
+using Application.DTO.ProductImages;
 using Application.Enum;
 using AutoMapper;
 
@@ -18,10 +20,12 @@ namespace Application.DTO.Orders
         public Status Status { set; get; }
         public TransactionStatus transactionStatus { set; get; }
         public Guid UserId { set; get; }
+        public List<OrderDetailDTO> detailDTOs { set; get; }
         public class AutoMapperProfiles : Profile
         {
             public AutoMapperProfiles()
             {
+                CreateMap<Entities.OrderDetail, OrderDetailDTO>();
                 CreateMap<Entities.Order, OrderDTO>();
             }
         }
