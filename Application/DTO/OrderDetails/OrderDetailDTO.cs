@@ -18,7 +18,7 @@ namespace Application.DTO.OrderDetails
         {
             public AutoMapperProfiles()
             {
-                CreateMap<Entities.Order, OrderDetailDTO>();
+                CreateMap<Entities.OrderDetail, OrderDetailDTO>();
             }
         }
     }

@@ -36,7 +36,8 @@ namespace Web.Controllers
             List<OrderDetailDTO> orderDetails = new List<OrderDetailDTO>();
             foreach (var i in list)
             {
-                var ord = _mapper.Map<OrderDetail, OrderDetailDTO>(i);
+                var odt = i;
+                var ord = _mapper.Map<OrderDetail,OrderDetailDTO>(odt);
                 orderDetails.Add(ord);
             }               
             foreach(var i in orderDetails)
