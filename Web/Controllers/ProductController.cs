@@ -77,6 +77,7 @@ namespace Web.Controllers
                 return RedirectToAction("Create");
             }
         }
+        [HttpGet]
         public async Task<IActionResult> EditProduct(int id)
         {
             var product = await _unitOfWork.Products.GetByIdAsync(id);
@@ -84,7 +85,7 @@ namespace Web.Controllers
             product.ProductImages = await _unitOfWork.ProductImageRepository.GetListImgByIdProAsync(id);
             return View(product);
         }
-        [HttpGet]
+        [HttpPost]
         public async Task<IActionResult> EditProduct(CreateUpdateProductRequest request)
         {
             var product = await _unitOfWork.Products.GetByIdAsync(request.product_id);

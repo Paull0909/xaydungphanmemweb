@@ -1,28 +1,72 @@
-﻿@model List<Application.Entities.Cart>
+﻿@model List<Application.DTO.Carts.CartDTO>
 @using System.Security.Claims
 <div class="min-h-screen flex flex-col md:flex-row max-w-6xl mx-auto p-6">
     <!-- Form chính bao bọc toàn bộ nội dung -->
-    <form asp-action="CreateOrdersByProduct" method="post" class="flex-1 flex flex-col md:flex-row">
-        <!-- Left Column - Customer Information -->
-        <div class="flex-1 bg-white shadow-md p-6 md:p-10 rounded-lg">
-            <input type="email" name="ShipEmail" placeholder="Email" class="w-full p-3 border rounded-md mb-4 focus:ring-2 focus:ring-blue-400" required>
-            <input type="text" name="ShipName" placeholder="Name" class="w-full p-3 border rounded-md mb-4" required>
-            <input type="text" name="ShipAddress" placeholder="Address" class="w-full p-3 border rounded-md mb-4" required>
+    <form asp-action="CreateOrdersByCart" method="post" class="flex-1 flex flex-col md:flex-row space-y-6">
+        <!-- Cột trái - Thông tin khách hàng -->
+        <div class="flex-1 bg-white shadow-md p-6 md:p-10 rounded-lg space-y-6">
+            <!-- Email Field -->
+            <div class="space-y-1">
+                <input type="email"
+                       name="ShipEmail"
+                       placeholder="Email*"
+                       class="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition peer"
+                       required>
+                <span class="hidden text-sm text-red-500 mt-1 peer-invalid:peer-[&:not(:placeholder-shown)]:block">
+                    Vui lòng nhập email hợp lệ
+                </span>
+            </div>
 
-            <!-- Các trường ẩn quan trọng -->
-@*             <input type="hidden" id="userIdInput" name="UserId" value="@User.FindFirstValue(ClaimTypes.NameIdentifier)" />
+            <!-- Name Field -->
+            <div class="space-y-1">
+                <input type="text"
+                       name="ShipName"
+                       placeholder="Họ tên*"
+                       class="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition peer"
+                       required>
+                <span class="hidden text-sm text-red-500 mt-1 peer-invalid:peer-[&:not(:placeholder-shown)]:block">
+                    Vui lòng nhập họ tên
+                </span>
+            </div>
+
+            <!-- Address Field -->
+            <div class="space-y-1">
+                <input type="text"
+                       name="ShipAddress"
+                       placeholder="Địa chỉ*"
+                       class="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition peer"
+                       required>
+                <span class="hidden text-sm text-red-500 mt-1 peer-invalid:peer-[&:not(:placeholder-shown)]:block">
+                    Vui lòng nhập địa chỉ
+                </span>
+            </div>
+
+            <!-- Phone Field -->
+            <div class="space-y-1">
+                <input type="tel"
+                       name="ShipPhoneNumber"
+                       placeholder="Số điện thoại*"
+                       class="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition peer"
+                       pattern="[0-9]{10}"
+                       required>
+                <span class="hidden text-sm text-red-500 mt-1 peer-invalid:peer-[&:not(:placeholder-shown)]:block">
+                    Vui lòng nhập số điện thoại hợp lệ (10 số)
+                </span>
+            </div>
+            <input type="hidden" id="userIdInput" name="UserId" value="@User.FindFirstValue(ClaimTypes.NameIdentifier)" />
             <input type="hidden" id="currentDateTime" name="OrderDate" />
-            <input type="hidden" name="product_id" value="@Model.product_id" />
-            <input type="hidden" name="name_product" value="@Model.Product.product_name" />
-            <input type="hidden" name="Quantity" value="@Model.Quantity" />
-            <input type="hidden" name="Price" value="@Model.Price" />
-            <input type="hidden" name="Size" value="@Model.Size" />
-            <input type="hidden" name="Cata_product" value="@Model.Loai" />
-            <input type="hidden" name="Totalprice" value="@((Model.Price * Model.Quantity) + 30000)" />
-            <input type="hidden" name="ShippingFee" value="30000" /> *@
+            <input type="hidden" name="Totalprice" value="@(Model.Sum(p => p.Price * p.Quantity) + 30000)" />
+            <input type="hidden" name="ShippingFee" value="30000" />
 
-            <input type="tel" name="ShipPhoneNumber" placeholder="Phone" class="w-full p-3 border rounded-md mb-6" required>
-
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                <input type="hidden" name="[@i].product_id" value="@Model[i].product_id" />
+                <input type="hidden" name="[@i].name_product" value="@Model[i].Products.product_name" />
+                <input type="hidden" name="[@i].Quantity" value="@Model[i].Quantity" />
+                <input type="hidden" name="[@i].Price" value="@Model[i].Price" />
+                <input type="hidden" name="[@i].Size" value="@Model[i].Size" />
+                <input type="hidden" name="[@i].Cata_product" value="@Model[i].Loai" />
+            }
             <div class="bg-white p-6 shadow-md rounded-lg">
                 <h2 class="text-xl font-bold mb-2">Payment</h2>
                 <p class="text-gray-600 text-sm mb-4">All transactions are secure and encrypted.</p>
@@ -36,10 +80,10 @@
                                 <span>Chuyển khoản (Bank Deposit)</span>
                             </div>
                             <div class="flex space-x-2">
-                                <img src="#" alt="BIDV" class="h-5">
-                                <img src="#" alt="VCB" class="h-5">
-                                <img src="#" alt="MB Bank" class="h-5">
-                                <img src="#" alt="TP Bank" class="h-5">
+                                <img src="https://rubee.com.vn/wp-content/uploads/2022/01/logo-ngan-hang-bidv.jpg" class="h-5">
+                                <img src="http://dcdesign.vn/image/data/DC%20Design/BAI%20VIET%20CHUYEN%20NGANH/Logo%20dep/logo-vietcombank.jpg" alt="VCB" class="h-5">
+                                <img src="https://www.mbbank.com.vn/images/logo.png" alt="MB Bank" class="h-5">
+                                <img src="https://tpb.vn/wps/wcm/connect/a85b875d-ad73-4591-8fd5-e8417a69c316/logo-tpb.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE-a85b875d-ad73-4591-8fd5-e8417a69c316-pjudclH" alt="TP Bank" class="h-5">
                             </div>
                             <input type="radio" name="PaymentMethod" value="bank_transfer" class="hidden" id="input-card" required>
                         </div>
@@ -83,7 +127,7 @@
             </div>
             <button type="submit" class="w-full bg-blue-600 text-white p-3 rounded-lg text-lg hover:bg-blue-700 transition">Thanh toán</button>
         </div>
-        <!-- Right Column - Order Summary -->
+        <!-- Cột phải - Tóm tắt đơn hàng -->
         <div class="bg-gray-100 p-6 md:p-10 md:w-1/3">
             <div class="border-b border-gray-300 pb-6">
                 @foreach (var product in Model)
@@ -91,16 +135,17 @@
                     <div class="flex items-start mb-4">
                         <div class="relative mr-4">
                             <div class="w-16 h-20 bg-gray-200 rounded-md relative">
-@*                                 <img src="@product.Product.ProductImages" alt="@product.Loai" class="w-full h-full object-cover rounded-md"> *@
+                                <img src="@product.ProductImages.ImagePath" alt="@product.Loai" class="w-full h-full object-cover rounded-md">
                                 <span class="absolute -top-2 -right-2 w-5 h-5 bg-gray-500 rounded-full text-white text-xs flex items-center justify-center">@product.Quantity</span>
                             </div>
                         </div>
                         <div class="flex-1">
-                            <h3 class="font-semibold">@product.Product.product_name</h3>
+                            <h3 class="font-semibold">@product.Products.product_name</h3>
                             <p class="text-sm text-gray-600">@product.Size</p>
                         </div>
                         <div class="text-right">
                             <p class="font-semibold">@string.Format("{0:N0}", product.Price) ₫</p>
+                            <p class="text-sm">x @product.Quantity</p>
                         </div>
                     </div>
                 }
@@ -108,20 +153,20 @@
 
             <div class="py-4 border-b border-gray-300">
                 <div class="flex justify-between mb-2">
-                    <span>Subtotal</span>
+                    <span>Tạm tính</span>
                     <span class="font-semibold">
                         @string.Format("{0:N0}", Model.Sum(p => p.Price * p.Quantity)) ₫
                     </span>
                 </div>
                 <div class="flex justify-between mb-2">
-                    <span class="font-semibold">Shipping</span>
+                    <span class="font-semibold">Phí vận chuyển</span>
                     <span class="font-semibold">30.000₫</span>
                 </div>
             </div>
 
             <div class="pt-4">
                 <div class="flex justify-between items-center mb-4">
-                    <span class="text-lg font-bold">Total</span>
+                    <span class="text-lg font-bold">Tổng cộng</span>
                     <div class="text-right">
                         <span class="text-xl font-bold ml-2">
                             @string.Format("{0:N0}", Model.Sum(p => p.Price * p.Quantity) + 30000) ₫
@@ -130,45 +175,18 @@
                 </div>
             </div>
 
-            <!-- Note Section -->
+            <!-- Phần ghi chú -->
             <div class="pt-4">
                 <div class="flex justify-between items-center mb-4">
-                    <span class="text-sm font-semibold">Note</span>
+                    <span class="text-sm font-semibold">Ghi chú</span>
                 </div>
                 <div class="text-gray-600">
-                    <textarea id="note" name="Note" rows="4" class="w-full p-2 border rounded-md" placeholder="Enter any special instructions or notes here..."></textarea>
+                    <textarea id="note" name="Note" rows="4" class="w-full p-2 border rounded-md" placeholder="Nhập bất kỳ hướng dẫn hoặc ghi chú đặc biệt nào tại đây..."></textarea>
                 </div>
             </div>
         </div>
     </form>
 </div>
 <script>
-    // Định nghĩa các phương thức thanh toán
-    const paymentMethods = ['card', 'cod', 'paypal'];
 
-    // Xử lý khi chọn phương thức thanh toán
-    paymentMethods.forEach(method => {
-        const option = document.getElementById(`option-${method}`);
-        const radio = document.getElementById(`radio-${method}`);
-        const input = document.getElementById(`input-${method}`);
-
-        option.addEventListener('click', function() {
-            // Ẩn tất cả các chi tiết
-            paymentMethods.forEach(m => {
-                document.getElementById(`${m}-details`).classList.add('hidden');
-                document.getElementById(`option-${m}`).classList.remove('selected');
-                document.getElementById(`radio-${m}`).classList.remove('selected');
-                document.getElementById(`input-${m}`).checked = false;
-            });
-
-            // Hiển thị chi tiết của phương thức đã chọn
-            document.getElementById(`${method}-details`).classList.remove('hidden');
-            option.classList.add('selected');
-            radio.classList.add('selected');
-            input.checked = true;
-        });
-    });
-
-    // Chọn phương thức mặc định (chuyển khoản)
-    document.getElementById('option-card').click();
 </script>

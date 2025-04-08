@@ -77,10 +77,10 @@
                         }
                     </div>
                 </div>
-@*                 <input type="hidden" id="selectedColorInput" name="Loai" /> *@
-                <input type="hidden" id="userIdInput" name="UserId" value="@User.FindFirstValue(ClaimTypes.NameIdentifier)" />
-                <input type="hidden" id="selectedColorInput" name="variant" />
 
+                <input type="hidden" id="userIdInput" name="UserId" value="@User.FindFirstValue(ClaimTypes.NameIdentifier)" />
+                <input type="hidden" id="selectedColorInput" name="Loai" />
+                <input type="hidden" id="selectedColorInputLoai" name="variant" />
                 <input type="hidden" id="selectedSizeInput" name="Size" />
                 <input type="hidden" name="product_id" value="@Model.product_id" />
                 <input type="hidden" name="type_id" value="@Model.type_id" />
@@ -89,8 +89,17 @@
                 <div id="quantity-info" class="mt-4 text-gray-500"></div>
                 <div class="mt-4">
                     <label for="Quantity" class="block text-lg font-medium">Số lượng</label>
-                    <input type="number" name="soluong" id="Quantity" class="border rounded px-4 py-2 w-32" min="1" value="1" />
-@*                     <input type="number" name="soluong" id="Quantity" class="border rounded px-4 py-2 w-32" min="1" value="1" /> *@
+                    <input type="number"
+                           name="soluong"
+                           id="Quantity"
+                           class="border rounded px-4 py-2 w-32"
+                           min="1"
+                           value="1"/>
+
+                    <input type="hidden"
+                           name="Quantity"
+                           id="soluongHidden"
+                           value="1"/>
                 </div>
                 <div class="flex gap-4">
                     <button type="submit" id="addToCart" form="cartForm"
@@ -194,32 +203,7 @@
 </section>
 <hr />
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        let userId = document.getElementById("userIdInput").value.trim();
-
-        console.log("User ID từ input:", userId);
-
-        document.getElementById("cartForm").addEventListener("submit", function (event) {
-            if (!userId) {
-                event.preventDefault();
-                document.getElementById("loginModal").classList.remove("hidden");
-            }
-        });
-    });
-        document.getElementById("okButton").onclick = function () {
-        window.location.href = "/Account/Login";
-    };
-        document.addEventListener("DOMContentLoaded", function () {
-        const buyNowButton = document.getElementById("buyNow");
-        const cartForm = document.getElementById("cartForm");
-        if (buyNowButton) {
-            buyNowButton.addEventListener("click", function () {
-                cartForm.action = "/Orders/CreateOrdersByProduct";
-                cartForm.method = "GET";
-            });
-        }
-    });
-        function checkForm() {
+           function checkForm() {
         const submitButton = document.querySelector("#addToCart");
         const submitButtonBuy = document.querySelector("#buyNow");
 
@@ -241,4 +225,14 @@
             submitButtonBuy?.classList.remove("bg-blue-500", "text-white");
         }
     }
+        document.addEventListener("DOMContentLoaded", function () {
+        const buyNowButton = document.getElementById("buyNow");
+        const cartForm = document.getElementById("cartForm");
+        if (buyNowButton) {
+            buyNowButton.addEventListener("click", function () {
+                cartForm.action = "/Orders/CreateOrdersByProduct";
+                cartForm.method = "GET";
+            });
+        }
+    });
 </script>

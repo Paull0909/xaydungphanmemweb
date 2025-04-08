@@ -19,7 +19,6 @@ namespace Web.Controllers
             var total = await _unitOfWork.TotalRevenueRepository.GetAllforYear();
             return View(total);
         }
-        
         [HttpGet]
         public async Task<IActionResult> GetTotalbyYear(int year)
         {

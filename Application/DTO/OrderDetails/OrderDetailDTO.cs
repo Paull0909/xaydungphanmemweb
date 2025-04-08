@@ -1,4 +1,5 @@
 ﻿using Application.DTO.Adventisements;
+using Application.DTO.ProductImages;
 using AutoMapper;
 
 namespace Application.DTO.OrderDetails
@@ -12,11 +13,12 @@ namespace Application.DTO.OrderDetails
         public decimal Price { set; get; }
         public string Cata_product { set; get; }
         public string Size { set; get; }
+        public ProductImageDTO imageDTO { set; get; }
         public class AutoMapperProfiles : Profile
         {
             public AutoMapperProfiles()
             {
-                CreateMap<Entities.Order, OrderDetailDTO>();
+                CreateMap<Entities.OrderDetail, OrderDetailDTO>();
             }
         }
     }

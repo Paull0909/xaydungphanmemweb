@@ -219,7 +219,7 @@ namespace Web.Controllers
         public async Task<IActionResult> ExternalLoginCallback(string? returnUrl, string? remoteError)
         {
             // If no returnUrl is provided, default to the application's home page.
-            returnUrl = returnUrl ?? Url.Content("~/");
+            returnUrl = Url.Content("~/");
 
             // Check if an error occurred during the external authentication process.
             // If so, display an alert to the user and close the popup window.
@@ -253,7 +253,7 @@ namespace Web.Controllers
             if (signInResult.Succeeded)
             {
                 returnUrl = Url.Content("~/");
-                return Content($"<script>window.opener.location.href = '{returnUrl}'; window.close();</script>", "text/html");
+                return RedirectToAction("index", "home");
             }
 
             // If the user does not have a corresponding record in the AspNetUserLogins table,

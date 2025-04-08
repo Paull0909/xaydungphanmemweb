@@ -30,8 +30,8 @@
                         <td class="p-2">@item.Loai</td>
                         <td class="p-2">@item.Size</td>
                         <td class="p-2">
-                            <input type="number" class="w-16 p-1 border rounded quantity-input"
-                                   value="@item.Quantity" min="1" data-id="@item.Id" data-price="@item.Price">
+                            @item.Quantity             @* <input type="number" class="w-16 p-1 border rounded quantity-input"
+                                   value="@item.Quantity" min="1" data-id="@item.Id" data-price="@item.Price"> *@
                         </td>
                         <td class="p-2 total-price">@String.Format("{0:N0}", item.Price * item.Quantity) <sup>đ</sup></td>
                         <td class="p-2">
@@ -73,44 +73,44 @@
     </div>
 </div>
 <script>
-       document.addEventListener("DOMContentLoaded", function () {
-        let quantityInputs = document.querySelectorAll(".quantity-input");
-        let totalPriceElement = document.querySelector("#total-price");
+    //    document.addEventListener("DOMContentLoaded", function () {
+    //     let quantityInputs = document.querySelectorAll(".quantity-input");
+    //     let totalPriceElement = document.querySelector("#total-price");
 
-        quantityInputs.forEach(input => {
-            input.addEventListener("change", function () {
-                let newQuantity = parseInt(this.value);
-                if (newQuantity < 1) {
-                    this.value = 1;
-                    newQuantity = 1;
-                }
+    //     quantityInputs.forEach(input => {
+    //         input.addEventListener("change", function () {
+    //             let newQuantity = parseInt(this.value);
+    //             if (newQuantity < 1) {
+    //                 this.value = 1;
+    //                 newQuantity = 1;
+    //             }
 
-                let price = parseFloat(this.dataset.price);
-                let id = this.dataset.id;
-                let totalElement = this.closest("tr").querySelector(".total-price");
+    //             let price = parseFloat(this.dataset.price);
+    //             let id = this.dataset.id;
+    //             let totalElement = this.closest("tr").querySelector(".total-price");
 
-                // 🛠 Kiểm tra nếu `totalElement` không tồn tại
-                if (!totalElement) {
-                    console.error("Không tìm thấy phần tử 'thành tiền' trong hàng này.");
-                    return;
-                }
+    //             // 🛠 Kiểm tra nếu `totalElement` không tồn tại
+    //             if (!totalElement) {
+    //                 console.error("Không tìm thấy phần tử 'thành tiền' trong hàng này.");
+    //                 return;
+    //             }
 
-                // Cập nhật giá thành tiền
-                let newTotal = newQuantity * price;
-                totalElement.innerHTML = newTotal.toLocaleString() + " đ";
+    //             // Cập nhật giá thành tiền
+    //             let newTotal = newQuantity * price;
+    //             totalElement.innerHTML = newTotal.toLocaleString() + " đ";
 
-                // Cập nhật tổng tiền hàng
-                let totalPrice = 0;
-                document.querySelectorAll(".total-price").forEach(item => {
-                    let priceText = item.innerText.replace(/\D/g, ""); // Lấy số từ chuỗi
-                    totalPrice += parseFloat(priceText) || 0;
-                });
+    //             // Cập nhật tổng tiền hàng
+    //             let totalPrice = 0;
+    //             document.querySelectorAll(".total-price").forEach(item => {
+    //                 let priceText = item.innerText.replace(/\D/g, ""); // Lấy số từ chuỗi
+    //                 totalPrice += parseFloat(priceText) || 0;
+    //             });
 
-                if (totalPriceElement) {
-                    totalPriceElement.innerHTML = totalPrice.toLocaleString() + " đ";
-                }              
-            });
-        });
-    });
+    //             if (totalPriceElement) {
+    //                 totalPriceElement.innerHTML = totalPrice.toLocaleString() + " đ";
+    //             }              
+    //         });
+    //     });
+    // });
 
 </script>
