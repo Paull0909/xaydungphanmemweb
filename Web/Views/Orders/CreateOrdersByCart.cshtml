@@ -188,5 +188,40 @@
     </form>
 </div>
 <script>
+    const paymentOptions = document.querySelectorAll('.payment-option');
+    const radios = {
+        card: document.getElementById('radio-card'),
+        cod: document.getElementById('radio-cod'),
+        paypal: document.getElementById('radio-paypal')
+    };
 
+    const details = {
+        card: document.getElementById('card-details'),
+        cod: document.getElementById('cod-details'),
+        paypal: document.getElementById('paypal-details')
+    };
+
+    paymentOptions.forEach(option => {
+        option.addEventListener('click', () => {
+            // Clear selected class & scale
+            paymentOptions.forEach(opt => opt.classList.remove('selected'));
+            Object.keys(radios).forEach(key => {
+                radios[key].querySelector('div').classList.remove('scale-100');
+                radios[key].querySelector('div').classList.add('scale-0');
+                details[key].classList.add('hidden');
+            });
+
+            // Add selected class & scale
+            option.classList.add('selected');
+            const id = option.id.replace('option-', '');
+            radios[id].querySelector('div').classList.remove('scale-0');
+            radios[id].querySelector('div').classList.add('scale-100');
+
+            // Set checked
+            document.getElementById(`input-${id}`).checked = true;
+
+            // Show extra details
+            details[id].classList.remove('hidden');
+        });
+    });
 </script>
