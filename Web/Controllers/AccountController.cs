@@ -253,7 +253,7 @@ namespace Web.Controllers
             if (signInResult.Succeeded)
             {
                 returnUrl = Url.Content("~/");
-                return RedirectToAction("index", "home");
+                return Content($"<script>window.opener.location.href = '{returnUrl}'; window.close();</script>", "text/html");
             }
 
             // If the user does not have a corresponding record in the AspNetUserLogins table,
