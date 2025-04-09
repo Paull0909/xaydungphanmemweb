@@ -38,6 +38,8 @@ namespace Web.Controllers
             {
                 var odt = i;
                 var ord = _mapper.Map<OrderDetail,OrderDetailDTO>(odt);
+                var pr = await _unitOfWork.Products.GetByIdAsync(ord.product_id);
+                ord.product_name = pr.product_name;
                 orderDetails.Add(ord);
             }               
             foreach(var i in orderDetails)

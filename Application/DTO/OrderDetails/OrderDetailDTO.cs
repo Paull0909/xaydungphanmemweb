@@ -9,6 +9,7 @@ namespace Application.DTO.OrderDetails
         public int Id { get; set; }
         public int bill_id { get; set; }
         public int product_id { get; set; }
+        public string product_name { set; get; }
         public int quantity { get; set; }
         public decimal Price { set; get; }
         public string Cata_product { set; get; }
