@@ -1,54 +1,122 @@
 ﻿@model List<Application.DTO.OrderDetails.OrderDetailDTO>
 @using System.Security.Claims
+
+@functions {
+    string FormatCurrency(decimal value)
+    {
+        return string.Format("{0:N0}₫", value);
+    }
+}
+
 @{
     ViewData["Title"] = "Chi tiết đơn hàng";
     var billId = Model.FirstOrDefault()?.bill_id ?? 0;
+    var subtotal = Model.Sum(x => x.Price * x.quantity);
+    var shippingFee = 30000;
+    var total = subtotal + shippingFee;
 }
 
-<div class="container mx-auto px-4 py-8">
-    <a asp-action="GetAllByIdUser" asp-controller="Orders" asp-route-id="@Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier))" class="mb-6 flex items-center text-blue-600 hover:text-blue-800">
-        <i class="fas fa-arrow-left mr-2"></i> Quay lại danh sách đơn hàng
+<div class="container mx-auto px-4 py-10 max-w-6xl">
+    <!-- Nút quay lại -->
+    <a asp-action="GetAllByIdUser" asp-controller="Orders" asp-route-id="@Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier))"
+       class="mb-8 inline-flex items-center text-blue-600 hover:text-blue-800 bg-blue-50 hover:bg-blue-100 px-4 py-2 rounded-lg transition-all duration-200 group">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 group-hover:-translate-x-1 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+        Quay lại danh sách đơn hàng
     </a>
 
-    <div class="flex justify-between items-center mb-6">
-        <h1 class="text-2xl font-bold text-gray-800">Chi tiết đơn hàng <span class="text-blue-600">#@billId</span></h1>
+    <!-- Tiêu đề đơn hàng -->
+    <div class="bg-gradient-to-r from-gray-50 to-white rounded-2xl p-6 mb-8 shadow-sm">
+        <div class="flex justify-between items-center">
+            <div>
+                <h1 class="text-2xl font-bold text-gray-800">Chi tiết đơn hàng <span class="text-blue-600">#@billId</span></h1>
+                <p class="text-gray-500 mt-1">Xem thông tin chi tiết về đơn hàng của bạn</p>
+            </div>
+        </div>
     </div>
 
-    <div class="bg-white rounded-lg shadow overflow-hidden">
+    <!-- Bảng sản phẩm -->
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100">
         <div class="p-6">
-            <h3 class="text-lg font-semibold mb-4">Sản phẩm đã đặt</h3>
-            <table class="min-w-full divide-y divide-gray-200">
-                <thead class="bg-gray-100">
-                    <tr>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Sản phẩm</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Màu</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Size</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Số lượng</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Đơn giá</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Thành tiền</th>
-                    </tr>
-                </thead>
-                <tbody class="bg-white divide-y divide-gray-200">
-                    @foreach (var item in Model)
-                    {
-                        var Total = item.Price * item.quantity;
+            <h3 class="text-lg font-semibold mb-6 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                </svg>
+                Sản phẩm đã đặt
+            </h3>
+
+            <div class="overflow-x-auto rounded-xl border border-gray-100">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gradient-to-r from-gray-50 to-white">
                         <tr>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <div class="flex items-center">
-                                    <div class="flex-shrink-0 h-20 w-20">
-                                        <img class="h-20 w-20 rounded-full" src="@item.imageDTO?.ImagePath" alt="">
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4 text-sm text-gray-500">@item.Cata_product</td>
-                            <td class="px-6 py-4 text-sm text-gray-500">@item.Size</td>
-                            <td class="px-6 py-4 text-sm text-gray-500">@item.quantity</td>
-                            <td class="px-6 py-4 text-sm text-gray-500">@item.Price.ToString("N0")₫</td>
-                            <td class="px-6 py-4 text-sm font-medium text-gray-900">@Total.ToString("N0")₫</td>
+                            <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Ảnh</th>
+                            <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tên sản phẩm</th>
+                            <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Màu</th>
+                            <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Size</th>
+                            <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Số lượng</th>
+                            <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Đơn giá</th>
+                            <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Thành tiền</th>
                         </tr>
-                    }
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-100">
+                        @foreach (var item in Model)
+                        {
+                            var Total = item.Price * item.quantity;
+                            <tr class="hover:bg-blue-50 transition-colors duration-150">
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="h-20 w-20 flex-shrink-0 overflow-hidden rounded-lg border border-gray-200">
+                                            <img class="h-full w-full object-cover object-center" src="@item.imageDTO?.ImagePath" alt="@item.product_name">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-sm font-semibold text-gray-900">
+                                    @item.product_name
+                                </td>
+                                <td class="px-6 py-4 text-sm font-semibold text-gray-900">
+                                        @item.Cata_product
+                                </td>
+                                <td class="px-6 py-4 text-sm font-semibold text-gray-900">
+                                        @item.Size
+                                </td>
+                                <td class="px-6 py-4 text-sm font-semibold text-gray-900 ml-32">
+                                    @item.quantity
+                                </td>
+
+                                <td class="px-6 py-4 text-sm font-semibold text-gray-900">@FormatCurrency(item.Price)</td>
+                                <td class="px-6 py-4 text-sm font-semibold text-gray-900">
+                                    @FormatCurrency(Total)
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Tổng kết -->
+            <div class="mt-8 bg-gray-50 rounded-xl p-6 border border-gray-100">
+                <h4 class="text-lg font-semibold mb-4 text-gray-800 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                    </svg>
+                    Tổng kết đơn hàng
+                </h4>
+                <div class="space-y-3">
+                    <div class="flex justify-between items-center pb-3 border-b border-gray-200">
+                        <span class="text-gray-600">Tạm tính:</span>
+                        <span class="font-medium text-gray-900">@FormatCurrency(subtotal)</span>
+                    </div>
+                    <div class="flex justify-between items-center pb-3 border-b border-gray-200">
+                        <span class="text-gray-600">Phí vận chuyển:</span>
+                        <span class="font-medium text-gray-900">@FormatCurrency(shippingFee)</span>
+                    </div>
+                    <div class="flex justify-between items-center pt-2">
+                        <span class="text-lg font-bold text-gray-900">Tổng cộng:</span>
+                        <span class="text-xl font-bold text-blue-600">@FormatCurrency(total)</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -36,10 +36,13 @@ namespace Web.Controllers
             List<OrderDetailDTO> orderDetails = new List<OrderDetailDTO>();
             foreach (var i in list)
             {
-                var ord = _mapper.Map<OrderDetail, OrderDetailDTO>(i);
+                var odt = i;
+                var ord = _mapper.Map<OrderDetail, OrderDetailDTO>(odt);
+                var pr = await _unitOfWork.Products.GetByIdAsync(ord.product_id);
+                ord.product_name = pr.product_name;
                 orderDetails.Add(ord);
-            }               
-            foreach(var i in orderDetails)
+            }
+            foreach (var i in orderDetails)
             {
                 var img = await _unitOfWork.ProductImageRepository.GetImgByIdProductAsync(i.product_id);
                 i.imageDTO = _mapper.Map<ProductImage, ProductImageDTO>(img);
@@ -56,29 +59,29 @@ namespace Web.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateOrdersByProduct(CreateUpdateOrderDetailRequest a, CreateUpdateOrderRequest od)
         {
-            if (a != null || od  != null)
+            if (a != null || od != null)
             {
-                    var or = _mapper.Map<CreateUpdateOrderRequest, Order>(od);
-                    _unitOfWork.OrderRepository.Add(or);
-                    var result = await _unitOfWork.CompleteAsync();
-                    a.bill_id = or.bill_id;
-                    var ord = _mapper.Map<CreateUpdateOrderDetailRequest, OrderDetail>(a);
-                    _unitOfWork.OrderDetailRepository.Add(ord);
-                    var variant = await _unitOfWork.VariantsProductRepository.Loadwhenbuyer(ord.product_id, ord.Cata_product);
-                    var size = await _unitOfWork.SizeProductsRepository.Loadwhenbuyer(variant.Id, ord.Size, ord.quantity);
-                    if(size == false)
-                    {
-                        return View("CreateOrdersByProduct");
-                    }
-                    TotalRevenue t = new TotalRevenue
-                    {
-                        tongdoanhthu = or.Totalprice,
-                        date = DateTime.Now,
-                        numberofsales = 1
-                    };
-                    await _unitOfWork.TotalRevenueRepository.AddWhenbyOder(t);
-                    _unitOfWork.CompleteAsync();
-                    return RedirectToAction("Index", "Home");
+                var or = _mapper.Map<CreateUpdateOrderRequest, Order>(od);
+                _unitOfWork.OrderRepository.Add(or);
+                var result = await _unitOfWork.CompleteAsync();
+                a.bill_id = or.bill_id;
+                var ord = _mapper.Map<CreateUpdateOrderDetailRequest, OrderDetail>(a);
+                _unitOfWork.OrderDetailRepository.Add(ord);
+                var variant = await _unitOfWork.VariantsProductRepository.Loadwhenbuyer(ord.product_id, ord.Cata_product);
+                var size = await _unitOfWork.SizeProductsRepository.Loadwhenbuyer(variant.Id, ord.Size, ord.quantity);
+                if (size == false)
+                {
+                    return View("CreateOrdersByProduct");
+                }
+                TotalRevenue t = new TotalRevenue
+                {
+                    tongdoanhthu = or.Totalprice,
+                    date = DateTime.Now,
+                    numberofsales = 1
+                };
+                await _unitOfWork.TotalRevenueRepository.AddWhenbyOder(t);
+                _unitOfWork.CompleteAsync();
+                return RedirectToAction("Index", "Home");
             }
             else
             {
@@ -90,7 +93,7 @@ namespace Web.Controllers
         [HttpGet]
         public async Task<IActionResult> CreateOrdersByCart(List<int> id)
         {
-            if (id.Count>0)
+            if (id.Count > 0)
             {
                 List<CartDTO> list = new List<CartDTO>();
                 foreach (var item in id)
@@ -113,7 +116,7 @@ namespace Web.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateOrdersByCart(List<CreateUpdateOrderDetailRequest> list, CreateUpdateOrderRequest od)
         {
-            if (list != null || od  != null)
+            if (list != null || od != null)
             {
                 var or = _mapper.Map<CreateUpdateOrderRequest, Order>(od);
                 _unitOfWork.OrderRepository.Add(or);
