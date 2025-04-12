@@ -157,5 +157,18 @@ namespace Web.Controllers
                 return View(list);
             }
         }
+        [HttpGet]
+        public async Task<IActionResult> GetBillNew()
+        {
+            var or = await _unitOfWork.OrderRepository.GetAllByBillNew();
+            return View(or);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetBillOld()
+        {
+            var or = await _unitOfWork.OrderRepository.GetAllByBillOld();
+            return View(or);
+        }
     }
 }
