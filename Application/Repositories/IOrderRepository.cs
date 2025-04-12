@@ -9,5 +9,7 @@ namespace Application.Repositories
     {
         Task<PagedResult<OrderDTO>> GetOrderPagingAsync(PagedRequest request);
         Task<List<Order>> GetAllByUser(Guid id);
+        Task<List<Order>> GetAllByBillNew();
+        Task<List<Order>> GetAllByBillOld();
     }
 }

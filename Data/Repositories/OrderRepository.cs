@@ -2,6 +2,7 @@
 using Application.DTO.Categorys;
 using Application.DTO.Orders;
 using Application.Entities;
+using Application.Enum;
 using Application.Repositories;
 using AutoMapper;
 using Data.EF;
@@ -17,6 +18,18 @@ namespace Data.Repositories
         public OrderRepository(WebDbContext context, IMapper mapper) : base(context)
         {
             _mapper = mapper;
+        }
+
+        public Task<List<Order>> GetAllByBillNew()
+        {
+            var or = _context.Orders.Where(t => t.Status == Status.New).OrderByDescending(t=>t.OrderDate).ToListAsync();
+            return or;
+        }
+
+        public Task<List<Order>> GetAllByBillOld()
+        {
+            var or = _context.Orders.Where(t => t.Status == Status.Old).OrderByDescending(t => t.OrderDate).ToListAsync();
+            return or;
         }
 
         public async Task<List<Order>> GetAllByUser(Guid id)
