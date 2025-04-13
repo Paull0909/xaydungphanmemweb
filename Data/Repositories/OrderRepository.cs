@@ -8,6 +8,7 @@ using AutoMapper;
 using Data.EF;
 using Data.SeedWorks;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace Data.Repositories
 {
@@ -36,6 +37,27 @@ namespace Data.Repositories
         {
             var or = _context.Orders.Where(x => x.UserId == id).ToList();
             return or;
+        }
+        public async Task<int> UpdateStatusBill(int id, int status)
+        {
+            var or = await _context.Orders.FindAsync(id);
+            if(or != null)
+            {
+                if (status == 0)
+                {
+                    or.Status = Status.New;
+                    _context.Orders.Update(or);
+                    _context.SaveChanges();
+                }
+                else if (status == 1)
+                {
+                    or.Status = Status.Old;
+                    _context.Orders.Update(or);
+                    _context.SaveChanges();
+                }
+                else return 0;
+            }
+            return or.bill_id;
         }
 
         public async Task<PagedResult<OrderDTO>> GetOrderPagingAsync(PagedRequest request)

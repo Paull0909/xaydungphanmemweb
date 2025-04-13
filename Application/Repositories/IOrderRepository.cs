@@ -11,5 +11,6 @@ namespace Application.Repositories
         Task<List<Order>> GetAllByUser(Guid id);
         Task<List<Order>> GetAllByBillNew();
         Task<List<Order>> GetAllByBillOld();
+        Task<int> UpdateStatusBill(int id, int status);
     }
 }

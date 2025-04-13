@@ -170,5 +170,13 @@ namespace Web.Controllers
             var or = await _unitOfWork.OrderRepository.GetAllByBillOld();
             return View(or);
         }
+
+
+        [HttpPost]
+        public async Task<IActionResult> UpdateStatus(int id,int status)
+        {
+            var or = await _unitOfWork.OrderRepository.UpdateStatusBill(id,status);
+            return View(or);
+        }
     }
 }
