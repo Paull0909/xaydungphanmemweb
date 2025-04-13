@@ -176,7 +176,7 @@ namespace Web.Controllers
         public async Task<IActionResult> UpdateStatus(int id,int status)
         {
             var or = await _unitOfWork.OrderRepository.UpdateStatusBill(id,status);
-            return View(or);
+            return RedirectToAction("GetBillNew");
         }
     }
 }

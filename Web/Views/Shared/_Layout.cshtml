@@ -81,15 +81,12 @@
                     </button>
                 </div>
                 <div class="hidden lg:flex lg:gap-x-12 justify-center w-auto mx-auto">
-                    @if (User.Identity.IsAuthenticated)
-                    {
                         <ul class="flex space-x-10 text-gray-700">
                             <li><a class="hover:text-gray-900 text-xl font-medium">Women</a></li>
                             <li><a class="hover:text-gray-900 text-xl font-medium">Men</a></li>
                             <li><a class="hover:text-gray-900 text-xl font-medium">Company</a></li>
                             <li><a class="hover:text-gray-900 text-xl font-medium">Stores</a></li>
                         </ul>
-                    }
                 </div>
                 <div class="hidden lg:flex lg:justify-between items-center lg:gap-x-4 pl-0 w-1/2">
                     <div class="flex items-center gap-x-4 w-full">
@@ -260,14 +257,13 @@
                         </a>
                     </li>
                     <li>
-                        <a asp-controller="Orders" asp-action="GetAllByIdUser"
-                           class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                            <svg class="shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-                                 aria-hidden="true"
+                        <a asp-controller="Orders" asp-action="GetBillNew"
+                             class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group">
+                            <svg class="shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900"
                                  xmlns="http://www.w3.org/2000/svg"
                                  fill="currentColor"
-                                 viewBox="0 0 20 20">
-                                <path d="m17.418 3.623-.018-.008a6.713 6.713 0 0 0-2.4-.569V2h1a1 1 0 1 0 0-2h-2a1 1 0 0 0-1 1v2H9.89A6.977 6.977 0 0 1 12 8v5h-2V8A5 5 0 1 0 0 8v6a1 1 0 0 0 1 1h8v4a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-4h6a1 1 0 0 0 1-1V8a5 5 0 0 0-2.582-4.377ZM6 12H4a1 1 0 0 1 0-2h2a1 1 0 0 1 0 2Z" />
+                                 viewBox="0 0 24 24">
+                                <path d="M3 3a1 1 0 0 1 1-1h2.22a1 1 0 0 1 .97.757L7.68 5H21a1 1 0 0 1 .96 1.28l-2 7A1 1 0 0 1 19 14H8a1 1 0 0 1-.97-.757L4.28 4H4a1 1 0 0 1-1-1Zm4.1 11h10.8l1.43-5H8.53l-1.43 5Zm.9 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Zm9 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z" />
                             </svg>
                             <span class="flex-1 ms-3 whitespace-nowrap">Quản lý đơn hàng</span>
                         </a>
