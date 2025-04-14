@@ -43,18 +43,37 @@ namespace Web.Controllers
         {
             if (request != null)
             {
-                var cart = _mapper.Map<CreateUpdateCartRequest, Cart>(request);
-                _unitOfWork.CartRepository.Add(cart);
-                var result = await _unitOfWork.CompleteAsync();
-                if (result > 0)
+                var cr = await _unitOfWork.CartRepository.GetCart(request.UserId, request.product_id,request.Loai,request.Size);
+                if(cr == null)
                 {
-                    ViewBag.Category = "Da them vao gio hang";
-                    return RedirectToAction("Index", "Home");
+                    var cart = _mapper.Map<CreateUpdateCartRequest, Cart>(request);
+                    _unitOfWork.CartRepository.Add(cart);
+                    var result = await _unitOfWork.CompleteAsync();
+                    if (result > 0)
+                    {
+                        ViewBag.Category = "Da them vao gio hang";
+                        return RedirectToAction("Index", "Home");
+                    }
+                    else
+                    {
+                        ViewBag.Category = "Loi vui long nhap lai";
+                        return RedirectToAction("CreateCategory");
+                    }
                 }
                 else
                 {
-                    ViewBag.Category = "Loi vui long nhap lai";
-                    return RedirectToAction("CreateCategory");
+                    cr.Quantity = cr.Quantity + request.Quantity;
+                    var result = await _unitOfWork.CompleteAsync();
+                    if (result > 0)
+                    {
+                        ViewBag.Category = "Da them vao gio hang";
+                        return RedirectToAction("Index", "Home");
+                    }
+                    else
+                    {
+                        ViewBag.Category = "Loi vui long nhap lai";
+                        return RedirectToAction("CreateCategory");
+                    }
                 }
             }
             else
