@@ -18,18 +18,30 @@ namespace Web.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateSize(CreateUpdateSizeProductRequest request)
+        public async Task<IActionResult> CreateSize(List<CreateUpdateSizeProductRequest> request)
         {
-            var model = _mapper.Map<CreateUpdateSizeProductRequest, Size_Product>(request);
-            var name = await _unitOfWork.SizeProductsRepository.GetByProduct(model.variants_product_id);
-            string mess = "Size da ton tai";
-            foreach(var i in name)
+            foreach(var i in request)
             {
-                if (i.Name == model.Name) return View(mess);
+                var model = _mapper.Map<CreateUpdateSizeProductRequest, Size_Product>(i);
+                var name = await _unitOfWork.SizeProductsRepository.GetByProduct(model.variants_product_id);
+                string mess = "Size da ton tai";
+                foreach (var j in name)
+                {
+                    if (j.Name == model.Name) return View(mess);
+                }
+                _unitOfWork.SizeProductsRepository.Add(model);
+                _unitOfWork.CompleteAsync();
+                return View(model);
             }
-            _unitOfWork.SizeProductsRepository.Add(model);
-            _unitOfWork.CompleteAsync();
-            return View(model);
+            return RedirectToAction("GetAllProduct","Product");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(int i)
+        {
+                var size = await _unitOfWork.SizeProductsRepository.GetByIdAsync(i);
+                _unitOfWork.SizeProductsRepository.Remove(size);
+                return RedirectToAction("GetAllProduct", "Product");
         }
     }
 }

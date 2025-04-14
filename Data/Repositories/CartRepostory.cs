@@ -30,5 +30,11 @@ namespace Data.Repositories
             }
             return dto;
         }
+
+        public async Task<Cart> GetCart(Guid user, int pr , string loai ,string size)
+        {
+            var cart = _context.Carts.FirstOrDefault(t => t.UserId == user & t.product_id == pr & t.Loai == loai & t.Size == size);
+            return cart;
+        }
     }
 }
