@@ -20,7 +20,7 @@ namespace Application.DTO.Products
         public int type_id { get; set; }
         public string Desdescription { get; set; }
         public int advertisement_id { get; set; }
-        public List<ProductImage> img { set; get; }
+        public List<ProductImage> ProductImages { set; get; }
         public List<Variants_product> variants { get; set; }
         public IEnumerable<Category> Categories { get; set; }
         public IEnumerable<Advertisement> Advertisements { get; set; }
@@ -30,6 +30,7 @@ namespace Application.DTO.Products
             public AutoMapperProfiles()
             {
                 CreateMap<CreateUpdateProductRequest, Entities.Product > ();
+                CreateMap<Entities.Product,CreateUpdateProductRequest>();
             }
         }
     }

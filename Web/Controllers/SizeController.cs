@@ -33,15 +33,16 @@ namespace Web.Controllers
                 _unitOfWork.CompleteAsync();
                 return View(model);
             }
-            return RedirectToAction("GetAllProduct","Product");
+            return RedirectToAction("GetAllProduct", "Product");
         }
 
         [HttpPost]
-        public async Task<IActionResult> Delete(int i)
+        public async Task<IActionResult> Delete(int id)
         {
-                var size = await _unitOfWork.SizeProductsRepository.GetByIdAsync(i);
+                var size = await _unitOfWork.SizeProductsRepository.GetByIdAsync(id);
                 _unitOfWork.SizeProductsRepository.Remove(size);
-                return RedirectToAction("GetAllProduct", "Product");
+            await _unitOfWork.CompleteAsync();
+            return Ok();
         }
     }
 }

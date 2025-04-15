@@ -15,7 +15,7 @@ namespace Web.Controllers
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
-
+        [HttpGet]
         public async Task<IActionResult> GetAllProduct()
         {
             ViewBag.Category = await _unitOfWork.Categories.GetAllAsync();
@@ -81,11 +81,14 @@ namespace Web.Controllers
         public async Task<IActionResult> EditProduct(int id)
         {
             var product = await _unitOfWork.Products.GetByIdAsync(id);
-            ViewBag.Category = await _unitOfWork.Categories.GetAllAsync();
-            product.ProductImages = await _unitOfWork.ProductImageRepository.GetListImgByIdProAsync(id);
-            return View(product);
+            var viewModel = _mapper.Map<CreateUpdateProductRequest>(product);
+            viewModel.Categories = await _unitOfWork.Categories.GetAllAsync();
+            viewModel.Advertisements = await _unitOfWork.AdventisementRepository.GetAllAsync();
+            viewModel.ProductImages = await _unitOfWork.ProductImageRepository.GetListImgByIdProAsync(id);
+            viewModel.variants = await _unitOfWork.VariantsProductRepository.GetVariantsByProductIdAsync(id);
+            return View(viewModel);
         }
-        [HttpPost]
+         [HttpPost]
         public async Task<IActionResult> EditProduct(CreateUpdateProductRequest request)
         {
             var product = await _unitOfWork.Products.GetByIdAsync(request.product_id);
@@ -99,7 +102,7 @@ namespace Web.Controllers
             {
                 foreach (var image in product.ProductImages)
                 {
-                    var imgs = _unitOfWork.ProductImageRepository.GetByIdAsync(image.Id);
+                    var imgs =  await _unitOfWork.ProductImageRepository.GetByIdAsync(image.Id);
                     if(imgs != null)
                     {
                         _mapper.Map(image, imgs);

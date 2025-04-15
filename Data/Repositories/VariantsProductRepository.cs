@@ -64,5 +64,12 @@ namespace Data.Repositories
             var i = _context.Variants_product.FirstOrDefault(t => t.product_id == id & t.Name == name);
             return i;
         }
+        public async Task<List<Variants_product>> GetVariantsByProductIdAsync(int productId)
+        {
+            return await _context.Variants_product
+                                 .Where(v => v.product_id == productId)
+                                 .Include(v => v.Size)
+                                 .ToListAsync();
+        }
     }
 }

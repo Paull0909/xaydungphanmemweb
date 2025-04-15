@@ -39,12 +39,14 @@ namespace Web.Controllers
             _unitOfWork.CompleteAsync();
             return RedirectToAction("GetAllProduct", "Product");
         }
+        [HttpPost]
         public async Task<IActionResult> Delete(int id)
         {
             var img = await _unitOfWork.ProductImageRepository.GetByIdAsync(id);
+            int productId = img.product_id;
             _unitOfWork.ProductImageRepository.Remove(img);
             _unitOfWork.CompleteAsync();
-            return View();
+            return RedirectToAction("EditProduct", "Product", new { id = productId });
         }
     }
 }
