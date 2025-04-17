@@ -92,3 +92,4 @@ document.addEventListener("DOMContentLoaded", function () {
 window.changeImage = changeImage;
 window.toggleSizeInfo = toggleSizeInfo;
 window.toggleSection = toggleSection;
+

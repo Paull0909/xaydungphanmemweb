@@ -1,98 +1,487 @@
-﻿@model Application.Entities.Product
-<div class="p-6 sm:ml-64 bg-gray-50 min-h-screen">
+﻿@model Application.DTO.Products.CreateUpdateProductRequest
+<div class="p-6 sm:ml-64 bg-gray-50 dark:bg-gray-900 min-h-screen">
     <div class="flex flex-col flex-1 overflow-hidden">
-        <form asp-action="CreateVariant" asp-controller="Variant_Product" method="post">
-            <div class="bg-white p-6 rounded-lg shadow-lg">
-                <h2 class="text-xl font-semibold mb-4">Quản lý màu sắc & Sizes</h2>
 
-                <div class="mb-4">
-                    <label class="block text-sm font-medium">Số lượng màu sản phẩm</label>
-                    <input type="number"
-                           id="ProductCount"
-                           class="w-full p-2 border rounded-lg"
-                           min="1"
-                           value="1"
-                           oninput="generateFields()" />
-                </div>
-
-                <div class="mb-4">
-                    <label class="block text-sm font-medium">Số lượng Sizes cho mỗi sản phẩm</label>
-                    <input type="number"
-                           id="sizeCount"
-                           class="w-full p-2 border rounded-lg"
-                           min="1"
-                           value="1"
-                           oninput="generateFields()" />
-                </div>
-
-                <!-- Vùng chứa các trường nhập cho màu sắc và kích thước -->
-                <div id="fieldsContainer" class="mt-4"></div>
+        <!-- Tiêu đề -->
+        <header class="bg-white dark:bg-gray-800 shadow-sm z-10 rounded-xl mb-6">
+            <div class="px-6 py-5 flex justify-between items-center">
+                <h1 class="text-2xl font-bold text-gray-800 dark:text-white flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-purple-600 dark:text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                    </svg>
+                    Chỉnh Sửa Sản Phẩm
+                </h1>
             </div>
+        </header>
 
-            <div class="flex justify-end mt-6">
-                <button type="button"
-                        class="px-6 py-3 bg-red-500 text-white rounded-lg shadow-md hover:bg-red-600 transition"
-                        onclick="closeDetailModal()">
-                    Hủy
-                </button>
-                <button type="submit"
-                        class="ml-3 px-6 py-3 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition">
-                    Lưu
-                </button>
+        <!-- Nội dung trang -->
+        <main class="flex-1 overflow-y-auto bg-transparent">
+            <div class="max-w-6xl mx-auto">
+                <form method="post" asp-controller="Product" asp-action="EditProduct" enctype="multipart/form-data" class="space-y-8">
+                    <input type="hidden" asp-for="product_id" />
+
+                    <!-- Thông tin cơ bản sản phẩm -->
+                    <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700">
+                        <h2 class="text-xl font-bold mb-6 text-gray-800 dark:text-white flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-purple-600 dark:text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                            Thông Tin Cơ Bản
+                        </h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Tên sản phẩm -->
+                            <div class="col-span-2">
+                                <label class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Tên Sản Phẩm</label>
+                                <input type="text"
+                                       class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                                       asp-for="product_name" placeholder="Nhập tên sản phẩm" />
+                                <span asp-validation-for="product_name" class="text-red-500 text-sm mt-1 block"></span>
+                            </div>
+
+                            <!-- Giá -->
+                            <div>
+                                <label class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Giá</label>
+                                <div class="relative">
+                                    <input type="number"
+                                           min="0"
+                                           class="w-full p-3 pl-7 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                                           asp-for="price" placeholder="0" />
+                                    <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                                        <span class="text-gray-500 dark:text-gray-400">đ</span>
+                                    </div>
+                                </div>
+                                <span asp-validation-for="price" class="text-red-500 text-sm mt-1 block"></span>
+                            </div>
+
+                            <!-- Giảm giá -->
+                            <div>
+                                <label class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Giảm Giá (%)</label>
+                                <div class="relative">
+                                    <input type="number"
+                                           min="0"
+                                           max="100"
+                                           class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                                           asp-for="discount" placeholder="0" />
+                                    <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                                        <span class="text-gray-500 dark:text-gray-400">%</span>
+                                    </div>
+                                </div>
+                                <span asp-validation-for="discount" class="text-red-500 text-sm mt-1 block"></span>
+                            </div>
+
+                            <!-- Trạng thái sản phẩm -->
+                            <div>
+                                <label class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Trạng Thái</label>
+                                <select class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                                        asp-for="status">
+                                    <option value="0">Đang Bán</option>
+                                    <option value="1">Hết Hàng</option>
+                                    <option value="2">Ngừng Kinh Doanh</option>
+                                </select>
+                                <span asp-validation-for="status" class="text-red-500 text-sm mt-1 block"></span>
+                            </div>
+
+                            <!-- Sản phẩm nổi bật -->
+                            <div>
+                                <label class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Sản Phẩm Nổi Bật</label>
+                                <select class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                                        asp-for="IsFeatured">
+                                    <option value="1">Có</option>
+                                    <option value="0">Không</option>
+                                </select>
+                                <span asp-validation-for="IsFeatured" class="text-red-500 text-sm mt-1 block"></span>
+                            </div>
+
+                            <!-- Danh mục -->
+                            <div class="col-span-2">
+                                <label class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Danh Mục</label>
+                                <select class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                                        asp-for="type_id">
+                                    <option value="">Chọn danh mục</option>
+                                    @foreach (var category in Model.Categories)
+                                    {
+                                        <option value="@category.type_id">@category.type_name</option>
+                                    }
+                                </select>
+                                <span asp-validation-for="type_id" class="text-red-500 text-sm mt-1 block"></span>
+                            </div>
+
+                            <!-- Quảng cáo -->
+                            <div class="col-span-2">
+                                <label class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Quảng cáo</label>
+                                <select class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                                        asp-for="advertisement_id">
+                                    <option value="">Chọn quảng cáo</option>
+                                    @if (Model.advertisement_id != null)
+                                    {
+                                        foreach (var ad in Model.Advertisements)
+                                        {
+                                            <option value="@ad.id">@ad.title</option>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <option value="">Không quảng cáo</option>
+                                    }
+                                </select>
+                                <span asp-validation-for="advertisement_id" class="text-red-500 text-sm mt-1 block"></span>
+                            </div>
+
+                            <!-- Mô tả -->
+                            <div class="col-span-2">
+                                <label class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Mô Tả</label>
+                                <input type="text"
+                                       class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                                       asp-for="Desdescription" placeholder="Nhập mô tả sản phẩm" />
+                                <span asp-validation-for="Desdescription" class="text-red-500 text-sm mt-1 block"></span>
+                            </div>
+
+                            <!-- Hình ảnh sản phẩm -->
+                            <div class="col-span-2">
+                                <div class="p-4">
+                                    <button type="button" onclick="addNewImageInput()"
+                                            class="px-4 py-2 bg-violet-600 text-white rounded-lg hover:bg-violet-700 transition">
+                                        + Thêm Hình Ảnh Mới
+                                    </button>
+                                </div>
+                                <!-- Vùng chứa hình ảnh với giao diện cải tiến -->
+                                <div id="ProductImagesContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-4">
+                                    @if (Model.ProductImages != null && Model.ProductImages.Any())
+                                    {
+                                        @for (int i = 0; i < Model.ProductImages.Count; i++)
+                                        {
+                                            var image = Model.ProductImages[i];
+                                            <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-4 relative group hover:shadow-md transition-all duration-300 bg-white dark:bg-gray-800" data-image-id="@image.Id" data-is-db-image="true">
+                                                <!-- Xem trước hình ảnh với giao diện cải tiến -->
+                                                <div class="h-36 w-full rounded-lg overflow-hidden mb-3 bg-gray-50 dark:bg-gray-700 flex items-center justify-center">
+                                                    @if (!string.IsNullOrEmpty(image.ImagePath))
+                                                    {
+                                                        <img src="@image.ImagePath" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" alt="Hình ảnh sản phẩm" />
+                                                    }
+                                                    else
+                                                    {
+                                                        <div class="h-full w-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-300 dark:text-gray-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                                                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                                                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                                                <polyline points="21 15 16 10 5 21"></polyline>
+                                                            </svg>
+                                                        </div>
+                                                    }
+                                                </div>
+
+                                                <!-- Hiển thị đường dẫn hình ảnh -->
+                                                <div class="relative mb-2">
+                                                    <input type="text" value="@image.ImagePath"
+                                                           class="w-full p-2 border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-700 rounded-lg text-gray-500 dark:text-gray-400 text-sm cursor-not-allowed"
+                                                           readonly disabled />
+                                                </div>
+
+                                                <!-- Hiển thị chú thích -->
+                                                <div class="relative">
+                                                    <label class="block mb-1 text-xs font-medium text-gray-600 dark:text-gray-400">Chú Thích</label>
+                                                    <input type="text" value="@image.Caption"
+                                                           class="w-full p-2 border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-700 rounded-lg text-gray-500 dark:text-gray-400 text-sm cursor-not-allowed"
+                                                           readonly disabled />
+                                                </div>
+
+                                                <!-- Nút xóa kích hoạt modal cho hình ảnh trong cơ sở dữ liệu -->
+                                                <button type="button"
+                                                        class="absolute top-2 right-2 bg-red-500 text-white rounded-full p-2 shadow-md hover:bg-red-600 hover:scale-105 transform transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+                                                        onclick="showDeleteModal('db', '@image.Id', '@Model.product_id', '@Context.Request.Path')">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                                                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                                                    </svg>
+                                                </button>
+
+
+                                            </div>
+                                        }
+                                    }
+
+                                    <!-- Vùng chứa hình ảnh mới sẽ được gửi cùng form -->
+                                    <div id="newImagesContainer" class="contents">
+
+                                    </div>
+
+                                    @if (Model.ProductImages == null || !Model.ProductImages.Any())
+                                    {
+                                        <div id="noImagesMessage" class="col-span-full text-center py-8 text-gray-500 dark:text-gray-400 bg-gray-50 dark:bg-gray-700 rounded-lg border border-dashed border-gray-300 dark:border-gray-600">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto text-gray-400 dark:text-gray-500 mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                                <polyline points="21 15 16 10 5 21"></polyline>
+                                            </svg>
+                                            <p>Không có hình ảnh bổ sung.</p>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+
+                            <!-- Modal xác nhận xóa hình ảnh từ cơ sở dữ liệu -->
+                            <div id="deleteDbModal" class="fixed inset-0 bg-black bg-opacity-50 dark:bg-opacity-70 z-50 flex items-center justify-center hidden">
+                                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-md w-full mx-4 transform transition-all duration-300 scale-95 opacity-0" id="dbModalContent">
+                                    <div class="p-5 border-b border-gray-200 dark:border-gray-700">
+                                        <h3 class="text-lg font-medium text-gray-900 dark:text-white flex items-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                                            </svg>
+                                            Xác Nhận Xóa Hình Ảnh
+                                        </h3>
+                                    </div>
+                                    <div class="p-5">
+                                        <p class="text-gray-600 dark:text-gray-300">Bạn có chắc chắn muốn xóa hình ảnh này khỏi cơ sở dữ liệu? Hành động này không thể hoàn tác.</p>
+                                    </div>
+                                    <div class="p-4 bg-gray-50 dark:bg-gray-700 rounded-b-lg flex justify-end space-x-3">
+                                        <button type="button" class="px-4 py-2 bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-gray-200 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-500 transition-all" onclick="closeDeleteDbModal()">
+                                            Hủy
+                                        </button>
+                                        <button type="button" id="confirmDeleteDbBtn" class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-all flex items-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1.5" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fillRule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clipRule="evenodd" />
+                                            </svg>
+                                            Xóa Hình Ảnh
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Modal xác nhận xóa hình ảnh mới -->
+                            <div id="deleteNewModal" class="fixed inset-0 bg-black bg-opacity-50 dark:bg-opacity-70 z-50 flex items-center justify-center hidden">
+                                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-md w-full mx-4 transform transition-all duration-300 scale-95 opacity-0" id="newModalContent">
+                                    <div class="p-5 border-b border-gray-200 dark:border-gray-700">
+                                        <h3 class="text-lg font-medium text-gray-900 dark:text-white flex items-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-amber-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                                            </svg>
+                                            Xác Nhận Xóa
+                                        </h3>
+                                    </div>
+                                    <div class="p-5">
+                                        <p class="text-gray-600 dark:text-gray-300">Bạn có chắc chắn muốn xóa hình ảnh này khỏi danh sách?</p>
+                                        <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">Lưu ý: Hình ảnh này chưa được lưu vào cơ sở dữ liệu.</p>
+                                    </div>
+                                    <div class="p-4 bg-gray-50 dark:bg-gray-700 rounded-b-lg flex justify-end space-x-3">
+                                        <button type="button" class="px-4 py-2 bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-gray-200 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-500 transition-all" onclick="closeDeleteNewModal()">
+                                            Hủy
+                                        </button>
+                                        <button type="button" id="confirmDeleteNewBtn" class="px-4 py-2 bg-amber-500 text-white rounded-lg hover:bg-amber-600 transition-all flex items-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1.5" viewBox="0 0 20 20" fill="currentColor">
+                                                <path d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z" />
+                                                <path fillRule="evenodd" d="M3 8h14v7a2 2 0 01-2 2H5a2 2 0 01-2-2V8zm5 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" clipRule="evenodd" />
+                                            </svg>
+                                            Xóa Khỏi Danh Sách
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Biến thể và kích thước sản phẩm -->
+                    <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700">
+                        <div class="flex justify-between items-center mb-6">
+                            <h2 class="text-xl font-bold text-gray-800 dark:text-white flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-purple-600 dark:text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                    <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                                </svg>
+                                Biến Thể & Kích Thước
+                            </h2>
+                            <button type="button" class="px-4 py-2 bg-purple-600 dark:bg-purple-500 text-white rounded-lg hover:bg-purple-700 dark:hover:bg-purple-600 transition shadow-sm flex items-center" onclick="addVariant()">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                </svg>
+                                Thêm Biến Thể
+                            </button>
+                        </div>
+
+                        <div id="variantsContainer" class="space-y-6">
+                            @if (Model.variants != null && Model.variants.Any())
+                            {
+                                @for (int i = 0; i < Model.variants.Count; i++)
+                                {
+                                    var variant = Model.variants[i];
+                                    <div class="variant-item bg-gray-50 dark:bg-gray-700 p-5 rounded-lg border border-gray-200 dark:border-gray-600">
+                                        <div class="flex justify-between items-center mb-4">
+                                            <div class="flex items-center">
+                                                <input type="hidden" name="variants[@i].Id" value="@variant.Id" />
+                                                <input type="hidden" name="variants[@i].Product_Id" value="@variant.product_id" />
+                                                <div class="mr-3">
+                                                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Tên Biến Thể (Màu Sắc)</label>
+                                                    <input type="text" name="variants[@i].Name" value="@variant.Name" class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition bg-white dark:bg-gray-800 text-gray-900 dark:text-white" placeholder="VD: Đỏ, Xanh, Đen" />
+                                                </div>
+                                            </div>
+                                            <button type="button" onclick="removeVariant(this)" class="p-2 text-red-500 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300 transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <polyline points="3 6 5 6 21 6"></polyline>
+                                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+
+                                        <div class="mt-4">
+                                            <div class="flex justify-between items-center mb-2">
+                                                <h4 class="font-medium text-sm text-gray-700 dark:text-gray-300">Kích Thước</h4>
+                                                <button type="button" onclick="addSize(this, @i)" class="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 rounded-lg hover:bg-purple-200 dark:hover:bg-purple-800 transition text-xs flex items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                    </svg>
+                                                    Thêm Kích Thước
+                                                </button>
+                                            </div>
+
+                                            <div class="sizes-container space-y-2">
+                                                @if (variant.Size != null && variant.Size.Any())
+                                                {
+                                                    var sizes = variant.Size.ToList();
+                                                    for (int j = 0; j < sizes.Count; j++)
+                                                    {
+                                                        var size = sizes[j];
+                                                        <div class="size-item flex items-center gap-3 p-2 bg-white dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700">
+                                                            <input type="hidden" name="variants[@i].Size[@j].Id" value="@size.Id" />
+                                                            <input type="hidden" name="variants[@i].Size[@j].Id" value="@size.Id" />
+
+                                                            <div class="flex-1">
+                                                                <input type="text" name="variants[@i].Size[@j].Name" value="@size.Name"
+                                                                       class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                                                                       placeholder="Tên kích thước (VD: S, M, L, XL)" />
+                                                            </div>
+                                                            <div class="w-24">
+                                                                <input type="number" name="variants[@i].Size[@j].quantity" value="@size.quantity"
+                                                                       class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                                                                       placeholder="Số lượng" min="0" />
+                                                            </div>
+                                                            <!-- Thêm data-id và truyền id vào hàm -->
+                                                            <button type="button"
+                                                                    onclick="confirmDeleteSize(@size.Id)"
+                                                                    class="p-1 text-red-500 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300 transition"
+                                                                    data-id="@size.Id">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                                                                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    <div class="text-center py-3 text-gray-500 dark:text-gray-400 text-sm">
+                                                        Không có kích thước. Nhấn "Thêm Kích Thước" để thêm kích thước cho biến thể này.
+                                                    </div>
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                            else
+                            {
+                                <div class="text-center py-8 text-gray-500 dark:text-gray-400">
+                                    Không có biến thể. Nhấn "Thêm Biến Thể" để thêm biến thể sản phẩm.
+                                </div>
+                            }
+                        </div>
+
+                        <!-- Mẫu cho biến thể và kích thước mới (ẩn) -->
+                        <template id="newVariantTemplate">
+                            <div class="variant-item bg-gray-50 dark:bg-gray-700 p-5 rounded-lg border border-gray-200 dark:border-gray-600 mt-4">
+                                <div class="flex justify-between items-center mb-4">
+                                    <div class="flex items-center">
+                                        <input type="hidden" name="Newvariants[{variantIndex}].product_id" value="@Model.product_id" />
+
+                                        <div class="mr-3">
+                                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Tên Biến Thể (Màu Sắc)</label>
+                                            <input type="text" name="Newvariants[{variantIndex}].Name" class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition bg-white dark:bg-gray-800 text-gray-900 dark:text-white" placeholder="VD: Đỏ, Xanh, Đen" />
+                                        </div>
+                                    </div>
+                                    <button type="button" onclick="removeNewVariant(this)" class="p-2 text-red-500 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300 transition">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="3 6 5 6 21 6"></polyline>
+                                            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+
+                                <div class="mt-4">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <h4 class="font-medium text-sm text-gray-700 dark:text-gray-300">Kích Thước</h4>
+                                        <button type="button" onclick="addNewSize(this, {variantIndex})" class="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 rounded-lg hover:bg-purple-200 dark:hover:bg-purple-800 transition text-xs flex items-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                            </svg>
+                                            Thêm Kích Thước
+                                        </button>
+                                    </div>
+
+                                    <div class="sizes-container space-y-2">
+                                        <!-- Mẫu sẽ được điền với kích thước -->
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+
+                        <template id="newSizeTemplate">
+                            <div class="size-item flex items-center gap-3 p-2 bg-white dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700">
+                                <div class="flex-1">
+                                    <input type="text" name="Newvariants[{variantIndex}].NewSizes[{sizeIndex}].Name" class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition bg-white dark:bg-gray-700 text-gray-900 dark:text-white" placeholder="Tên kích thước (VD: S, M, L, XL)" />
+                                </div>
+                                <div class="w-24">
+                                    <input type="number" name="Newvariants[{variantIndex}].NewSizes[{sizeIndex}].Quantity" class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition bg-white dark:bg-gray-700 text-gray-900 dark:text-white" placeholder="Số lượng" min="0" value="0" />
+                                </div>
+                                <button type="button" onclick="removeNewSize(this)" class="p-1 text-red-500 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300 transition">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                                    </svg>
+                                </button>
+                            </div>
+                        </template>
+                    </div>
+
+                    <!-- Các nút hành động -->
+                    <div class="flex justify-end mt-8 space-x-3 bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700">
+                        <a asp-controller="Product" asp-action="GetAllProduct" type="button"
+                           class="px-6 py-3 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-lg shadow-sm hover:bg-gray-300 dark:hover:bg-gray-600 transition flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                            Hủy
+                        </a>
+                        <button type="submit"
+                                class="px-6 py-3 bg-purple-600 dark:bg-purple-500 text-white rounded-lg shadow-md hover:bg-purple-700 dark:hover:bg-purple-600 transition flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+                                <polyline points="17 21 17 13 7 13 7 21"></polyline>
+                                <polyline points="7 3 7 8 15 8"></polyline>
+                            </svg>
+                            Lưu Thay Đổi
+                        </button>
+                    </div>
+                </form>
+                <!-- Form ẩn để xóa hình ảnh từ cơ sở dữ liệu -->
+                <form id="deleteImageForm" method="post" asp-controller="ImageProduct" asp-action="Delete" class="hidden">
+                    <input type="hidden" id="deleteImageId" name="Id" />
+                    <input type="hidden" id="deleteProductId" name="product_id" />
+                    <input type="hidden" id="deleteReturnUrl" name="returnUrl" />
+                </form>
             </div>
-        </form>
+        </main>
     </div>
 </div>
-<script>
-    // Hàm tạo các trường nhập cho biến thể và kích thước
-    function generateFields() {
-        const cataProductCount = parseInt(document.getElementById("ProductCount").value) || 0;
-        const sizeCount = parseInt(document.getElementById("sizeCount").value) || 0;
-        const fieldsContainer = document.getElementById("fieldsContainer");
 
-        fieldsContainer.innerHTML = ""; // Xóa các trường trước đó
-
-        // Tạo các trường nhập cho mỗi biến thể (product)
-        for (let i = 0; i < cataProductCount; i++) {
-            const productDiv = document.createElement("div");
-            productDiv.classList.add("bg-gray-50", "p-4", "rounded-lg", "shadow-md", "mb-4");
-
-            productDiv.innerHTML = `
-                <div class="flex justify-between items-center mb-2">
-                    <h3 class="font-semibold">Sản phẩm ${i + 1}</h3>
-                    <button onclick="removeProduct(this)" class="text-red-500 text-sm font-semibold">Xóa</button>
-                </div>
-                <input type="text" name="variants[${i}].Name" class="w-full p-2 border rounded-lg mb-3" placeholder="Nhập màu sản phẩm" required />
-
-                <div id="sizesContainer-${i}">
-                    ${generateSizeFields(i, sizeCount)} <!-- Tạo các trường nhập cho kích thước -->
-                </div>
-            `;
-
-            fieldsContainer.appendChild(productDiv);
-        }
-    }
-
-    // Hàm tạo các trường kích thước cho mỗi biến thể
-    function generateSizeFields(productIndex, sizeCount) {
-        let html = "";
-        for (let j = 0; j < sizeCount; j++) {
-            html += `
-                <div class="flex gap-2 mb-2">
-                    <input type="text" name="variants[${productIndex}].sizes[${j}].Name" class="flex-1 p-2 border rounded-lg" placeholder="Size ${j + 1}" required />
-                    <input type="number" name="variants[${productIndex}].sizes[${j}].Quantity" class="w-1/4 p-2 border rounded-lg" placeholder="Số lượng" min="1" required />
-                    <button onclick="removeElement(this)" class="text-red-500 text-sm"><i class="fas fa-trash"></i></button>
-                </div>
-            `;
-        }
-        return html;
-    }
-
-    function removeElement(element) {
-        element.closest(".flex").remove(); // Xóa một trường Size cụ thể
-    }
-
-    function removeProduct(element) {
-        element.closest(".bg-gray-50").remove(); // Xóa toàn bộ sản phẩm (variant)
-    }
-</script>
+@if (ViewBag.Product != null)
+{
+    <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mt-4 rounded" role="alert">
+        <p>@ViewBag.Product</p>
+    </div>
+}

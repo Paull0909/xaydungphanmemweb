@@ -117,7 +117,7 @@ namespace Web.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateOrdersByCart(List<CreateUpdateOrderDetailRequest> list, CreateUpdateOrderRequest od, List<int> id)
         {
-            if (list != null || od  != null)
+            if (list != null || od != null)
             {
                 var or = _mapper.Map<CreateUpdateOrderRequest, Order>(od);
                 _unitOfWork.OrderRepository.Add(or);

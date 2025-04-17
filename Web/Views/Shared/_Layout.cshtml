@@ -7,21 +7,6 @@
 <head>
     <!-- ✅ Tailwind CSS v3 -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- ✅ Tailwind config nếu cần -->
-    <script>
-        tailwind.config = {
-        theme: {
-        extend: {
-        colors: {
-        indigo: tailwind.colors.indigo,
-        blue: tailwind.colors.blue,
-        }
-        }
-        }
-        }
-    </script>
-
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - ASPNETCoreIdentityDemo</title>
@@ -39,30 +24,115 @@
 <body class="flex flex-col min-h-screen w-full">
     @if (!User.IsInRole("Admin"))
     {
-        <header class="bg-gray-200 shadow-md w-full">
-            <nav class="flex items-center justify-between py-6 w-full px-6" aria-label="Global">
+        <header>
+            <nav class="relative bg-white shadow">
+                <div class="mx-auto flex items-center justify-between py-4 px-4 sm:px-6 lg:px-8" aria-label="Global">
+                    <a asp-action="Index" asp-controller="Home" class="flex items-center">
+                        <img class="h-12 w-auto rounded-full object-cover shadow-sm hover:shadow-md transition-shadow duration-300"
+                             src="~/Images/logo.jpg" alt="Logo" />
+                    </a>
 
-                <a asp-action="Index" asp-controller="Home" class="-m-1.5 p-1.5 ">
-                    <img class="h-12 w-auto rounded-full" src="~/Images/logo.jpg" alt="" />
-                </a>
-                <div class="flex lg:hidden justify-end items-center gap-x-4">
-                    <div class="flex lg:justify-end items-center gap-x-4 ml-auto">
-                        <!-- Search -->
-                        <div class="relative">
-                            <input type="text" placeholder="Search" class="px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-600 w-60 pr-10 text-left"> 
-                            <span class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 mt-2.5">
-                                <i class="fas fa-search"></i>
-                            </span>
+                    <div class="flex lg:hidden items-center gap-x-4">
+                        <div class="flex items-center gap-x-3">
+                            <div class="relative" x-data="{ open: false }">
+                                <div class="relative ml-4">
+                                    <input type="text" placeholder="Search products..."
+                                           class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <button class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 mt-2.5">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <a asp-controller="Cart" asp-action="GetAllById" asp-route-id="@Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier))"
+                                   class="text-gray-500 hover:text-gray-900 relative p-2 rounded-full hover:bg-gray-100 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                    </svg>
+                                    @if (ViewBag.CartItemCount > 0)
+                                    {
+                                        <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-medium">
+                                            @ViewBag.CartItemCount
+                                        </span>
+                                    }
+                                </a>
+                            }
+                            else
+                            {
+                                <a asp-action="Login" asp-controller="Account"
+                                   class="text-gray-500 hover:text-gray-900 p-2 rounded-full hover:bg-gray-100 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                    </svg>
+                                </a>
+                            }
                         </div>
+
+                        <button id="menu-toggle" type="button"
+                                class="inline-flex items-center justify-center rounded-lg p-2 text-gray-500 hover:text-gray-900 hover:bg-gray-100 transition-colors">
+                            <span class="sr-only">Open main menu</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="hidden lg:flex lg:gap-x-12 justify-center mx-auto">
+                        <ul class="flex space-x-10">
+                            <li>
+                                <a class="text-gray-700 hover:text-blue-600 text-lg font-medium relative group py-2">
+                                    Women
+                                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-gray-700 hover:text-blue-600 text-lg font-medium relative group py-2">
+                                    Company
+                                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-gray-700 hover:text-blue-600 text-lg font-medium relative group py-2">
+                                    Company
+                                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-gray-700 hover:text-blue-600 text-lg font-medium relative group py-2">
+                                    Stores
+                                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Desktop Right Section (Search, Cart, User) -->
+                    <div class="hidden lg:flex items-center gap-x-6">
+                        <!-- Search Bar -->
+                        <div class="relative">
+                            <input type="text" placeholder="Search products..."
+                                   class="w-64 px-4 py-2 rounded-full border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                            <button class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 mt-2.5">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <!-- Cart Icon -->
                         @if (User.Identity.IsAuthenticated)
                         {
-                            <!-- Icon Shopping -->
                             <a asp-controller="Cart" asp-action="GetAllById" asp-route-id="@Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier))"
-                            class="text-gray-500 hover:text-gray-900 relative">
-                                <i class="fas fa-shopping-cart"></i>
+                               class="text-gray-500 hover:text-gray-900 relative p-2 rounded-full hover:bg-gray-100 transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                </svg>
                                 @if (ViewBag.CartItemCount > 0)
                                 {
-                                    <span class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                                    <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-medium">
                                         @ViewBag.CartItemCount
                                     </span>
                                 }
@@ -70,136 +140,161 @@
                         }
                         else
                         {
-                            <a asp-action="Login" asp-controller="Account" class="text-gray-500 hover:text-gray-900">
-                                <i class="fas fa-shopping-cart"></i>
+                            <a asp-action="Login" asp-controller="Account"
+                               class="text-gray-500 hover:text-gray-900 p-2 rounded-full hover:bg-gray-100 transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                </svg>
                             </a>
                         }
-                    </div>
-                    <button id="menu-toggle" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
-                        <span class="sr-only">Open main menu</span>
-                        <i class="fas fa-bars text-2xl size-6"></i>
-                    </button>
-                </div>
-                <div class="hidden lg:flex lg:gap-x-12 justify-center w-auto mx-auto">
-                    @if (User.Identity.IsAuthenticated)
-                    {
-                        <ul class="flex space-x-10 text-gray-700">
-                            <li><a class="hover:text-gray-900 text-xl font-medium">Women</a></li>
-                            <li><a class="hover:text-gray-900 text-xl font-medium">Men</a></li>
-                            <li><a class="hover:text-gray-900 text-xl font-medium">Company</a></li>
-                            <li><a class="hover:text-gray-900 text-xl font-medium">Stores</a></li>
-                        </ul>
-                    }
-                </div>
-                <div class="hidden lg:flex lg:justify-between items-center lg:gap-x-4 pl-0 w-1/2">
-                    <div class="flex items-center gap-x-4 w-full">
-                        <!-- Search -->
-                        <div class="relative w-1/6 ml-0 flex-grow">
-                            <input type="text" placeholder="Search" class="px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-600 w-full text-left pr-10"> <!-- Thêm pr-10 để tạo khoảng cách bên phải cho biểu tượng -->
-                            <span class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 mt-2.5">
-                                <i class="fas fa-search"></i>
-                            </span>
-                        </div>
+                        <!-- User Section -->
                         @if (User.Identity.IsAuthenticated)
                         {
-                        <!-- Icon Shopping-->
-                        <div class="flex justify-center items-center w-10 pl-8">
-                            <a asp-controller ="Cart" asp-action="GetAllById" asp-route-id="@Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier))" id="userIdInput" class="text-gray-500 hover:text-gray-900">
-                                <i class="fas fa-shopping-cart"></i>
-                            </a>
-                        </div>
+                            <div class="flex items-center gap-x-4 border-l border-gray-200 pl-4">
+                                <!-- User Greeting -->
+                                <div class="relative group" x-data="{ open: false }">
+                                    <button @@click="open = !open" class="flex items-center gap-2 text-gray-700 hover:text-blue-600 transition-colors">
+                                        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-medium">
+                                            @(User.Identity.Name?.Substring(0, 1).ToUpper())
+                                        </div>
+                                        <span class="font-medium">@User.Identity.Name</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                                        </svg>
+                                    </button>
+
+                                    <!-- Dropdown Menu -->
+                                    <div x-show="open" @@click.away="open = false"
+                                         class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 border border-gray-100 z-10">
+                                        <a asp-action="GetAllByIdUser" asp-controller="Orders" asp-route-id="@Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier))"
+                                           class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">
+                                            Lịch sử đơn hàng
+                                        </a>
+                                        <div class="border-t border-gray-100 my-1"></div>
+                                        <form asp-controller="Account" asp-action="Logout" method="post" class="block">
+                                            @Html.AntiForgeryToken()
+                                            <button type="submit" class="w-full text-left px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 flex items-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                                                </svg>
+                                                Đăng xuất
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
                         }
                         else
                         {
-                            <a  asp-action="Login" asp-controller="Account" class="text-gray-500 hover:text-gray-900">
-                                <i class="fas fa-shopping-cart"></i>
-                            </a>
+                            <div class="flex items-center gap-x-4">
+                                <a asp-action="Login" asp-controller="Account"
+                                   class="text-gray-700 hover:text-blue-600 font-medium transition-colors">
+                                    Đăng nhập
+                                </a>
+                                <div class="h-6 w-px bg-gray-200"></div>
+                                <a asp-action="Register" asp-controller="Account"
+                                   class="bg-blue-600 hover:bg-blue-700 text-white font-medium px-4 py-2 rounded-lg transition-colors">
+                                    Đăng ký
+                                </a>
+                            </div>
                         }
                     </div>
-                    @if (User.Identity.IsAuthenticated)
-                    {
-                        <a asp-action="GetAllByIdUser" asp-controller="Orders" asp-route-id="@Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier))" class="text-gray-500 hover:text-gray-900 mr-2 ml-2">
-                            <i class="fas fa-history"></i>
-                        </a>
-                        <div class="flex justify-center w-full">
-                            <span class="text-gray-500 hover:text-gray-900 font-medium w-auto truncate">Hello @User.Identity.Name</span>
-                        </div>
-
-                        <form asp-controller="Account" asp-action="Logout" method="post" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                            @Html.AntiForgeryToken()
-                            <button type="submit" class="flex items-center">
-                                <svg class="shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-                                     aria-hidden="true"
-                                     xmlns="http://www.w3.org/2000/svg"
-                                     fill="none"
-                                     viewBox="0 0 18 16">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 8h11m0 0L8 4m4 4-4 4m4-11h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-3"></path>
-                                </svg>
-                                <span class="flex-1 ms-3 whitespace-nowrap">Log Out</span>
-                            </button>
-                        </form>
-
-                    }
-                    else
-                    {
-                        <a asp-action="Login" asp-controller="Account" class="text-gray-500 hover:text-gray-900 font-medium w-32 pl-8">Sign In</a>
-                        <div class="h-6 w-px bg-gray-300"></div>
-                        <a asp-action="Register" asp-controller="Account" class="text-gray-500 hover:text-gray-900 font-medium w-32">Sign Up</a>
-                    }
                 </div>
             </nav>
 
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden lg:hidden" role="dialog" aria-modal="true">
-                <div class="fixed inset-0 z-10 bg-black/30"></div>
-                <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-                    <div class="flex items-center justify-between">
-                        <a asp-action="Index" asp-controller="Home" class="-m-1.5 p-1.5">
-                            <img class="h-12 w-auto rounded-full" src="~/Images/logo.jpg" alt="" />
+            <!-- Mobile Menu (Slide-in) -->
+            @{
+                var Mobile = Context.Request.Cookies["Mobile"];
+                var Logged = Context.Request.Cookies["Logged"];
+                var Auth = Context.Request.Cookies["Auth"];
+            }
+            <div id="mobile-menu" class="hidden lg:hidden fixed inset-0 z-50">
+                <!-- Backdrop -->
+                <div class="fixed inset-0 bg-black/30 backdrop-blur-sm" id="mobile-backdrop"></div>
+
+                <!-- Menu Panel -->
+                <div class="fixed inset-y-0 right-0 w-full max-w-sm bg-white shadow-xl overflow-y-auto p-6 transform transition-transform duration-300 ease-in-out">
+                    <!-- Header with Close Button -->
+                    <div class="flex items-center justify-between mb-8">
+                        <a asp-action="Index" asp-controller="Home" class="flex items-center">
+                            <img class="h-10 w-auto rounded-full object-cover" src="~/Images/logo.jpg" alt="Brand Logo" />
+                            <span class="ml-3 text-xl font-bold text-gray-900">Shoe Store</span>
                         </a>
-                        <button type="button" id="close-menu" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
-                            <span class="sr-only">Close menu</span>
-                            <i class="fas fa-times text-2xl size-6"></i>
+                        <button id="close-menu" class="text-gray-500 hover:text-gray-900 p-2 rounded-full hover:bg-gray-100 transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
                         </button>
                     </div>
-                    <div class="mt-6 flow-root">
-                        <div class="-my-6 divide-y divide-gray-500/10">
-                            <div class="space-y-2 py-6">
-                                <a class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Women</a>
-                                <a class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Men</a>
-                                <a class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Company</a>
-                                <a class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Stores</a>
+
+                    <!-- Navigation Links -->
+                    <div class="space-y-1 mb-8">
+                        <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Dnh mục/p>
+                        <a class="block px-4 py-3 rounded-lg text-gray-900 hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                                Women
+                        </a>
+                        <a  class="block px-4 py-3 rounded-lg text-gray-900 hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                                Company
+                        </a>
+                        <a class="block px-4 py-3 rounded-lg text-gray-900 hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                                Company
+                        </a>
+                        <a  class="block px-4 py-3 rounded-lg text-gray-900 hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                                Stores
+                        </a>
+                    </div>
+
+                    <!-- User Section -->
+                    <div class="border-t border-gray-200 pt-6">
+                        <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Tài khoản</p>
+
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <!-- Logged In User -->
+                            <div class="flex items-center mb-4 bg-gray-50 p-3 rounded-lg">
+                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-medium">
+                                    @(User.Identity.Name?.Substring(0, 1).ToUpper())
+                                </div>
+                                <div class="ml-3">
+                                    <p class="font-medium text-gray-900">@User.Identity.Name</p>
+                                    <p class="text-sm text-gray-500">Đã đăng nhập</p>
+                                </div>
                             </div>
-                            <div class="py-6">
-                                <!-- Sign In link -->
-                                @if (!User.Identity.IsAuthenticated)
-                                {
 
-                                    <a asp-controller="Account" asp-action="Login" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Sign In</a>
-                                }
-                                <!-- Sign Up link -->
-                                @if (!User.Identity.IsAuthenticated)
-                                {
-                                    <a asp-controller="Account" asp-action="Register" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Sign Up</a>
-                                }
-
-                                <!-- Show LogOut if User is authenticated -->
-                                @if (User.Identity.IsAuthenticated)
-                                {
-
-                                }
-                                @if (User.Identity.IsAuthenticated)
-                                {
-                                    <a href="#" class="text-gray-500 hover:text-gray-900">
-                                        <i class="fas fa-history"></i>
-                                    </a>
-                                    <form asp-controller="Account" asp-action="Logout" method="post">
-                                        @Html.AntiForgeryToken() <!-- CSRF Token -->
-                                        <button type="submit" class="text-gray-500 hover:text-gray-900 font-medium">Log Out</button>
-                                    </form>
-                                }
+                            <!-- User Actions -->
+                            <div class="space-y-1">
+                                <a asp-action="GetAllByIdUser" asp-controller="Orders" asp-route-id="@Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier))"
+                                   class="flex items-center px-4 py-3 rounded-lg text-gray-900 hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    Lịch sử mua hàng
+                                </a>
+                                <form asp-controller="Account" asp-action="Logout" method="post">
+                                    @Html.AntiForgeryToken()
+                                    <button type="submit" class="w-full flex items-center px-4 py-3 rounded-lg text-gray-900 hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                                        </svg>
+                                        Đăng xuất
+                                    </button>
+                                </form>
                             </div>
-                        </div>
+                        }
+                        else
+                        {
+                            <!-- Auth Buttons -->
+                            <div class="space-y-3">
+                                <a asp-action="Login" asp-controller="Account"
+                                   class="block w-full text-center px-4 py-3 rounded-lg border border-gray-300 text-gray-900 font-medium hover:bg-gray-50 transition-colors">
+                                    Đăng nhập
+                                </a>
+                                <a asp-action="Register" asp-controller="Account"
+                                   class="block w-full text-center px-4 py-3 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors">
+                                    Đăng ký
+                                </a>
+                            </div>
+                        }
                     </div>
                 </div>
             </div>
@@ -260,6 +355,18 @@
                         </a>
                     </li>
                     <li>
+                        <a asp-controller="Orders" asp-action="GetBillNew"
+                           class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group">
+                            <svg class="shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900"
+                                 xmlns="http://www.w3.org/2000/svg"
+                                 fill="currentColor"
+                                 viewBox="0 0 24 24">
+                                <path d="M3 3a1 1 0 0 1 1-1h2.22a1 1 0 0 1 .97.757L7.68 5H21a1 1 0 0 1 .96 1.28l-2 7A1 1 0 0 1 19 14H8a1 1 0 0 1-.97-.757L4.28 4H4a1 1 0 0 1-1-1Zm4.1 11h10.8l1.43-5H8.53l-1.43 5Zm.9 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Zm9 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z" />
+                            </svg>
+                            <span class="flex-1 ms-3 whitespace-nowrap">Quản lý đơn hàng</span>
+                        </a>
+                    </li>
+                    <li>
                         <a asp-controller="Orders" asp-action="GetAllByIdUser"
                            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                             <svg class="shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
@@ -269,7 +376,7 @@
                                  viewBox="0 0 20 20">
                                 <path d="m17.418 3.623-.018-.008a6.713 6.713 0 0 0-2.4-.569V2h1a1 1 0 1 0 0-2h-2a1 1 0 0 0-1 1v2H9.89A6.977 6.977 0 0 1 12 8v5h-2V8A5 5 0 1 0 0 8v6a1 1 0 0 0 1 1h8v4a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-4h6a1 1 0 0 0 1-1V8a5 5 0 0 0-2.582-4.377ZM6 12H4a1 1 0 0 1 0-2h2a1 1 0 0 1 0 2Z" />
                             </svg>
-                            <span class="flex-1 ms-3 whitespace-nowrap">Quản lý đơn hàng</span>
+                            <span class="flex-1 ms-3 whitespace-nowrap">Nhận xét</span>
                         </a>
                     </li>
                     <li>
@@ -323,11 +430,9 @@
                                      viewBox="0 0 18 16">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 8h11m0 0L8 4m4 4-4 4m4-11h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-3"></path>
                                 </svg>
-                                <span class="flex-1 ms-3 whitespace-nowrap">Log Out</span>
+                                <span class="flex-1 ms-3 whitespace-nowrap">Đăng xuất</span>
                             </button>
                         </form>
-
-
                     </li>
                 </ul>
             </div>
@@ -406,14 +511,85 @@
             </div>
         </footer>
     }
+    <script>
+
+        // Simple Alpine.js-like functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            // Find all elements with x-data attribute
+            document.querySelectorAll('[x-data]').forEach(el => {
+                // Extract the data object
+                const dataAttr = el.getAttribute('x-data');
+                const data = dataAttr ? eval(`(${dataAttr})`) : {};
+
+                el.querySelectorAll('[\\@@click]').forEach(clickEl => {
+                    const clickAttr = clickEl.getAttribute('@@click');
+                    clickEl.addEventListener('click', (e) => {
+                        // Simple evaluation of the click attribute
+                        if (clickAttr.includes('open = !open')) {
+                            data.open = !data.open;
+
+                            // Find elements with x-show attribute
+                            el.querySelectorAll('[x-show]').forEach(showEl => {
+                                if (data.open) {
+                                    showEl.classList.remove('hidden');
+                                } else {
+                                    showEl.classList.add('hidden');
+                                }
+                            });
+                        }
+                    });
+                });
+
+                // Initialize x-show elements
+                el.querySelectorAll('[x-show]').forEach(showEl => {
+                    showEl.classList.add('hidden');
+                });
+
+                // Handle click away
+                document.addEventListener('click', (e) => {
+                    if (data.open && !el.contains(e.target)) {
+                        data.open = false;
+                        el.querySelectorAll('[x-show]').forEach(showEl => {
+                            showEl.classList.add('hidden');
+                        });
+                    }
+                });
+            });
+        });
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.getElementById('menu-toggle');
+            const closeMenu = document.getElementById('close-menu');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileBackdrop = document.getElementById('mobile-backdrop');
+
+            menuToggle.addEventListener('click', function () {
+                mobileMenu.classList.remove('hidden');
+                document.body.classList.add('overflow-hidden');
+            });
+
+            closeMenu.addEventListener('click', function () {
+                mobileMenu.classList.add('hidden');
+                document.body.classList.remove('overflow-hidden');
+            });
+
+            mobileBackdrop.addEventListener('click', function () {
+                mobileMenu.classList.add('hidden');
+                document.body.classList.remove('overflow-hidden');
+            });
+        });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
     <script src="~/js/Category.js"></script>
     <script src="~/js/javascript.js"></script>
+    <script src="~/js/Edit.js"></script>
     <script src="~/js/Home.js"></script>
     <script src="~/js/Total.js"></script>
     <script src="~/js/Product.js"></script>
     <script src="~/js/CreateOrders.js"></script>
+    <script src="~/js/Layout.js"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
