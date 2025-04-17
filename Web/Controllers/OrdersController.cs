@@ -114,9 +114,9 @@ namespace Web.Controllers
             }
         }
         [HttpPost]
-        public async Task<IActionResult> CreateOrdersByCart(List<CreateUpdateOrderDetailRequest> list, CreateUpdateOrderRequest od)
+        public async Task<IActionResult> CreateOrdersByCart(List<CreateUpdateOrderDetailRequest> list, CreateUpdateOrderRequest od, List<int> id)
         {
-            if (list != null || od  != null)
+            if (list != null || od != null)
             {
                 var or = _mapper.Map<CreateUpdateOrderRequest, Order>(od);
                 _unitOfWork.OrderRepository.Add(or);
@@ -134,6 +134,11 @@ namespace Web.Controllers
                         {
                             return View("CreateOrdersByProduct");
                         }
+                    }
+                    foreach (var item in id)
+                    {
+                        var j = await _unitOfWork.CartRepository.GetByIdAsync(item);
+                        _unitOfWork.CartRepository.Remove(j);
                     }
                     TotalRevenue t = new TotalRevenue
                     {

@@ -29,33 +29,82 @@
             <div class="swiper-pagination"></div>
         </div>
     </section>
-    <section class="px-6 py-12 bg-gray-50">
-        <div class="mx-auto mt-6 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 text-center">
-            @foreach (var item in Model)
-            {
-                var discountedPrice = item.price - (item.price * item.discount / 100);
-                <div class="bg-white rounded-lg shadow-lg p-4 hover:shadow-xl transition transform hover:scale-105">
-                    <a asp-controller="Home" asp-action="InfoProduct" asp-route-id="@item.product_id">
-                        <div class="rounded-lg overflow-hidden aspect-square">
-                            <img src="@item.img?.ImagePath"
-                                 class="w-full h-full object-cover"
-                                 alt="@item.product_name" />
+    <section class="px-6 py-12 bg-gradient-to-b from-gray-50 to-white">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
+                @foreach (var item in Model)
+                {
+                    var DiscountedPrice = item.price - (item.price * item.discount / 100);
+                    <div class="group bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hiddenden border border-gray-100">
+                        <div class="relative">
+                            <!-- Product Image with Aspect Ratio -->
+                            <a asp-controller="Home" asp-action="InfoProduct" asp-route-id="@item.product_id" class="block relative">
+                                <div class="aspect-square overflow-hidden bg-gray-100">
+                                    <img src="@item.img.ImagePath"
+                                         class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                                         alt="@item.product_name" />
+                                </div>
+
+                                <!-- Discount Badge -->
+                                @if (item.discount > 0)
+                                {
+                                    <div class="absolute top-3 left-3 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                                        -@item.discount%
+                                    </div>
+                                }
+
+                                <!-- Quick Action Buttons -->
+                                <div class="absolute right-3 top-3 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <button type="button" class="bg-white rounded-full p-2 shadow-md hover:bg-gray-50 transition-colors" title="Thêm vào yêu thích">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                        </svg>
+                                    </button>
+                                    <button type="button" class="bg-white rounded-full p-2 shadow-md hover:bg-gray-50 transition-colors" title="Xem nhanh">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </a>
                         </div>
-                        <h3 class="mt-4 font-semibold">@item.product_name</h3>
-                        <div class="flex justify-center items-center space-x-2 mt-2">
-                            @if (item.discount > 0)
-                            {
-                                <p class="text-sm text-gray-500 line-through mr-8">@item.price.ToString("N0")₫</p>
-                                <p class="price text-red-600 font-bold">@discountedPrice.ToString("N0")₫</p>
-                            }
-                            else
-                            {
-                                <p class="price text-red-600 font-bold">@item.price.ToString("N0")₫</p>
-                            }
+
+                        <!-- Product Info -->
+                        <div class="p-4">
+                            <!-- Product Name -->
+                            <a asp-controller="Home" asp-action="InfoProduct" asp-route-id="@item.product_id"
+                               class="block font-medium text-gray-800 hover:text-blue-600 transition-colors mb-2 line-clamp-2 min-h-[40px]">
+                                @item.product_name
+                            </a>
+
+                            <!-- Price Section -->
+                            <div class="mt-3 flex items-center justify-between">
+                                <div>
+                                    @if (item.discount > 0)
+                                    {
+                                        <div class="flex items-center space-x-4">
+                                            <div class="flex flex-col items-start">
+                                                <p class="text-sm text-gray-500 line-through">@item.price.ToString("N0")₫</p>
+                                            </div>
+                                            <div class="flex flex-col items-start">
+                                                <p class="text-red-600 font-bold">
+                                                    @(((decimal)item.price - ((decimal)item.price * (decimal)item.discount / 100)).ToString("N0"))₫
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                    }
+                                    else
+                                    {
+                                        <p class="text-gray-900 font-bold">@item.price.ToString("N0")₫</p>
+                                    }
+                                </div>
+                            </div>
                         </div>
-                    </a>
-                </div>
-            }
+                    </div>
+                }
+            </div>
         </div>
     </section>
 }

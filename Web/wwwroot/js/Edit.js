@@ -1,5 +1,5 @@
 ﻿// Bộ đếm cho các input hình ảnh mới
-let newImageCounter = 1;
+let newImageCounter = 0;
 let currentNewImageElement = null;
 let newVariantIndex = 0;
 let newSizeIndices = {};
@@ -98,21 +98,17 @@ function addNewImageInput() {
         noImagesMessage.style.display = 'none';
     }
 
+    // Gán index hiện tại rồi mới tăng biến đếm
+    const currentIndex = newImageCounter;
+    newImageCounter++;
+
     // Tạo container hình ảnh mới
     const newImageContainer = document.createElement('div');
     newImageContainer.className = 'border border-gray-200 dark:border-gray-700 rounded-lg p-4 relative group hover:shadow-md transition-all duration-300 bg-white dark:bg-gray-800';
-
-    // Gán data-new-image-id với giá trị chính xác của newImageCounter trước khi tăng
     newImageContainer.dataset.isNewImage = 'true';
-    newImageContainer.dataset.newImageId = `new-${newImageCounter}`;
+    newImageContainer.dataset.newImageId = `new-${currentIndex}`;
 
-    // Lưu giá trị hiện tại của newImageCounter để truyền vào showDeleteModal
-    const currentImageId = `new-${newImageCounter}`;
-
-    // Tăng newImageCounter sau khi gán
-    newImageCounter++;
-
-    // Tạo vùng xem trước hình ảnh với giao diện cải tiến
+    // Tạo vùng xem trước hình ảnh
     const previewContainer = document.createElement('div');
     previewContainer.className = 'h-36 w-full rounded-lg overflow-hidden mb-3 bg-gray-50 dark:bg-gray-700 flex items-center justify-center';
     previewContainer.innerHTML = `
@@ -123,13 +119,13 @@ function addNewImageInput() {
             </svg>
         `;
 
-    // Tạo input cho URL hình ảnh với giao diện cải tiến
+    // Tạo input cho URL hình ảnh
     const urlInputWrapper = document.createElement('div');
     urlInputWrapper.className = 'mb-2';
 
     const urlInput = document.createElement('input');
     urlInput.type = 'text';
-    urlInput.name = `ProductImages[${newImageCounter}].ImagePath`;
+    urlInput.name = `ProductImages[${currentIndex}].ImagePath`; // ✅ Đúng index
     urlInput.className = 'w-full p-2.5 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm transition-all bg-white dark:bg-gray-700 text-gray-900 dark:text-white';
     urlInput.placeholder = 'Nhập URL hình ảnh...';
 
@@ -145,20 +141,20 @@ function addNewImageInput() {
 
     const captionInput = document.createElement('input');
     captionInput.type = 'text';
-    captionInput.name = `ProductImages[${newImageCounter}].Caption`;
+    captionInput.name = `ProductImages[${currentIndex}].Caption`; // ✅ Đúng index
     captionInput.className = 'w-full p-2.5 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm transition-all bg-white dark:bg-gray-700 text-gray-900 dark:text-white';
     captionInput.placeholder = 'Nhập chú thích cho hình ảnh...';
 
     captionWrapper.appendChild(captionLabel);
     captionWrapper.appendChild(captionInput);
 
-    // Thêm input ẩn product_id
+    // Input ẩn chứa product_id nếu cần
     const productIdInput = document.createElement('input');
     productIdInput.type = 'hidden';
-    productIdInput.name = `ProductImages[${newImageCounter}].product_id`;
-    productIdInput.value = '@Model.product_id';
+    productIdInput.name = `ProductImages[${currentIndex}].product_id`; // ✅ Đúng index
+    productIdInput.value = '@Model.product_id'; // Razor sẽ render giá trị
 
-    // Tạo nút xóa với giao diện cải tiến - kiểu khác cho hình ảnh mới
+    // Nút xóa ảnh
     const deleteButton = document.createElement('button');
     deleteButton.type = 'button';
     deleteButton.className = 'absolute top-2 right-2 bg-red-500 text-white rounded-full p-2 shadow-md hover:bg-red-600 hover:scale-105 transform transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2';
@@ -166,25 +162,25 @@ function addNewImageInput() {
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <line x1="18" y1="6" x2="6" y2="18"></line>
                 <line x1="6" y1="6" x2="18" y2="18"></line>
-             </svg>
+            </svg>
         `;
     deleteButton.onclick = function () {
-        showDeleteModal('new', currentImageId);  // Gọi showDeleteModal và truyền ID chính xác
+        showDeleteModal('new', `new-${currentIndex}`);
     };
 
-    // Thêm trình nghe sự kiện để cập nhật xem trước khi URL thay đổi
+    // Cập nhật preview khi nhập URL
     urlInput.addEventListener('input', function () {
         updateImagePreview(this, previewContainer);
     });
 
-    // Lắp ráp container hình ảnh mới
+    // Ghép tất cả lại
     newImageContainer.appendChild(previewContainer);
     newImageContainer.appendChild(productIdInput);
     newImageContainer.appendChild(urlInputWrapper);
     newImageContainer.appendChild(captionWrapper);
     newImageContainer.appendChild(deleteButton);
 
-    // Thêm vào container
+    // Thêm vào vùng chứa
     const newImagesContainer = document.getElementById('newImagesContainer');
     if (newImagesContainer) {
         newImagesContainer.appendChild(newImageContainer);
@@ -203,27 +199,27 @@ function updateImagePreview(input, previewContainer) {
 
         // Hiển thị chỉ báo đang tải
         previewContainer.innerHTML = `
-                <div class="flex flex-col items-center justify-center">
-                    <svg class="animate-spin h-8 w-8 text-purple-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                    </svg>
-                    <span class="text-xs text-gray-500 dark:text-gray-400 mt-2">Đang tải...</span>
-                </div>
-            `;
+                    <div class="flex flex-col items-center justify-center">
+                        <svg class="animate-spin h-8 w-8 text-purple-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        <span class="text-xs text-gray-500 dark:text-gray-400 mt-2">Đang tải...</span>
+                    </div>
+                `;
 
         img.onerror = function () {
             // Nếu hình ảnh không tải được, hiển thị placeholder lỗi
             previewContainer.innerHTML = `
-                    <div class="flex flex-col items-center justify-center text-center p-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-red-400 mb-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <line x1="12" y1="8" x2="12" y2="12"></line>
-                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
-                        </svg>
-                        <span class="text-xs text-red-500">URL hình ảnh không hợp lệ</span>
-                    </div>
-                `;
+                        <div class="flex flex-col items-center justify-center text-center p-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-red-400 mb-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="8" x2="12" y2="12"></line>
+                                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                            </svg>
+                            <span class="text-xs text-red-500">URL hình ảnh không hợp lệ</span>
+                        </div>
+                    `;
         };
 
         img.onload = function () {
@@ -236,12 +232,12 @@ function updateImagePreview(input, previewContainer) {
     } else {
         // Nếu URL trống, hiển thị placeholder
         previewContainer.innerHTML = `
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-300 dark:text-gray-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                    <polyline points="21 15 16 10 5 21"></polyline>
-                </svg>
-            `;
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-300 dark:text-gray-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                        <polyline points="21 15 16 10 5 21"></polyline>
+                    </svg>
+                `;
     }
 }
 
@@ -274,13 +270,13 @@ function removeNewImageInput(element) {
                     message.id = 'noImagesMessage';
                     message.className = 'col-span-full text-center py-8 text-gray-500 dark:text-gray-400 bg-gray-50 dark:bg-gray-700 rounded-lg border border-dashed border-gray-300 dark:border-gray-600';
                     message.innerHTML = `
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto text-gray-400 dark:text-gray-500 mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                                <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                                <polyline points="21 15 16 10 5 21"></polyline>
-                            </svg>
-                            <p>Không có hình ảnh bổ sung.</p>
-                        `;
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto text-gray-400 dark:text-gray-500 mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                    <polyline points="21 15 16 10 5 21"></polyline>
+                                </svg>
+                                <p>Không có hình ảnh bổ sung.</p>
+                            `;
                     document.getElementById('ProductImagesContainer').appendChild(message);
                 }
             }
@@ -377,10 +373,10 @@ function removeVariant(button) {
     const container = document.getElementById('variantsContainer');
     if (container.children.length === 0) {
         container.innerHTML = `
-                <div class="text-center py-8 text-gray-500 dark:text-gray-400">
-                    Không có biến thể. Nhấn "Thêm Biến Thể" để thêm biến thể sản phẩm.
-                </div>
-            `;
+                    <div class="text-center py-8 text-gray-500 dark:text-gray-400">
+                        Không có biến thể. Nhấn "Thêm Biến Thể" để thêm biến thể sản phẩm.
+                    </div>
+                `;
     }
 }
 
@@ -391,10 +387,10 @@ function removeNewVariant(button) {
     const container = document.getElementById('variantsContainer');
     if (container.children.length === 0) {
         container.innerHTML = `
-                <div class="text-center py-8 text-gray-500 dark:text-gray-400">
-                    Không có biến thể. Nhấn "Thêm Biến Thể" để thêm biến thể sản phẩm.
-                </div>
-            `;
+                    <div class="text-center py-8 text-gray-500 dark:text-gray-400">
+                        Không có biến thể. Nhấn "Thêm Biến Thể" để thêm biến thể sản phẩm.
+                    </div>
+                `;
     }
 }
 
@@ -414,19 +410,19 @@ function addSize(button, variantIndex) {
     const sizeItem = document.createElement('div');
     sizeItem.className = 'size-item flex items-center gap-3 p-2 bg-white dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700';
     sizeItem.innerHTML = `
-            <div class="flex-1">
-                <input type="text" name="variants[${variantIndex}].Size[${sizeIndex}].Name" class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition bg-white dark:bg-gray-700 text-gray-900 dark:text-white" placeholder="Tên kích thước (VD: S, M, L, XL)" />
-            </div>
-            <div class="w-24">
-                <input type="number" name="variants[${variantIndex}].Size[${sizeIndex}].quantity" class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition bg-white dark:bg-gray-700 text-gray-900 dark:text-white" placeholder="Số lượng" min="0" value="0" />
-            </div>
-            <button type="button" onclick="removeSize(this)" class="p-1 text-red-500 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300 transition">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-            </button>
-        `;
+                <div class="flex-1">
+                    <input type="text" name="variants[${variantIndex}].Size[${sizeIndex}].Name" class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition bg-white dark:bg-gray-700 text-gray-900 dark:text-white" placeholder="Tên kích thước (VD: S, M, L, XL)" />
+                </div>
+                <div class="w-24">
+                    <input type="number" name="variants[${variantIndex}].Size[${sizeIndex}].quantity" class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition bg-white dark:bg-gray-700 text-gray-900 dark:text-white" placeholder="Số lượng" min="0" value="0" />
+                </div>
+                <button type="button" onclick="removeSize(this)" class="p-1 text-red-500 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            `;
 
     sizesContainer.appendChild(sizeItem);
 }
@@ -475,10 +471,10 @@ function removeSize(button) {
     const sizesContainer = button.closest('.sizes-container');
     if (sizesContainer.children.length === 0) {
         sizesContainer.innerHTML = `
-                <div class="text-center py-3 text-gray-500 dark:text-gray-400 text-sm">
-                    Không có kích thước. Nhấn "Thêm Kích Thước" để thêm kích thước cho biến thể này.
-                </div>
-            `;
+                    <div class="text-center py-3 text-gray-500 dark:text-gray-400 text-sm">
+                        Không có kích thước. Nhấn "Thêm Kích Thước" để thêm kích thước cho biến thể này.
+                    </div>
+                `;
     }
 }
 
@@ -490,10 +486,10 @@ function removeNewSize(button) {
     const sizesContainer = button.closest('.sizes-container');
     if (sizesContainer.children.length === 0) {
         sizesContainer.innerHTML = `
-                <div class="text-center py-3 text-gray-500 dark:text-gray-400 text-sm">
-                    Không có kích thước. Nhấn "Thêm Kích Thước" để thêm kích thước cho biến thể này.
-                </div>
-            `;
+                    <div class="text-center py-3 text-gray-500 dark:text-gray-400 text-sm">
+                        Không có kích thước. Nhấn "Thêm Kích Thước" để thêm kích thước cho biến thể này.
+                    </div>
+                `;
     }
 }
 
