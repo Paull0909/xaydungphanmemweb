@@ -113,8 +113,9 @@ namespace Web.Controllers
                 return RedirectToAction("GetAllById", "Cart");
             }
         }
+
         [HttpPost]
-        public async Task<IActionResult> CreateOrdersByCart(List<CreateUpdateOrderDetailRequest> list, CreateUpdateOrderRequest od)
+        public async Task<IActionResult> CreateOrdersByCart(List<CreateUpdateOrderDetailRequest> list, CreateUpdateOrderRequest od, List<int> id)
         {
             if (list != null || od  != null)
             {
@@ -135,11 +136,16 @@ namespace Web.Controllers
                             return View("CreateOrdersByProduct");
                         }
                     }
+                    foreach (var item in id)
+                    {
+                        var j = await _unitOfWork.CartRepository.GetByIdAsync(item);
+                        _unitOfWork.CartRepository.Remove(j);
+                    }
                     TotalRevenue t = new TotalRevenue
                     {
-                        tongdoanhthu = or.Totalprice,
-                        date = DateTime.Now,
-                        numberofsales = 1
+                       tongdoanhthu = or.Totalprice,
+                       date = DateTime.Now,
+                       numberofsales = 1
                     };
                     await _unitOfWork.TotalRevenueRepository.AddWhenbyOder(t);
                     _unitOfWork.CompleteAsync();
