@@ -159,10 +159,6 @@ namespace Web.Controllers
             return View(product);
         }
 
-        public async Task<IActionResult> ProductCate(int type_id)
-        {
-            var product = await _unitOfWork.Products.GetProductofCate(type_id);
-            return View(product);
-        }
+        
     }
 }
