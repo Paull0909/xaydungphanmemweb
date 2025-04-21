@@ -19,6 +19,12 @@ namespace Data.Repositories
             _mapper = mapper;
         }
 
+        public async Task<List<Product>> GetProductofCate(int type_id)
+        {
+            var pro = await _context.Products.Where(t => t.type_id == type_id).ToListAsync();
+            return pro;
+        }
+
         public async Task<PagedResult<ProductDTO>> GetProductPagingAsync(PagedRequest request)
         {
             var query = _context.Products.AsQueryable();
