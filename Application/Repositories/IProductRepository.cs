@@ -8,5 +8,6 @@ namespace Application.Repositories
     public interface IProductRepository : IRepository<Product, int>
     {
         Task<PagedResult<ProductDTO>> GetProductPagingAsync(PagedRequest request);
+        Task<List<Product>> GetProductofCate(int type_id);
     }
 }

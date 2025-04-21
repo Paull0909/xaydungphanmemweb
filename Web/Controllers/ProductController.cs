@@ -61,6 +61,7 @@ namespace Web.Controllers
 
             return View(model);
         }
+
         [HttpPost]
         public async Task<IActionResult> Create(CreateUpdateProductRequest request)
         {
@@ -88,6 +89,7 @@ namespace Web.Controllers
             viewModel.variants = await _unitOfWork.VariantsProductRepository.GetVariantsByProductIdAsync(id);
             return View(viewModel);
         }
+
          [HttpPost]
         public async Task<IActionResult> EditProduct(CreateUpdateProductRequest request)
         {
@@ -154,6 +156,12 @@ namespace Web.Controllers
             {
                 item.Size = await _unitOfWork.SizeProductsRepository.GetByProduct(item.Id);
             }
+            return View(product);
+        }
+
+        public async Task<IActionResult> ProductCate(int type_id)
+        {
+            var product = await _unitOfWork.Products.GetProductofCate(type_id);
             return View(product);
         }
     }
