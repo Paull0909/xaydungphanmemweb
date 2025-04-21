@@ -1,0 +1,67 @@
+﻿@model List<Application.DTO.Products.ProductDTO>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <!-- Product grid - Improved for mobile -->
+    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6">
+        @if (Model != null && Model.Any())
+        {
+            @foreach (var item in Model)
+            {
+                var DiscountedPrice = item.price - (item.price * item.discount / 100);
+                <div class="group bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden border border-gray-100">
+                    <div class="relative">
+                        <!-- Product Image with Aspect Ratio -->
+                        <a asp-controller="Home" asp-action="InfoProduct" asp-route-id="@item.product_id" class="block relative">
+                            <div class="aspect-square overflow-hidden bg-gray-100">
+                                <img src="@item.img.ImagePath"
+                                     class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                                     alt="@item.product_name" />
+                            </div>
+
+                            <!-- Discount Badge -->
+                            @if (item.discount > 0)
+                            {
+                                <div class="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                                    -@item.discount%
+                                </div>
+                            }
+                        </a>
+                    </div>
+
+                    <!-- Product Info - Improved for mobile -->
+                    <div class="p-3 sm:p-4">
+                        <!-- Product Name -->
+                        <a asp-controller="Home" asp-action="InfoProduct" asp-route-id="@item.product_id"
+                           class="block font-medium text-gray-800 hover:text-violet-600 transition-colors mb-1 text-sm sm:text-base line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem]">
+                            @item.product_name
+                        </a>
+
+                        <!-- Price Section -->
+                        <div class="mt-2 flex items-center justify-between">
+                            <div>
+                                @if (item.discount > 0)
+                                {
+                                    <div class="flex items-center space-x-2 sm:space-x-4">
+                                        <p class="text-xs sm:text-sm text-gray-500 line-through">@item.price.ToString("N0")₫</p>
+                                        <p class="text-sm sm:text-base text-red-600 font-bold">
+                                            @(((decimal)item.price - ((decimal)item.price * (decimal)item.discount / 100)).ToString("N0"))₫
+                                        </p>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <p class="text-sm sm:text-base text-gray-900 font-bold">@item.price.ToString("N0")₫</p>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="text-center text-gray-500 text-lg py-10">
+                Không có sản phẩm nào để hiển thị.
+            </div>
+        }
+    </div>
+</main>
