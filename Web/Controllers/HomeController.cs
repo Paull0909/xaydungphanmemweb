@@ -66,5 +66,30 @@ namespace Web.Controllers
                 return View();
             }
         }
+
+        public async Task<IActionResult> ProductCate(int type_id)
+        {
+            var pr = await _unitOfWork.Products.GetProductofCate(type_id);
+            List<ProductDTO> product = new List<ProductDTO>();
+            foreach (var item in pr)
+            {
+                var rr = _mapper.Map<Product, ProductDTO>(item);
+                product.Add(rr);
+            }
+            foreach (var i in product)
+            {
+                i.img = await _unitOfWork.ProductImageRepository.GetImgByIdProductAsync(i.product_id);
+
+            }
+            if (product != null)
+            {
+                return View(product);
+            }
+            else
+            {
+                ViewBag.Product = "Khong co du lieu nao";
+                return View();
+            }
+        }
     }
 }
