@@ -80,8 +80,8 @@
                             </svg>
                         </button>
                     </div>
-                    <div class="hidden lg:flex lg:gap-x-12 justify-center mx-auto">
-                        <ul class="flex space-x-10">
+                    <div class=" hidden lg:flex lg:gap-x-12 ">
+                        <ul class="flex space-x-20 mt-2">
                             <li>
                                 <a class="text-gray-700 hover:text-blue-600 text-lg font-medium relative group py-2">
                                     Women
@@ -90,7 +90,7 @@
                             </li>
                             <li>
                                 <a class="text-gray-700 hover:text-blue-600 text-lg font-medium relative group py-2">
-                                    Company
+                                    Men
                                     <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
                                 </a>
                             </li>
@@ -106,12 +106,11 @@
                                     <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
                                 </a>
                             </li>
-                            <li>
-                                @await Component.InvokeAsync("Category")
-                            </li>
+
 
                         </ul>
                     </div>
+                        @await Component.InvokeAsync("Category")
 
                     <!-- Desktop Right Section (Search, Cart, User) -->
                     <div class="hidden lg:flex items-center gap-x-6">
