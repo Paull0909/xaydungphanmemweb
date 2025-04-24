@@ -1,12 +1,72 @@
 ﻿@model List<Application.Entities.Category>
-<a class=" dropdown-toggle" style="float:left" href="#" id="navbarDropdownMenuLink" role="button"
-       data-bs-toggle="dropdown" aria-expanded="false">
-        <i class="fas fa-users"></i>
-        Danh Muc
-    </a>
-    <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
-        @foreach (var item in Model)
-        {
-        <a class="dropdown-item nav-link" asp-area="" asp-controller="Product" asp-route-type_id="@item.type_id" asp-action="ProductCate"> @item.type_name</a>
-        }
-    </ul>
+<div class="relative inline-block text-left">
+    <button type="button"
+            class="mt-2.5 text-gray-700 hover:text-blue-600 text-lg font-medium relative group py-2 inline-flex items-center justify-center gap-2 transition-all duration-200 focus:outline-none focus:ring-offset-2"
+            id="menu-button" aria-expanded="true" aria-haspopup="true">
+
+        <span>Danh Mục</span>
+        <svg class="h-5 w-5 transition-transform duration-200" id="dropdown-arrow" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.25 8.27a.75.75 0 01-.02-1.06z" clip-rule="evenodd" />
+        </svg>
+        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
+    </button>
+
+
+
+    <div id="dropdownMenu"
+         class="invisible absolute left-0 mt-2 w-56 origin-top-left translate-y-2 scale-95 rounded-lg border border-gray-200 bg-white opacity-0 shadow-lg ring-1 ring-black ring-opacity-5 transition-all duration-200 ease-in-out focus:outline-none z-50"
+         role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+        <div class="py-1 max-h-80 overflow-y-auto" role="none">
+            @foreach (var item in Model)
+            {
+                <a asp-area=""
+                   asp-controller="Home"
+                   asp-route-type_id="@item.type_id"
+                   asp-action="ProductCate"
+                   class="flex items-center px-4 py-3 text-sm text-black hover:bg-transparent hover:text-violet-700 transition-colors duration-150 border-l-2 border-transparent hover:border-violet-500"
+                   role="menuitem">
+                    <span class="ml-2">@item.type_name</span>
+                </a>
+            }
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const button = document.getElementById("menu-button");
+        const menu = document.getElementById("dropdownMenu");
+        const arrow = document.getElementById("dropdown-arrow");
+
+        button.addEventListener("click", function (e) {
+            e.stopPropagation();
+
+            // Toggle visibility with animation
+            if (menu.classList.contains("invisible")) {
+                // Show menu
+                menu.classList.remove("invisible", "opacity-0", "translate-y-2", "scale-95");
+                menu.classList.add("visible", "opacity-100", "translate-y-0", "scale-100");
+                arrow.classList.add("rotate-180");
+            } else {
+                // Hide menu
+                menu.classList.remove("visible", "opacity-100", "translate-y-0", "scale-100");
+                menu.classList.add("invisible", "opacity-0", "translate-y-2", "scale-95");
+                arrow.classList.remove("rotate-180");
+            }
+        });
+
+        // Prevent closing when clicking inside the dropdown
+        menu.addEventListener("click", function (e) {
+            e.stopPropagation();
+        });
+
+        // Hide dropdown when clicking outside
+        document.addEventListener("click", function (event) {
+            if (!menu.classList.contains("invisible")) {
+                menu.classList.remove("visible", "opacity-100", "translate-y-0", "scale-100");
+                menu.classList.add("invisible", "opacity-0", "translate-y-2", "scale-95");
+                arrow.classList.remove("rotate-180");
+            }
+        });
+    });
+</script>
