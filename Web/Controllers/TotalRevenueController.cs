@@ -1,9 +1,11 @@
 ﻿using Application.SeedWorks;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Web.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class TotalRevenueController : Controller
     {
         private readonly IMapper _mapper;

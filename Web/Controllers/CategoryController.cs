@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Web.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class CategoryController : Controller
     {
         private readonly IMapper _mapper;
